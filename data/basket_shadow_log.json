@@ -28,5 +28,15 @@
   "n_held": 0,
   "n_members": 59,
   "book_value_usd": 0
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-16T14:57:10.203113+00:00",
+  "event": "OK",
+  "mode": "establishment",
+  "n_orders": 30,
+  "n_held": 0,
+  "n_members": 59,
+  "book_value_usd": 0
  }
 ]

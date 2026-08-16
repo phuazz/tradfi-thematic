@@ -125,8 +125,17 @@ def main() -> int:
     last_px_path = PROJECT_ROOT / "data" / "last_prices.json"
     last_px = read_json(last_px_path, {})
     for s, r in scan_rows.items():
-        last_px[s] = {"px": float(r["price"]), "asof": scan["generated_at_utc"]}
+        last_px[s] = {"px": float(r["price"]), "asof": scan["generated_at_utc"],
+                      "fund": r.get("fund_ann_30d")}
     last_px_path.write_text(json.dumps(last_px, indent=1), encoding="utf-8")
+
+    def fund_of(sym):
+        """Trailing 30d funding, latest scan first, else last seen (stamped
+        data beats a silent None for the frozen live exclusion rule)."""
+        r = scan_rows.get(sym)
+        if r is not None and r.get("fund_ann_30d") is not None:
+            return r["fund_ann_30d"]
+        return (last_px.get(sym) or {}).get("fund")
     filters = read_json(FILTERS_PATH, {})
     umap = read_json(MAP_PATH, {"rows": {}})["rows"]
 
@@ -161,7 +170,7 @@ def main() -> int:
         q = round_step(usd / px, f["step_size"])
         while q * px < f["min_notional"]:
             q += float(f["step_size"])
-        fund = scan_rows.get(sym, {}).get("fund_ann_30d")
+        fund = fund_of(sym)
         return {"symbol": sym, "side": side, "qty": round(q, 8),
                 "approx_usd": round(q * px, 2), "ref_price": px,
                 "ref_price_asof": price_asof.get(sym),
@@ -170,7 +179,7 @@ def main() -> int:
     if missing:
         mode = "establishment"
         for sym in missing[:TRANCHE_SIZE]:
-            fund = scan_rows.get(sym, {}).get("fund_ann_30d")
+            fund = fund_of(sym)
             if fund is not None and fund > prereg.LIVE_FUNDING_EXCLUDE_ANN:
                 skipped_funding.append(f"{sym} ({fund:+.1f}%/yr)")
                 continue
@@ -184,7 +193,7 @@ def main() -> int:
             drift = (cur - target_usd) / target_usd if target_usd else 0.0
             if abs(drift) > DRIFT_BAND:
                 side = "sell" if drift > 0 else "buy"
-                fund = scan_rows.get(sym, {}).get("fund_ann_30d")
+                fund = fund_of(sym)
                 if side == "buy" and fund is not None and fund > prereg.LIVE_FUNDING_EXCLUDE_ANN:
                     skipped_funding.append(f"{sym} ({fund:+.1f}%/yr)")
                     continue
