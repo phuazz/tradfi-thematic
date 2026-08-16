@@ -24,7 +24,20 @@ stands.
   same ops evidence.
 - Leverage **1×** (fully collateralised); any margin call is FAIL-OPS.
 
-**Book cap: ______ (owner)** · Option: A / B (N = __)
+**Book cap: US$5,000 (owner, in session, 2026-08-16)** · **Option: A — full basket.**
+Activated 2026-08-16 on the owner's number, per the standing pre-authorisation.
+Equal-weight target = cap / N over the establishment-eligible set; names whose
+target falls below the contract's minimum notional are bumped to the minimum
+(logged as deviations), the rest renormalised.
+
+**Execution windows (documented at activation):** establishment tranches on
+weekday mornings 07:30–09:30 SGT (≤5 sessions from 2026-08-17); weekly
+maintenance in the SATURDAY 07:30–09:30 SGT window — closest to the model's
+Friday-close rebalance, with the known weekend-liquidity caveat carried
+deliberately: thin Saturday fills are exactly the execution evidence this
+shadow exists to measure. **Liquidity gate at establishment:** membership in
+the scanner's liquid set over the trailing seven days' scans (rolling union),
+so weekend-window scans cannot wrongly exclude weekday-liquid names.
 
 ## 3. Mechanics (frozen)
 

@@ -1,0 +1,12 @@
+[
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-16T14:55:46.815033+00:00",
+  "event": "OK",
+  "mode": "establishment",
+  "n_orders": 18,
+  "n_held": 0,
+  "n_members": 21,
+  "book_value_usd": 0
+ }
+]

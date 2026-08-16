@@ -1,0 +1,164 @@
+{
+ "ts_utc": "2026-08-16T14:55:46.815033+00:00",
+ "mode": "establishment",
+ "book_cap_usd": 5000.0,
+ "n_members": 21,
+ "target_usd_per_name": 238.1,
+ "n_held": 0,
+ "n_missing": 21,
+ "book_value_usd": 0,
+ "orders": [
+  {
+   "symbol": "AAOIUSDT",
+   "side": "buy",
+   "qty": 1.54,
+   "approx_usd": 237.71,
+   "ref_price": 154.36,
+   "fund_ann_30d": 5.9
+  },
+  {
+   "symbol": "BZUSDT",
+   "side": "buy",
+   "qty": 2.75,
+   "approx_usd": 237.32,
+   "ref_price": 86.3,
+   "fund_ann_30d": -42.83
+  },
+  {
+   "symbol": "CLUSDT",
+   "side": "buy",
+   "qty": 2.92,
+   "approx_usd": 237.4,
+   "ref_price": 81.3,
+   "fund_ann_30d": -25.3
+  },
+  {
+   "symbol": "CRCLUSDT",
+   "side": "buy",
+   "qty": 3.3,
+   "approx_usd": 237.67,
+   "ref_price": 72.02,
+   "fund_ann_30d": 3.21
+  },
+  {
+   "symbol": "DRAMUSDT",
+   "side": "buy",
+   "qty": 4.11,
+   "approx_usd": 237.76,
+   "ref_price": 57.85,
+   "fund_ann_30d": 5.48
+  },
+  {
+   "symbol": "EWYUSDT",
+   "side": "buy",
+   "qty": 1.31,
+   "approx_usd": 237.48,
+   "ref_price": 181.28,
+   "fund_ann_30d": 6.11
+  },
+  {
+   "symbol": "GOOGLUSDT",
+   "side": "buy",
+   "qty": 0.68,
+   "approx_usd": 236.99,
+   "ref_price": 348.52,
+   "fund_ann_30d": 4.74
+  },
+  {
+   "symbol": "INTCUSDT",
+   "side": "buy",
+   "qty": 2.28,
+   "approx_usd": 237.9,
+   "ref_price": 104.34,
+   "fund_ann_30d": 2.02
+  },
+  {
+   "symbol": "MSTRUSDT",
+   "side": "buy",
+   "qty": 2.53,
+   "approx_usd": 238.0,
+   "ref_price": 94.07,
+   "fund_ann_30d": 1.48
+  },
+  {
+   "symbol": "NBISUSDT",
+   "side": "buy",
+   "qty": 0.86,
+   "approx_usd": 237.69,
+   "ref_price": 276.38,
+   "fund_ann_30d": 8.43
+  },
+  {
+   "symbol": "NVDAUSDT",
+   "side": "buy",
+   "qty": 1.05,
+   "approx_usd": 236.66,
+   "ref_price": 225.39,
+   "fund_ann_30d": 0.08
+  },
+  {
+   "symbol": "QQQUSDT",
+   "side": "buy",
+   "qty": 0.32,
+   "approx_usd": 234.38,
+   "ref_price": 732.43,
+   "fund_ann_30d": 1.13
+  },
+  {
+   "symbol": "SNDKUSDT",
+   "side": "buy",
+   "qty": 0.14,
+   "approx_usd": 232.36,
+   "ref_price": 1659.69,
+   "fund_ann_30d": 5.03
+  },
+  {
+   "symbol": "SPCXUSDT",
+   "side": "buy",
+   "qty": 1.7,
+   "approx_usd": 237.61,
+   "ref_price": 139.77,
+   "fund_ann_30d": -0.74
+  },
+  {
+   "symbol": "SPYUSDT",
+   "side": "buy",
+   "qty": 0.3,
+   "approx_usd": 233.32,
+   "ref_price": 777.73,
+   "fund_ann_30d": 0.32
+  },
+  {
+   "symbol": "TSLAUSDT",
+   "side": "buy",
+   "qty": 0.69,
+   "approx_usd": 236.95,
+   "ref_price": 343.41,
+   "fund_ann_30d": 1.19
+  },
+  {
+   "symbol": "XAGUSDT",
+   "side": "buy",
+   "qty": 3.659,
+   "approx_usd": 238.09,
+   "ref_price": 65.07,
+   "fund_ann_30d": 4.98
+  },
+  {
+   "symbol": "XAUUSDT",
+   "side": "buy",
+   "qty": 0.054,
+   "approx_usd": 236.83,
+   "ref_price": 4385.77,
+   "fund_ann_30d": 2.56
+  }
+ ],
+ "skipped_funding_rule": [
+  "SAMSUNGUSDT (+34.7%/yr)",
+  "SKHYNIXUSDT (+47.6%/yr)"
+ ],
+ "skipped_no_price": [
+  "MRVLUSDT"
+ ],
+ "window": "07:30-09:30 SGT; execution is manual, this file is a list, not an instruction to any system"
+}

@@ -1,0 +1,980 @@
+{
+ "XAUUSDT": {
+  "base": "XAU",
+  "min_notional": 5.0,
+  "step_size": "0.001",
+  "tick_size": "0.01"
+ },
+ "XAGUSDT": {
+  "base": "XAG",
+  "min_notional": 5.0,
+  "step_size": "0.001",
+  "tick_size": "0.0100"
+ },
+ "TSLAUSDT": {
+  "base": "TSLA",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "XPTUSDT": {
+  "base": "XPT",
+  "min_notional": 5.0,
+  "step_size": "0.001",
+  "tick_size": "0.0100"
+ },
+ "XPDUSDT": {
+  "base": "XPD",
+  "min_notional": 5.0,
+  "step_size": "0.001",
+  "tick_size": "0.0100"
+ },
+ "INTCUSDT": {
+  "base": "INTC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HOODUSDT": {
+  "base": "HOOD",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MSTRUSDT": {
+  "base": "MSTR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AMZNUSDT": {
+  "base": "AMZN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CRCLUSDT": {
+  "base": "CRCL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "COINUSDT": {
+  "base": "COIN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "PLTRUSDT": {
+  "base": "PLTR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "COPPERUSDT": {
+  "base": "COPPER",
+  "min_notional": 5.0,
+  "step_size": "0.1",
+  "tick_size": "0.00100"
+ },
+ "EWYUSDT": {
+  "base": "EWY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "EWJUSDT": {
+  "base": "EWJ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "PAYPUSDT": {
+  "base": "PAYP",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "METAUSDT": {
+  "base": "META",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NVDAUSDT": {
+  "base": "NVDA",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "GOOGLUSDT": {
+  "base": "GOOGL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CLUSDT": {
+  "base": "CL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BZUSDT": {
+  "base": "BZ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NATGASUSDT": {
+  "base": "NATGAS",
+  "min_notional": 5.0,
+  "step_size": "0.1",
+  "tick_size": "0.00100"
+ },
+ "QQQUSDT": {
+  "base": "QQQ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SPYUSDT": {
+  "base": "SPY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AAPLUSDT": {
+  "base": "AAPL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TSMUSDT": {
+  "base": "TSM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MUUSDT": {
+  "base": "MU",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SNDKUSDT": {
+  "base": "SNDK",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MSFTUSDT": {
+  "base": "MSFT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AVGOUSDT": {
+  "base": "AVGO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BABAUSDT": {
+  "base": "BABA",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AMDUSDT": {
+  "base": "AMD",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "QCOMUSDT": {
+  "base": "QCOM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "USARUSDT": {
+  "base": "USAR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "LITEUSDT": {
+  "base": "LITE",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ORCLUSDT": {
+  "base": "ORCL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "DISUSDT": {
+  "base": "DIS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "UBERUSDT": {
+  "base": "UBER",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CSCOUSDT": {
+  "base": "CSCO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HDUSDT": {
+  "base": "HD",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SOXLUSDT": {
+  "base": "SOXL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MRVLUSDT": {
+  "base": "MRVL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CRWVUSDT": {
+  "base": "CRWV",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "WMTUSDT": {
+  "base": "WMT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "JPMUSDT": {
+  "base": "JPM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "VUSDT": {
+  "base": "V",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BRKBUSDT": {
+  "base": "BRKB",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "FLNCUSDT": {
+  "base": "FLNC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "DRAMUSDT": {
+  "base": "DRAM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "RKLBUSDT": {
+  "base": "RKLB",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CBRSUSDT": {
+  "base": "CBRS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SPCXUSDT": {
+  "base": "SPCX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "OPENAIUSDT": {
+  "base": "OPENAI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NBISUSDT": {
+  "base": "NBIS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "WDCUSDT": {
+  "base": "WDC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ARMUSDT": {
+  "base": "ARM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BEUSDT": {
+  "base": "BE",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "COHRUSDT": {
+  "base": "COHR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "QNTXUSDT": {
+  "base": "QNTX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "LLYUSDT": {
+  "base": "LLY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NVOUSDT": {
+  "base": "NVO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BBXUSDT": {
+  "base": "BBX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NOKUSDT": {
+  "base": "NOK",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "EWTUSDT": {
+  "base": "EWT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ASTSUSDT": {
+  "base": "ASTS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SKHYNIXUSDT": {
+  "base": "SKHYNIX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SAMSUNGUSDT": {
+  "base": "SAMSUNG",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HYUNDAIUSDT": {
+  "base": "HYUNDAI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ANTHROPICUSDT": {
+  "base": "ANTHROPIC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "DELLUSDT": {
+  "base": "DELL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "IBMUSDT": {
+  "base": "IBM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NOWUSDT": {
+  "base": "NOW",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CRMUSDT": {
+  "base": "CRM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "IRENUSDT": {
+  "base": "IREN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ONDSUSDT": {
+  "base": "ONDS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BXUSDT": {
+  "base": "BX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HPEUSDT": {
+  "base": "HPE",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AMATUSDT": {
+  "base": "AMAT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CRWDUSDT": {
+  "base": "CRWD",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CRDOUSDT": {
+  "base": "CRDO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AAOIUSDT": {
+  "base": "AAOI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "IWMUSDT": {
+  "base": "IWM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "AXTIUSDT": {
+  "base": "AXTI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NFLXUSDT": {
+  "base": "NFLX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "COSTUSDT": {
+  "base": "COST",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "URNMUSDT": {
+  "base": "URNM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HIMSUSDT": {
+  "base": "HIMS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "EBAYUSDT": {
+  "base": "EBAY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ZMUSDT": {
+  "base": "ZM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "DKNGUSDT": {
+  "base": "DKNG",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "RIVNUSDT": {
+  "base": "RIVN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "GMEUSDT": {
+  "base": "GME",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "XLEUSDT": {
+  "base": "XLE",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "EWZUSDT": {
+  "base": "EWZ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BMNRUSDT": {
+  "base": "BMNR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "UVXYUSDT": {
+  "base": "UVXY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ADBEUSDT": {
+  "base": "ADBE",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "GLWUSDT": {
+  "base": "GLW",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "STXXUSDT": {
+  "base": "STXX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ASMLUSDT": {
+  "base": "ASML",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "LRCXUSDT": {
+  "base": "LRCX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KLACUSDT": {
+  "base": "KLAC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ALABUSDT": {
+  "base": "ALAB",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SMCIUSDT": {
+  "base": "SMCI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CIENUSDT": {
+  "base": "CIEN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KORUUSDT": {
+  "base": "KORU",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SONYUSDT": {
+  "base": "SONY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MVLLUSDT": {
+  "base": "MVLL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TQQQUSDT": {
+  "base": "TQQQ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SQQQUSDT": {
+  "base": "SQQQ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "STRCUSDT": {
+  "base": "STRC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CATUSDT": {
+  "base": "CAT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TXNUSDT": {
+  "base": "TXN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "FLEXUSDT": {
+  "base": "FLEX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TERUSDT": {
+  "base": "TER",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TTWOUSDT": {
+  "base": "TTWO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KSTRUSDT": {
+  "base": "KSTR",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BSPUSDT": {
+  "base": "BSP",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BOTUSDT": {
+  "base": "BOT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "WENUSDT": {
+  "base": "WEN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "INTWUSDT": {
+  "base": "INTW",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SNXXUSDT": {
+  "base": "SNXX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "XBIUSDT": {
+  "base": "XBI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BNCUSDT": {
+  "base": "BNC",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.00100"
+ },
+ "FWDIUSDT": {
+  "base": "FWDI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.00100"
+ },
+ "GEVUSDT": {
+  "base": "GEV",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "VRTUSDT": {
+  "base": "VRT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SNOWUSDT": {
+  "base": "SNOW",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "APPUSDT": {
+  "base": "APP",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SKHYUSDT": {
+  "base": "SKHY",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MUUUSDT": {
+  "base": "MUU",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SOXSUSDT": {
+  "base": "SOXS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TZAUSDT": {
+  "base": "TZA",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MINIMAXUSDT": {
+  "base": "MINIMAX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ZHIPUUSDT": {
+  "base": "ZHIPU",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HK0700USDT": {
+  "base": "HK0700",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HK1810USDT": {
+  "base": "HK1810",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TENCENTUSDT": {
+  "base": "TENCENT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SPCXUSD1": {
+  "base": "SPCX",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SHAZUSDT": {
+  "base": "SHAZ",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SOFIUSDT": {
+  "base": "SOFI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "PANWUSDT": {
+  "base": "PANW",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "PENGUSDT": {
+  "base": "PENG",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "POPMARTUSDT": {
+  "base": "POPMART",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TMFUSDT": {
+  "base": "TMF",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "TBTUSDT": {
+  "base": "TBT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "BITOUSDT": {
+  "base": "BITO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "PYPLUSDT": {
+  "base": "PYPL",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "GSUSDT": {
+  "base": "GS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SMHUSDT": {
+  "base": "SMH",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "GIGADEVUSDT": {
+  "base": "GIGADEV",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KOUSDT": {
+  "base": "KO",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "RDDTUSDT": {
+  "base": "RDDT",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KUAISHOUUSDT": {
+  "base": "KUAISHOU",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "MEITUANUSDT": {
+  "base": "MEITUAN",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "CSOPSKHYNIX2LUSDT": {
+  "base": "CSOPSKHYNIX2L",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.00100"
+ },
+ "CSOPSAMSUNG2LUSDT": {
+  "base": "CSOPSAMSUNG2L",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "ZHONGJIUSDT": {
+  "base": "ZHONGJI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "SAMSUNGEMUSDT": {
+  "base": "SAMSUNGEM",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "HANMIUSDT": {
+  "base": "HANMI",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "LGELECTRONICSUSDT": {
+  "base": "LGELECTRONICS",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "NAVERUSDT": {
+  "base": "NAVER",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ },
+ "KODEX200USDT": {
+  "base": "KODEX200",
+  "min_notional": 5.0,
+  "step_size": "0.01",
+  "tick_size": "0.01000"
+ }
+}
