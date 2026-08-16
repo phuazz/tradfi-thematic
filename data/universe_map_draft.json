@@ -1,0 +1,3406 @@
+{
+ "generated_at_utc": "2026-08-16T14:30:40.554423+00:00",
+ "roster_ts": "2026-08-16T13:55:41.681760+00:00",
+ "rows": {
+  "AAOI": {
+   "base": "AAOI",
+   "candidate": "AAOI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Applied Optoelectronics, Inc.",
+    "longName": "Applied Optoelectronics, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGM",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2013-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 156
+   }
+  },
+  "AAPL": {
+   "base": "AAPL",
+   "candidate": "AAPL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Apple Inc.",
+    "longName": "Apple Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "currency": "USD",
+    "dividendYield_raw": 0.35,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "ADBE": {
+   "base": "ADBE",
+   "candidate": "ADBE",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Adobe Inc.",
+    "longName": "Adobe Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1986-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 481
+   }
+  },
+  "ALAB": {
+   "base": "ALAB",
+   "candidate": "ALAB",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Astera Labs, Inc.",
+    "longName": "Astera Labs, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2024-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 30
+   }
+  },
+  "AMAT": {
+   "base": "AMAT",
+   "candidate": "AMAT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Applied Materials, Inc.",
+    "longName": "Applied Materials, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": 0.42,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "AMD": {
+   "base": "AMD",
+   "candidate": "AMD",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Advanced Micro Devices, Inc.",
+    "longName": "Advanced Micro Devices, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "AMZN": {
+   "base": "AMZN",
+   "candidate": "AMZN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Amazon.com, Inc.",
+    "longName": "Amazon.com, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1997-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 352
+   }
+  },
+  "APP": {
+   "base": "APP",
+   "candidate": "APP",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Applovin Corporation",
+    "longName": "AppLovin Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Advertising Agencies",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 65
+   }
+  },
+  "ARM": {
+   "base": "ARM",
+   "candidate": "ARM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Arm Holdings plc",
+    "longName": "Arm Holdings plc",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2023-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 36
+   }
+  },
+  "ASML": {
+   "base": "ASML",
+   "candidate": "ASML",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ASML Holding N.V. - New York Re",
+    "longName": "ASML Holding N.V.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": 0.49,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1995-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 378
+   }
+  },
+  "ASTS": {
+   "base": "ASTS",
+   "candidate": "ASTS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "AST SpaceMobile, Inc.",
+    "longName": "AST SpaceMobile, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 82
+   }
+  },
+  "AVGO": {
+   "base": "AVGO",
+   "candidate": "AVGO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Broadcom Inc.",
+    "longName": "Broadcom Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 0.66,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2009-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 205
+   }
+  },
+  "AXTI": {
+   "base": "AXTI",
+   "candidate": "AXTI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "AXT Inc",
+    "longName": "AXT, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1998-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 340
+   }
+  },
+  "BABA": {
+   "base": "BABA",
+   "candidate": "BABA",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Alibaba Group Holding Limited",
+    "longName": "Alibaba Group Holding Limited",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "currency": "USD",
+    "dividendYield_raw": 0.85,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2014-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 144
+   }
+  },
+  "BE": {
+   "base": "BE",
+   "candidate": "BE",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Bloom Energy Corporation",
+    "longName": "Bloom Energy Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Industrials",
+    "industry": "Electrical Equipment & Parts",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2018-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 98
+   }
+  },
+  "BITO": {
+   "base": "BITO",
+   "candidate": "BITO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ProShares Bitcoin ETF",
+    "longName": "ProShares Bitcoin ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 61.68,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 59
+   }
+  },
+  "BMNR": {
+   "base": "BMNR",
+   "candidate": "BMNR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "BitMine Immersion Technologies,",
+    "longName": "Bitmine Immersion Technologies, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "currency": "USD",
+    "dividendYield_raw": 0.06,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 15
+   }
+  },
+  "BNC": {
+   "base": "BNC",
+   "candidate": "BNC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "CEA Industries Inc.",
+    "longName": "CEA Industries Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqCM",
+    "sector": "Industrials",
+    "industry": "Farm & Heavy Construction Machinery",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2014-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 150
+   }
+  },
+  "BOT": {
+   "base": "BOT",
+   "candidate": "BOT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "RoboStrategy, Inc.",
+    "longName": "Robostrategy, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGM",
+    "sector": "Financial Services",
+    "industry": "Asset Management",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 4
+   }
+  },
+  "BRKB": {
+   "base": "BRKB",
+   "candidate": "BRK-B",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Berkshire Hathaway Inc. New",
+    "longName": "Berkshire Hathaway Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Insurance - Diversified",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1996-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 364
+   }
+  },
+  "BSP": {
+   "base": "BSP",
+   "candidate": "BSP",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Bending Spoons S.p.A.",
+    "longName": "Bending Spoons S.p.A.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 2
+   }
+  },
+  "BX": {
+   "base": "BX",
+   "candidate": "BX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Blackstone Inc.",
+    "longName": "Blackstone Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Asset Management",
+    "currency": "USD",
+    "dividendYield_raw": 3.63,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2007-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 231
+   }
+  },
+  "BZ": {
+   "base": "BZ",
+   "candidate": "BZ=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Brent Crude Oil Last Day Financ",
+    "longName": "Brent Crude Oil Last Day Financial Futures",
+    "quoteType": "FUTURE",
+    "exchange": "NY Mercantile",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2007-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 196
+   }
+  },
+  "CAT": {
+   "base": "CAT",
+   "candidate": "CAT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Caterpillar, Inc.",
+    "longName": "Caterpillar Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Industrials",
+    "industry": "Farm & Heavy Construction Machinery",
+    "currency": "USD",
+    "dividendYield_raw": 0.76,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "CBRS": {
+   "base": "CBRS",
+   "candidate": "CBRS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Cerebras Systems Inc.",
+    "longName": "Cerebras Systems Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 4
+   }
+  },
+  "CIEN": {
+   "base": "CIEN",
+   "candidate": "CIEN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Ciena Corporation",
+    "longName": "Ciena Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1997-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 355
+   }
+  },
+  "CL": {
+   "base": "CL",
+   "candidate": "CL=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Crude Oil Sep 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "NY Mercantile",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "COHR": {
+   "base": "COHR",
+   "candidate": "COHR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Coherent Corp.",
+    "longName": "Coherent Corp.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Scientific & Technical Instruments",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1987-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 467
+   }
+  },
+  "COIN": {
+   "base": "COIN",
+   "candidate": "COIN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Coinbase Global, Inc.",
+    "longName": "Coinbase Global, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Financial Services",
+    "industry": "Financial Data & Stock Exchanges",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 65
+   }
+  },
+  "COPPER": {
+   "base": "COPPER",
+   "candidate": "HG=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Copper Sep 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "COMEX",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "COST": {
+   "base": "COST",
+   "candidate": "COST",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Costco Wholesale Corporation",
+    "longName": "Costco Wholesale Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Defensive",
+    "industry": "Discount Stores",
+    "currency": "USD",
+    "dividendYield_raw": 0.61,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1986-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 482
+   }
+  },
+  "CRCL": {
+   "base": "CRCL",
+   "candidate": "CRCL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Circle Internet Group, Inc.",
+    "longName": "Circle Internet Group",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 15
+   }
+  },
+  "CRDO": {
+   "base": "CRDO",
+   "candidate": "CRDO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Credo Technology Group Holding ",
+    "longName": "Credo Technology Group Holding Ltd",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2022-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 56
+   }
+  },
+  "CRM": {
+   "base": "CRM",
+   "candidate": "CRM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Salesforce, Inc.",
+    "longName": "Salesforce, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": 0.9,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2004-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "CRWD": {
+   "base": "CRWD",
+   "candidate": "CRWD",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "CrowdStrike Holdings, Inc.",
+    "longName": "CrowdStrike Holdings, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 87
+   }
+  },
+  "CRWV": {
+   "base": "CRWV",
+   "candidate": "CRWV",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "CoreWeave, Inc.",
+    "longName": "CoreWeave, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 18
+   }
+  },
+  "CSCO": {
+   "base": "CSCO",
+   "candidate": "CSCO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Cisco Systems, Inc.",
+    "longName": "Cisco Systems, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": 1.5,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1990-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 439
+   }
+  },
+  "DELL": {
+   "base": "DELL",
+   "candidate": "DELL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Dell Technologies Inc.",
+    "longName": "Dell Technologies Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "currency": "USD",
+    "dividendYield_raw": 0.51,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2016-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 121
+   }
+  },
+  "DIS": {
+   "base": "DIS",
+   "candidate": "DIS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Walt Disney Company (The)",
+    "longName": "The Walt Disney Company",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "currency": "USD",
+    "dividendYield_raw": 1.4,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "DKNG": {
+   "base": "DKNG",
+   "candidate": "DKNG",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "DraftKings Inc.",
+    "longName": "DraftKings Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Gambling",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 86
+   }
+  },
+  "DRAM": {
+   "base": "DRAM",
+   "candidate": "DRAM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Roundhill Memory ETF",
+    "longName": "Roundhill Memory ETF",
+    "quoteType": "ETF",
+    "exchange": "Cboe US",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 5
+   }
+  },
+  "EBAY": {
+   "base": "EBAY",
+   "candidate": "EBAY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "eBay Inc.",
+    "longName": "eBay Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "currency": "USD",
+    "dividendYield_raw": 1.2,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1998-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 336
+   }
+  },
+  "EWJ": {
+   "base": "EWJ",
+   "candidate": "EWJ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "iShares MSCI Japan Index Fund",
+    "longName": "iShares MSCI Japan ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 3.86,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1996-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 366
+   }
+  },
+  "EWT": {
+   "base": "EWT",
+   "candidate": "EWT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "iShares MSCI Taiwan ETF",
+    "longName": "iShares MSCI Taiwan ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 1.04,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 315
+   }
+  },
+  "EWY": {
+   "base": "EWY",
+   "candidate": "EWY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "iShares MSCI South Korea ETF",
+    "longName": "iShares MSCI South Korea ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 1.25,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 316
+   }
+  },
+  "EWZ": {
+   "base": "EWZ",
+   "candidate": "EWZ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "iShares MSCI Brazil ETF",
+    "longName": "iShares MSCI Brazil ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 4.0,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 314
+   }
+  },
+  "FLEX": {
+   "base": "FLEX",
+   "candidate": "FLEX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Flex Ltd.",
+    "longName": "Flex Ltd.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Electronic Components",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1994-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 390
+   }
+  },
+  "FLNC": {
+   "base": "FLNC",
+   "candidate": "FLNC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Fluence Energy, Inc.",
+    "longName": "Fluence Energy, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Utilities",
+    "industry": "Utilities - Renewable",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 59
+   }
+  },
+  "FWDI": {
+   "base": "FWDI",
+   "candidate": "FWDI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Forward Industries, Inc.",
+    "longName": "Forward Industries, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqCM",
+    "sector": "Consumer Cyclical",
+    "industry": "Footwear & Accessories",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1994-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 382
+   }
+  },
+  "GEV": {
+   "base": "GEV",
+   "candidate": "GEV",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "GE Vernova Inc.",
+    "longName": "GE Vernova Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Industrials",
+    "industry": "Specialty Industrial Machinery",
+    "currency": "USD",
+    "dividendYield_raw": 0.19,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2024-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 30
+   }
+  },
+  "GLW": {
+   "base": "GLW",
+   "candidate": "GLW",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Corning Incorporated",
+    "longName": "Corning Incorporated",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Electronic Components",
+    "currency": "USD",
+    "dividendYield_raw": 0.67,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "GME": {
+   "base": "GME",
+   "candidate": "GME",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "GameStop Corporation",
+    "longName": "GameStop Corp.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Specialty Retail",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2002-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 295
+   }
+  },
+  "GOOGL": {
+   "base": "GOOGL",
+   "candidate": "GOOGL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Alphabet Inc.",
+    "longName": "Alphabet Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "USD",
+    "dividendYield_raw": 0.25,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2004-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 265
+   }
+  },
+  "GS": {
+   "base": "GS",
+   "candidate": "GS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Goldman Sachs Group, Inc. (The)",
+    "longName": "The Goldman Sachs Group, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "currency": "USD",
+    "dividendYield_raw": 1.92,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1999-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 328
+   }
+  },
+  "HD": {
+   "base": "HD",
+   "candidate": "HD",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Home Depot, Inc. (The)",
+    "longName": "The Home Depot, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Home Improvement Retail",
+    "currency": "USD",
+    "dividendYield_raw": 2.75,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "HIMS": {
+   "base": "HIMS",
+   "candidate": "HIMS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Hims & Hers Health, Inc.",
+    "longName": "Hims & Hers Health, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - Specialty & Generic",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 84
+   }
+  },
+  "HK0700": {
+   "base": "HK0700",
+   "candidate": "0700.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "TENCENT",
+    "longName": "Tencent Holdings Limited",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "HKD",
+    "dividendYield_raw": 1.2,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2004-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "HK1810": {
+   "base": "HK1810",
+   "candidate": "1810.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "XIAOMI-W",
+    "longName": "Xiaomi Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2018-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 98
+   }
+  },
+  "HOOD": {
+   "base": "HOOD",
+   "candidate": "HOOD",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Robinhood Markets, Inc.",
+    "longName": "Robinhood Markets, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 62
+   }
+  },
+  "HPE": {
+   "base": "HPE",
+   "candidate": "HPE",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Hewlett Packard Enterprise Comp",
+    "longName": "Hewlett Packard Enterprise Company",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": 0.97,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2015-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 131
+   }
+  },
+  "HYUNDAI": {
+   "base": "HYUNDAI",
+   "candidate": "005380.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "HyundaiMtr",
+    "longName": "Hyundai Motor Company",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Auto Manufacturers",
+    "currency": "KRW",
+    "dividendYield_raw": 2.21,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 320
+   }
+  },
+  "IBM": {
+   "base": "IBM",
+   "candidate": "IBM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "International Business Machines",
+    "longName": "International Business Machines Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "currency": "USD",
+    "dividendYield_raw": 2.88,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1962-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 776
+   }
+  },
+  "INTC": {
+   "base": "INTC",
+   "candidate": "INTC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Intel Corporation",
+    "longName": "Intel Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "INTW": {
+   "base": "INTW",
+   "candidate": "INTW",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "GraniteShares 2x Long INTC Dail",
+    "longName": "GraniteShares 2x Long INTC Daily ETF",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.0,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 19
+   }
+  },
+  "IREN": {
+   "base": "IREN",
+   "candidate": "IREN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "IREN LIMITED",
+    "longName": "IREN Limited",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 58
+   }
+  },
+  "IWM": {
+   "base": "IWM",
+   "candidate": "IWM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "iShares Russell 2000 Index Fund",
+    "longName": "iShares Russell 2000 ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.91,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 316
+   }
+  },
+  "JPM": {
+   "base": "JPM",
+   "candidate": "JPM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "JP Morgan Chase & Co.",
+    "longName": "JPMorgan Chase & Co.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Banks - Diversified",
+    "currency": "USD",
+    "dividendYield_raw": 1.65,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "KLAC": {
+   "base": "KLAC",
+   "candidate": "KLAC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "KLA Corporation",
+    "longName": "KLA Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": 0.45,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1980-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 551
+   }
+  },
+  "KO": {
+   "base": "KO",
+   "candidate": "KO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Coca-Cola Company (The)",
+    "longName": "The Coca-Cola Company",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Consumer Defensive",
+    "industry": "Beverages - Non-Alcoholic",
+    "currency": "USD",
+    "dividendYield_raw": 2.42,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "KODEX200": {
+   "base": "KODEX200",
+   "candidate": "069500.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "KODEX 200",
+    "longName": "KODEX 200",
+    "quoteType": "ETF",
+    "exchange": "KSE",
+    "sector": null,
+    "industry": null,
+    "currency": "KRW",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2007-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 215
+   }
+  },
+  "KORU": {
+   "base": "KORU",
+   "candidate": "KORU",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Daily South Korea Bull",
+    "longName": "Direxion Daily South Korea Bull 3X Shares",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.53,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2013-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 161
+   }
+  },
+  "KSTR": {
+   "base": "KSTR",
+   "candidate": "KSTR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "KraneShares China Technology & ",
+    "longName": "KraneShares China Technology & Semiconductor STAR 50 Index ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.0,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 67
+   }
+  },
+  "KUAISHOU": {
+   "base": "KUAISHOU",
+   "candidate": "1024.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "KUAISHOU-W",
+    "longName": "Kuaishou Technology",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "HKD",
+    "dividendYield_raw": 1.72,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 67
+   }
+  },
+  "LGELECTRONICS": {
+   "base": "LGELECTRONICS",
+   "candidate": "066570.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "LGELECTRONICS",
+    "longName": "LG Electronics Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "currency": "KRW",
+    "dividendYield_raw": 0.63,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2002-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 293
+   }
+  },
+  "LITE": {
+   "base": "LITE",
+   "candidate": "LITE",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Lumentum Holdings Inc.",
+    "longName": "Lumentum Holdings Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2015-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 134
+   }
+  },
+  "LLY": {
+   "base": "LLY",
+   "candidate": "LLY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Eli Lilly and Company",
+    "longName": "Eli Lilly and Company",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - General",
+    "currency": "USD",
+    "dividendYield_raw": 0.59,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "LRCX": {
+   "base": "LRCX",
+   "candidate": "LRCX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Lam Research Corporation",
+    "longName": "Lam Research Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": 0.31,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1984-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 508
+   }
+  },
+  "MEITUAN": {
+   "base": "MEITUAN",
+   "candidate": "3690.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "MEITUAN-W",
+    "longName": "Meituan",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2018-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 96
+   }
+  },
+  "META": {
+   "base": "META",
+   "candidate": "META",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Meta Platforms, Inc.",
+    "longName": "Meta Platforms, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "USD",
+    "dividendYield_raw": 0.36,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2012-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 172
+   }
+  },
+  "MRVL": {
+   "base": "MRVL",
+   "candidate": "MRVL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Marvell Technology, Inc.",
+    "longName": "Marvell Technology, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 0.11,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 315
+   }
+  },
+  "MSFT": {
+   "base": "MSFT",
+   "candidate": "MSFT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Microsoft Corporation",
+    "longName": "Microsoft Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": 0.73,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1986-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 486
+   }
+  },
+  "MSTR": {
+   "base": "MSTR",
+   "candidate": "MSTR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Strategy Inc",
+    "longName": "Strategy Inc",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1998-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 339
+   }
+  },
+  "MU": {
+   "base": "MU",
+   "candidate": "MU",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Micron Technology, Inc.",
+    "longName": "Micron Technology, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 0.05,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "MUU": {
+   "base": "MUU",
+   "candidate": "MUU",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Daily MU Bull 2X ETF",
+    "longName": "Direxion Daily MU Bull 2X Shares",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.66,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2024-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 23
+   }
+  },
+  "MVLL": {
+   "base": "MVLL",
+   "candidate": "MVLL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "GraniteShares 2x Long MRVL Dail",
+    "longName": "GraniteShares 2x Long MRVL Daily ETF",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.0,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 18
+   }
+  },
+  "NATGAS": {
+   "base": "NATGAS",
+   "candidate": "NG=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Natural Gas Sep 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "NY Mercantile",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "NAVER": {
+   "base": "NAVER",
+   "candidate": "035420.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "NAVER",
+    "longName": "NAVER Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "KRW",
+    "dividendYield_raw": 1.15,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2002-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 287
+   }
+  },
+  "NBIS": {
+   "base": "NBIS",
+   "candidate": "NBIS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Nebius Group N.V.",
+    "longName": null,
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2024-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 23
+   }
+  },
+  "NFLX": {
+   "base": "NFLX",
+   "candidate": "NFLX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Netflix, Inc.",
+    "longName": "Netflix, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2002-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 292
+   }
+  },
+  "NOK": {
+   "base": "NOK",
+   "candidate": "NOK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Nokia Corporation Sponsored",
+    "longName": "Nokia Oyj",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": 1.52,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1994-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 386
+   }
+  },
+  "NOW": {
+   "base": "NOW",
+   "candidate": "NOW",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ServiceNow, Inc.",
+    "longName": "ServiceNow, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2012-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 171
+   }
+  },
+  "NVDA": {
+   "base": "NVDA",
+   "candidate": "NVDA",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "NVIDIA Corporation",
+    "longName": "NVIDIA Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 0.44,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1999-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 332
+   }
+  },
+  "NVO": {
+   "base": "NVO",
+   "candidate": "NVO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Novo Nordisk A/S",
+    "longName": "Novo Nordisk A/S",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - General",
+    "currency": "USD",
+    "dividendYield_raw": 3.91,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1981-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 545
+   }
+  },
+  "ONDS": {
+   "base": "ONDS",
+   "candidate": "ONDS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Ondas Inc",
+    "longName": "Ondas Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqCM",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2020-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 69
+   }
+  },
+  "ORCL": {
+   "base": "ORCL",
+   "candidate": "ORCL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Oracle Corporation",
+    "longName": "Oracle Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": 1.33,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1986-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 486
+   }
+  },
+  "PANW": {
+   "base": "PANW",
+   "candidate": "PANW",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Palo Alto Networks, Inc.",
+    "longName": "Palo Alto Networks, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2012-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 170
+   }
+  },
+  "PAYP": {
+   "base": "PAYP",
+   "candidate": "PAYP",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "PayPay Corporation - American D",
+    "longName": "PayPay Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 6
+   }
+  },
+  "PENG": {
+   "base": "PENG",
+   "candidate": "PENG",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Penguin Solutions, Inc.",
+    "longName": "Penguin Solutions, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2017-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 112
+   }
+  },
+  "PLTR": {
+   "base": "PLTR",
+   "candidate": "PLTR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Palantir Technologies Inc.",
+    "longName": "Palantir Technologies Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2020-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 72
+   }
+  },
+  "POPMART": {
+   "base": "POPMART",
+   "candidate": "9992.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "POP MART",
+    "longName": "Pop Mart International Group Limited",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Consumer Cyclical",
+    "industry": "Leisure",
+    "currency": "HKD",
+    "dividendYield_raw": 1.77,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2020-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 69
+   }
+  },
+  "PYPL": {
+   "base": "PYPL",
+   "candidate": "PYPL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "PayPal Holdings, Inc.",
+    "longName": "PayPal Holdings, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Financial Services",
+    "industry": "Credit Services",
+    "currency": "USD",
+    "dividendYield_raw": 0.91,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2015-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 134
+   }
+  },
+  "QCOM": {
+   "base": "QCOM",
+   "candidate": "QCOM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "QUALCOMM Incorporated",
+    "longName": "QUALCOMM Incorporated",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 2.22,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1991-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 417
+   }
+  },
+  "QQQ": {
+   "base": "QQQ",
+   "candidate": "QQQ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Invesco QQQ Trust, Series 1",
+    "longName": "Invesco QQQ Trust",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.44,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1999-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 330
+   }
+  },
+  "RDDT": {
+   "base": "RDDT",
+   "candidate": "RDDT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Reddit, Inc.",
+    "longName": "Reddit, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2024-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 30
+   }
+  },
+  "RIVN": {
+   "base": "RIVN",
+   "candidate": "RIVN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Rivian Automotive, Inc.",
+    "longName": "Rivian Automotive, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Auto Manufacturers",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 58
+   }
+  },
+  "RKLB": {
+   "base": "RKLB",
+   "candidate": "RKLB",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Rocket Lab Corporation",
+    "longName": "Rocket Lab Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2020-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 70
+   }
+  },
+  "SAMSUNG": {
+   "base": "SAMSUNG",
+   "candidate": "005930.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SamsungElec",
+    "longName": "Samsung Electronics Co., Ltd.",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "currency": "KRW",
+    "dividendYield_raw": 0.54,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 320
+   }
+  },
+  "SHAZ": {
+   "base": "SHAZ",
+   "candidate": "SHAZ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SharonAI Holdings, Inc.",
+    "longName": "SharonAI Holdings Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqCM",
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 7
+   }
+  },
+  "SKHY": {
+   "base": "SKHY",
+   "candidate": "SKHY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SK hynix Inc.",
+    "longName": "SK hynix Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 2
+   }
+  },
+  "SKHYNIX": {
+   "base": "SKHYNIX",
+   "candidate": "000660.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SK hynix",
+    "longName": "SK hynix Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "KRW",
+    "dividendYield_raw": 0.09,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 320
+   }
+  },
+  "SMCI": {
+   "base": "SMCI",
+   "candidate": "SMCI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Super Micro Computer, Inc.",
+    "longName": "Super Micro Computer, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2007-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 234
+   }
+  },
+  "SMH": {
+   "base": "SMH",
+   "candidate": "SMH",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "VanEck Semiconductor ETF",
+    "longName": "VanEck Semiconductor ETF",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.2,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 315
+   }
+  },
+  "SNDK": {
+   "base": "SNDK",
+   "candidate": "SNDK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Sandisk Corporation",
+    "longName": "Sandisk Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 19
+   }
+  },
+  "SNOW": {
+   "base": "SNOW",
+   "candidate": "SNOW",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Snowflake Inc.",
+    "longName": "Snowflake Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2020-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 72
+   }
+  },
+  "SNXX": {
+   "base": "SNXX",
+   "candidate": "SNXX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Tradr 2X Long SNDK Daily ETF",
+    "longName": "Tradr 2X Long Sndk Daily ETF",
+    "quoteType": "ETF",
+    "exchange": "Cboe US",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 8
+   }
+  },
+  "SOFI": {
+   "base": "SOFI",
+   "candidate": "SOFI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SoFi Technologies, Inc.",
+    "longName": "SoFi Technologies, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Financial Services",
+    "industry": "Credit Services",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2021-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 68
+   }
+  },
+  "SONY": {
+   "base": "SONY",
+   "candidate": "SONY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Sony Group Corporation",
+    "longName": "Sony Group Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "currency": "USD",
+    "dividendYield_raw": 0.65,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1973-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 643
+   }
+  },
+  "SOXL": {
+   "base": "SOXL",
+   "candidate": "SOXL",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Daily Semiconductor Bu",
+    "longName": "Direxion Daily Semiconductor Bull 3X Shares",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.01,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2010-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 198
+   }
+  },
+  "SOXS": {
+   "base": "SOXS",
+   "candidate": "SOXS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Daily Semiconductor Be",
+    "longName": "Direxion Daily Semiconductor Bear 3X Shares",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 41.76,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2010-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 198
+   }
+  },
+  "SPY": {
+   "base": "SPY",
+   "candidate": "SPY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "State Street SPDR S&P 500 ETF T",
+    "longName": "State Street SPDR S&P 500 ETF Trust",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 1.01,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1993-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 404
+   }
+  },
+  "SQQQ": {
+   "base": "SQQQ",
+   "candidate": "SQQQ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ProShares UltraPro Short QQQ",
+    "longName": "ProShares UltraPro Short QQQ",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 9.13,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2010-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 199
+   }
+  },
+  "STRC": {
+   "base": "STRC",
+   "candidate": "STRC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Strategy Inc - Variable Rate Se",
+    "longName": "Strategy Inc",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": 6.33,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 14
+   }
+  },
+  "TBT": {
+   "base": "TBT",
+   "candidate": "TBT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ProShares UltraShort Lehman 20 ",
+    "longName": "ProShares UltraShort 20+ Year Treasury",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 2.52,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2008-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 220
+   }
+  },
+  "TER": {
+   "base": "TER",
+   "candidate": "TER",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Teradyne, Inc.",
+    "longName": "Teradyne, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "USD",
+    "dividendYield_raw": 0.12,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "TMF": {
+   "base": "TMF",
+   "candidate": "TMF",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Daily 20-Yr Treasury B",
+    "longName": "Direxion Daily 20+ Year Treasury Bull 3X Shares",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 4.75,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2009-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 209
+   }
+  },
+  "TQQQ": {
+   "base": "TQQQ",
+   "candidate": "TQQQ",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ProShares UltraPro QQQ",
+    "longName": "ProShares UltraPro QQQ",
+    "quoteType": "ETF",
+    "exchange": "NasdaqGM",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.58,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2010-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 199
+   }
+  },
+  "TSLA": {
+   "base": "TSLA",
+   "candidate": "TSLA",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Tesla, Inc.",
+    "longName": "Tesla, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Auto Manufacturers",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2010-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 195
+   }
+  },
+  "TSM": {
+   "base": "TSM",
+   "candidate": "TSM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Taiwan Semiconductor Manufactur",
+    "longName": "Taiwan Semiconductor Manufacturing Company Limited",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 1.02,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1997-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 347
+   }
+  },
+  "TTWO": {
+   "base": "TTWO",
+   "candidate": "TTWO",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Take-Two Interactive Software, ",
+    "longName": "Take-Two Interactive Software, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Communication Services",
+    "industry": "Electronic Gaming & Multimedia",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1997-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 353
+   }
+  },
+  "TXN": {
+   "base": "TXN",
+   "candidate": "TXN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Texas Instruments Incorporated",
+    "longName": "Texas Instruments Incorporated",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "USD",
+    "dividendYield_raw": 2.03,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "TZA": {
+   "base": "TZA",
+   "candidate": "TZA",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Direxion Small Cap Bear 3X ETF",
+    "longName": "Direxion Daily Small Cap Bear 3X Shares",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 4.68,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2008-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 214
+   }
+  },
+  "UBER": {
+   "base": "UBER",
+   "candidate": "UBER",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Uber Technologies, Inc.",
+    "longName": "Uber Technologies, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-05-01",
+    "last_bar": "2026-08-01",
+    "n_months": 88
+   }
+  },
+  "URNM": {
+   "base": "URNM",
+   "candidate": "URNM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Sprott Uranium Miners ETF",
+    "longName": "Sprott Uranium Miners ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 3.58,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 81
+   }
+  },
+  "USAR": {
+   "base": "USAR",
+   "candidate": "USAR",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "USA Rare Earth, Inc.",
+    "longName": "USA Rare Earth, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGM",
+    "sector": "Basic Materials",
+    "industry": "Other Industrial Metals & Mining",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2023-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 38
+   }
+  },
+  "UVXY": {
+   "base": "UVXY",
+   "candidate": "UVXY",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ProShares Ultra VIX Short Term ",
+    "longName": "ProShares Ultra VIX Short-Term Futures ETF",
+    "quoteType": "ETF",
+    "exchange": "Cboe US",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.0,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2011-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 179
+   }
+  },
+  "V": {
+   "base": "V",
+   "candidate": "V",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Visa Inc.",
+    "longName": "Visa Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Financial Services",
+    "industry": "Credit Services",
+    "currency": "USD",
+    "dividendYield_raw": 0.74,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2008-03-01",
+    "last_bar": "2026-08-01",
+    "n_months": 222
+   }
+  },
+  "VRT": {
+   "base": "VRT",
+   "candidate": "VRT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Vertiv Holdings, LLC",
+    "longName": "Vertiv Holdings Co",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Industrials",
+    "industry": "Electrical Equipment & Parts",
+    "currency": "USD",
+    "dividendYield_raw": 0.09,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2018-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 97
+   }
+  },
+  "WDC": {
+   "base": "WDC",
+   "candidate": "WDC",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Western Digital Corporation",
+    "longName": "Western Digital Corporation",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "currency": "USD",
+    "dividendYield_raw": 0.12,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1978-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 575
+   }
+  },
+  "WEN": {
+   "base": "WEN",
+   "candidate": "WEN",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Wendy's Company (The)",
+    "longName": "The Wendy's Company",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Cyclical",
+    "industry": "Restaurants",
+    "currency": "USD",
+    "dividendYield_raw": 3.24,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1985-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 500
+   }
+  },
+  "WMT": {
+   "base": "WMT",
+   "candidate": "WMT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Walmart Inc.",
+    "longName": "Walmart Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Consumer Defensive",
+    "industry": "Discount Stores",
+    "currency": "USD",
+    "dividendYield_raw": 0.86,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1972-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 649
+   }
+  },
+  "XAG": {
+   "base": "XAG",
+   "candidate": "SI=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Silver Sep 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "COMEX",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "XAU": {
+   "base": "XAU",
+   "candidate": "GC=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Gold Dec 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "COMEX",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-08-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "XBI": {
+   "base": "XBI",
+   "candidate": "XBI",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "State Street SPDR S&P Biotech E",
+    "longName": "State Street SPDR S&P Biotech ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 0.39,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2006-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 247
+   }
+  },
+  "XLE": {
+   "base": "XLE",
+   "candidate": "XLE",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "State Street Energy Select Sect",
+    "longName": "State Street Energy Select Sector SPDR ETF",
+    "quoteType": "ETF",
+    "exchange": "NYSEArca",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": 2.55,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1998-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 333
+   }
+  },
+  "XPD": {
+   "base": "XPD",
+   "candidate": "PA=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Palladium Sep 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "NY Mercantile",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1998-09-01",
+    "last_bar": "2026-08-01",
+    "n_months": 283
+   }
+  },
+  "XPT": {
+   "base": "XPT",
+   "candidate": "PL=F",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Platinum Oct 26",
+    "longName": null,
+    "quoteType": "FUTURE",
+    "exchange": "NY Mercantile",
+    "sector": null,
+    "industry": null,
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1997-10-01",
+    "last_bar": "2026-08-01",
+    "n_months": 284
+   }
+  },
+  "ZM": {
+   "base": "ZM",
+   "candidate": "ZM",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Zoom Communications, Inc.",
+    "longName": "Zoom Communications, Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2019-04-01",
+    "last_bar": "2026-08-01",
+    "n_months": 89
+   }
+  },
+  "ANTHROPIC": {
+   "base": "ANTHROPIC",
+   "candidate": "ANTHROPIC",
+   "status": "pending-join",
+   "expected_no_underlying": true,
+   "vendor": {
+    "shortName": null,
+    "longName": null,
+    "quoteType": null,
+    "exchange": null,
+    "sector": null,
+    "industry": null,
+    "currency": null,
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "error": "no price series"
+   }
+  },
+  "BBX": {
+   "base": "BBX",
+   "candidate": "BB",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "BlackBerry Limited",
+    "longName": "BlackBerry Limited",
+    "quoteType": "EQUITY",
+    "exchange": "NYSE",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "1999-02-01",
+    "last_bar": "2026-08-01",
+    "n_months": 331
+   }
+  },
+  "CSOPSAMSUNG2L": {
+   "base": "CSOPSAMSUNG2L",
+   "candidate": "7747.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "XL2CSOPSMSN",
+    "longName": "CSOP Leveraged and Inverse Series - CSOP Samsung Electronics Daily Max (2x) Leveraged Product",
+    "quoteType": "ETF",
+    "exchange": "HKSE",
+    "sector": null,
+    "industry": null,
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 15
+   }
+  },
+  "CSOPSKHYNIX2L": {
+   "base": "CSOPSKHYNIX2L",
+   "candidate": "7709.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "XL2CSOPHYNIX",
+    "longName": "Csop Leveraged And Inverse Series - CSOP SK Hynix Daily Max (2x) Leveraged Product",
+    "quoteType": "ETF",
+    "exchange": "HKSE",
+    "sector": null,
+    "industry": null,
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2025-11-01",
+    "last_bar": "2026-08-01",
+    "n_months": 10
+   }
+  },
+  "GIGADEV": {
+   "base": "GIGADEV",
+   "candidate": "3986.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "GIGADEVICE",
+    "longName": null,
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "currency": "HKD",
+    "dividendYield_raw": 0.17,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 8
+   }
+  },
+  "HANMI": {
+   "base": "HANMI",
+   "candidate": "042700.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "HANMISemi",
+    "longName": "HANMI Semiconductor Co., Ltd.",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "currency": "KRW",
+    "dividendYield_raw": 0.35,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2005-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 254
+   }
+  },
+  "MINIMAX": {
+   "base": "MINIMAX",
+   "candidate": "0100.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "MINIMAX-W",
+    "longName": "MiniMax Group Inc",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 8
+   }
+  },
+  "OPENAI": {
+   "base": "OPENAI",
+   "candidate": "OPENAI",
+   "status": "pending-join",
+   "expected_no_underlying": true,
+   "vendor": {
+    "shortName": null,
+    "longName": null,
+    "quoteType": null,
+    "exchange": null,
+    "sector": null,
+    "industry": null,
+    "currency": null,
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "error": "no price series"
+   }
+  },
+  "QNTX": {
+   "base": "QNTX",
+   "candidate": "QNT",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Quantinuum Inc.",
+    "longName": "Quantinuum Inc.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGM",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 3
+   }
+  },
+  "SAMSUNGEM": {
+   "base": "SAMSUNGEM",
+   "candidate": "009150.KS",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "SamsungElecMech",
+    "longName": "Samsung Electro-Mechanics Co., Ltd.",
+    "quoteType": "EQUITY",
+    "exchange": "KSE",
+    "sector": "Technology",
+    "industry": "Electronic Components",
+    "currency": "KRW",
+    "dividendYield_raw": 0.15,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2000-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 320
+   }
+  },
+  "SPCX": {
+   "base": "SPCX",
+   "candidate": "SPCX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Space Exploration Technologies ",
+    "longName": "Space Exploration Technologies Corp.",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "currency": "USD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 3
+   }
+  },
+  "STXX": {
+   "base": "STXX",
+   "candidate": "STX",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Seagate Technology Holdings PLC",
+    "longName": "Seagate Technology Holdings plc",
+    "quoteType": "EQUITY",
+    "exchange": "NasdaqGS",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "currency": "USD",
+    "dividendYield_raw": 0.3,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2002-12-01",
+    "last_bar": "2026-08-01",
+    "n_months": 285
+   }
+  },
+  "TENCENT": {
+   "base": "TENCENT",
+   "candidate": "0700.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "TENCENT",
+    "longName": "Tencent Holdings Limited",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "currency": "HKD",
+    "dividendYield_raw": 1.2,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2004-06-01",
+    "last_bar": "2026-08-01",
+    "n_months": 267
+   }
+  },
+  "ZHIPU": {
+   "base": "ZHIPU",
+   "candidate": "2513.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "Z.AI",
+    "longName": "Z.AI Co., Ltd.",
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-01-01",
+    "last_bar": "2026-08-01",
+    "n_months": 8
+   }
+  },
+  "ZHONGJI": {
+   "base": "ZHONGJI",
+   "candidate": "3308.HK",
+   "status": "pending-join",
+   "vendor": {
+    "shortName": "ZJ INNOLIGHT",
+    "longName": null,
+    "quoteType": "EQUITY",
+    "exchange": "HKSE",
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "currency": "HKD",
+    "dividendYield_raw": null,
+    "firstTradeDateEpochUtc": null
+   },
+   "series": {
+    "first_bar": "2026-07-01",
+    "last_bar": "2026-08-01",
+    "n_months": 2
+   }
+  }
+ }
+}

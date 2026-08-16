@@ -1,0 +1,166 @@
+# Binance-announced underlying per TradFi contract. Source: agent extraction
+# 2026-08-16 over 48 Binance announcement pages + fapi exchangeInfo; per-row
+# announcement dates retained; URLs in the agent record (RESEARCH_MEMO).
+# Format: SYMBOL | announced name | native listing | source | confidence
+SHAZ | SharonAI Holdings, Inc. Class A Common Stock — AI/HPC cloud GPU | Nasdaq: SHAZ (listed 2026-02-18) | ann. 2026-07-21 | announced
+SNXX | Tradr 2X Long SNDK Daily ETF — 2x daily SanDisk, NOT TD Synnex | NYSE Arca: SNXX (underlying SNDK) | ann. 2026-07-09 | announced
+STXX | Seagate Technology Holdings PLC Ordinary Shares — STX crypto perp (Stacks) forced rename | Nasdaq: STX | ann. 2026-06-11 | announced
+BBX | BlackBerry Limited Common Stock — BB crypto perp (BounceBit) forced rename | NYSE: BB | ann. 2026-06-01 | announced
+BSP | Bending Spoons S.p.A. Common Stock — IPO 2026-07-01 | Nasdaq: BSP | ann. 2026-07-02 | announced
+STRC | Strategy Inc Variable Rate Series A Perpetual Stretch Preferred Stock — NOT MSTR common | Nasdaq: STRC | ann. 2026-07-02 | announced
+MVLL | GraniteShares 2x Long MRVL Daily ETF | Nasdaq: MVLL (underlying MRVL) | ann. 2026-06-29 | announced
+INTW | GraniteShares 2x Long INTC Daily ETF — NOT Intuit | Nasdaq: INTW (underlying INTC) | ann. 2026-07-09 | announced
+FWDI | Forward Industries, Inc. Common Stock — SOL treasury co, ex-FORD | Nasdaq: FWDI | ann. 2026-07-09 | announced
+PENG | Penguin Solutions, Inc. Common Stock — ex-SMART Global | Nasdaq: PENG | ann. 2026-07-21 | announced
+BNC | CEA Industries Inc — BNB digital-asset treasury company | Nasdaq: BNC | ann. 2026-07-09 | announced
+QNTX | Quantinuum Inc. — launched pre-IPO 2026-05-29, IPO'd Nasdaq as QNT 2026-06-04; QNTX avoids Quant crypto collision | Nasdaq: QNT | ann. 2026-05-29 | announced
+MUU | Direxion Daily MU Bull 2X ETF — 2x Micron, distinct from MU common | Nasdaq: MUU (underlying MU) | ann. 2026-07-16 | announced
+CBRS | Cerebras Systems Inc. Class A Common Stock — IPO 2026-05-14, listed equity | Nasdaq: CBRS | ann. 2026-05-19 | announced
+BOT | RoboStrategy, Inc. — closed-end fund holding robotics/physical-AI, listed 2026-05-11 | Nasdaq: BOT | ann. 2026-07-09 | announced
+DRAM | Roundhill Memory ETF — memory-sector ETF, launched 2026-04-02 | Cboe BZX: DRAM | ann. 2026-05-18 | announced
+GIGADEV | GigaDevice Semiconductor Inc. H shares — H-line listed 2026-01-13 | HKEX: 3986 | ann. 2026-08-03 | announced
+USAR | USA Rare Earth, Inc. Class A Common Stock | Nasdaq: USAR | ann. 2026-05-06 | announced
+KORU | Direxion Daily South Korea Bull 3X ETF | NYSE Arca: KORU | ann. 2026-06-22 | announced
+KSTR | KraneShares SSE STAR Market 50 Index ETF | NYSE Arca: KSTR | ann. 2026-07-02 | announced
+TER | Teradyne, Inc. Common Stock | Nasdaq: TER | ann. 2026-07-02 | announced
+HANMI | HANMI Semiconductor Co., Ltd. — the semi-equipment maker, NOT Hanmi Pharm | KRX: 042700 | ann. 2026-08-14 | announced
+NAVER | NAVER Corp | KRX: 035420 | ann. 2026-08-14 | announced
+TENCENT | Tencent Holdings Limited — USDT-priced contract (HKD FX-converted) | HKEX: 700 | ann. 2026-07-17 | announced
+HK0700 | Tencent Holdings Limited — QUANTO contract (1 HKD = 1 USDT), same share line as TENCENT | HKEX: 700 | ann. 2026-07-17 | announced
+PAYP | PayPay Corporation Common Stock — SoftBank Japanese payments, ADS IPO 2026-03-12, NOT PayPal | Nasdaq: PAYP | ann. 2026-03-23 | announced
+PYPL | PayPal Holdings, Inc. Common Stock — the actual PayPal | Nasdaq: PYPL | ann. 2026-07-29 | announced
+CSOPSAMSUNG2L | CSOP Samsung Electronics Daily Max (2X) Leveraged Product | HKEX: 7747 (ref KRX 005930) | ann. 2026-08-11 | announced
+CSOPSKHYNIX2L | CSOP SK Hynix Daily Max (2X) Leveraged Product | HKEX: 7709 (ref KRX 000660) | ann. 2026-08-11 | announced
+SAMSUNGEM | Samsung Electro-Mechanics Co Ltd — NOT Samsung Electronics | KRX: 009150 | ann. 2026-08-14 | announced
+SKHY | SK Hynix Inc ADR — the NEW Nasdaq ADR, regular-way from 2026-07-13 | Nasdaq: SKHY | ann. 2026-07-10 | announced
+SKHYNIX | SK Hynix Inc. — Korean home line, coexists with SKHY ADR | KRX: 000660 | ann. 2026-06-02 | announced
+ZHONGJI | ZhongJi Innolight Co., Ltd. H Shares — H-line listed 2026-07-30 | HKEX: 3308 | ann. 2026-08-14 | announced
+KUAISHOU | KUAISHOU TECHNOLOGY - W | HKEX: 1024 | ann. 2026-08-11 | announced
+POPMART | Pop Mart International Group Ltd | HKEX: 9992 | ann. 2026-07-23 | announced
+MEITUAN | MEITUAN - W | HKEX: 3690 | ann. 2026-08-11 | announced
+HK1810 | Xiaomi Corporation — QUANTO contract (1 HKD = 1 USDT) | HKEX: 1810 | ann. 2026-07-17 | announced
+KODEX200 | Samsung KODEX 200 ETF — KOSPI 200 tracker | KRX: 069500 | ann. 2026-08-14 | announced
+LGELECTRONICS | LG Electronics Inc | KRX: 066570 | ann. 2026-08-14 | announced
+HYUNDAI | Hyundai Motor Company | KRX: 005380 | ann. 2026-06-02 | announced
+SAMSUNG | Samsung Electronics Co Ltd | KRX: 005930 | ann. 2026-06-02 | announced
+BMNR | BitMine Immersion Technologies, Inc. Common Stock — ETH treasury co | NYSE American: BMNR | ann. 2026-06-11 | announced
+IREN | IREN Limited Ordinary Shares | Nasdaq: IREN | ann. 2026-06-03 | announced
+ONDS | Ondas Holdings Inc. Common Stock | Nasdaq: ONDS | ann. 2026-06-03 | announced
+AXTI | AXT Inc Common Stock | Nasdaq: AXTI | ann. 2026-06-08 | announced
+AAOI | Applied Optoelectronics, Inc. Common Stock | Nasdaq: AAOI | ann. 2026-06-08 | announced
+CRWV | CoreWeave, Inc. Class A Common Stock | Nasdaq: CRWV | ann. 2026-05-15 | announced
+ALAB | Astera Labs, Inc. Common Stock | Nasdaq: ALAB | ann. 2026-06-22 | announced
+CRDO | Credo Technology Group Holding Ltd Ordinary Shares | Nasdaq: CRDO | ann. 2026-06-08 | announced
+SPCX | Space Exploration Technologies Corp. (SpaceX) — pre-IPO perp 2026-05-21, then IPO'd Nasdaq 2026-06-12 | Nasdaq: SPCX (since 2026-06-12) | ann. 2026-05-21 | announced
+OPENAI | OpenAI Group PBC — Pre-IPO perpetual, synthetic mark, NOT a listed security | none (private) | ann. 2026-05-26 | announced
+ANTHROPIC | Anthropic PBC — Pre-IPO perpetual, synthetic mark, NOT a listed security | none (private) | ann. 2026-06-02 | announced
+ZHIPU | Knowledge Atlas Technology JSC Ltd — Zhipu AI / z.ai, listed 2026-01-08 | HKEX: 2513 | ann. 2026-07-17 | announced
+MINIMAX | MiniMax Group Inc — Chinese AI company, listed 2026-01-09 | HKEX: 100 | ann. 2026-07-17 | announced
+BITO | ProShares Bitcoin ETF | NYSE Arca: BITO | ann. 2026-07-27 | announced
+TMF | Direxion Daily 20+ Year Treasury Bull 3X ETF | NYSE Arca: TMF | ann. 2026-07-27 | announced
+TBT | ProShares UltraShort 20+ Year Treasury | NYSE Arca: TBT | ann. 2026-07-27 | announced
+TZA | Direxion Daily Small Cap Bear 3X Shares | NYSE Arca: TZA | ann. 2026-07-16 | announced
+UVXY | ProShares Ultra VIX Short Term Futures ETF | Cboe BZX: UVXY | ann. 2026-06-11 | announced
+WEN | Wendy's Company (The) Common Stock — the restaurant company | Nasdaq: WEN | ann. 2026-07-09 | announced
+BE | Bloom Energy Corporation Class A Common Stock | NYSE: BE | ann. 2026-05-26 | announced
+GEV | GE Vernova Inc. Common Stock | NYSE: GEV | ann. 2026-07-10 | announced
+FLNC | Fluence Energy, Inc. Class A Common Stock | Nasdaq: FLNC | ann. 2026-05-18 | announced
+HIMS | Hims & Hers Health, Inc. Class A Common Stock | NYSE: HIMS | ann. 2026-06-09 | announced
+LITE | Lumentum Holdings Inc. Common Stock | Nasdaq: LITE | ann. 2026-05-15 | announced
+AAPL | Apple Inc. Common Stock | Nasdaq: AAPL | ann. 2026-04-06 | announced
+ADBE | Adobe Inc. Common Stock | Nasdaq: ADBE | ann. 2026-06-11 | announced
+AMAT | Applied Materials, Inc. Common Stock | Nasdaq: AMAT | ann. 2026-06-08 | announced
+AMD | Advanced Micro Devices, Inc. Common Stock | Nasdaq: AMD | ann. 2026-05-06 | announced
+AMZN | Amazon.com Inc. Common Stock | Nasdaq: AMZN | ann. 2026-02-09 | announced
+APP | Applovin Corporation Class A Common Stock | Nasdaq: APP | ann. 2026-07-10 | announced
+ARM | Arm Holdings plc American Depositary Shares | Nasdaq: ARM | ann. 2026-05-26 | announced
+ASML | ASML Holding N.V. New York Registry Shares | Nasdaq: ASML | ann. 2026-06-11 | announced
+ASTS | AST SpaceMobile, Inc. Class A Common Stock | Nasdaq: ASTS | ann. 2026-06-01 | announced
+AVGO | Broadcom Inc. Common Stock | Nasdaq: AVGO | ann. 2026-04-20 | announced
+BABA | Alibaba Group Holdings Ltd ADR | NYSE: BABA | ann. 2026-04-20 | announced
+BRKB | Berkshire Hathaway Inc. New Common Stock Class B | NYSE: BRK.B | ann. 2026-05-15 | announced
+BX | Blackstone Inc. Common Stock | NYSE: BX | ann. 2026-06-08 | announced
+CAT | Caterpillar, Inc. Common Stock | NYSE: CAT | ann. 2026-07-02 | announced
+CIEN | Ciena Corporation Common Stock | NYSE: CIEN | ann. 2026-06-22 | announced
+CL | WTI Crude Oil — COMMODITY perp, 1 barrel, NOT Colgate-Palmolive | NYMEX WTI reference | ann. 2026-04-01 | announced
+BZ | Brent Crude Oil — COMMODITY perp | ICE Brent reference | ann. 2026-04-01 | announced
+COHR | Coherent Corp. Common Stock | NYSE: COHR | ann. 2026-05-26 | announced
+COIN | Coinbase Global Inc. Common Stock | Nasdaq: COIN | ann. 2026-02-09 | announced
+COPPER | Copper — COMMODITY perp, 1 pound | commodity | ann. 2026-03-06 | announced
+COST | Costco Wholesale Corporation Common Stock | Nasdaq: COST | ann. 2026-06-09 | announced
+CRCL | Circle Internet Group Inc. Common Stock | Nasdaq: CRCL | ann. 2026-02-09 | announced
+CRM | Salesforce, Inc. Common Stock | NYSE: CRM | ann. 2026-06-03 | announced
+CRWD | CrowdStrike Holdings, Inc. Class A Common Stock | Nasdaq: CRWD | ann. 2026-06-08 | announced
+CSCO | Cisco Systems, Inc. Common Stock | Nasdaq: CSCO | ann. 2026-05-15 | announced
+DELL | Dell Technologies Inc. Class C Common Stock | NYSE: DELL | ann. 2026-06-03 | announced
+DIS | Walt Disney Company (The) Common Stock | NYSE: DIS | ann. 2026-05-15 | announced
+DKNG | DraftKings Inc. Class A Common Stock | Nasdaq: DKNG | ann. 2026-06-10 | announced
+EBAY | eBay Inc. Common Stock | Nasdaq: EBAY | ann. 2026-06-09 | announced
+EWJ | iShares MSCI Japan ETF | NYSE Arca: EWJ | ann. 2026-03-19 | announced
+EWT | iShares MSCI Taiwan ETF | NYSE Arca: EWT | ann. 2026-06-01 | announced
+EWY | iShares MSCI South Korea ETF | NYSE Arca: EWY | ann. 2026-03-16 | announced
+EWZ | iShares MSCI Brazil ETF | NYSE Arca: EWZ | ann. 2026-06-10 | announced
+FLEX | Flex Ltd. Ordinary Shares | Nasdaq: FLEX | ann. 2026-07-02 | announced
+GLW | Corning Incorporated Common Stock | NYSE: GLW | ann. 2026-06-11 | announced
+GME | GameStop Corporation Common Stock | NYSE: GME | ann. 2026-06-10 | announced
+GOOGL | Alphabet Inc. Common Stock Class A | Nasdaq: GOOGL | ann. 2026-03-26 | announced
+GS | Goldman Sachs Group, Inc. (The) Common Stock | NYSE: GS | ann. 2026-07-29 | announced
+HD | Home Depot, Inc. (The) Common Stock | NYSE: HD | ann. 2026-05-15 | announced
+HOOD | Robinhood Markets Inc. Common Stock | Nasdaq: HOOD | ann. 2026-02-02 | announced
+HPE | Hewlett Packard Enterprise Company Common Stock | NYSE: HPE | ann. 2026-06-08 | announced
+IBM | International Business Machines Corporation Common Stock | NYSE: IBM | ann. 2026-06-03 | announced
+INTC | Intel Corp. Common Stock | Nasdaq: INTC | ann. 2026-02-02 | announced
+IWM | iShares Russell 2000 Index Fund | NYSE Arca: IWM | ann. 2026-06-08 | announced
+JPM | JP Morgan Chase & Co. Common Stock | NYSE: JPM | ann. 2026-05-15 | announced
+KLAC | KLA Corporation Common Stock | Nasdaq: KLAC | ann. 2026-06-22 | announced
+KO | Coca-Cola Company (The) Common Stock | NYSE: KO | ann. 2026-08-06 | announced
+LLY | Eli Lilly and Company Common Stock | NYSE: LLY | ann. 2026-06-01 | announced
+LRCX | Lam Research Corporation Common Stock | Nasdaq: LRCX | ann. 2026-06-22 | announced
+MRVL | Marvell Technology, Inc. Common Stock | Nasdaq: MRVL | ann. 2026-05-15 | announced
+META | Meta Platforms, Inc. Common Stock | Nasdaq: META | ann. 2026-03-26 | announced
+MSFT | Microsoft Corporation Common Stock | Nasdaq: MSFT | ann. 2026-04-20 | announced
+MSTR | Strategy Inc. Common Stock — the common; STRC is the separate preferred | Nasdaq: MSTR | ann. 2026-02-09 | announced
+MU | Micron Technology, Inc. Common Stock — the common; MUU is the separate 2x ETF | Nasdaq: MU | ann. 2026-04-07 | announced
+NATGAS | Natural Gas — COMMODITY perp, 1 MMBtu | commodity | ann. 2026-04-01 | announced
+NBIS | Nebius Group N.V. Class A Ordinary Shares | Nasdaq: NBIS | ann. 2026-05-26 | announced
+NFLX | Netflix, Inc. Common Stock | Nasdaq: NFLX | ann. 2026-06-09 | announced
+NOK | Nokia Corporation Sponsored American Depositary Shares | NYSE: NOK | ann. 2026-06-01 | announced
+NOW | ServiceNow, Inc. Common Stock | NYSE: NOW | ann. 2026-06-03 | announced
+NVDA | NVIDIA Corporation Common Stock | Nasdaq: NVDA | ann. 2026-03-26 | announced
+NVO | Novo Nordisk A/S ADR | NYSE: NVO | ann. 2026-06-01 | announced
+ORCL | Oracle Corporation Common Stock | NYSE: ORCL | ann. 2026-05-15 | announced
+PANW | Palo Alto Networks, Inc. Common Stock | Nasdaq: PANW | ann. 2026-07-21 | announced
+PLTR | Palantir Technologies Inc. Common Stock Class A | Nasdaq: PLTR | ann. 2026-02-09 | announced
+QCOM | QUALCOMM Incorporated Common Stock | Nasdaq: QCOM | ann. 2026-05-06 | announced
+QQQ | Invesco QQQ Trust Series 1 | Nasdaq: QQQ | ann. 2026-04-06 | announced
+RDDT | Reddit, Inc. Class A Common Stock | NYSE: RDDT | ann. 2026-08-06 | announced
+RIVN | Rivian Automotive, Inc. Class A Common Stock | Nasdaq: RIVN | ann. 2026-06-10 | announced
+RKLB | Rocket Lab Corporation Common Stock | Nasdaq: RKLB | ann. 2026-05-18 | announced
+SMCI | Super Micro Computer, Inc. Common Stock | Nasdaq: SMCI | ann. 2026-06-22 | announced
+SMH | VanEck Semiconductor ETF | Nasdaq: SMH | ann. 2026-07-29 | announced
+SNDK | Sandisk Corporation Common Stock | Nasdaq: SNDK | ann. 2026-04-07 | announced
+SNOW | Snowflake Inc. Common Stock | NYSE: SNOW | ann. 2026-07-10 | announced
+SOFI | SoFi Technologies, Inc. Common Stock | Nasdaq: SOFI | ann. 2026-07-21 | announced
+SONY | Sony Group Corporation American Depositary Shares | NYSE: SONY | ann. 2026-06-22 | announced
+SOXL | Direxion Daily Semiconductor Bull 3X ETF | NYSE Arca: SOXL | ann. 2026-05-15 | announced
+SOXS | Direxion Daily Semiconductor Bear 3X Shares | NYSE Arca: SOXS | ann. 2026-07-16 | announced
+SPY | State Street SPDR S&P 500 ETF Trust | NYSE Arca: SPY | ann. 2026-04-06 | announced
+SQQQ | ProShares UltraPro Short QQQ | Nasdaq: SQQQ | ann. 2026-06-29 | announced
+TQQQ | ProShares UltraPro QQQ | Nasdaq: TQQQ | ann. 2026-06-29 | announced
+TSLA | Tesla Inc. Common Stock — first equity perp 2026-01-28 | Nasdaq: TSLA | ann. 2026-01-26 | announced
+TSM | Taiwan Semiconductor Manufacturing Company Ltd ADR | NYSE: TSM | ann. 2026-04-06 | announced
+TTWO | Take-Two Interactive Software, Inc. Common Stock | Nasdaq: TTWO | ann. 2026-07-02 | announced
+TXN | Texas Instruments Incorporated Common Stock | Nasdaq: TXN | ann. 2026-07-02 | announced
+UBER | Uber Technologies, Inc. Common Stock | NYSE: UBER | ann. 2026-05-15 | announced
+URNM | Sprott Uranium Miners ETF | NYSE Arca: URNM | ann. 2026-06-09 | announced
+V | Visa Inc. Class A | NYSE: V | ann. 2026-05-15 | announced
+VRT | Vertiv Holdings, LLC Class A Common Stock | NYSE: VRT | ann. 2026-07-10 | announced
+WDC | Western Digital Corporation Common Stock | Nasdaq: WDC | ann. 2026-05-26 | announced
+WMT | Walmart Inc. Common Stock | NYSE: WMT | ann. 2026-05-15 | announced
+XAG | Silver (XAG) — COMMODITY perp, 1 troy ounce | commodity | ann. 2026-01-07 | announced
+XAU | Gold (XAU) — COMMODITY perp, first TradFi contract 2025-12-11 | commodity | Binance PR 2026-01 | announced
+XBI | State Street SPDR S&P Biotech ETF | NYSE Arca: XBI | ann. 2026-07-09 | announced
+XLE | State Street Energy Select Sector SPDR ETF | NYSE Arca: XLE | ann. 2026-06-10 | announced
+XPD | Palladium (XPD) — COMMODITY perp, 1 troy ounce | commodity | ann. 2026-01-30 | announced
+XPT | Platinum (XPT) — COMMODITY perp, 1 troy ounce | commodity | ann. 2026-01-30 | announced
+ZM | Zoom Communications, Inc. Class A Common Stock | Nasdaq: ZM | ann. 2026-06-10 | announced
