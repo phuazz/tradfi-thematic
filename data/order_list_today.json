@@ -1,5 +1,5 @@
 {
- "ts_utc": "2026-08-16T14:57:10.203113+00:00",
+ "ts_utc": "2026-08-16T23:15:02.305915+00:00",
  "mode": "establishment",
  "book_cap_usd": 5000.0,
  "n_members": 59,
@@ -11,10 +11,10 @@
   {
    "symbol": "AAOIUSDT",
    "side": "buy",
-   "qty": 0.54,
-   "approx_usd": 83.35,
-   "ref_price": 154.36,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "qty": 0.55,
+   "approx_usd": 84.58,
+   "ref_price": 153.78,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 5.9
   },
   {
@@ -111,9 +111,9 @@
    "symbol": "BZUSDT",
    "side": "buy",
    "qty": 0.98,
-   "approx_usd": 84.57,
-   "ref_price": 86.3,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 84.52,
+   "ref_price": 86.25,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": -42.83
   },
   {
@@ -129,9 +129,9 @@
    "symbol": "CLUSDT",
    "side": "buy",
    "qty": 1.04,
-   "approx_usd": 84.55,
-   "ref_price": 81.3,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 84.52,
+   "ref_price": 81.27,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": -25.3
   },
   {
@@ -165,9 +165,9 @@
    "symbol": "CRCLUSDT",
    "side": "buy",
    "qty": 1.17,
-   "approx_usd": 84.26,
-   "ref_price": 72.02,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 84.59,
+   "ref_price": 72.3,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 3.21
   },
   {
@@ -191,19 +191,19 @@
   {
    "symbol": "DRAMUSDT",
    "side": "buy",
-   "qty": 1.46,
-   "approx_usd": 84.46,
-   "ref_price": 57.85,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "qty": 1.47,
+   "approx_usd": 84.75,
+   "ref_price": 57.65,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 5.48
   },
   {
    "symbol": "EWYUSDT",
    "side": "buy",
    "qty": 0.46,
-   "approx_usd": 83.39,
-   "ref_price": 181.28,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 83.24,
+   "ref_price": 180.96,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 6.11
   },
   {
@@ -219,9 +219,9 @@
    "symbol": "GOOGLUSDT",
    "side": "buy",
    "qty": 0.24,
-   "approx_usd": 83.64,
-   "ref_price": 348.52,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 83.67,
+   "ref_price": 348.61,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 4.74
   },
   {
@@ -246,9 +246,9 @@
    "symbol": "INTCUSDT",
    "side": "buy",
    "qty": 0.81,
-   "approx_usd": 84.52,
-   "ref_price": 104.34,
-   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
+   "approx_usd": 84.6,
+   "ref_price": 104.44,
+   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
    "fund_ann_30d": 2.02
   },
   {
