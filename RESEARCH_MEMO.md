@@ -5,6 +5,52 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-16 — Phase 2 CLOSED: engine run complete, bar reads
+
+Engine and 11-test suite committed before results were read; tests green
+including the no-look-ahead fixture with a leak-detection control. Full run in
+`data/phase2_results.json` (weekly Friday-close basis, 2018-01 → present,
+~449 weeks; all figures NET of fees, the funding band and dividends).
+
+**Bar reads against the frozen pre-registration (formal filing at Phase 3):**
+
+- **Bar 1 — rotation ships: FAILS.** Primary cell (K=5, cap=2) at 1× costs:
+  Sharpe +1.03 / +0.98 / +0.94 across the {0,+3,+6}% band against the basket's
+  +1.20 / +1.07 / +0.94 — never ahead by the required +0.10, behind at two of
+  three band points. **The filed sleeve-C failure mode replicated on this
+  menu**: selection concentration doubles CAGR (+46.5% vs +21.0% at the edge)
+  and buys it with −57% MaxDD vs −40%, losing on the frozen risk-adjusted
+  metric.
+- **Bar 2 — the equal-weight basket ships: PASSES with margin.** Basket net
+  Sharpe +0.94 at the band edge (bar: ≥ +0.40), positive totals everywhere,
+  and essentially invariant to 2×/4× cost stress (+0.94 / +0.94) — its weekly
+  turnover is tiny.
+- **Null (selection-skill check): 97.4th percentile** (strategy 0.942 vs null
+  p90 0.818, 1,000 paths, frozen seed). The momentum RANKING is real against
+  random same-shape selection; what fails against the basket is the
+  concentrated SHAPE, not the ordering.
+- **Split-half (primary, edge): +0.80 / +1.09** — both halves positive.
+- **Grid, reported in full (no verdict weight):** k5_capNone +1.07,
+  k10_cap2 +1.07, **k10_capNone +1.24** at the edge — wider books do better,
+  and the best cell beats the basket. Under the freeze this is an observation
+  for a FUTURE pre-registration, not an actionable result: promoting the best
+  cell after seeing results is exactly what the primary-cell discipline
+  exists to prevent.
+
+**Caveats carried, per pre-registration §6:** every ABSOLUTE level above is
+upward-biased by the 2026 menu selection — and the basket, being
+"own-the-menu", is the shape that bias flatters most. The bar-2 pass is
+therefore a licence for a micro shadow with live funding data, not an expected
++21%/yr. Funding was charged as a band, not data; the live +30%/yr exclusion
+rule remains untested by construction.
+
+**Design point raised for Phase 3:** the pre-authorised micro-live shadow was
+sized for a K-name book (default K × US$300). The SHIPPING config is a
+~140-name basket; equal-weighting it at micro scale is bounded below by
+Binance minimum order sizes, so the book cap the owner owes at Phase 3 is a
+real sizing decision (order of US$3–7k for ~$20–50 per name), or a shadow on
+a defined basket tranche. Flagged, not decided.
+
 ## 2026-08-16 — Phase 0 CLOSED: universe integrity
 
 **Result: 160 of 162 bases verified two-source, 2 no-underlying (OPENAI, ANTHROPIC
