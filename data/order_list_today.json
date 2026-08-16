@@ -1,5 +1,5 @@
 {
- "ts_utc": "2026-08-16T14:56:17.532532+00:00",
+ "ts_utc": "2026-08-16T14:56:46.236277+00:00",
  "mode": "establishment",
  "book_cap_usd": 5000.0,
  "n_members": 59,
@@ -14,7 +14,98 @@
    "qty": 0.54,
    "approx_usd": 83.35,
    "ref_price": 154.36,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 5.9
+  },
+  {
+   "symbol": "AAPLUSDT",
+   "side": "buy",
+   "qty": 0.27,
+   "approx_usd": 82.7,
+   "ref_price": 306.3,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "AMATUSDT",
+   "side": "buy",
+   "qty": 0.16,
+   "approx_usd": 81.26,
+   "ref_price": 507.88,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "AMDUSDT",
+   "side": "buy",
+   "qty": 0.16,
+   "approx_usd": 82.55,
+   "ref_price": 515.94,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "AMZNUSDT",
+   "side": "buy",
+   "qty": 0.32,
+   "approx_usd": 84.34,
+   "ref_price": 263.55,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "ARMUSDT",
+   "side": "buy",
+   "qty": 0.3,
+   "approx_usd": 83.77,
+   "ref_price": 279.23,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "AVGOUSDT",
+   "side": "buy",
+   "qty": 0.21,
+   "approx_usd": 82.84,
+   "ref_price": 394.5,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "AXTIUSDT",
+   "side": "buy",
+   "qty": 1.03,
+   "approx_usd": 84.48,
+   "ref_price": 82.02,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "BABAUSDT",
+   "side": "buy",
+   "qty": 0.68,
+   "approx_usd": 84.42,
+   "ref_price": 124.14,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "BEUSDT",
+   "side": "buy",
+   "qty": 0.36,
+   "approx_usd": 83.35,
+   "ref_price": 231.52,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "BMNRUSDT",
+   "side": "buy",
+   "qty": 4.69,
+   "approx_usd": 84.61,
+   "ref_price": 18.04,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "BZUSDT",
@@ -22,7 +113,17 @@
    "qty": 0.98,
    "approx_usd": 84.57,
    "ref_price": 86.3,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": -42.83
+  },
+  {
+   "symbol": "CBRSUSDT",
+   "side": "buy",
+   "qty": 0.38,
+   "approx_usd": 83.33,
+   "ref_price": 219.29,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "CLUSDT",
@@ -30,7 +131,35 @@
    "qty": 1.04,
    "approx_usd": 84.55,
    "ref_price": 81.3,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": -25.3
+  },
+  {
+   "symbol": "COHRUSDT",
+   "side": "buy",
+   "qty": 0.25,
+   "approx_usd": 81.89,
+   "ref_price": 327.56,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "COINUSDT",
+   "side": "buy",
+   "qty": 0.56,
+   "approx_usd": 83.53,
+   "ref_price": 149.16,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "COPPERUSDT",
+   "side": "buy",
+   "qty": 12.4,
+   "approx_usd": 84.15,
+   "ref_price": 6.786,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "CRCLUSDT",
@@ -38,7 +167,26 @@
    "qty": 1.17,
    "approx_usd": 84.26,
    "ref_price": 72.02,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 3.21
+  },
+  {
+   "symbol": "CRWVUSDT",
+   "side": "buy",
+   "qty": 0.8,
+   "approx_usd": 84.23,
+   "ref_price": 105.29,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "DELLUSDT",
+   "side": "buy",
+   "qty": 0.17,
+   "approx_usd": 83.7,
+   "ref_price": 492.35,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "DRAMUSDT",
@@ -46,6 +194,7 @@
    "qty": 1.46,
    "approx_usd": 84.46,
    "ref_price": 57.85,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 5.48
   },
   {
@@ -54,7 +203,17 @@
    "qty": 0.46,
    "approx_usd": 83.39,
    "ref_price": 181.28,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 6.11
+  },
+  {
+   "symbol": "GLWUSDT",
+   "side": "buy",
+   "qty": 0.5,
+   "approx_usd": 83.16,
+   "ref_price": 166.32,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "GOOGLUSDT",
@@ -62,7 +221,26 @@
    "qty": 0.24,
    "approx_usd": 83.64,
    "ref_price": 348.52,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 4.74
+  },
+  {
+   "symbol": "HOODUSDT",
+   "side": "buy",
+   "qty": 0.88,
+   "approx_usd": 84.19,
+   "ref_price": 95.67,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "HYUNDAIUSDT",
+   "side": "buy",
+   "qty": 0.26,
+   "approx_usd": 82.49,
+   "ref_price": 317.27,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   },
   {
    "symbol": "INTCUSDT",
@@ -70,33 +248,38 @@
    "qty": 0.81,
    "approx_usd": 84.52,
    "ref_price": 104.34,
+   "ref_price_asof": "2026-08-16T12:03:26.995580+00:00",
    "fund_ann_30d": 2.02
+  },
+  {
+   "symbol": "IRENUSDT",
+   "side": "buy",
+   "qty": 1.91,
+   "approx_usd": 84.48,
+   "ref_price": 44.23,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "LITEUSDT",
+   "side": "buy",
+   "qty": 0.09,
+   "approx_usd": 83.37,
+   "ref_price": 926.38,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
+  },
+  {
+   "symbol": "METAUSDT",
+   "side": "buy",
+   "qty": 0.14,
+   "approx_usd": 82.76,
+   "ref_price": 591.12,
+   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
+   "fund_ann_30d": null
   }
  ],
  "skipped_funding_rule": [],
- "skipped_no_price": [
-  "AAPLUSDT",
-  "AMATUSDT",
-  "AMDUSDT",
-  "AMZNUSDT",
-  "ARMUSDT",
-  "AVGOUSDT",
-  "AXTIUSDT",
-  "BABAUSDT",
-  "BEUSDT",
-  "BMNRUSDT",
-  "CBRSUSDT",
-  "COHRUSDT",
-  "COINUSDT",
-  "COPPERUSDT",
-  "CRWVUSDT",
-  "DELLUSDT",
-  "GLWUSDT",
-  "HOODUSDT",
-  "HYUNDAIUSDT",
-  "IRENUSDT",
-  "LITEUSDT",
-  "METAUSDT"
- ],
+ "skipped_no_price": [],
  "window": "07:30-09:30 SGT; execution is manual, this file is a list, not an instruction to any system"
 }

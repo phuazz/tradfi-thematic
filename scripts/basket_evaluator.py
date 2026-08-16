@@ -119,6 +119,14 @@ def main() -> int:
         return 1
     liquid = update_liquid_rolling(scan)
     scan_rows = {r["symbol"]: r for r in scan["rows"]}
+    # Rolling last-seen prices: a weekend scan carries only weekend-liquid
+    # rows, so names absent from the LATEST scan keep their last-seen price
+    # (stamped) rather than dropping off the order list.
+    last_px_path = PROJECT_ROOT / "data" / "last_prices.json"
+    last_px = read_json(last_px_path, {})
+    for s, r in scan_rows.items():
+        last_px[s] = {"px": float(r["price"]), "asof": scan["generated_at_utc"]}
+    last_px_path.write_text(json.dumps(last_px, indent=1), encoding="utf-8")
     filters = read_json(FILTERS_PATH, {})
     umap = read_json(MAP_PATH, {"rows": {}})["rows"]
 
@@ -134,7 +142,8 @@ def main() -> int:
     n = len(members)
     target_usd = BOOK_CAP_USD / n if n else 0.0
 
-    prices = {s: float(scan_rows[s]["price"]) for s in members if s in scan_rows}
+    prices = {s: last_px[s]["px"] for s in members if s in last_px}
+    price_asof = {s: last_px[s]["asof"] for s in members if s in last_px}
     qty_held, val_held = current_book(prices)
     held = set(qty_held)
     missing = [s for s in members if s not in held]
@@ -155,6 +164,7 @@ def main() -> int:
         fund = scan_rows.get(sym, {}).get("fund_ann_30d")
         return {"symbol": sym, "side": side, "qty": round(q, 8),
                 "approx_usd": round(q * px, 2), "ref_price": px,
+                "ref_price_asof": price_asof.get(sym),
                 "fund_ann_30d": fund}
 
     if missing:
