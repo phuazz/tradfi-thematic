@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tradfi-thematic — names first</title>
+<style>
+:root {
+  --bg: #ffffff; --bg-soft: #f7f7f5; --text: #1a1a1a; --text-muted: #5f5e5a;
+  --text-faint: #888780; --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.16);
+  --danger: #A32D2D; --danger-bg: rgba(163,45,45,0.08);
+  --success: #0F6E56; --success-bg: rgba(15,110,86,0.08);
+  --warning: #854F0B; --info: #185FA5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5;
+  -webkit-text-size-adjust: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 24px 28px 60px; }
+header { padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+h1 { margin: 0; font-size: 21px; font-weight: 500; }
+h1 .sub { font-size: 13px; color: var(--text-muted); font-weight: 400; margin-left: 8px; }
+.asof { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
+section { margin-top: 30px; }
+h2 { margin: 0 0 10px; font-size: 16px; font-weight: 500; }
+h2 .hint { font-size: 12px; color: var(--text-muted); font-weight: 400; margin-left: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead tr { border-bottom: 1px solid var(--border-strong); }
+th { text-align: left; padding: 9px 8px; font-weight: 500; font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+th.num, td.num { text-align: right; }
+tbody tr { border-bottom: 1px solid var(--border); }
+tbody tr:hover { background: var(--bg-soft); }
+td { padding: 9px 8px; font-variant-numeric: tabular-nums; }
+.nm { font-weight: 500; }
+.tk { color: var(--text-faint); font-size: 11px; margin-left: 6px; }
+.danger { color: var(--danger); } .success { color: var(--success); }
+.muted { color: var(--text-muted); } .faint { color: var(--text-faint); }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.card h3 { margin: 0 0 8px; font-size: 14px; font-weight: 500; }
+.row { font-size: 12px; color: var(--text-muted); margin-top: 5px; line-height: 1.5; }
+.row strong { color: var(--text); font-weight: 500; }
+.pill { display: inline-block; padding: 1px 8px; font-size: 11px; border-radius: 3px;
+  background: var(--bg-soft); border: 1px solid var(--border); letter-spacing: 0.03em; }
+.pill-ok { background: var(--success-bg); color: var(--success); border-color: transparent; }
+.pill-warn { background: rgba(239,159,39,0.15); color: var(--warning); border-color: transparent; }
+.badge { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 4px; background: var(--bg-soft); color: var(--text-muted); white-space: nowrap; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+.chip { background: transparent; border: 1px solid var(--border); padding: 5px 12px; font-size: 12px;
+  border-radius: 6px; cursor: pointer; color: var(--text-muted); font-family: inherit; }
+.chip.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.legend { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 70ch; }
+.provenance { font-size: 11px; color: var(--text-faint); margin-top: 6px; }
+.clusterbar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+.clusterbar div { height: 100%; }
+.clusterkey { font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.8; }
+.clusterkey span.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
+@media (max-width: 800px) { .container { padding: 16px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>tradfi-thematic<span class="sub">names-first study and implementation surface — local page, nothing publishes</span></h1>
+  <div class="asof" id="asof"></div>
+</header>
+
+<section>
+  <h2>Shadow status<span class="hint">both live books, the frozen triggers, and the close-out countdown</span></h2>
+  <div class="cards" id="shadow-cards"></div>
+</section>
+
+<section>
+  <h2>Today's orders<span class="hint">execute manually in the 07:30–09:30 SGT window; log fills with scripts/log_basket_fill.py — rows tick themselves off on the next rebuild</span></h2>
+  <div class="scroll" id="tbl-orders"></div>
+</section>
+
+<section>
+  <h2>The book, by name<span class="hint">holdings from the append-only fill log, valued at last-seen marks</span></h2>
+  <div class="scroll" id="tbl-book"></div>
+</section>
+
+<section>
+  <h2>Universe explorer<span class="hint">every verified underlying by company name — filter by cluster; excluded rows say why</span></h2>
+  <div class="chips" id="chips"></div>
+  <div class="clusterbar" id="clusterbar"></div>
+  <div class="clusterkey" id="clusterkey"></div>
+  <div class="scroll" id="tbl-universe" style="margin-top: 12px;"></div>
+</section>
+
+<section>
+  <h2>The filed verdict<span class="hint">bars read exactly as pre-registered; every absolute level carries the menu-survivorship caveat</span></h2>
+  <div class="legend" id="verdict-text"></div>
+  <div class="scroll" id="tbl-verdict" style="margin-top: 12px;"></div>
+  <div class="provenance" id="verdict-prov"></div>
+</section>
+
+<div class="legend" style="margin-top: 32px;">
+  <strong>Reading rules.</strong> Funding is trailing 30-day annualised, longs pay when
+  positive; a buy is skipped while a name's funding exceeds +30%/yr (Amendment 1 rule
+  set, live only). Every backtest figure is net of fees, the funding band and forgone
+  dividends, on a weekly Friday-close basis. The menu is Binance's 2025–26 selection:
+  absolute levels are upward-biased by construction and the equal-weight basket is the
+  shape that bias flatters most — the shadow exists to replace assumptions with live
+  fills and funding, not to confirm a forecast.
+</div>
+
+</div>
+<script>
+const DATA = /*__DATA__*/null;
+
+const CLUSTER_COLOURS = {
+  "semis-hardware": "#3266ad", "software-ai": "#7f77dd", "platforms-media": "#185FA5",
+  "consumer": "#0F6E56", "financials": "#854F0B", "crypto-equity": "#993C1D",
+  "health": "#5f8a3c", "industrials-space": "#5F5E5A", "space": "#2f6f8f",
+  "energy": "#a35d2d", "materials": "#8a6d3b", "index-broad": "#444",
+  "country-korea": "#6b4f9e", "country-japan": "#6b4f9e", "country-taiwan": "#6b4f9e",
+  "country-brazil": "#6b4f9e", "etf-other": "#777", "rates": "#777", "commodity": "#b0a48c",
+};
+const fmtPct = v => (v === null || v === undefined) ? "—" : (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
+const fmtTs = iso => iso ? new Date(iso).toLocaleString("en-GB", {day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", timeZone:"Asia/Singapore"}) + " SGT" : "—";
+
+function renderAsof() {
+  document.getElementById("asof").textContent =
+    `Built ${fmtTs(DATA.built_at_utc)} · orders as of ${fmtTs(DATA.as_of.orders)} · funding scan ${fmtTs(DATA.as_of.scan)} · study results ${fmtTs(DATA.as_of.results)}`;
+}
+
+function renderShadow() {
+  const sb = DATA.shadow_books || {};
+  const b = sb.basket || {}, s = sb.smh || {};
+  document.getElementById("shadow-cards").innerHTML = `
+    <div class="card"><h3>TradFi equity basket <span class="pill">${DATA.orders_mode || "—"}</span></h3>
+      <div class="row"><strong>Established:</strong> ${DATA.n_filled} of ${DATA.n_members} names · book value $${DATA.book_value.toFixed(0)} of $${DATA.book_cap.toFixed(0)}</div>
+      <div class="row"><strong>Target:</strong> $${(DATA.target_usd || 0).toFixed(2)} per name · equity-only per Amendment 1</div>
+      <div class="row"><strong>Triggers:</strong> <span class="${(b.fail_events || 0) ? "danger" : "success"}">${(b.fail_events || 0) ? b.fail_events + " FAIL" : "none breached"}</span></div>
+    </div>
+    <div class="card"><h3>WS17 xyz:SMH shadow <span class="pill">${s.mode || "—"}</span></h3>
+      <div class="row"><strong>Fills logged:</strong> ${s.n_fills_logged ?? "—"} (${s.n_probes_logged ?? "—"} probes; Tue/Fri schedule)</div>
+      <div class="row"><strong>Triggers:</strong> <span class="${(s.fail_events || 0) ? "danger" : "success"}">${(s.fail_events || 0) ? s.fail_events + " FAIL" : "none breached"}</span></div>
+    </div>
+    <div class="card"><h3>Combined close-out</h3>
+      <div class="row"><strong>${sb.close_out || "2026-09-13"}</strong> · ${sb.days_to_close_out ?? "—"} days remaining</div>
+      <div class="row faint">FAIL-EXECUTION 15bp median fill · FAIL-BAND +6%/yr rolling funding · FAIL-OPS missed windows or margin call at 1×.</div>
+    </div>`;
+}
+
+function renderOrders() {
+  const rows = DATA.orders || [];
+  const t = document.getElementById("tbl-orders");
+  if (!rows.length) { t.innerHTML = '<div class="muted" style="padding:12px;">No orders today.</div>'; return; }
+  t.innerHTML = `<table><thead><tr><th>Company</th><th>Side</th><th class="num">Qty</th>
+    <th class="num">≈USD</th><th class="num">Ref px</th><th class="num">Funding 30d</th><th>Status</th></tr></thead><tbody>` +
+    rows.map(o => `<tr>
+      <td class="nm">${o.name}<span class="tk">${o.symbol}</span></td>
+      <td class="${o.side === "buy" ? "success" : "danger"}">${o.side}</td>
+      <td class="num">${o.qty}</td><td class="num">$${o.approx_usd}</td>
+      <td class="num muted">${o.ref_price}</td>
+      <td class="num ${(o.fund_ann_30d ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(o.fund_ann_30d)}</td>
+      <td>${o.status === "filled" ? '<span class="pill pill-ok">filled</span>' : '<span class="pill">pending</span>'}</td>
+    </tr>`).join("") + "</tbody></table>";
+}
+
+function renderBook() {
+  const rows = DATA.book || [];
+  const t = document.getElementById("tbl-book");
+  if (!rows.length) { t.innerHTML = '<div class="muted" style="padding:12px;">No holdings yet — establishment begins with tranche 1.</div>'; return; }
+  t.innerHTML = `<table><thead><tr><th>Company</th><th class="num">Qty</th><th class="num">Value</th>
+    <th class="num">Drift vs target</th><th class="num">Funding 30d</th></tr></thead><tbody>` +
+    rows.map(r => `<tr>
+      <td class="nm">${r.name}<span class="tk">${r.symbol}</span></td>
+      <td class="num">${r.qty}</td><td class="num">$${r.value}</td>
+      <td class="num ${Math.abs(r.drift_pct ?? 0) > 25 ? "danger" : "muted"}">${fmtPct(r.drift_pct)}</td>
+      <td class="num ${(r.fund ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(r.fund)}</td>
+    </tr>`).join("") + "</tbody></table>";
+}
+
+let CURRENT_CLUSTER = "all";
+function renderChips() {
+  const counts = DATA.clusters;
+  const chips = [["all", "All (" + Object.values(counts).reduce((a, b) => a + b, 0) + ")"]]
+    .concat(Object.keys(counts).sort().map(c => [c, `${c} (${counts[c]})`]));
+  document.getElementById("chips").innerHTML =
+    chips.map(([c, label]) => `<button class="chip${c === CURRENT_CLUSTER ? " active" : ""}" data-c="${c}">${label}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(el => el.addEventListener("click", () => {
+    CURRENT_CLUSTER = el.dataset.c; renderChips(); renderUniverse();
+  }));
+}
+
+function renderClusterBar() {
+  const counts = DATA.clusters;
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  const parts = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  document.getElementById("clusterbar").innerHTML =
+    parts.map(([c, n]) => `<div title="${c}: ${n}" style="width:${(n / total * 100).toFixed(2)}%; background:${CLUSTER_COLOURS[c] || "#999"}"></div>`).join("");
+  document.getElementById("clusterkey").innerHTML =
+    parts.map(([c, n]) => `<span class="sw" style="background:${CLUSTER_COLOURS[c] || "#999"}"></span>${c} ${n}`).join("");
+}
+
+function renderUniverse() {
+  const rows = (DATA.universe || []).filter(r =>
+    CURRENT_CLUSTER === "all" ? true : r.cluster === CURRENT_CLUSTER);
+  document.getElementById("tbl-universe").innerHTML =
+    `<table><thead><tr><th>Company</th><th>Cluster</th><th>Region</th>
+      <th class="num">History from</th><th class="num">Perp vol 24h</th><th class="num">Funding 30d</th>
+      <th>In book</th><th>Excluded</th></tr></thead><tbody>` +
+    rows.map(r => `<tr${r.excluded ? ' style="opacity:0.55"' : ""}>
+      <td class="nm">${r.name}<span class="tk">${r.base}</span></td>
+      <td><span class="badge">${r.cluster}</span></td>
+      <td class="muted">${r.region}</td>
+      <td class="num ${r.full_hist ? "muted" : "faint"}">${r.first_bar || "—"}${r.full_hist ? "" : " (short)"}</td>
+      <td class="num muted">${r.vol24 != null ? "$" + Math.round(r.vol24) + "M" : "—"}</td>
+      <td class="num ${(r.fund ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(r.fund)}</td>
+      <td>${r.in_book ? '<span class="pill pill-ok">yes</span>' : '<span class="faint">—</span>'}</td>
+      <td class="faint">${r.excluded || ""}</td>
+    </tr>`).join("") + "</tbody></table>";
+}
+
+function vrow(label, s) {
+  if (!s) return "";
+  return `<tr><td>${label}</td><td class="num">${s.sharpe >= 0 ? "+" : ""}${s.sharpe?.toFixed(2)}</td>
+    <td class="num">${fmtPct(s.cagr != null ? s.cagr * 100 : null)}</td>
+    <td class="num">${fmtPct(s.max_dd != null ? s.max_dd * 100 : null)}</td></tr>`;
+}
+
+function renderVerdict() {
+  const v = DATA.verdict;
+  const n = v.null || {};
+  document.getElementById("verdict-text").innerHTML =
+    `<strong>Rotation REJECTED</strong> — the primary cell was never +0.10 ahead of the
+     equal-weight basket across the funding band. <strong>Ranking CONFIRMED real</strong>
+     — ${n.strategy_percentile}th percentile of ${n.n_paths} cost-matched random
+     same-shape selections. <strong>The equal-weight basket SHIPS</strong> — and after
+     Amendment 1 the live book is its equity-only form, whose re-anchor is
+     indistinguishable from the filed row. Split-half ${v.split_half?.first?.sharpe} /
+     ${v.split_half?.second?.sharpe}. The K=10 uncapped observation (+${v.grid_note?.k10_capNone})
+     is future-pre-registration material only.`;
+  let html = `<table><thead><tr><th>Series (net, 1× costs)</th><th class="num">Sharpe</th>
+    <th class="num">CAGR</th><th class="num">MaxDD</th></tr></thead><tbody>`;
+  for (const b of v.bands) {
+    html += vrow(`Primary K=5 cap=2 — band ${Math.round(parseFloat(b) * 100)}%`, v.primary[b]);
+  }
+  for (const b of v.bands) {
+    html += vrow(`EW basket (full menu) — band ${Math.round(parseFloat(b) * 100)}%`, v.basket[b]);
+  }
+  html += vrow("EW basket — band 6%, 2× costs", v.basket_2x_edge);
+  for (const [k, s] of Object.entries(v.equity_anchor || {})) {
+    html += vrow(`EW basket EQUITY-ONLY — ${k.replace("band_", "band ").replace("_2x", " 2× costs")}`, s);
+  }
+  html += "</tbody></table>";
+  document.getElementById("tbl-verdict").innerHTML = html;
+  document.getElementById("verdict-prov").textContent =
+    `Null p50 ${n.p50} · p90 ${n.p90} · strategy ${n.strategy_sharpe} (seed frozen). ` +
+    `Weekly Friday-close basis, 2018-01 onward; fees + funding band + dividends charged; ` +
+    `results computed ${fmtTs(DATA.as_of.results)}.`;
+}
+
+renderAsof(); renderShadow(); renderOrders(); renderBook();
+renderChips(); renderClusterBar(); renderUniverse(); renderVerdict();
+</script>
+</body>
+</html>

@@ -236,6 +236,14 @@ def main() -> int:
             body += "\nSkipped by +30%/yr funding rule: " + ", ".join(skipped_funding)
         send_alert(f"[basket shadow] {mode}: {len(orders)} orders", body)
 
+    # Rebuild the local names-first dashboard so it is fresh before the
+    # execution window — fail-open, the evaluation itself must never die here.
+    try:
+        subprocess.run([sys.executable, "scripts/build_dashboard.py"],
+                       cwd=PROJECT_ROOT, capture_output=True, timeout=120)
+    except Exception:  # noqa: BLE001
+        pass
+
     subprocess.run(["git", "add", "-A"], cwd=PROJECT_ROOT, capture_output=True)
     subprocess.run(["git", "commit", "-m", f"auto: basket shadow {mode} {stamp[:10]}"],
                    cwd=PROJECT_ROOT, capture_output=True)
