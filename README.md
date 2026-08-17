@@ -3,8 +3,12 @@
 Thematic rotation over the **full Binance TradFi perpetual menu** (163 contracts at
 seed, 2026-08-16): long-only cross-sectional momentum computed on the UNDERLYINGS'
 history, traded via the perps, with a funding-aware term frozen at pre-registration.
-**Personal book. Research-grade — nothing deployed.** Local-only repo (no remote) at
-the owner's default; add a remote only on explicit instruction.
+**Personal book. Research-grade — two micro shadow experiments live, nothing sized.**
+Public on owner instruction (2026-08-17); previously local-only. **Live dashboard:**
+[phuazz.github.io/tradfi-thematic](https://phuazz.github.io/tradfi-thematic/) —
+names-first study and implementation surface, rebuilt each morning by the evaluator.
+Not investment advice; the shadow books are micro-sized verification experiments and
+every backtest figure carries the menu-survivorship caveat stated below.
 
 Commissioned 2026-08-16; kickoff and interview record: `C:\dev\KICKOFF_tradfi-thematic.md`
 (vault-docs). Owner-settled inputs: universe = ALL available TradFi perps; the

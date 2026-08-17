@@ -151,7 +151,11 @@ def main() -> int:
     assert placeholder in template, "placeholder missing"
     out = template.replace(placeholder, json.dumps(data, separators=(",", ":"), allow_nan=False))
     (ROOT / "dashboard.html").write_text(out, encoding="utf-8")
-    print(f"dashboard.html built: {len(out)/1024:.0f} KB, {len(uni)} universe rows, "
+    # Published copy (owner instruction 2026-08-17): GitHub Pages serves docs/.
+    docs = ROOT / "docs"
+    docs.mkdir(exist_ok=True)
+    (docs / "index.html").write_text(out, encoding="utf-8")
+    print(f"dashboard built (root + docs/): {len(out)/1024:.0f} KB, {len(uni)} universe rows, "
           f"{len(order_rows)} orders, {len(book_rows)} holdings")
     return 0
 

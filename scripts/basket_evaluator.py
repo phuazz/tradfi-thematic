@@ -244,9 +244,15 @@ def main() -> int:
     except Exception:  # noqa: BLE001
         pass
 
+    subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                   cwd=PROJECT_ROOT, capture_output=True)
     subprocess.run(["git", "add", "-A"], cwd=PROJECT_ROOT, capture_output=True)
     subprocess.run(["git", "commit", "-m", f"auto: basket shadow {mode} {stamp[:10]}"],
                    cwd=PROJECT_ROOT, capture_output=True)
+    # Push is best-effort: the repo went public on owner instruction
+    # (2026-08-17); a failed push leaves the commit local for the next run.
+    subprocess.run(["git", "push", "origin", "main"], cwd=PROJECT_ROOT,
+                   capture_output=True)
 
     print(f"mode={mode} members={n} held={len(held)} orders={len(orders)} "
           f"skipped_funding={len(skipped_funding)} target=${target_usd:.2f}")
