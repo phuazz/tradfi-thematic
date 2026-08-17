@@ -225,7 +225,9 @@ def main() -> int:
     ORDER_LIST.write_text(json.dumps(payload, indent=1), encoding="utf-8")
     append_log([{"type": "ops", "ts_utc": stamp, "event": "OK", "mode": mode,
                  "n_orders": len(orders), "n_held": len(held),
-                 "n_members": n, "book_value_usd": payload["book_value_usd"]}])
+                 "n_members": n, "book_value_usd": payload["book_value_usd"],
+                 "skipped_funding": skipped_funding,
+                 "skipped_no_price": skipped_price}])
     HEARTBEAT.parent.mkdir(exist_ok=True)
     HEARTBEAT.write_text(stamp, encoding="utf-8")
 

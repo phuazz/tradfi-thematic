@@ -3,180 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tradfi-thematic — names first</title>
+<title>TradFi thematic — names first</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 <style>
 :root {
-  --bg: #ffffff; --bg-soft: #f7f7f5; --text: #1a1a1a; --text-muted: #5f5e5a;
-  --text-faint: #888780; --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.16);
-  --danger: #A32D2D; --danger-bg: rgba(163,45,45,0.08);
-  --success: #0F6E56; --success-bg: rgba(15,110,86,0.08);
-  --warning: #854F0B; --info: #185FA5;
+  /* surfaces */
+  --bg: #fafaf8; --bg2: #ffffff; --bg3: #f5f5f0; --bg4: #eeeee8; --bg-hover: #f0f0ea;
+  /* borders */
+  --bd: #e2e0d8; --bd2: #d5d3ca; --bd-strong: #c0beb5;
+  /* text */
+  --t1: #1a1a18; --t2: #5c5c56; --t3: #8a8a82; --t4: #b0b0a8;
+  /* semantic: green = gain/long, red = loss/short */
+  --g: #1a8754; --g2: #22a366; --g-bg: rgba(26,135,84,0.07); --g-bg2: rgba(26,135,84,0.14);
+  --r: #c0392b; --r2: #e74c3c; --r-bg: rgba(192,57,43,0.07); --r-bg2: rgba(192,57,43,0.14);
+  --b: #2563eb; --b2: #3b82f6; --b-bg: rgba(37,99,235,0.06); --b-bg2: rgba(37,99,235,0.12);
+  --a: #b45309; --a-bg: rgba(180,83,9,0.07);
+  --p: #7c3aed; --p-bg: rgba(124,58,237,0.06);
+  --c: #0891b2; --c-bg: rgba(8,145,178,0.06);
+  --pk: #be185d; --pk-bg: rgba(190,24,93,0.06);
+  --g-text: #146c43; --r-text: #a93226; --b-text: #1d4ed8; --a-text: #92400e;
+  --p-text: #7c3aed; --c-text: #0e7490; --pk-text: #be185d;
+  --t3-text: #66665e;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --radius: 8px; --radius-lg: 12px;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5;
-  -webkit-text-size-adjust: 100%; }
-.container { max-width: 1280px; margin: 0 auto; padding: 24px 28px 60px; }
-header { padding-bottom: 14px; border-bottom: 1px solid var(--border); }
-h1 { margin: 0; font-size: 21px; font-weight: 500; }
-h1 .sub { font-size: 13px; color: var(--text-muted); font-weight: 400; margin-left: 8px; }
-.asof { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
-section { margin-top: 30px; }
-h2 { margin: 0 0 10px; font-size: 16px; font-weight: 500; }
-h2 .hint { font-size: 12px; color: var(--text-muted); font-weight: 400; margin-left: 8px; }
+body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--t1);
+  font-size: 14px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 22px 28px 60px; }
+.masthead h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; letter-spacing: -0.5px; margin: 0; }
+.masthead .clause { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--t3); margin-top: 2px; }
+.asof { font-family: var(--mono); font-size: 11px; color: var(--t3-text); margin-top: 8px; }
+.tab-row { display: flex; gap: 0; margin: 20px 0 0; border: 1px solid var(--bd); border-radius: var(--radius); overflow-x: auto; background: var(--bg2); width: fit-content; max-width: 100%; }
+.tab-row button { padding: 9px 16px; background: var(--bg2); border: none; border-right: 1px solid var(--bd); cursor: pointer; font-size: 13px; font-weight: 600; color: var(--t2); font-family: inherit; white-space: nowrap; }
+.tab-row button:last-child { border-right: none; }
+.tab-row button.active { background: var(--t1); color: var(--bg2); }
+.tab { display: none; }
+.tab.active { display: block; }
+section { margin-top: 28px; }
+h2 { margin: 0 0 10px; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t2); }
+h2 .hint { font-size: 12px; color: var(--t3-text); font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 8px; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
-thead tr { border-bottom: 1px solid var(--border-strong); }
-th { text-align: left; padding: 9px 8px; font-weight: 500; font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+thead th { position: sticky; top: 0; background: var(--bg3); text-align: left; padding: 9px 8px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t3-text); white-space: nowrap; border-bottom: 2px solid var(--bd2); }
 th.num, td.num { text-align: right; }
-tbody tr { border-bottom: 1px solid var(--border); }
-tbody tr:hover { background: var(--bg-soft); }
+tbody tr { border-bottom: 1px solid var(--bd); }
+tbody tr:hover { background: var(--bg-hover); }
 td { padding: 9px 8px; font-variant-numeric: tabular-nums; }
-.nm { font-weight: 500; }
-.tk { color: var(--text-faint); font-size: 11px; margin-left: 6px; }
-.danger { color: var(--danger); } .success { color: var(--success); }
-.muted { color: var(--text-muted); } .faint { color: var(--text-faint); }
-.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+td.num { font-family: var(--mono); font-size: 12px; }
+.nm { font-weight: 600; }
+.tk { color: var(--t4); font-family: var(--mono); font-size: 11px; margin-left: 6px; font-weight: 400; }
+.pos { color: var(--g-text); } .neg { color: var(--r-text); }
+.muted { color: var(--t2); } .faint { color: var(--t3-text); font-size: 12px; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
-.card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
-.card h3 { margin: 0 0 8px; font-size: 14px; font-weight: 500; }
-.row { font-size: 12px; color: var(--text-muted); margin-top: 5px; line-height: 1.5; }
-.row strong { color: var(--text); font-weight: 500; }
-.pill { display: inline-block; padding: 1px 8px; font-size: 11px; border-radius: 3px;
-  background: var(--bg-soft); border: 1px solid var(--border); letter-spacing: 0.03em; }
-.pill-ok { background: var(--success-bg); color: var(--success); border-color: transparent; }
-.pill-warn { background: rgba(239,159,39,0.15); color: var(--warning); border-color: transparent; }
-.badge { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 4px; background: var(--bg-soft); color: var(--text-muted); white-space: nowrap; }
+.cards > div { min-width: 0; }
+.card { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 14px 16px; box-shadow: var(--shadow); }
+.card h3 { margin: 0 0 8px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t2); }
+.card .big { font-size: 24px; font-weight: 700; font-family: var(--mono); }
+.row { font-size: 12px; color: var(--t2); margin-top: 5px; line-height: 1.5; }
+.row strong { color: var(--t1); font-weight: 600; }
+.pill { display: inline-block; padding: 2px 9px; font-size: 11px; border-radius: 4px; background: var(--bg3); border: 1px solid var(--bd); color: var(--t2); letter-spacing: 0.02em; }
+.pill-ok { background: var(--g-bg2); color: var(--g-text); border-color: transparent; }
+.badge { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 4px; background: var(--bg3); color: var(--t3-text); white-space: nowrap; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
-.chip { background: transparent; border: 1px solid var(--border); padding: 5px 12px; font-size: 12px;
-  border-radius: 6px; cursor: pointer; color: var(--text-muted); font-family: inherit; }
-.chip.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-.legend { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px;
-  padding: 10px 14px; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 70ch; }
-.provenance { font-size: 11px; color: var(--text-faint); margin-top: 6px; }
-.clusterbar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
-.clusterbar div { height: 100%; }
-.clusterkey { font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.8; }
+.chip { background: var(--bg2); border: 1px solid var(--bd); padding: 5px 12px; font-size: 12px; border-radius: 6px; cursor: pointer; color: var(--t2); font-family: inherit; font-weight: 500; }
+.chip.active { background: var(--t1); color: var(--bg2); border-color: var(--t1); }
+.legend { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); padding: 12px 16px; font-size: 12.5px; color: var(--t2); line-height: 1.7; max-width: 72ch; box-shadow: var(--shadow-sm); }
+.provenance { font-family: var(--mono); font-size: 11px; color: var(--t3-text); margin-top: 8px; }
+.chart-wrap { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow); }
+.chart { width: 100%; height: 380px; }
+.chart-sm { width: 100%; height: 260px; }
+.period-selector { display: inline-flex; border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; background: var(--bg2); margin-bottom: 10px; }
+.period-selector button { padding: 6px 13px; background: var(--bg2); border: none; border-right: 1px solid var(--bd); cursor: pointer; font-size: 12px; font-weight: 600; color: var(--t2); font-family: inherit; }
+.period-selector button:last-child { border-right: none; }
+.period-selector button.active { background: var(--t1); color: var(--bg2); }
+.clusterbar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--bd); }
+.clusterkey { font-size: 11px; color: var(--t3-text); margin-top: 6px; line-height: 1.9; }
 .clusterkey span.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
-@media (max-width: 800px) { .container { padding: 16px; } }
+.rule-card { background: var(--bg2); border: 1px solid var(--bd); border-left: 3px solid var(--b); border-radius: var(--radius); padding: 10px 14px; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
+.rule-card strong { color: var(--t1); text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; display: block; margin-bottom: 2px; }
+@media (max-width: 800px) { .container { padding: 14px; } .masthead h1 { font-size: 26px; } .chart { height: 300px; } }
 </style>
 </head>
 <body>
 <div class="container">
 
-<header>
-  <h1>tradfi-thematic<span class="sub">names-first study and implementation surface — local page, nothing publishes</span></h1>
+<div class="masthead">
+  <h1>TradFi thematic</h1>
+  <div class="clause">names first — a study and its implementation, on one page</div>
   <div class="asof" id="asof"></div>
-</header>
+</div>
 
-<section>
-  <h2>Shadow status<span class="hint">both live books, the frozen triggers, and the close-out countdown</span></h2>
-  <div class="cards" id="shadow-cards"></div>
-</section>
+<div class="tab-row" id="tabs">
+  <button data-tab="book" class="active">Book &amp; orders</button>
+  <button data-tab="universe">Universe</button>
+  <button data-tab="perf">Performance</button>
+  <button data-tab="method">Method &amp; decisions</button>
+</div>
 
-<section>
-  <h2>Today's orders<span class="hint">execute manually in the 07:30–09:30 SGT window; log fills with scripts/log_basket_fill.py — rows tick themselves off on the next rebuild</span></h2>
-  <div class="scroll" id="tbl-orders"></div>
-</section>
+<!-- ============================ BOOK & ORDERS ============================ -->
+<div class="tab active" id="tab-book">
+  <section>
+    <h2>Shadow status<span class="hint">both live books, the frozen triggers, the close-out countdown</span></h2>
+    <div class="cards" id="shadow-cards"></div>
+  </section>
+  <section>
+    <h2>Today's orders<span class="hint">execute manually in the 07:30–09:30 SGT window; rows tick off as fills are logged</span></h2>
+    <div class="scroll" id="tbl-orders"></div>
+  </section>
+  <section>
+    <h2>The book, by name<span class="hint">holdings from the append-only fill log, valued at last-seen marks</span></h2>
+    <div class="scroll" id="tbl-book"></div>
+  </section>
+</div>
 
-<section>
-  <h2>The book, by name<span class="hint">holdings from the append-only fill log, valued at last-seen marks</span></h2>
-  <div class="scroll" id="tbl-book"></div>
-</section>
+<!-- ============================== UNIVERSE ============================== -->
+<div class="tab" id="tab-universe">
+  <section>
+    <h2>Universe explorer<span class="hint">every verified underlying by company name — excluded rows say why</span></h2>
+    <div class="chips" id="chips"></div>
+    <div class="clusterbar" id="clusterbar"></div>
+    <div class="clusterkey" id="clusterkey"></div>
+    <div class="scroll" id="tbl-universe" style="margin-top: 12px;"></div>
+  </section>
+</div>
 
-<section>
-  <h2>Universe explorer<span class="hint">every verified underlying by company name — filter by cluster; excluded rows say why</span></h2>
-  <div class="chips" id="chips"></div>
-  <div class="clusterbar" id="clusterbar"></div>
-  <div class="clusterkey" id="clusterkey"></div>
-  <div class="scroll" id="tbl-universe" style="margin-top: 12px;"></div>
-</section>
+<!-- ============================ PERFORMANCE ============================= -->
+<div class="tab" id="tab-perf">
+  <section>
+    <h2>Cumulative return, net<span class="hint">weekly Friday closes, 1× costs; rebased to 0% at the window start</span></h2>
+    <div class="period-selector" id="perf-periods">
+      <button data-p="52">1Y</button><button data-p="156">3Y</button><button data-p="0" class="active">MAX</button>
+    </div>
+    <div class="chart-wrap"><div id="ch-perf" class="chart"></div></div>
+    <div class="provenance" id="perf-prov"></div>
+  </section>
+  <section>
+    <h2>Drawdown<span class="hint">same series, same basis — the cost concentration pays for the extra CAGR</span></h2>
+    <div class="chart-wrap"><div id="ch-dd" class="chart-sm"></div></div>
+  </section>
+  <section>
+    <h2>Breadth and the gate<span class="hint">share of the eligible universe above the +5% floor; below 30% the sleeve is in cash</span></h2>
+    <div class="chart-wrap"><div id="ch-breadth" class="chart-sm"></div></div>
+  </section>
+  <section>
+    <h2>Selection against chance<span class="hint">1,000 cost-matched random same-shape portfolios, frozen seed — the ranking is real; the concentrated shape is what loses to the basket</span></h2>
+    <div class="chart-wrap"><div id="ch-null" class="chart-sm"></div></div>
+  </section>
+</div>
 
-<section>
-  <h2>The filed verdict<span class="hint">bars read exactly as pre-registered; every absolute level carries the menu-survivorship caveat</span></h2>
-  <div class="legend" id="verdict-text"></div>
-  <div class="scroll" id="tbl-verdict" style="margin-top: 12px;"></div>
-  <div class="provenance" id="verdict-prov"></div>
-</section>
-
-<div class="legend" style="margin-top: 32px;">
-  <strong>Reading rules.</strong> Funding is trailing 30-day annualised, longs pay when
-  positive; a buy is skipped while a name's funding exceeds +30%/yr (Amendment 1 rule
-  set, live only). Every backtest figure is net of fees, the funding band and forgone
-  dividends, on a weekly Friday-close basis. The menu is Binance's 2025–26 selection:
-  absolute levels are upward-biased by construction and the equal-weight basket is the
-  shape that bias flatters most — the shadow exists to replace assumptions with live
-  fills and funding, not to confirm a forecast.
+<!-- ========================= METHOD & DECISIONS ========================= -->
+<div class="tab" id="tab-method">
+  <section>
+    <h2>The filed verdict<span class="hint">bars read exactly as pre-registered before any result existed</span></h2>
+    <div class="legend" id="verdict-text"></div>
+    <div class="scroll" id="tbl-verdict" style="margin-top: 12px;"></div>
+    <div class="provenance" id="verdict-prov"></div>
+  </section>
+  <section>
+    <h2>The rules, as frozen<span class="hint">why each decision is made — every rule below was committed before the result it governs</span></h2>
+    <div id="rules"></div>
+  </section>
+  <section>
+    <h2>Decision log<span class="hint">every evaluator run with its reasons — skips name the rule that caused them</span></h2>
+    <div class="scroll" id="tbl-decisions"></div>
+  </section>
+  <section>
+    <h2>Amendments<span class="hint">every change after activation, disclosed and dated</span></h2>
+    <div id="amendments"></div>
+  </section>
+  <div class="legend" style="margin-top: 24px;">
+    <strong>Reading rules.</strong> Funding is trailing 30-day annualised, longs pay when
+    positive. Every backtest figure is net of fees, the funding band and forgone
+    dividends, on a weekly Friday-close basis. The menu is Binance's 2025–26 selection:
+    absolute levels are upward-biased by construction and the equal-weight basket is the
+    shape that bias flatters most — the shadow exists to replace assumptions with live
+    fills and funding, not to confirm a forecast. Nothing here is investment advice.
+  </div>
 </div>
 
 </div>
 <script>
 const DATA = /*__DATA__*/null;
 
+const CHART_LAYOUT = {
+  paper_bgcolor: 'transparent',
+  plot_bgcolor: '#fafaf8',
+  font: { family: 'DM Sans', size: 11, color: '#4a4a44' },
+  margin: { t: 10, b: 10, l: 10, r: 10 },
+  xaxis: { gridcolor: '#eeeee8', linecolor: '#d5d3ca', linewidth: 1, showgrid: false,
+           tickformat: "%b '%y", dtick: 'M2', tickfont: { size: 11 } },
+  yaxis: { gridcolor: '#f0f0ea', linecolor: '#d5d3ca', linewidth: 1, showgrid: true, gridwidth: 1,
+           side: 'right', tickfont: { size: 11, family: 'JetBrains Mono' } },
+  showlegend: true,
+  legend: { x: 0, y: 1.02, orientation: 'h', font: { size: 11, color: '#2b2b28' }, bgcolor: 'transparent' },
+  hovermode: 'x unified',
+  hoverlabel: { bgcolor: '#fff', bordercolor: '#d5d3ca', font: { size: 11, family: 'DM Sans' } }
+};
+const PLOT_CFG = { displayModeBar: false, responsive: true };
+
 const CLUSTER_COLOURS = {
-  "semis-hardware": "#3266ad", "software-ai": "#7f77dd", "platforms-media": "#185FA5",
-  "consumer": "#0F6E56", "financials": "#854F0B", "crypto-equity": "#993C1D",
-  "health": "#5f8a3c", "industrials-space": "#5F5E5A", "space": "#2f6f8f",
-  "energy": "#a35d2d", "materials": "#8a6d3b", "index-broad": "#444",
-  "country-korea": "#6b4f9e", "country-japan": "#6b4f9e", "country-taiwan": "#6b4f9e",
-  "country-brazil": "#6b4f9e", "etf-other": "#777", "rates": "#777", "commodity": "#b0a48c",
+  "semis-hardware": "#2563eb", "software-ai": "#7c3aed", "platforms-media": "#0891b2",
+  "consumer": "#1a8754", "financials": "#b45309", "crypto-equity": "#be185d",
+  "health": "#22a366", "industrials-space": "#5c5c56", "space": "#0e7490",
+  "energy": "#a93226", "materials": "#92400e", "index-broad": "#1a1a18",
+  "country-korea": "#6d28d9", "country-japan": "#6d28d9", "country-taiwan": "#6d28d9",
+  "country-brazil": "#6d28d9", "etf-other": "#8a8a82", "rates": "#8a8a82", "commodity": "#b0b0a8",
 };
 const fmtPct = v => (v === null || v === undefined) ? "—" : (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
 const fmtTs = iso => iso ? new Date(iso).toLocaleString("en-GB", {day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", timeZone:"Asia/Singapore"}) + " SGT" : "—";
 
+/* ------------------------------ tabs ------------------------------ */
+let chartsDrawn = false;
+document.querySelectorAll('#tabs button').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  if (btn.dataset.tab === 'perf' && !chartsDrawn && DATA.series) { drawCharts(0); chartsDrawn = true; }
+}));
+
+/* --------------------------- book & orders --------------------------- */
 function renderAsof() {
   document.getElementById("asof").textContent =
-    `Built ${fmtTs(DATA.built_at_utc)} · orders as of ${fmtTs(DATA.as_of.orders)} · funding scan ${fmtTs(DATA.as_of.scan)} · study results ${fmtTs(DATA.as_of.results)}`;
+    `built ${fmtTs(DATA.built_at_utc)} · orders ${fmtTs(DATA.as_of.orders)} · funding scan ${fmtTs(DATA.as_of.scan)} · study ${fmtTs(DATA.as_of.results)}`;
 }
-
 function renderShadow() {
   const sb = DATA.shadow_books || {};
   const b = sb.basket || {}, s = sb.smh || {};
   document.getElementById("shadow-cards").innerHTML = `
     <div class="card"><h3>TradFi equity basket <span class="pill">${DATA.orders_mode || "—"}</span></h3>
-      <div class="row"><strong>Established:</strong> ${DATA.n_filled} of ${DATA.n_members} names · book value $${DATA.book_value.toFixed(0)} of $${DATA.book_cap.toFixed(0)}</div>
-      <div class="row"><strong>Target:</strong> $${(DATA.target_usd || 0).toFixed(2)} per name · equity-only per Amendment 1</div>
-      <div class="row"><strong>Triggers:</strong> <span class="${(b.fail_events || 0) ? "danger" : "success"}">${(b.fail_events || 0) ? b.fail_events + " FAIL" : "none breached"}</span></div>
+      <div class="big">$${DATA.book_value.toFixed(0)}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> / $${DATA.book_cap.toFixed(0)}</span></div>
+      <div class="row"><strong>${DATA.n_filled} of ${DATA.n_members}</strong> names established · target $${(DATA.target_usd || 0).toFixed(2)}/name · equity-only (Amendment 1)</div>
+      <div class="row"><strong>Triggers:</strong> <span class="${(b.fail_events || 0) ? "neg" : "pos"}">${(b.fail_events || 0) ? b.fail_events + " FAIL" : "none breached"}</span></div>
     </div>
     <div class="card"><h3>WS17 xyz:SMH shadow <span class="pill">${s.mode || "—"}</span></h3>
-      <div class="row"><strong>Fills logged:</strong> ${s.n_fills_logged ?? "—"} (${s.n_probes_logged ?? "—"} probes; Tue/Fri schedule)</div>
-      <div class="row"><strong>Triggers:</strong> <span class="${(s.fail_events || 0) ? "danger" : "success"}">${(s.fail_events || 0) ? s.fail_events + " FAIL" : "none breached"}</span></div>
+      <div class="row"><strong>Fills:</strong> ${s.n_fills_logged ?? "—"} (${s.n_probes_logged ?? "—"} probes; Tue/Fri schedule + one 5-session hold)</div>
+      <div class="row"><strong>Triggers:</strong> <span class="${(s.fail_events || 0) ? "neg" : "pos"}">${(s.fail_events || 0) ? s.fail_events + " FAIL" : "none breached"}</span></div>
     </div>
     <div class="card"><h3>Combined close-out</h3>
-      <div class="row"><strong>${sb.close_out || "2026-09-13"}</strong> · ${sb.days_to_close_out ?? "—"} days remaining</div>
+      <div class="big">${sb.days_to_close_out ?? "—"}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> days</span></div>
+      <div class="row"><strong>${sb.close_out || "2026-09-13"}</strong> — one sitting, both records.</div>
       <div class="row faint">FAIL-EXECUTION 15bp median fill · FAIL-BAND +6%/yr rolling funding · FAIL-OPS missed windows or margin call at 1×.</div>
     </div>`;
 }
-
 function renderOrders() {
   const rows = DATA.orders || [];
   const t = document.getElementById("tbl-orders");
-  if (!rows.length) { t.innerHTML = '<div class="muted" style="padding:12px;">No orders today.</div>'; return; }
+  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No orders today.</div>'; return; }
   t.innerHTML = `<table><thead><tr><th>Company</th><th>Side</th><th class="num">Qty</th>
     <th class="num">≈USD</th><th class="num">Ref px</th><th class="num">Funding 30d</th><th>Status</th></tr></thead><tbody>` +
     rows.map(o => `<tr>
       <td class="nm">${o.name}<span class="tk">${o.symbol}</span></td>
-      <td class="${o.side === "buy" ? "success" : "danger"}">${o.side}</td>
+      <td class="${o.side === "buy" ? "pos" : "neg"}">${o.side}</td>
       <td class="num">${o.qty}</td><td class="num">$${o.approx_usd}</td>
       <td class="num muted">${o.ref_price}</td>
-      <td class="num ${(o.fund_ann_30d ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(o.fund_ann_30d)}</td>
+      <td class="num ${(o.fund_ann_30d ?? 0) >= 0 ? "neg" : "pos"}">${fmtPct(o.fund_ann_30d)}</td>
       <td>${o.status === "filled" ? '<span class="pill pill-ok">filled</span>' : '<span class="pill">pending</span>'}</td>
     </tr>`).join("") + "</tbody></table>";
 }
-
 function renderBook() {
   const rows = DATA.book || [];
   const t = document.getElementById("tbl-book");
-  if (!rows.length) { t.innerHTML = '<div class="muted" style="padding:12px;">No holdings yet — establishment begins with tranche 1.</div>'; return; }
+  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No holdings yet — establishment begins with tranche 1.</div>'; return; }
   t.innerHTML = `<table><thead><tr><th>Company</th><th class="num">Qty</th><th class="num">Value</th>
     <th class="num">Drift vs target</th><th class="num">Funding 30d</th></tr></thead><tbody>` +
     rows.map(r => `<tr>
       <td class="nm">${r.name}<span class="tk">${r.symbol}</span></td>
       <td class="num">${r.qty}</td><td class="num">$${r.value}</td>
-      <td class="num ${Math.abs(r.drift_pct ?? 0) > 25 ? "danger" : "muted"}">${fmtPct(r.drift_pct)}</td>
-      <td class="num ${(r.fund ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(r.fund)}</td>
+      <td class="num ${Math.abs(r.drift_pct ?? 0) > 25 ? "neg" : "muted"}">${fmtPct(r.drift_pct)}</td>
+      <td class="num ${(r.fund ?? 0) >= 0 ? "neg" : "pos"}">${fmtPct(r.fund)}</td>
     </tr>`).join("") + "</tbody></table>";
 }
 
+/* ------------------------------ universe ------------------------------ */
 let CURRENT_CLUSTER = "all";
 function renderChips() {
   const counts = DATA.clusters;
@@ -188,7 +293,6 @@ function renderChips() {
     CURRENT_CLUSTER = el.dataset.c; renderChips(); renderUniverse();
   }));
 }
-
 function renderClusterBar() {
   const counts = DATA.clusters;
   const total = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -198,7 +302,6 @@ function renderClusterBar() {
   document.getElementById("clusterkey").innerHTML =
     parts.map(([c, n]) => `<span class="sw" style="background:${CLUSTER_COLOURS[c] || "#999"}"></span>${c} ${n}`).join("");
 }
-
 function renderUniverse() {
   const rows = (DATA.universe || []).filter(r =>
     CURRENT_CLUSTER === "all" ? true : r.cluster === CURRENT_CLUSTER);
@@ -209,56 +312,143 @@ function renderUniverse() {
     rows.map(r => `<tr${r.excluded ? ' style="opacity:0.55"' : ""}>
       <td class="nm">${r.name}<span class="tk">${r.base}</span></td>
       <td><span class="badge">${r.cluster}</span></td>
-      <td class="muted">${r.region}</td>
+      <td class="faint">${r.region}</td>
       <td class="num ${r.full_hist ? "muted" : "faint"}">${r.first_bar || "—"}${r.full_hist ? "" : " (short)"}</td>
       <td class="num muted">${r.vol24 != null ? "$" + Math.round(r.vol24) + "M" : "—"}</td>
-      <td class="num ${(r.fund ?? 0) >= 0 ? "danger" : "success"}">${fmtPct(r.fund)}</td>
+      <td class="num ${(r.fund ?? 0) >= 0 ? "neg" : "pos"}">${fmtPct(r.fund)}</td>
       <td>${r.in_book ? '<span class="pill pill-ok">yes</span>' : '<span class="faint">—</span>'}</td>
       <td class="faint">${r.excluded || ""}</td>
     </tr>`).join("") + "</tbody></table>";
 }
 
+/* ------------------------------- charts ------------------------------- */
+function rebase(vals, from) {
+  const base = vals[from];
+  return vals.slice(from).map(v => (v / base - 1) * 100);
+}
+function drawCharts(fromWeeksBack) {
+  const S = DATA.series;
+  const n = S.dates.length;
+  const from = fromWeeksBack ? Math.max(0, n - fromWeeksBack) : 0;
+  const x = S.dates.slice(from);
+
+  Plotly.react('ch-perf', [
+    { x, y: rebase(S.basket_eq_b6, from), name: 'EW basket — equity-only (SHIPS)', line: { color: '#1a8754', width: 4 } },
+    { x, y: rebase(S.basket_b6, from), name: 'EW basket — full menu', line: { color: '#2563eb', width: 1.3 } },
+    { x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 cap=2 (rejected)', line: { color: '#7c3aed', width: 1.3 } },
+    { x, y: rebase(S.primary_b0, from), name: 'Rotation, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+
+  const dd = ser => { let peak = -1e9; return ser.map(v => { peak = Math.max(peak, v); return (v / peak - 1) * 100; }); };
+  Plotly.react('ch-dd', [
+    { x: S.dates, y: dd(S.basket_eq_b6), name: 'EW basket — equity-only', line: { color: '#1a8754', width: 2.5 }, fill: 'tozeroy', fillcolor: 'rgba(26,135,84,0.07)' },
+    { x: S.dates, y: dd(S.primary_b6), name: 'Rotation K=5 cap=2', line: { color: '#7c3aed', width: 1.3 } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%' } }, PLOT_CFG);
+
+  const gateShapes = [];
+  let start = null;
+  S.gated.forEach((g, i) => {
+    if (g && start === null) start = i;
+    if ((!g || i === S.gated.length - 1) && start !== null) {
+      gateShapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0: S.dates[start], x1: S.dates[i], y0: 0, y1: 1,
+                        fillcolor: 'rgba(192,57,43,0.07)', line: { width: 0 } });
+      start = null;
+    }
+  });
+  Plotly.react('ch-breadth', [
+    { x: S.dates, y: S.breadth.map(v => v * 100), name: '% of eligible above the +5% floor', line: { color: '#2563eb', width: 2 } },
+    { x: [S.dates[0], S.dates[S.dates.length - 1]], y: [30, 30], name: '30% gate', mode: 'lines', line: { color: '#c0392b', width: 1.3, dash: 'dash' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 }, shapes: gateShapes,
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', range: [0, 100] } }, PLOT_CFG);
+
+  const v = DATA.verdict.null || {};
+  Plotly.react('ch-null', [
+    { x: S.null_sharpes, type: 'histogram', name: 'random same-shape portfolios',
+      marker: { color: 'rgba(37,99,235,0.35)', line: { color: '#2563eb', width: 0.5 } }, nbinsx: 40 },
+  ], { ...CHART_LAYOUT, showlegend: false, margin: { t: 30, b: 34, l: 10, r: 45 }, hovermode: 'closest',
+       xaxis: { ...CHART_LAYOUT.xaxis, tickformat: '.2f', dtick: 0.2, title: { text: 'net Sharpe, band edge', font: { size: 11 } } },
+       shapes: [
+         { type: 'line', x0: v.strategy_sharpe, x1: v.strategy_sharpe, yref: 'paper', y0: 0, y1: 1, line: { color: '#7c3aed', width: 2.5 } },
+         { type: 'line', x0: v.p90, x1: v.p90, yref: 'paper', y0: 0, y1: 1, line: { color: '#c0beb5', width: 1.3, dash: 'dash' } },
+       ],
+       annotations: [
+         { x: v.strategy_sharpe, y: 1.04, yref: 'paper', text: `rotation ${v.strategy_sharpe} (${v.strategy_percentile}th)`, showarrow: false, font: { size: 11, color: '#7c3aed' } },
+         { x: v.p90, y: 0.92, yref: 'paper', text: 'null p90', showarrow: false, font: { size: 11, color: '#66665e' } },
+       ] }, PLOT_CFG);
+
+  document.getElementById('perf-prov').textContent =
+    `series computed ${fmtTs(DATA.as_of.series)} · net of 10bp RT fees, the +6%/yr funding band and dividends (dotted line: 0% band) · weekly Friday closes, rebased to 0% at the window start`;
+}
+document.querySelectorAll('#perf-periods button').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('#perf-periods button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawCharts(parseInt(btn.dataset.p, 10));
+}));
+
+/* --------------------------- method & decisions --------------------------- */
 function vrow(label, s) {
   if (!s) return "";
   return `<tr><td>${label}</td><td class="num">${s.sharpe >= 0 ? "+" : ""}${s.sharpe?.toFixed(2)}</td>
     <td class="num">${fmtPct(s.cagr != null ? s.cagr * 100 : null)}</td>
     <td class="num">${fmtPct(s.max_dd != null ? s.max_dd * 100 : null)}</td></tr>`;
 }
-
 function renderVerdict() {
   const v = DATA.verdict;
   const n = v.null || {};
   document.getElementById("verdict-text").innerHTML =
-    `<strong>Rotation REJECTED</strong> — the primary cell was never +0.10 ahead of the
-     equal-weight basket across the funding band. <strong>Ranking CONFIRMED real</strong>
-     — ${n.strategy_percentile}th percentile of ${n.n_paths} cost-matched random
-     same-shape selections. <strong>The equal-weight basket SHIPS</strong> — and after
-     Amendment 1 the live book is its equity-only form, whose re-anchor is
-     indistinguishable from the filed row. Split-half ${v.split_half?.first?.sharpe} /
-     ${v.split_half?.second?.sharpe}. The K=10 uncapped observation (+${v.grid_note?.k10_capNone})
-     is future-pre-registration material only.`;
+    `<strong>Rotation REJECTED</strong> — never +0.10 Sharpe ahead of the equal-weight
+     basket across the funding band. <strong>Ranking CONFIRMED real</strong> —
+     ${n.strategy_percentile}th percentile of ${n.n_paths} random same-shape selections.
+     <strong>The equal-weight basket SHIPS</strong>, in its equity-only form after
+     Amendment 1 (re-anchor indistinguishable from the filed row). Split-half
+     ${v.split_half?.first?.sharpe} / ${v.split_half?.second?.sharpe}. The K=10 uncapped
+     cell (+${v.grid_note?.k10_capNone}) is future-pre-registration material only.`;
   let html = `<table><thead><tr><th>Series (net, 1× costs)</th><th class="num">Sharpe</th>
     <th class="num">CAGR</th><th class="num">MaxDD</th></tr></thead><tbody>`;
-  for (const b of v.bands) {
-    html += vrow(`Primary K=5 cap=2 — band ${Math.round(parseFloat(b) * 100)}%`, v.primary[b]);
-  }
-  for (const b of v.bands) {
-    html += vrow(`EW basket (full menu) — band ${Math.round(parseFloat(b) * 100)}%`, v.basket[b]);
-  }
+  for (const b of v.bands) html += vrow(`Rotation K=5 cap=2 — band ${Math.round(parseFloat(b) * 100)}%`, v.primary[b]);
+  for (const b of v.bands) html += vrow(`EW basket (full menu) — band ${Math.round(parseFloat(b) * 100)}%`, v.basket[b]);
   html += vrow("EW basket — band 6%, 2× costs", v.basket_2x_edge);
-  for (const [k, s] of Object.entries(v.equity_anchor || {})) {
+  for (const [k, s] of Object.entries(v.equity_anchor || {}))
     html += vrow(`EW basket EQUITY-ONLY — ${k.replace("band_", "band ").replace("_2x", " 2× costs")}`, s);
-  }
   html += "</tbody></table>";
   document.getElementById("tbl-verdict").innerHTML = html;
   document.getElementById("verdict-prov").textContent =
-    `Null p50 ${n.p50} · p90 ${n.p90} · strategy ${n.strategy_sharpe} (seed frozen). ` +
-    `Weekly Friday-close basis, 2018-01 onward; fees + funding band + dividends charged; ` +
-    `results computed ${fmtTs(DATA.as_of.results)}.`;
+    `null p50 ${n.p50} · p90 ${n.p90} · rotation ${n.strategy_sharpe} (frozen seed) · results ${fmtTs(DATA.as_of.results)}`;
+}
+function renderRules() {
+  document.getElementById("rules").innerHTML = Object.entries(DATA.rules)
+    .map(([k, txt]) => `<div class="rule-card"><strong>${k.replace(/_/g, " ")}</strong>${txt}</div>`).join("");
+}
+function renderDecisions() {
+  const rows = DATA.decisions || [];
+  const t = document.getElementById("tbl-decisions");
+  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No evaluator runs logged yet.</div>'; return; }
+  t.innerHTML = `<table><thead><tr><th>Run (SGT)</th><th>Mode</th><th class="num">Orders</th>
+    <th class="num">Held</th><th class="num">Book</th><th>Skips, with the rule that caused them</th></tr></thead><tbody>` +
+    rows.map(r => {
+      const skips = []
+        .concat((r.skipped_funding || []).map(s => `funding rule: ${s}`))
+        .concat((r.skipped_no_price || []).map(s => `no price: ${s}`));
+      return `<tr>
+        <td class="num">${fmtTs(r.ts_utc)}</td>
+        <td>${r.event === "OK" ? `<span class="pill">${r.mode}</span>` : `<span class="pill" style="background:var(--r-bg2);color:var(--r-text);border-color:transparent;">${r.event}</span>`}</td>
+        <td class="num">${r.n_orders ?? "—"}</td>
+        <td class="num">${r.n_held ?? "—"}${r.n_members ? '<span class="faint"> / ' + r.n_members + "</span>" : ""}</td>
+        <td class="num">${r.book_value_usd != null ? "$" + r.book_value_usd : "—"}</td>
+        <td class="faint">${skips.length ? skips.join("; ") : (r.reason || "—")}</td>
+      </tr>`;
+    }).join("") + "</tbody></table>";
+}
+function renderAmendments() {
+  document.getElementById("amendments").innerHTML = DATA.amendments
+    .map(a => `<div class="rule-card" style="border-left-color: var(--a);"><strong>${a.date}</strong>${a.what}</div>`).join("");
 }
 
 renderAsof(); renderShadow(); renderOrders(); renderBook();
-renderChips(); renderClusterBar(); renderUniverse(); renderVerdict();
+renderChips(); renderClusterBar(); renderUniverse();
+renderVerdict(); renderRules(); renderDecisions(); renderAmendments();
 </script>
 </body>
 </html>

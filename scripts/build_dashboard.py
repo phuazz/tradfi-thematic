@@ -129,12 +129,16 @@ def main() -> int:
         if not r["excluded"]:
             clusters[r["cluster"]] = clusters.get(r["cluster"], 0) + 1
 
+    series = rj(ROOT / "data" / "phase2_series.json", None)
+    decisions = [r for r in log if r.get("type") == "ops"][::-1][:60]
+
     data = {
         "built_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of": {
             "orders": orders.get("ts_utc"),
             "scan": scan.get("generated_at_utc"),
             "results": results.get("computed_at_utc"),
+            "series": (series or {}).get("computed_at_utc"),
         },
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
@@ -144,6 +148,23 @@ def main() -> int:
         "shadow_books": scan.get("shadow_books"),
         "universe": uni, "clusters": clusters,
         "verdict": verdict,
+        "series": series,
+        "decisions": decisions,
+        "rules": {
+            "signal": "distance of underlying adjusted close above its own 200-day moving average (P/MA200 − 1), computed on the underlying, traded via the perp",
+            "floor": "+5% above the MA to qualify (the deployed sleeve-C floor, inherited, not fitted)",
+            "gate": "if fewer than 30% of the eligible universe clears the floor, the whole sleeve goes to cash for the week",
+            "cadence": "signal on the Thursday US close, execution at the Friday close — no look-ahead by construction, pinned by test",
+            "basket": "the shipping product: every eligible name equal-weighted weekly; selection had to beat this by +0.10 Sharpe across the funding band and did not",
+            "funding_rule": "live only: a name whose trailing 30-day funding exceeds +30%/yr is not bought that week (the scanner's deployed threshold; insurance, not edge — it cannot be backtested because the contracts are months old)",
+            "maintenance": "Saturday window: trade only names drifted beyond ±25% of target, plus entries of newly eligible names and exits of delisted ones",
+            "costs": "every backtest figure is net of 10bp round-trip fees (stressed 2× and 4×), a {0,+3,+6}%/yr funding band on invested days, and forgone dividends",
+        },
+        "amendments": [
+            {"date": "2026-08-16", "what": "Countersign and activation — Option A, US$5,000 book cap at 1× leverage; establishment tranches of 30 in the 07:30–09:30 SGT window."},
+            {"date": "2026-08-16", "what": "Amendment 1 (pre-fills): EQUITY-ONLY — the commodity cluster excluded on owner instruction; membership 59 → 51; re-anchor indistinguishable from the filed full-menu basket, so the shipping bar carries."},
+            {"date": "2026-08-17", "what": "Published to GitHub Pages on owner instruction; the evaluator pushes each morning's rebuild."},
+        ],
     }
 
     template = (ROOT / "dashboard_template.html").read_text(encoding="utf-8")
