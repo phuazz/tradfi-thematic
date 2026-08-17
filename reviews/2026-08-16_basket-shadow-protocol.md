@@ -39,6 +39,19 @@ shadow exists to measure. **Liquidity gate at establishment:** membership in
 the scanner's liquid set over the trailing seven days' scans (rolling union),
 so weekend-window scans cannot wrongly exclude weekday-liquid names.
 
+## Amendment 1 (2026-08-16, before any fill was logged) — EQUITY-ONLY membership
+
+Owner instruction at end of session: "focus on tradfi equity only." Membership
+narrows to equity underlyings — the commodity cluster (gold, silver, platinum,
+palladium, WTI, Brent, copper, natural gas) is excluded from the live basket.
+No fill had been logged, so nothing unwinds; tranche 1 regenerates tonight.
+Disclosed divergence: the FILED bar-2 verdict was computed on the full menu
+including commodities; the equity-only basket is re-anchored by a supplementary
+engine run (same frozen cost model, no parameters to tune in an equal-weight
+basket) recorded in the memo, and the register record's tested object stands
+as filed. Display names accompany tickers on every order list from this
+amendment onward.
+
 ## 3. Mechanics (frozen)
 
 - **Establishment:** orders placed manually across ≤5 sessions in the WS17

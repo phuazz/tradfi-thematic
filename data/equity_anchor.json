@@ -1,0 +1,42 @@
+{
+ "excluded": [
+  "BZ",
+  "CL",
+  "COPPER",
+  "NATGAS",
+  "XAG",
+  "XAU",
+  "XPD",
+  "XPT"
+ ],
+ "results": {
+  "band_0": {
+   "sharpe": 1.185,
+   "cagr": 0.2933,
+   "total_return": 8.216,
+   "max_dd": -0.3873,
+   "n_weeks": 449
+  },
+  "band_0.03": {
+   "sharpe": 1.062,
+   "cagr": 0.2554,
+   "total_return": 6.1254,
+   "max_dd": -0.4045,
+   "n_weeks": 449
+  },
+  "band_0.06": {
+   "sharpe": 0.938,
+   "cagr": 0.2185,
+   "total_return": 4.5083,
+   "max_dd": -0.4213,
+   "n_weeks": 449
+  },
+  "band_0.06_2x": {
+   "sharpe": 0.938,
+   "cagr": 0.2183,
+   "total_return": 4.502,
+   "max_dd": -0.4213,
+   "n_weeks": 449
+  }
+ }
+}

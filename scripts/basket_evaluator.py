@@ -47,6 +47,7 @@ ORDER_LIST = PROJECT_ROOT / "data" / "order_list_today.json"
 HEARTBEAT = PROJECT_ROOT / "logs" / "last_success.txt"
 
 BOOK_CAP_USD = 5000.0           # owner, 2026-08-16, Option A
+EQUITY_ONLY = True              # Amendment 1, 2026-08-16: commodity cluster excluded
 TRANCHE_SIZE = 30
 DRIFT_BAND = 0.25               # maintenance only beyond +/-25% of target
 LIQUID_WINDOW_DAYS = 7
@@ -141,13 +142,16 @@ def main() -> int:
 
     # Establishment-eligible: prereg-eligible base whose perp trades, is in the
     # rolling liquid union, and has a contract filter row.
-    members = []
+    members, names = [], {}
     for base, e in sorted(umap.items()):
         if e["status"] != "verified" or e["levered_etp"] or base in prereg.EXPLICIT_DROPS:
+            continue
+        if EQUITY_ONLY and e.get("cluster") == "commodity":
             continue
         sym = base + "USDT"
         if sym in filters and sym in liquid:
             members.append(sym)
+            names[sym] = e.get("vendor_name") or (e.get("announced_name") or base).split("—")[0].strip()
     n = len(members)
     target_usd = BOOK_CAP_USD / n if n else 0.0
 
@@ -171,7 +175,8 @@ def main() -> int:
         while q * px < f["min_notional"]:
             q += float(f["step_size"])
         fund = fund_of(sym)
-        return {"symbol": sym, "side": side, "qty": round(q, 8),
+        return {"symbol": sym, "name": names.get(sym, sym), "side": side,
+                "qty": round(q, 8),
                 "approx_usd": round(q * px, 2), "ref_price": px,
                 "ref_price_asof": price_asof.get(sym),
                 "fund_ann_30d": fund}
@@ -225,7 +230,7 @@ def main() -> int:
     HEARTBEAT.write_text(stamp, encoding="utf-8")
 
     if orders:
-        body = "\n".join(f"{o['side']:>4} {o['symbol']:<16} qty {o['qty']} (~${o['approx_usd']})"
+        body = "\n".join(f"{o['side']:>4} {o['name'][:34]:<34} [{o['symbol']}] qty {o['qty']} (~${o['approx_usd']})"
                          for o in orders)
         if skipped_funding:
             body += "\nSkipped by +30%/yr funding rule: " + ", ".join(skipped_funding)
