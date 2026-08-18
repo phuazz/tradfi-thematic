@@ -238,8 +238,19 @@ def main() -> int:
             body += "\nSkipped by +30%/yr funding rule: " + ", ".join(skipped_funding)
         send_alert(f"[basket shadow] {mode}: {len(orders)} orders", body)
 
-    # Rebuild the local names-first dashboard so it is fresh before the
-    # execution window — fail-open, the evaluation itself must never die here.
+    # Saturday: refresh the underlying panel and the chart series before the
+    # dashboard rebuild (protocol section 4 — weekly data refresh). Fail-open.
+    if is_saturday:
+        for script, tmo in (("scripts/fetch_underlyings.py", 900),
+                            ("scripts/write_name_series.py", 300),
+                            ("scripts/persist_series.py", 900)):
+            try:
+                subprocess.run([sys.executable, script], cwd=PROJECT_ROOT,
+                               capture_output=True, timeout=tmo)
+            except Exception:  # noqa: BLE001
+                pass
+    # Rebuild the names-first dashboard so it is fresh before the execution
+    # window — fail-open, the evaluation itself must never die here.
     try:
         subprocess.run([sys.executable, "scripts/build_dashboard.py"],
                        cwd=PROJECT_ROOT, capture_output=True, timeout=120)

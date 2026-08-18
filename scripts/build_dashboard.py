@@ -130,6 +130,7 @@ def main() -> int:
             clusters[r["cluster"]] = clusters.get(r["cluster"], 0) + 1
 
     series = rj(ROOT / "data" / "phase2_series.json", None)
+    name_series = rj(ROOT / "data" / "name_series.json", None)
     decisions = [r for r in log if r.get("type") == "ops"][::-1][:60]
 
     data = {
@@ -149,6 +150,7 @@ def main() -> int:
         "universe": uni, "clusters": clusters,
         "verdict": verdict,
         "series": series,
+        "name_series": name_series,
         "decisions": decisions,
         "rules": {
             "signal": "distance of underlying adjusted close above its own 200-day moving average (P/MA200 − 1), computed on the underlying, traded via the perp",

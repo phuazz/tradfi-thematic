@@ -88,6 +88,22 @@ td.num { font-family: var(--mono); font-size: 12px; }
 .rule-card { background: var(--bg2); border: 1px solid var(--bd); border-left: 3px solid var(--b); border-radius: var(--radius); padding: 10px 14px; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
 .rule-card strong { color: var(--t1); text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; display: block; margin-bottom: 2px; }
 @media (max-width: 800px) { .container { padding: 14px; } .masthead h1 { font-size: 26px; } .chart { height: 300px; } }
+.nm.clickable { cursor: pointer; }
+.nm.clickable:hover { color: var(--b-text); text-decoration: underline; }
+.modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.45); z-index: 50; }
+.modal-backdrop.open { display: block; }
+.modal { position: fixed; inset: 4vh 4vw; background: var(--bg); border: 1px solid var(--bd2);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg, 0 10px 15px rgba(0,0,0,0.1));
+  z-index: 51; display: flex; flex-direction: column; overflow: hidden; }
+.modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 14px 18px 10px; border-bottom: 1px solid var(--bd); background: var(--bg2); }
+.modal-head h3 { margin: 0; font-size: 17px; font-weight: 700; }
+.modal-meta { font-size: 12px; color: var(--t2); margin-top: 3px; }
+.modal-close { min-width: 44px; min-height: 44px; border: 1px solid var(--bd); border-radius: 8px;
+  background: var(--bg2); font-size: 18px; cursor: pointer; color: var(--t2); font-family: inherit; }
+.modal-body { flex: 1; padding: 10px 14px 14px; min-height: 0; }
+#ch-name { width: 100%; height: 100%; min-height: 260px; }
+@media (max-width: 800px) { .modal { inset: 2vh 3vw; } }
 </style>
 </head>
 <body>
@@ -188,6 +204,20 @@ td.num { font-family: var(--mono); font-size: 12px; }
 </div>
 
 </div>
+
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <h3 id="modal-title"></h3>
+        <div class="modal-meta" id="modal-meta"></div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body"><div id="ch-name"></div></div>
+  </div>
+</div>
+
 <script>
 const DATA = /*__DATA__*/null;
 
@@ -259,7 +289,7 @@ function renderOrders() {
   t.innerHTML = `<table><thead><tr><th>Company</th><th>Side</th><th class="num">Qty</th>
     <th class="num">≈USD</th><th class="num">Ref px</th><th class="num">Funding 30d</th><th>Status</th></tr></thead><tbody>` +
     rows.map(o => `<tr>
-      <td class="nm">${o.name}<span class="tk">${o.symbol}</span></td>
+      <td class="nm clickable" data-base="${o.symbol.replace(/USDT$/, "")}">${o.name}<span class="tk">${o.symbol}</span></td>
       <td class="${o.side === "buy" ? "pos" : "neg"}">${o.side}</td>
       <td class="num">${o.qty}</td><td class="num">$${o.approx_usd}</td>
       <td class="num muted">${o.ref_price}</td>
@@ -274,7 +304,7 @@ function renderBook() {
   t.innerHTML = `<table><thead><tr><th>Company</th><th class="num">Qty</th><th class="num">Value</th>
     <th class="num">Drift vs target</th><th class="num">Funding 30d</th></tr></thead><tbody>` +
     rows.map(r => `<tr>
-      <td class="nm">${r.name}<span class="tk">${r.symbol}</span></td>
+      <td class="nm clickable" data-base="${r.symbol.replace(/USDT$/, "")}">${r.name}<span class="tk">${r.symbol}</span></td>
       <td class="num">${r.qty}</td><td class="num">$${r.value}</td>
       <td class="num ${Math.abs(r.drift_pct ?? 0) > 25 ? "neg" : "muted"}">${fmtPct(r.drift_pct)}</td>
       <td class="num ${(r.fund ?? 0) >= 0 ? "neg" : "pos"}">${fmtPct(r.fund)}</td>
@@ -310,7 +340,7 @@ function renderUniverse() {
       <th class="num">History from</th><th class="num">Perp vol 24h</th><th class="num">Funding 30d</th>
       <th>In book</th><th>Excluded</th></tr></thead><tbody>` +
     rows.map(r => `<tr${r.excluded ? ' style="opacity:0.55"' : ""}>
-      <td class="nm">${r.name}<span class="tk">${r.base}</span></td>
+      <td class="nm clickable" data-base="${r.base}">${r.name}<span class="tk">${r.base}</span></td>
       <td><span class="badge">${r.cluster}</span></td>
       <td class="faint">${r.region}</td>
       <td class="num ${r.full_hist ? "muted" : "faint"}">${r.first_bar || "—"}${r.full_hist ? "" : " (short)"}</td>
@@ -445,6 +475,47 @@ function renderAmendments() {
   document.getElementById("amendments").innerHTML = DATA.amendments
     .map(a => `<div class="rule-card" style="border-left-color: var(--a);"><strong>${a.date}</strong>${a.what}</div>`).join("");
 }
+
+/* ------------------------ per-name click-through ------------------------ */
+function openName(base) {
+  const NS = DATA.name_series;
+  if (!NS || !NS.px[base]) return;
+  const u = (DATA.universe || []).find(r => r.base === base) || {};
+  document.getElementById('modal-title').textContent = u.name || base;
+  document.getElementById('modal-meta').textContent =
+    `${base} · ${u.cluster || '—'} · ${u.region || '—'} · funding ${fmtPct(u.fund)} · ` +
+    `${u.in_book ? 'in the book' : 'not held'}${u.excluded ? ' · ' + u.excluded : ''}`;
+  document.getElementById('modal-backdrop').classList.add('open');
+
+  const px = NS.px[base], ma = NS.ma[base];
+  const floor = ma.map(v => v == null ? null : v * (1 + 0.05));
+  const last = px[px.length - 1], lastMa = ma[ma.length - 1];
+  const sig = (last != null && lastMa != null) ? (last / lastMa - 1) * 100 : null;
+  Plotly.react('ch-name', [
+    { x: NS.dates, y: px, name: 'weekly close (signal basis)', line: { color: '#2563eb', width: 2.5 } },
+    { x: NS.dates, y: ma, name: 'MA200', line: { color: '#b45309', width: 1.5 } },
+    { x: NS.dates, y: floor, name: '+5% floor', line: { color: '#1a8754', width: 1.3, dash: 'dash' } },
+  ], { ...CHART_LAYOUT, margin: { t: 34, b: 30, l: 10, r: 55 },
+       annotations: sig == null ? [] : [{
+         x: 1.0, xref: 'paper', y: last, xanchor: 'left', xshift: 4,
+         text: `${sig >= 0 ? '+' : ''}${sig.toFixed(1)}% vs MA`, showarrow: false,
+         font: { size: 11, color: sig > 5 ? '#146c43' : '#a93226' },
+         bgcolor: sig > 5 ? 'rgba(26,135,84,0.14)' : 'rgba(192,57,43,0.14)',
+       }] }, PLOT_CFG);
+}
+document.getElementById('modal-close').addEventListener('click', () =>
+  document.getElementById('modal-backdrop').classList.remove('open'));
+document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('modal-backdrop').classList.remove('open');
+});
+// Delegate clicks from every table: any .nm cell carrying data-base opens it.
+document.addEventListener('click', (e) => {
+  const cell = e.target.closest('.nm[data-base]');
+  if (cell) openName(cell.dataset.base);
+});
 
 renderAsof(); renderShadow(); renderOrders(); renderBook();
 renderChips(); renderClusterBar(); renderUniverse();
