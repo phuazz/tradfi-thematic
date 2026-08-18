@@ -214,7 +214,18 @@ td.num { font-family: var(--mono); font-size: 12px; }
       </div>
       <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
     </div>
-    <div class="modal-body"><div id="ch-name"></div></div>
+    <div class="modal-body">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:8px;">
+        <div class="period-selector" id="name-periods">
+          <button data-p="52">1Y</button><button data-p="156" class="active">3Y</button><button data-p="0">MAX</button>
+        </div>
+        <div class="period-selector" id="name-scale">
+          <button data-s="linear">Lin</button><button data-s="log">Log</button>
+        </div>
+        <span class="faint">green shading = qualifies (close above MA200 +5%)</span>
+      </div>
+      <div id="ch-name"></div>
+    </div>
   </div>
 </div>
 
@@ -368,6 +379,7 @@ function drawCharts(fromWeeksBack) {
     { x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 cap=2 (rejected)', line: { color: '#7c3aed', width: 1.3 } },
     { x, y: rebase(S.primary_b0, from), name: 'Rotation, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } },
   ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
        yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
 
   const dd = ser => { let peak = -1e9; return ser.map(v => { peak = Math.max(peak, v); return (v / peak - 1) * 100; }); };
@@ -375,6 +387,7 @@ function drawCharts(fromWeeksBack) {
     { x: S.dates, y: dd(S.basket_eq_b6), name: 'EW basket — equity-only', line: { color: '#1a8754', width: 2.5 }, fill: 'tozeroy', fillcolor: 'rgba(26,135,84,0.07)' },
     { x: S.dates, y: dd(S.primary_b6), name: 'Rotation K=5 cap=2', line: { color: '#7c3aed', width: 1.3 } },
   ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(S.dates.length) },
        yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%' } }, PLOT_CFG);
 
   const gateShapes = [];
@@ -391,6 +404,7 @@ function drawCharts(fromWeeksBack) {
     { x: S.dates, y: S.breadth.map(v => v * 100), name: '% of eligible above the +5% floor', line: { color: '#2563eb', width: 2 } },
     { x: [S.dates[0], S.dates[S.dates.length - 1]], y: [30, 30], name: '30% gate', mode: 'lines', line: { color: '#c0392b', width: 1.3, dash: 'dash' } },
   ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 }, shapes: gateShapes,
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(S.dates.length) },
        yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', range: [0, 100] } }, PLOT_CFG);
 
   const v = DATA.verdict.null || {};
@@ -477,32 +491,78 @@ function renderAmendments() {
 }
 
 /* ------------------------ per-name click-through ------------------------ */
+// Adaptive x-ticks: two-month labels crowd unreadably past ~1.5 years; step to
+// half-yearly, then yearly, keeping the house "%b '%y" format throughout.
+function adaptiveDtick(nWeeks) {
+  if (nWeeks <= 78) return 'M2';
+  if (nWeeks <= 200) return 'M6';
+  return 'M12';
+}
+let nameBase = null, namePeriod = 156, nameScale = null;
+function drawNameChart() {
+  const NS = DATA.name_series;
+  if (!NS || !nameBase || !NS.px[nameBase]) return;
+  const n = NS.dates.length;
+  const from = namePeriod ? Math.max(0, n - namePeriod) : 0;
+  const x = NS.dates.slice(from);
+  const px = NS.px[nameBase].slice(from);
+  const ma = NS.ma[nameBase].slice(from);
+
+  // Qualification shading: contiguous stretches where close > MA200 x 1.05.
+  const shapes = [];
+  let start = null;
+  for (let i = 0; i < px.length; i++) {
+    const q = px[i] != null && ma[i] != null && px[i] > ma[i] * 1.05;
+    if (q && start === null) start = i;
+    if ((!q || i === px.length - 1) && start !== null) {
+      shapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0: x[start], x1: x[i], y0: 0, y1: 1,
+                    fillcolor: 'rgba(26,135,84,0.08)', line: { width: 0 } });
+      start = null;
+    }
+  }
+  const finite = px.filter(v => v != null && v > 0);
+  const autoLog = finite.length && (Math.max(...finite) / Math.min(...finite)) > 8;
+  const scale = nameScale || (autoLog ? 'log' : 'linear');
+  document.querySelectorAll('#name-scale button').forEach(b =>
+    b.classList.toggle('active', b.dataset.s === scale));
+
+  Plotly.react('ch-name', [
+    { x, y: px, name: 'weekly close (signal basis)', line: { color: '#2563eb', width: 2.5 } },
+    { x, y: ma, name: 'MA200', line: { color: '#b45309', width: 1.5 } },
+  ], { ...CHART_LAYOUT, margin: { t: 34, b: 34, l: 10, r: 55 }, shapes,
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(px.length) },
+       yaxis: { ...CHART_LAYOUT.yaxis, type: scale } }, PLOT_CFG);
+}
 function openName(base) {
   const NS = DATA.name_series;
   if (!NS || !NS.px[base]) return;
+  nameBase = base; nameScale = null; namePeriod = 156;
+  document.querySelectorAll('#name-periods button').forEach(b =>
+    b.classList.toggle('active', b.dataset.p === '156'));
   const u = (DATA.universe || []).find(r => r.base === base) || {};
   document.getElementById('modal-title').textContent = u.name || base;
-  document.getElementById('modal-meta').textContent =
-    `${base} · ${u.cluster || '—'} · ${u.region || '—'} · funding ${fmtPct(u.fund)} · ` +
-    `${u.in_book ? 'in the book' : 'not held'}${u.excluded ? ' · ' + u.excluded : ''}`;
-  document.getElementById('modal-backdrop').classList.add('open');
-
   const px = NS.px[base], ma = NS.ma[base];
-  const floor = ma.map(v => v == null ? null : v * (1 + 0.05));
   const last = px[px.length - 1], lastMa = ma[ma.length - 1];
   const sig = (last != null && lastMa != null) ? (last / lastMa - 1) * 100 : null;
-  Plotly.react('ch-name', [
-    { x: NS.dates, y: px, name: 'weekly close (signal basis)', line: { color: '#2563eb', width: 2.5 } },
-    { x: NS.dates, y: ma, name: 'MA200', line: { color: '#b45309', width: 1.5 } },
-    { x: NS.dates, y: floor, name: '+5% floor', line: { color: '#1a8754', width: 1.3, dash: 'dash' } },
-  ], { ...CHART_LAYOUT, margin: { t: 34, b: 30, l: 10, r: 55 },
-       annotations: sig == null ? [] : [{
-         x: 1.0, xref: 'paper', y: last, xanchor: 'left', xshift: 4,
-         text: `${sig >= 0 ? '+' : ''}${sig.toFixed(1)}% vs MA`, showarrow: false,
-         font: { size: 11, color: sig > 5 ? '#146c43' : '#a93226' },
-         bgcolor: sig > 5 ? 'rgba(26,135,84,0.14)' : 'rgba(192,57,43,0.14)',
-       }] }, PLOT_CFG);
+  const badge = sig == null ? '' : (sig > 5
+    ? `<span class="pill" style="background:var(--g-bg2);color:var(--g-text);border-color:transparent;">+${sig.toFixed(1)}% above MA — qualifies</span>`
+    : `<span class="pill" style="background:var(--r-bg2);color:var(--r-text);border-color:transparent;">${sig >= 0 ? '+' : ''}${sig.toFixed(1)}% vs MA — below the +5% floor</span>`);
+  document.getElementById('modal-meta').innerHTML =
+    `${base} · ${u.cluster || '—'} · ${u.region || '—'} · funding ${fmtPct(u.fund)} · ` +
+    `${u.in_book ? 'in the book' : 'not held'}${u.excluded ? ' · ' + u.excluded : ''} &nbsp; ${badge}`;
+  document.getElementById('modal-backdrop').classList.add('open');
+  drawNameChart();
 }
+document.querySelectorAll('#name-periods button').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('#name-periods button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  namePeriod = parseInt(btn.dataset.p, 10);
+  drawNameChart();
+}));
+document.querySelectorAll('#name-scale button').forEach(btn => btn.addEventListener('click', () => {
+  nameScale = btn.dataset.s;
+  drawNameChart();
+}));
 document.getElementById('modal-close').addEventListener('click', () =>
   document.getElementById('modal-backdrop').classList.remove('open'));
 document.getElementById('modal-backdrop').addEventListener('click', (e) => {
