@@ -1,5 +1,5 @@
 {
- "ts_utc": "2026-08-17T01:08:16.806850+00:00",
+ "ts_utc": "2026-08-18T03:16:08.892082+00:00",
  "mode": "establishment",
  "book_cap_usd": 5000.0,
  "n_members": 51,
@@ -13,20 +13,20 @@
    "name": "Applied Optoelectronics, Inc.",
    "side": "buy",
    "qty": 0.63,
-   "approx_usd": 96.88,
-   "ref_price": 153.78,
-   "ref_price_asof": "2026-08-16T15:12:42.027084+00:00",
-   "fund_ann_30d": 5.9
+   "approx_usd": 97.02,
+   "ref_price": 154.0,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 6.61
   },
   {
    "symbol": "AAPLUSDT",
    "name": "Apple Inc.",
    "side": "buy",
-   "qty": 0.32,
-   "approx_usd": 98.02,
-   "ref_price": 306.3,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.31,
+   "approx_usd": 95.49,
+   "ref_price": 308.03,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 0.24
   },
   {
    "symbol": "AMATUSDT",
@@ -43,10 +43,10 @@
    "name": "Advanced Micro Devices, Inc.",
    "side": "buy",
    "qty": 0.19,
-   "approx_usd": 98.03,
-   "ref_price": 515.94,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 97.24,
+   "ref_price": 511.77,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 1.11
   },
   {
    "symbol": "AMZNUSDT",
@@ -82,31 +82,31 @@
    "symbol": "AXTIUSDT",
    "name": "AXT Inc",
    "side": "buy",
-   "qty": 1.19,
-   "approx_usd": 97.6,
-   "ref_price": 82.02,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 1.15,
+   "approx_usd": 97.82,
+   "ref_price": 85.06,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 10.3
   },
   {
    "symbol": "BABAUSDT",
    "name": "Alibaba Group Holding Limited",
    "side": "buy",
-   "qty": 0.78,
-   "approx_usd": 96.83,
-   "ref_price": 124.14,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.77,
+   "approx_usd": 97.48,
+   "ref_price": 126.6,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 1.36
   },
   {
    "symbol": "BEUSDT",
    "name": "Bloom Energy Corporation",
    "side": "buy",
-   "qty": 0.42,
-   "approx_usd": 97.24,
-   "ref_price": 231.52,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.4,
+   "approx_usd": 96.08,
+   "ref_price": 240.19,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 4.32
   },
   {
    "symbol": "BMNRUSDT",
@@ -122,80 +122,80 @@
    "symbol": "CBRSUSDT",
    "name": "Cerebras Systems Inc.",
    "side": "buy",
-   "qty": 0.44,
-   "approx_usd": 96.49,
-   "ref_price": 219.29,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.43,
+   "approx_usd": 96.51,
+   "ref_price": 224.44,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": -1.47
   },
   {
    "symbol": "COHRUSDT",
    "name": "Coherent Corp.",
    "side": "buy",
    "qty": 0.29,
-   "approx_usd": 94.99,
-   "ref_price": 327.56,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 96.53,
+   "ref_price": 332.87,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 5.03
   },
   {
    "symbol": "COINUSDT",
    "name": "Coinbase Global, Inc.",
    "side": "buy",
    "qty": 0.65,
-   "approx_usd": 96.95,
-   "ref_price": 149.16,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 97.54,
+   "ref_price": 150.06,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 4.09
   },
   {
    "symbol": "CRCLUSDT",
    "name": "Circle Internet Group, Inc.",
    "side": "buy",
-   "qty": 1.36,
+   "qty": 1.35,
    "approx_usd": 97.47,
-   "ref_price": 71.67,
-   "ref_price_asof": "2026-08-17T00:05:16.558806+00:00",
-   "fund_ann_30d": 3.01
+   "ref_price": 72.2,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 3.57
   },
   {
    "symbol": "CRWVUSDT",
    "name": "CoreWeave, Inc.",
    "side": "buy",
-   "qty": 0.93,
-   "approx_usd": 97.92,
-   "ref_price": 105.29,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.91,
+   "approx_usd": 97.16,
+   "ref_price": 106.77,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 0.72
   },
   {
    "symbol": "DELLUSDT",
    "name": "Dell Technologies Inc.",
    "side": "buy",
    "qty": 0.19,
-   "approx_usd": 93.55,
-   "ref_price": 492.35,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 94.48,
+   "ref_price": 497.25,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": -4.47
   },
   {
    "symbol": "DRAMUSDT",
    "name": "Roundhill Memory ETF",
    "side": "buy",
-   "qty": 1.7,
-   "approx_usd": 97.82,
-   "ref_price": 57.54,
-   "ref_price_asof": "2026-08-17T00:05:16.558806+00:00",
+   "qty": 1.63,
+   "approx_usd": 97.75,
+   "ref_price": 59.97,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
    "fund_ann_30d": 5.48
   },
   {
    "symbol": "EWYUSDT",
    "name": "iShares MSCI South Korea ETF",
    "side": "buy",
-   "qty": 0.54,
-   "approx_usd": 97.5,
-   "ref_price": 180.56,
-   "ref_price_asof": "2026-08-17T00:05:16.558806+00:00",
+   "qty": 0.53,
+   "approx_usd": 97.73,
+   "ref_price": 184.4,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
    "fund_ann_30d": 6.11
   },
   {
@@ -213,10 +213,10 @@
    "name": "Alphabet Inc.",
    "side": "buy",
    "qty": 0.28,
-   "approx_usd": 97.76,
-   "ref_price": 349.13,
-   "ref_price_asof": "2026-08-17T00:05:16.558806+00:00",
-   "fund_ann_30d": 4.54
+   "approx_usd": 97.34,
+   "ref_price": 347.66,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 4.82
   },
   {
    "symbol": "HOODUSDT",
@@ -243,10 +243,10 @@
    "name": "Intel Corporation",
    "side": "buy",
    "qty": 0.94,
-   "approx_usd": 98.03,
-   "ref_price": 104.29,
-   "ref_price_asof": "2026-08-17T00:05:16.558806+00:00",
-   "fund_ann_30d": 2.02
+   "approx_usd": 97.54,
+   "ref_price": 103.77,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 2.47
   },
   {
    "symbol": "IRENUSDT",
@@ -263,10 +263,10 @@
    "name": "Lumentum Holdings Inc.",
    "side": "buy",
    "qty": 0.1,
-   "approx_usd": 92.64,
-   "ref_price": 926.38,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 94.34,
+   "ref_price": 943.38,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 1.99
   },
   {
    "symbol": "METAUSDT",
@@ -282,31 +282,31 @@
    "symbol": "MINIMAXUSDT",
    "name": "MINIMAX-W",
    "side": "buy",
-   "qty": 2.34,
-   "approx_usd": 97.88,
-   "ref_price": 41.83,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 2.3,
+   "approx_usd": 97.96,
+   "ref_price": 42.59,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 22.64
   },
   {
    "symbol": "MRVLUSDT",
    "name": "Marvell Technology, Inc.",
    "side": "buy",
-   "qty": 0.44,
-   "approx_usd": 97.59,
-   "ref_price": 221.8,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "qty": 0.43,
+   "approx_usd": 97.23,
+   "ref_price": 226.11,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": 3.11
   },
   {
    "symbol": "MSFTUSDT",
    "name": "Microsoft Corporation",
    "side": "buy",
    "qty": 0.19,
-   "approx_usd": 94.18,
-   "ref_price": 495.7,
-   "ref_price_asof": "2026-08-15T00:02:59.317259+00:00",
-   "fund_ann_30d": null
+   "approx_usd": 93.71,
+   "ref_price": 493.21,
+   "ref_price_asof": "2026-08-17T12:21:12.319767+00:00",
+   "fund_ann_30d": -0.05
   }
  ],
  "skipped_funding_rule": [],
