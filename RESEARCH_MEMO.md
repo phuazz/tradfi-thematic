@@ -5,6 +5,26 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-21 — KT-2 CONFIRMATION: S1 FAIL on the drawdown bound. The family closes.
+
+Single run on the held-out Russell panel (1,076 weeks, GICS arm after the
+clustering degeneracy guard tripped 20/83 formations). Bars read exactly:
+**(a) Calmar margin passed everywhere** (+0.177/+0.159/+0.144 vs +0.05 bar);
+**(b) Sharpe floor passed everywhere** (+0.586/+0.497/+0.407 vs
++0.409/+0.265/+0.122); **(d) null 100.0th pct** (median −0.048); **(c) the
+drawdown bound FAILED** — DD ratios 0.74/0.77/0.79 at 1× (bar ≤ 0.75), and
+the fail stands at 1× alone, independent of the strict 2× reading. Rotation
+MaxDD −46/−49/−52% vs basket −62/−64/−66%: real truncation, short of the
+promised degree. The 0.75 bound was calibrated at 0.64 on the seen panel;
+held out it landed 0.74–0.81 — the generalisation gap the design existed to
+measure. Bootstrap margin CI [−0.084, +0.388] spans zero. Split-half
+REVERSED vs KT-1 (+0.227/+0.537). SEEN continuity reproduces KT-1's H3
+figure exactly (+0.440). **Per the §6 finality clause: FAIL closes the
+family permanently — no KT-3, no re-specification.** Verdict doc:
+`reviews/2026-08-21_kt2_verdict.md`. S2 rejected (spec degenerate as
+frozen). Book stays paused → protocol Amendment 5; close-out 2026-09-13 is
+an operations review.
+
 ## 2026-08-21 — Post-verdict: successor exploration on DECLARED outputs; two omissions disclosed
 
 Owner direction (Fable session): think through how the construction could work —

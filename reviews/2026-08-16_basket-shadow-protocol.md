@@ -89,6 +89,19 @@ week with a quarter of weeks needing none.
 - The SMH shadow was descoped the same day (separate owner decision); the
   2026-09-13 close-out now reads this rotation shadow alone.
 
+## Amendment 5 (2026-08-21, later same day) — closure made PERMANENT
+
+KT-2's held-out confirmation run **failed S1 on the drawdown bound**
+(`reviews/2026-08-21_kt2_verdict.md`); per the finality clause the owner
+confirmed at sign-off, the construction family is closed permanently. The
+Amendment 4 pause therefore converts to **permanent closure for this
+payload**: the book never un-pauses for this strategy, and no successor study
+exists to trigger an un-pause. The evaluator continues in paused mode purely
+to keep the record surfaces live until the **2026-09-13 close-out**, which
+proceeds as an operations review (disarm the schtask, remove the fleet row,
+file the close-out memo). Any future live idea on this venue starts from a
+NEW pre-registration of a different construction family, not from this book.
+
 ## Amendment 4 (2026-08-21, zero fills ever logged) — book PAUSED
 
 Owner decision 2026-08-21, taken the day the honest-universe kill-test returned

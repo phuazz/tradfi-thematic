@@ -502,11 +502,12 @@ function renderMonitor() {
   const gated = DATA.gated;
   const banners = [];
   if (DATA.orders_mode === 'paused')
-    banners.push(`<div class="banner banner-amber"><strong>Book paused — owner decision 2026-08-21, after the
-      kill-test verdict.</strong> The honest-universe study failed its pre-registered bar (Risk &amp; Validation has
-      the numbers), so the establishment buys were never executed. The evaluator still runs — signal, health checks
-      and this page stay live — but no buy list is generated while the successor study is designed. Risk-reducing
-      sells would still be listed if positions existed.</div>`);
+    banners.push(`<div class="banner banner-amber"><strong>Strategy case CLOSED — 2026-08-21.</strong> The
+      honest-universe kill-test failed its pre-registered bar, and the successor's single held-out confirmation run
+      (Russell 1000 point-in-time, 1,076 weeks) then failed its drawdown bound — Calmar and Sharpe bars passed, but
+      the rotation's drawdown reached 77–81% of the basket's where the frozen bound demanded ≤75%. Per the signed
+      finality clause the construction family is closed permanently. The establishment buys were never executed; the
+      book stays empty until the 2026-09-13 operations close-out. This page remains live as the record.</div>`);
   else if (gated) banners.push(`<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the
     eligible universe clears the +5% floor, so the rule holds nothing this week. Any open positions are sold.</div>`);
   else if (DATA.orders_mode === 'establishment' && !DATA.n_filled)
