@@ -3,18 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TradFi thematic — names first</title>
+<title>TradFi Perp Rotation — research dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 <style>
 :root {
-  /* surfaces */
   --bg: #fafaf8; --bg2: #ffffff; --bg3: #f5f5f0; --bg4: #eeeee8; --bg-hover: #f0f0ea;
-  /* borders */
   --bd: #e2e0d8; --bd2: #d5d3ca; --bd-strong: #c0beb5;
-  /* text */
   --t1: #1a1a18; --t2: #5c5c56; --t3: #8a8a82; --t4: #b0b0a8;
-  /* semantic: green = gain/long, red = loss/short */
   --g: #1a8754; --g2: #22a366; --g-bg: rgba(26,135,84,0.07); --g-bg2: rgba(26,135,84,0.14);
   --r: #c0392b; --r2: #e74c3c; --r-bg: rgba(192,57,43,0.07); --r-bg2: rgba(192,57,43,0.14);
   --b: #2563eb; --b2: #3b82f6; --b-bg: rgba(37,99,235,0.06); --b-bg2: rgba(37,99,235,0.12);
@@ -23,8 +19,7 @@
   --c: #0891b2; --c-bg: rgba(8,145,178,0.06);
   --pk: #be185d; --pk-bg: rgba(190,24,93,0.06);
   --g-text: #146c43; --r-text: #a93226; --b-text: #1d4ed8; --a-text: #92400e;
-  --p-text: #7c3aed; --c-text: #0e7490; --pk-text: #be185d;
-  --t3-text: #66665e;
+  --p-text: #7c3aed; --c-text: #0e7490; --pk-text: #be185d; --t3-text: #66665e;
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'DM Sans', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
@@ -34,180 +29,367 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--t1);
-  font-size: 14px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
-.container { max-width: 1280px; margin: 0 auto; padding: 22px 28px 60px; }
-.masthead h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; letter-spacing: -0.5px; margin: 0; }
-.masthead .clause { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--t3); margin-top: 2px; }
-.asof { font-family: var(--mono); font-size: 11px; color: var(--t3-text); margin-top: 8px; }
-.tab-row { display: flex; gap: 0; margin: 20px 0 0; border: 1px solid var(--bd); border-radius: var(--radius); overflow-x: auto; background: var(--bg2); width: fit-content; max-width: 100%; }
-.tab-row button { padding: 9px 16px; background: var(--bg2); border: none; border-right: 1px solid var(--bd); cursor: pointer; font-size: 13px; font-weight: 600; color: var(--t2); font-family: inherit; white-space: nowrap; }
-.tab-row button:last-child { border-right: none; }
-.tab-row button.active { background: var(--t1); color: var(--bg2); }
-.tab { display: none; }
-.tab.active { display: block; }
-section { margin-top: 28px; }
-h2 { margin: 0 0 10px; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t2); }
-h2 .hint { font-size: 12px; color: var(--t3-text); font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 8px; }
+  font-size: 14px; line-height: 1.55; -webkit-text-size-adjust: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 20px 26px 50px; }
+
+/* ---- masthead ---- */
+header.top { border-bottom: 1px solid var(--bd); padding-bottom: 16px; }
+.top-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--t3-text); }
+.top-meta a { color: var(--b-text); text-decoration: none; }
+.top-meta a:hover { text-decoration: underline; }
+h1 { font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacing: -0.5px; margin: 10px 0 4px; }
+.lede { font-size: 14.5px; color: var(--t2); max-width: 76ch; margin: 0 0 4px; }
+.hero-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 16px; }
+.hero-strip .item { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); padding: 11px 13px; min-width: 0; }
+.hero-strip .number { font-family: var(--mono); font-size: 23px; font-weight: 700; line-height: 1.15; }
+.hero-strip .number.good { color: var(--g); } .hero-strip .number.bad { color: var(--r); }
+.hero-strip .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--t3-text); margin-top: 3px; }
+.hero-strip .desc { font-size: 11px; color: var(--t3-text); margin-top: 2px; }
+
+/* ---- tabs ---- */
+nav.tabs { display: flex; gap: 0; margin: 18px 0 0; border: 1px solid var(--bd); border-radius: var(--radius);
+  overflow-x: auto; background: var(--bg2); -webkit-overflow-scrolling: touch; }
+nav.tabs button { padding: 9px 15px; background: var(--bg2); border: none; border-right: 1px solid var(--bd);
+  cursor: pointer; font-size: 13px; font-weight: 600; color: var(--t2); font-family: inherit; white-space: nowrap; }
+nav.tabs button:last-child { border-right: none; }
+nav.tabs button.active { background: var(--t1); color: var(--bg2); }
+.tab-content { display: none; } .tab-content.active { display: block; }
+.health-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-left: 5px; vertical-align: 1px; }
+.health-dot--ok { background: var(--g); } .health-dot--warn { background: var(--a); } .health-dot--broken { background: var(--r); }
+
+/* ---- sections ---- */
+section { margin-top: 26px; }
+h2 { margin: 0 0 9px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; }
+h2 .badge-sim { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; background: var(--bg3);
+  border: 1px solid var(--bd); color: var(--t3-text); border-radius: 4px; padding: 2px 6px; margin-left: 7px; vertical-align: 2px; }
+h3 { margin: 18px 0 8px; font-size: 13.5px; font-weight: 600; }
+.hint { font-size: 12px; color: var(--t3-text); font-weight: 400; margin-left: 7px; }
+.note { font-size: 12.5px; color: var(--t2); line-height: 1.7; max-width: 76ch; }
+.note strong { color: var(--t1); }
+
+/* ---- tables ---- */
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--bg2);
+  border: 1px solid var(--bd); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
-thead th { position: sticky; top: 0; background: var(--bg3); text-align: left; padding: 9px 8px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t3-text); white-space: nowrap; border-bottom: 2px solid var(--bd2); }
+thead th { position: sticky; top: 0; background: var(--bg3); text-align: left; padding: 8px; font-weight: 600;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t3-text);
+  white-space: nowrap; border-bottom: 2px solid var(--bd2); }
 th.num, td.num { text-align: right; }
+th.sortable { cursor: pointer; } th.sortable:hover { color: var(--t1); }
 tbody tr { border-bottom: 1px solid var(--bd); }
 tbody tr:hover { background: var(--bg-hover); }
-td { padding: 9px 8px; font-variant-numeric: tabular-nums; }
+td { padding: 8px; font-variant-numeric: tabular-nums; }
 td.num { font-family: var(--mono); font-size: 12px; }
 .nm { font-weight: 600; }
 .tk { color: var(--t4); font-family: var(--mono); font-size: 11px; margin-left: 6px; font-weight: 400; }
 .pos { color: var(--g-text); } .neg { color: var(--r-text); }
 .muted { color: var(--t2); } .faint { color: var(--t3-text); font-size: 12px; }
-.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+
+/* ---- components ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 11px; }
 .cards > div { min-width: 0; }
-.card { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 14px 16px; box-shadow: var(--shadow); }
-.card h3 { margin: 0 0 8px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--t2); }
-.card .big { font-size: 24px; font-weight: 700; font-family: var(--mono); }
-.row { font-size: 12px; color: var(--t2); margin-top: 5px; line-height: 1.5; }
+.card { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 13px 15px; box-shadow: var(--shadow); }
+.card h4 { margin: 0 0 7px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--t3-text); }
+.card .big { font-size: 22px; font-weight: 700; font-family: var(--mono); }
+.row { font-size: 12px; color: var(--t2); margin-top: 4px; line-height: 1.5; }
 .row strong { color: var(--t1); font-weight: 600; }
-.pill { display: inline-block; padding: 2px 9px; font-size: 11px; border-radius: 4px; background: var(--bg3); border: 1px solid var(--bd); color: var(--t2); letter-spacing: 0.02em; }
+.pill { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 4px; background: var(--bg3);
+  border: 1px solid var(--bd); color: var(--t2); letter-spacing: 0.02em; }
 .pill-ok { background: var(--g-bg2); color: var(--g-text); border-color: transparent; }
-.badge { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 4px; background: var(--bg3); color: var(--t3-text); white-space: nowrap; }
-.chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
-.chip { background: var(--bg2); border: 1px solid var(--bd); padding: 5px 12px; font-size: 12px; border-radius: 6px; cursor: pointer; color: var(--t2); font-family: inherit; font-weight: 500; }
-.chip.active { background: var(--t1); color: var(--bg2); border-color: var(--t1); }
-.legend { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); padding: 12px 16px; font-size: 12.5px; color: var(--t2); line-height: 1.7; max-width: 72ch; box-shadow: var(--shadow-sm); }
-.provenance { font-family: var(--mono); font-size: 11px; color: var(--t3-text); margin-top: 8px; }
-.chart-wrap { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow); }
-.chart { width: 100%; height: 380px; }
-.chart-sm { width: 100%; height: 260px; }
-.period-selector { display: inline-flex; border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; background: var(--bg2); margin-bottom: 10px; }
-.period-selector button { padding: 6px 13px; background: var(--bg2); border: none; border-right: 1px solid var(--bd); cursor: pointer; font-size: 12px; font-weight: 600; color: var(--t2); font-family: inherit; }
+.pill-warn { background: var(--a-bg); color: var(--a-text); border-color: transparent; }
+.pill-bad { background: var(--r-bg2); color: var(--r-text); border-color: transparent; }
+.badge { display: inline-block; padding: 2px 7px; font-size: 11px; border-radius: 4px; background: var(--bg3); color: var(--t3-text); white-space: nowrap; }
+.config-ribbon { background: var(--bg3); border: 1px solid var(--bd); border-radius: var(--radius);
+  padding: 8px 13px; font-family: var(--mono); font-size: 11.5px; color: var(--t2); margin: 10px 0; overflow-x: auto; white-space: nowrap; }
+.banner { border-radius: var(--radius); padding: 10px 14px; font-size: 12.5px; margin: 10px 0; line-height: 1.6; }
+.banner-amber { background: var(--a-bg); border: 1px solid rgba(180,83,9,0.25); color: var(--a-text); }
+.banner-blue { background: var(--b-bg); border: 1px solid rgba(37,99,235,0.22); color: var(--b-text); }
+details.caveats { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius); padding: 9px 14px; margin-top: 12px; }
+details.caveats summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--t2); min-height: 24px; }
+details.caveats .note { margin-top: 9px; }
+.chart-wrap { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--radius-lg); padding: 12px; box-shadow: var(--shadow); }
+.chart { width: 100%; height: 380px; } .chart-sm { width: 100%; height: 250px; } .chart-tall { width: 100%; height: 430px; }
+.period-selector { display: inline-flex; border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; background: var(--bg2); margin-bottom: 9px; }
+.period-selector button { padding: 6px 12px; background: var(--bg2); border: none; border-right: 1px solid var(--bd);
+  cursor: pointer; font-size: 12px; font-weight: 600; color: var(--t2); font-family: inherit; }
 .period-selector button:last-child { border-right: none; }
 .period-selector button.active { background: var(--t1); color: var(--bg2); }
-.clusterbar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--bd); }
-.clusterkey { font-size: 11px; color: var(--t3-text); margin-top: 6px; line-height: 1.9; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 9px 0; }
+.chip { background: var(--bg2); border: 1px solid var(--bd); padding: 5px 11px; font-size: 12px; border-radius: 6px;
+  cursor: pointer; color: var(--t2); font-family: inherit; font-weight: 500; }
+.chip.active { background: var(--t1); color: var(--bg2); border-color: var(--t1); }
+.rule-card { background: var(--bg2); border: 1px solid var(--bd); border-left: 3px solid var(--b); border-radius: var(--radius);
+  padding: 10px 13px; margin-top: 9px; font-size: 12.5px; color: var(--t2); line-height: 1.65; }
+.rule-card strong { color: var(--t1); text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em; display: block; margin-bottom: 2px; }
+.rule-card.amber { border-left-color: var(--a); }
+.rule-card.green { border-left-color: var(--g); }
+.provenance { font-family: var(--mono); font-size: 11px; color: var(--t3-text); margin-top: 7px; line-height: 1.6; }
+.steps { counter-reset: step; padding: 0; margin: 10px 0 0; list-style: none; }
+.steps li { counter-increment: step; position: relative; padding: 8px 0 8px 34px; font-size: 13px; color: var(--t2); border-bottom: 1px solid var(--bd); }
+.steps li:last-child { border-bottom: none; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 8px; width: 22px; height: 22px;
+  background: var(--bg3); border: 1px solid var(--bd); border-radius: 50%; text-align: center; line-height: 20px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--t2); }
+.steps li strong { color: var(--t1); }
+.clusterbar { display: flex; height: 24px; border-radius: 6px; overflow: hidden; border: 1px solid var(--bd); }
+.clusterkey { font-size: 11px; color: var(--t3-text); margin-top: 5px; line-height: 1.9; }
 .clusterkey span.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
-.rule-card { background: var(--bg2); border: 1px solid var(--bd); border-left: 3px solid var(--b); border-radius: var(--radius); padding: 10px 14px; margin-top: 10px; font-size: 12.5px; color: var(--t2); }
-.rule-card strong { color: var(--t1); text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; display: block; margin-bottom: 2px; }
-@media (max-width: 800px) { .container { padding: 14px; } .masthead h1 { font-size: 26px; } .chart { height: 300px; } }
+.heat td.h { font-family: var(--mono); font-size: 12px; text-align: right; }
 .nm.clickable { cursor: pointer; }
 .nm.clickable:hover { color: var(--b-text); text-decoration: underline; }
-/* Inline expandable chart row — the scanner.html pattern: the chart opens
-   directly under the clicked name, inside the table. */
 tr.expand-row > td { padding: 0; background: var(--bg); }
-.expand-panel { padding: 12px 14px 16px; border-top: 2px solid var(--bd2); min-width: 640px; }
-.expand-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-.expand-head .ttl { font-weight: 700; font-size: 14px; margin-right: 2px; }
-.expand-close { margin-left: auto; min-width: 44px; min-height: 34px; border: 1px solid var(--bd);
-  border-radius: 6px; background: var(--bg2); font-size: 15px; cursor: pointer; color: var(--t2); font-family: inherit; }
-.expand-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
-#ch-name { width: 100%; height: 340px; }
-@media (max-width: 800px) { #ch-name { height: 280px; } }
+.expand-panel { padding: 11px 13px 15px; border-top: 2px solid var(--bd2); min-width: 620px; }
+.expand-head { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 7px; }
+.expand-head .ttl { font-weight: 700; font-size: 14px; }
+.expand-close { margin-left: auto; min-width: 44px; min-height: 34px; border: 1px solid var(--bd); border-radius: 6px;
+  background: var(--bg2); font-size: 15px; cursor: pointer; color: var(--t2); font-family: inherit; }
+.expand-tools { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; }
+#ch-name { width: 100%; height: 330px; }
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--bd); font-size: 11.5px; color: var(--t3-text); line-height: 1.75; }
+footer strong { color: var(--t2); }
+@media (max-width: 800px) {
+  .container { padding: 13px; } h1 { font-size: 25px; }
+  .chart, .chart-tall { height: 300px; } #ch-name { height: 270px; }
+}
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="masthead">
-  <h1>TradFi thematic</h1>
-  <div class="clause">names first — a study and its implementation, on one page</div>
-  <div class="asof" id="asof"></div>
-</div>
+<header class="top">
+  <div class="top-meta">
+    <span>Personal research dashboard · USD base · perpetual futures</span>
+    <a href="https://github.com/phuazz/tradfi-thematic" target="_blank" rel="noopener">Method &amp; source</a>
+    <span id="ts-built"></span>
+  </div>
+  <h1>TradFi Perp Rotation — research dashboard</h1>
+  <p class="lede">A rules-based, long-only rotation that holds the ten strongest-trending equities and equity ETFs
+    from Binance's TradFi perpetual menu — ranked on how far each underlying sits above its own 200-day average,
+    capped at two names per theme, rebalanced weekly, and pulled entirely to cash when too few names qualify.
+    Signals are computed on the underlying stocks; the exposure is taken through perps. No leverage.</p>
+  <div class="hero-strip" id="hero-strip"></div>
+</header>
 
-<div class="tab-row" id="tabs">
-  <button data-tab="book" class="active">Book &amp; orders</button>
+<nav class="tabs" id="tabs">
+  <button data-tab="monitor" class="active">Monitor</button>
+  <button data-tab="rotation">Rotation</button>
   <button data-tab="universe">Universe</button>
-  <button data-tab="perf">Performance</button>
-  <button data-tab="method">Method &amp; decisions</button>
-</div>
+  <button data-tab="history">Trade History</button>
+  <button data-tab="robustness">Risk &amp; Validation</button>
+  <button data-tab="method">Method</button>
+  <button data-tab="decisions">Decisions</button>
+  <button data-tab="data">Data</button>
+  <button data-tab="health" id="health-tab-btn">Health<span class="health-dot" id="health-dot"></span></button>
+</nav>
 
-<!-- ============================ BOOK & ORDERS ============================ -->
-<div class="tab active" id="tab-book">
+<!-- ============================== MONITOR ============================== -->
+<div class="tab-content active" id="tab-monitor">
   <section>
-    <h2>Shadow status<span class="hint">both live books, the frozen triggers, the close-out countdown</span></h2>
-    <div class="cards" id="shadow-cards"></div>
+    <h2>Live book — what to own today</h2>
+    <div id="live-banner"></div>
+    <div class="cards" id="live-cards"></div>
+    <div class="config-ribbon" id="config-ribbon"></div>
   </section>
+
   <section>
     <h2>Today's orders<span class="hint">execute manually in the 07:30–09:30 SGT window; rows tick off as fills are logged</span></h2>
     <div class="scroll" id="tbl-orders"></div>
   </section>
+
   <section>
-    <h2>The book, by name<span class="hint">holdings from the append-only fill log, valued at last-seen marks</span></h2>
+    <h2>Current holdings<span class="hint">from the append-only fill log, valued at last-seen marks</span></h2>
     <div class="scroll" id="tbl-book"></div>
   </section>
-</div>
 
-<!-- ============================== UNIVERSE ============================== -->
-<div class="tab" id="tab-universe">
   <section>
-    <h2>Universe explorer<span class="hint">every verified underlying by company name — excluded rows say why</span></h2>
-    <div class="chips" id="chips"></div>
-    <div class="clusterbar" id="clusterbar"></div>
-    <div class="clusterkey" id="clusterkey"></div>
-    <div class="scroll" id="tbl-universe" style="margin-top: 12px;"></div>
-  </section>
-</div>
-
-<!-- ============================ PERFORMANCE ============================= -->
-<div class="tab" id="tab-perf">
-  <section>
-    <h2>Cumulative return, net<span class="hint">weekly Friday closes, 1× costs; rebased to 0% at the window start</span></h2>
+    <h2>Performance<span class="badge-sim">simulated</span><span class="hint">net of fees, the funding band and forgone dividends — the live book is days old, so this is the simulated record</span></h2>
     <div class="period-selector" id="perf-periods">
       <button data-p="52">1Y</button><button data-p="156">3Y</button><button data-p="0" class="active">MAX</button>
     </div>
-    <div class="chart-wrap"><div id="ch-perf" class="chart"></div></div>
+    <div class="chart-wrap"><div id="perf-chart" class="chart"></div></div>
     <div class="provenance" id="perf-prov"></div>
-  </section>
-  <section>
-    <h2>Drawdown<span class="hint">same series, same basis — the cost concentration pays for the extra CAGR</span></h2>
-    <div class="chart-wrap"><div id="ch-dd" class="chart-sm"></div></div>
-  </section>
-  <section>
-    <h2>Breadth and the gate<span class="hint">share of the eligible universe above the +5% floor; below 30% the sleeve is in cash</span></h2>
-    <div class="chart-wrap"><div id="ch-breadth" class="chart-sm"></div></div>
-  </section>
-  <section>
-    <h2>Selection against chance<span class="hint">1,000 cost-matched random same-shape portfolios, frozen seed — the ranking is real; the concentrated shape is what loses to the basket</span></h2>
-    <div class="chart-wrap"><div id="ch-null" class="chart-sm"></div></div>
+    <details class="caveats">
+      <summary>Known caveats &amp; methodology footnotes</summary>
+      <div class="note" id="caveat-note"></div>
+    </details>
   </section>
 </div>
 
-<!-- ========================= METHOD & DECISIONS ========================= -->
-<div class="tab" id="tab-method">
+<!-- ============================== ROTATION ============================= -->
+<div class="tab-content" id="tab-rotation">
   <section>
-    <h2>The filed verdict<span class="hint">bars read exactly as pre-registered before any result existed</span></h2>
-    <div class="legend" id="verdict-text"></div>
-    <div class="scroll" id="tbl-verdict" style="margin-top: 12px;"></div>
+    <h3>The rotation — K=10, two names per theme</h3>
+    <div class="cards" id="recipe-stats"></div>
+  </section>
+
+  <section>
+    <h2>Current selection<span class="hint">what the frozen rule picks on the latest completed panel</span></h2>
+    <div class="scroll" id="tbl-selection"></div>
+  </section>
+
+  <section>
+    <h2>Live signal — distance above the 200-day average<span class="hint">every eligible name ranked; the +5% floor is the qualification line, the top ten inside the theme cap are held</span></h2>
+    <div class="chips" id="signal-chips"></div>
+    <div class="scroll" id="tbl-signal"></div>
+  </section>
+
+  <section>
+    <h2>Honest assessment — this is a seen-data pick riding a flattered universe</h2>
+    <div class="note" id="honest-note"></div>
+  </section>
+
+  <section>
+    <h2>Equity vs benchmark<span class="hint">rotation against buy-and-hold SPY on the identical weekly basis, both net of the same cost model</span></h2>
+    <div class="chart-wrap"><div id="rot-equity-chart" class="chart"></div></div>
+  </section>
+
+  <section>
+    <h2>Right-tail behaviour<span class="hint">extreme upside and downside metrics — where a concentrated rotation actually differs from owning everything</span></h2>
+    <div class="scroll" id="tbl-tail"></div>
+  </section>
+
+  <section>
+    <h2>Theme allocation over time<span class="hint">what the rotation was holding, by theme, week by week</span></h2>
+    <div class="chart-wrap"><div id="rot-alloc-chart" class="chart-tall"></div></div>
+  </section>
+
+  <section>
+    <h2>Breadth and the cash gate<span class="hint">share of the eligible universe above the floor; below 30% the sleeve holds nothing</span></h2>
+    <div class="chart-wrap"><div id="rot-breadth-chart" class="chart-sm"></div></div>
+  </section>
+</div>
+
+<!-- ============================== UNIVERSE ============================= -->
+<div class="tab-content" id="tab-universe">
+  <section>
+    <h2>Universe explorer<span class="hint">every verified underlying by company name — click a name for its chart; excluded rows say why</span></h2>
+    <div class="chips" id="chips"></div>
+    <div class="clusterbar" id="clusterbar"></div>
+    <div class="clusterkey" id="clusterkey"></div>
+    <div class="scroll" id="tbl-universe" style="margin-top: 11px;"></div>
+  </section>
+</div>
+
+<!-- ============================ TRADE HISTORY ========================== -->
+<div class="tab-content" id="tab-history">
+  <section>
+    <h2>0 · Live fills<span class="hint">the real book — every executed order, logged by hand</span></h2>
+    <div class="scroll" id="tbl-fills"></div>
+  </section>
+  <section>
+    <h2>1 · Simulated trade ledger<span class="hint">every entry and exit the frozen rule would have made since 2018</span></h2>
+    <div class="scroll" id="tbl-ledger"></div>
+    <div class="provenance" id="ledger-prov"></div>
+  </section>
+  <section>
+    <h2>2 · Turnover<span class="hint">trades per week — the operational load the construction actually carries</span></h2>
+    <div class="chart-wrap"><div id="turnover-chart" class="chart-sm"></div></div>
+  </section>
+  <section>
+    <h2>3 · Monthly returns<span class="hint">simulated, net, band edge</span></h2>
+    <div class="chart-wrap"><div id="monthly-chart" class="chart-sm"></div></div>
+  </section>
+</div>
+
+<!-- ========================= RISK & VALIDATION ========================= -->
+<div class="tab-content" id="tab-robustness">
+  <section>
+    <h2>Risk &amp; Validation — why the live book holds what it holds</h2>
+    <div class="note" id="verdict-note"></div>
+  </section>
+  <section>
+    <h2>Headline comparison<span class="hint">every series on the identical weekly basis, net of the same costs</span></h2>
+    <div class="scroll" id="tbl-verdict"></div>
     <div class="provenance" id="verdict-prov"></div>
   </section>
   <section>
-    <h2>The rules, as frozen<span class="hint">why each decision is made — every rule below was committed before the result it governs</span></h2>
+    <h2>Selection against chance<span class="hint">1,000 cost-matched random portfolios of identical shape, frozen seed</span></h2>
+    <div class="chart-wrap"><div id="null-chart" class="chart-sm"></div></div>
+    <div class="provenance" id="null-prov"></div>
+  </section>
+  <section>
+    <h2>K × theme-cap sensitivity<span class="hint">the full declared grid — the pre-registered primary was K=5 cap=2; the live book runs K=10 cap=2 as a seen-data choice</span></h2>
+    <div class="scroll" id="tbl-grid"></div>
+  </section>
+  <section>
+    <h2>Split-half<span class="hint">does the construction survive being cut in two?</span></h2>
+    <div class="scroll" id="tbl-split"></div>
+  </section>
+</div>
+
+<!-- =============================== METHOD ============================== -->
+<div class="tab-content" id="tab-method">
+  <section>
+    <h3>The strategy explained, plain English</h3>
+    <div class="note" id="plain-note"></div>
+  </section>
+  <section>
+    <h2>How the deployment works, step by step</h2>
+    <ol class="steps" id="steps-list"></ol>
+  </section>
+  <section>
+    <h2>Signal definition (formal)</h2>
     <div id="rules"></div>
   </section>
+  <section>
+    <h2>Research log — the decisions that made this, in order</h2>
+    <div id="amendments"></div>
+  </section>
+  <section>
+    <h2>Caveats — what this backtest does not capture</h2>
+    <div class="note" id="method-caveats"></div>
+  </section>
+</div>
+
+<!-- ============================= DECISIONS ============================= -->
+<div class="tab-content" id="tab-decisions">
   <section>
     <h2>Decision log<span class="hint">every evaluator run with its reasons — skips name the rule that caused them</span></h2>
     <div class="scroll" id="tbl-decisions"></div>
   </section>
+</div>
+
+<!-- =============================== DATA ================================ -->
+<div class="tab-content" id="tab-data">
   <section>
-    <h2>Amendments<span class="hint">every change after activation, disclosed and dated</span></h2>
-    <div id="amendments"></div>
+    <h2>Panel summary</h2>
+    <div class="scroll" id="tbl-panel"></div>
   </section>
-  <div class="legend" style="margin-top: 24px;">
-    <strong>Reading rules.</strong> Funding is trailing 30-day annualised, longs pay when
-    positive. Every backtest figure is net of fees, the funding band and forgone
-    dividends, on a weekly Friday-close basis. The menu is Binance's 2025–26 selection:
-    absolute levels are upward-biased by construction and the equal-weight basket is the
-    shape that bias flatters most — the shadow exists to replace assumptions with live
-    fills and funding, not to confirm a forecast. Nothing here is investment advice.
-  </div>
+  <section>
+    <h2>Artefact vintages<span class="hint">every published number traces to one of these files</span></h2>
+    <div class="scroll" id="tbl-vintages"></div>
+  </section>
 </div>
 
+<!-- ============================== HEALTH =============================== -->
+<div class="tab-content" id="tab-health">
+  <section>
+    <h2>Data health<span class="hint">real guards, not decoration — the tab label carries the OK count so a regression is visible before the page is trusted</span></h2>
+    <div class="scroll" id="tbl-health"></div>
+    <div class="provenance" id="health-prov"></div>
+  </section>
 </div>
 
+<footer>
+  <strong>Not investment advice.</strong> A personal research dashboard for a personal book, not affiliated with any
+  regulated fund and not a recommendation to buy or sell anything. Positions shown are micro-sized verification
+  experiments.<br>
+  <strong>Backtest disclosure.</strong> Weekly Friday-close basis from 2018; signals read the prior session's close, so
+  no look-ahead by construction (pinned by test). Every figure is net of 10bp round-trip fees, a funding band of
+  0 to +6%/yr charged on invested days, and forgone dividends. Costs are stressed at 2× and 4×. No leverage.<br>
+  <strong>The bias that cannot be removed.</strong> The tradeable menu is Binance's own 2025–26 listing selection, so
+  absolute returns are flattered by construction; only the relative comparisons on this page are defensible.<br>
+  <strong>Data.</strong> Underlying prices from yfinance; contract specs, funding and liquidity from Binance's public
+  API; identities verified two-source against Binance's listing announcements. Open source.<br>
+  <span id="ts-built-footer"></span>
+</footer>
+
+</div>
 <script>
 const DATA = /*__DATA__*/null;
 
 const CHART_LAYOUT = {
-  paper_bgcolor: 'transparent',
-  plot_bgcolor: '#fafaf8',
+  paper_bgcolor: 'transparent', plot_bgcolor: '#fafaf8',
   font: { family: 'DM Sans', size: 11, color: '#4a4a44' },
   margin: { t: 10, b: 10, l: 10, r: 10 },
   xaxis: { gridcolor: '#eeeee8', linecolor: '#d5d3ca', linewidth: 1, showgrid: false,
@@ -220,7 +402,6 @@ const CHART_LAYOUT = {
   hoverlabel: { bgcolor: '#fff', bordercolor: '#d5d3ca', font: { size: 11, family: 'DM Sans' } }
 };
 const PLOT_CFG = { displayModeBar: false, responsive: true };
-
 const CLUSTER_COLOURS = {
   "semis-hardware": "#2563eb", "software-ai": "#7c3aed", "platforms-media": "#0891b2",
   "consumer": "#1a8754", "financials": "#b45309", "crypto-equity": "#be185d",
@@ -230,46 +411,101 @@ const CLUSTER_COLOURS = {
   "country-brazil": "#6d28d9", "etf-other": "#8a8a82", "rates": "#8a8a82", "commodity": "#b0b0a8",
 };
 const fmtPct = v => (v === null || v === undefined) ? "—" : (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
+const fmtPct2 = v => (v === null || v === undefined) ? "—" : (v >= 0 ? "+" : "") + v.toFixed(2) + "%";
 const fmtTs = iso => iso ? new Date(iso).toLocaleString("en-GB", {day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", timeZone:"Asia/Singapore"}) + " SGT" : "—";
+const fmtDate = iso => iso ? new Date(iso).toLocaleDateString("en-GB", {day:"2-digit", month:"short", year:"numeric"}) : "—";
+const V = DATA.verdict || {}, S = DATA.series || null, D = DATA.detail || null, H = DATA.health || null;
+const EDGE = (V.bands && V.bands.length) ? V.bands[V.bands.length - 1] : "0.06";
+const payloadStats = (D && D.stats) || {};
 
-/* ------------------------------ tabs ------------------------------ */
-let chartsDrawn = false;
-document.querySelectorAll('#tabs button').forEach(btn => btn.addEventListener('click', () => {
-  document.querySelectorAll('#tabs button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  if (btn.dataset.tab === 'perf' && !chartsDrawn && DATA.series) { drawCharts(0); chartsDrawn = true; }
-}));
-
-/* --------------------------- book & orders --------------------------- */
-function renderAsof() {
-  document.getElementById("asof").textContent =
-    `built ${fmtTs(DATA.built_at_utc)} · orders ${fmtTs(DATA.as_of.orders)} · funding scan ${fmtTs(DATA.as_of.scan)} · study ${fmtTs(DATA.as_of.results)}`;
+/* ------------------------------- tabs ------------------------------- */
+const drawn = {};
+function activateTab(name) {
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.toggle('active', t.id === 'tab-' + name));
+  if (!drawn[name]) { drawTabCharts(name); drawn[name] = true; }
 }
-function renderShadow() {
-  const sb = DATA.shadow_books || {};
-  const b = sb.basket || {}, s = sb.smh || {};
-  document.getElementById("shadow-cards").innerHTML = `
-    <div class="card"><h3>TradFi rotation — K=10 cap=2 <span class="pill">${DATA.orders_mode || "—"}</span></h3>
+document.querySelectorAll('#tabs button').forEach(btn =>
+  btn.addEventListener('click', () => { closeExpand(); activateTab(btn.dataset.tab); }));
+
+function drawTabCharts(name) {
+  if (name === 'monitor') drawPerf(0);
+  if (name === 'rotation') { drawRotEquity(); drawAlloc(); drawBreadth(); }
+  if (name === 'history') { drawTurnover(); drawMonthly(); }
+  if (name === 'robustness') drawNull();
+}
+
+/* ------------------------------- hero ------------------------------- */
+function renderHero() {
+  document.getElementById('ts-built').textContent = 'Built ' + fmtTs(DATA.built_at_utc);
+  document.getElementById('ts-built-footer').textContent = 'Last updated ' + fmtTs(DATA.built_at_utc) + '.';
+  const sh = payloadStats.sharpe, cagr = payloadStats.cagr, dd = payloadStats.max_dd;
+  const weeks = payloadStats.n_weeks || (S ? S.dates.length : 0);
+  const items = [
+    { n: sh != null ? (sh >= 0 ? '+' : '') + sh.toFixed(2) : '—', cls: (sh || 0) > 0 ? 'good' : 'bad',
+      label: 'Net Sharpe', desc: 'simulated, worst funding band' },
+    { n: cagr != null ? fmtPct(cagr * 100) : '—', cls: (cagr || 0) > 0 ? 'good' : 'bad',
+      label: 'CAGR', desc: 'net of all modelled costs' },
+    { n: dd != null ? fmtPct(dd * 100) : '—', cls: 'bad', label: 'Max drawdown', desc: 'weekly close basis' },
+    { n: (weeks / 52).toFixed(1) + 'y', cls: '', label: 'Backtest window', desc: weeks + ' weekly rebalances' },
+    { n: DATA.n_filled + '/10', cls: DATA.n_filled ? 'good' : '', label: 'Live positions',
+      desc: '$' + DATA.book_value.toFixed(0) + ' of $' + DATA.book_cap.toFixed(0) },
+  ];
+  document.getElementById('hero-strip').innerHTML = items.map(i =>
+    `<div class="item"><div class="number ${i.cls}">${i.n}</div><div class="label">${i.label}</div><div class="desc">${i.desc}</div></div>`).join('');
+}
+
+/* ------------------------------ monitor ------------------------------ */
+function renderMonitor() {
+  const sb = DATA.shadow_books || {}, b = sb.basket || {};
+  const gated = DATA.gated;
+  document.getElementById('live-banner').innerHTML = gated
+    ? `<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the eligible universe
+       clears the +5% floor, so the rule holds nothing this week. Any open positions are sold.</div>`
+    : (DATA.orders_mode === 'establishment' && !DATA.n_filled
+      ? `<div class="banner banner-blue"><strong>Establishment pending.</strong> The rotation is selected and the order
+         list is ready; no fills have been logged yet, so the book is still empty.</div>` : '');
+
+  const skips = DATA.skipped_funding || [];
+  document.getElementById('live-cards').innerHTML = `
+    <div class="card"><h4>The book</h4>
       <div class="big">$${DATA.book_value.toFixed(0)}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> / $${DATA.book_cap.toFixed(0)}</span></div>
-      <div class="row"><strong>${DATA.n_filled} of 10</strong> positions · $${(DATA.target_usd || 0).toFixed(0)}/name · live payload per Amendment 2, seen-data caveat carried</div>
-      <div class="row"><strong>Triggers:</strong> <span class="${(b.fail_events || 0) ? "neg" : "pos"}">${(b.fail_events || 0) ? b.fail_events + " FAIL" : "none breached"}</span></div>
+      <div class="row"><strong>${DATA.n_filled} of 10</strong> positions · $${(DATA.target_usd || 0).toFixed(0)} per name · 1× leverage</div>
+      <div class="row"><strong>Mode:</strong> ${DATA.orders_mode || '—'} · ${DATA.orders.length} order(s) listed today</div>
     </div>
-    <div class="card"><h3>WS17 xyz:SMH shadow <span class="pill">descoped</span></h3>
-      <div class="row">Closed early, not-started, 2026-08-20 (owner call) — zero fills logged; the KEEP-for-shadow verdict stands filed but unexercised.</div>
+    <div class="card"><h4>Signal state</h4>
+      <div class="big">${DATA.breadth != null ? (DATA.breadth * 100).toFixed(0) + '%' : '—'}</div>
+      <div class="row">of the eligible universe is above the +5% floor <span class="pill ${gated ? 'pill-bad' : 'pill-ok'}">${gated ? 'gated to cash' : 'invested'}</span></div>
+      <div class="row"><strong>Panel as of:</strong> ${DATA.signal_asof || '—'} · ${DATA.n_members} tradeable names</div>
     </div>
-    <div class="card"><h3>Combined close-out</h3>
-      <div class="big">${sb.days_to_close_out ?? "—"}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> days</span></div>
-      <div class="row"><strong>${sb.close_out || "2026-09-13"}</strong> — one sitting, both records.</div>
-      <div class="row faint">FAIL-EXECUTION 15bp median fill · FAIL-BAND +6%/yr rolling funding · FAIL-OPS missed windows or margin call at 1×.</div>
+    <div class="card"><h4>Funding rule</h4>
+      <div class="big">${skips.length}</div>
+      <div class="row">name(s) blocked from buying at more than +30%/yr trailing funding</div>
+      <div class="row faint">${skips.length ? skips.join(', ') : 'nothing crowded enough to block today'}</div>
+    </div>
+    <div class="card"><h4>Shadow close-out</h4>
+      <div class="big">${sb.days_to_close_out ?? '—'}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> days</span></div>
+      <div class="row"><strong>${sb.close_out || '2026-09-13'}</strong> · triggers ${(b.fail_events || 0) ? '<span class="neg">' + b.fail_events + ' FAIL</span>' : '<span class="pos">none breached</span>'}</div>
+      <div class="row faint">15bp median fill · +6%/yr rolling funding · missed windows · margin call at 1×</div>
     </div>`;
+
+  document.getElementById('config-ribbon').textContent =
+    `K=10 · cap 2/theme · MA200 +5% floor · 30% sleeve gate · weekly Friday signal, Saturday execution · ` +
+    `US$5,000 book at 1× · funding block >+30%/yr · fees 10bp RT · band {0,+3,+6}%/yr`;
+
+  document.getElementById('caveat-note').innerHTML =
+    `The equity curve above is <strong>simulated</strong> from 2018 on the underlying stocks, not a record of this book —
+     the live book is days old and holds nothing yet. The menu is Binance's own listing selection, so absolute levels are
+     flattered; the like-for-like comparisons are the defensible part. The construction shown is a
+     <strong>seen-data choice</strong>: the pre-registered primary was K=5, and K=10 was picked after the grid was
+     visible, so it carries a permanent caveat and was gated on a fresh null run at its own shape.
+     Funding is charged as a band, not as history — the contracts are months old, so no honest funding backtest exists.`;
 }
-function renderOrders() {
-  const rows = DATA.orders || [];
-  const t = document.getElementById("tbl-orders");
-  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No orders today.</div>'; return; }
-  t.innerHTML = `<table><thead><tr><th>Company</th><th>Side</th><th class="num">Qty</th>
+
+function ordersTable(rows, target, opts) {
+  opts = opts || {};
+  if (!rows.length) return '<div class="faint" style="padding:12px;">Nothing listed.</div>';
+  return `<table><thead><tr><th>Company</th><th>Side</th><th class="num">Qty</th>
     <th class="num">≈USD</th><th class="num">Ref px</th><th class="num">Funding 30d</th><th>Status</th></tr></thead><tbody>` +
     rows.map(o => `<tr>
       <td class="nm clickable" data-base="${o.symbol.replace(/USDT$/, "")}">${o.name}<span class="tk">${o.symbol}</span></td>
@@ -280,10 +516,11 @@ function renderOrders() {
       <td>${o.status === "filled" ? '<span class="pill pill-ok">filled</span>' : '<span class="pill">pending</span>'}</td>
     </tr>`).join("") + "</tbody></table>";
 }
+function renderOrders() { document.getElementById('tbl-orders').innerHTML = ordersTable(DATA.orders || []); }
 function renderBook() {
   const rows = DATA.book || [];
-  const t = document.getElementById("tbl-book");
-  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No holdings yet — establishment begins with tranche 1.</div>'; return; }
+  const t = document.getElementById('tbl-book');
+  if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No holdings yet — the book is established from the order list above.</div>'; return; }
   t.innerHTML = `<table><thead><tr><th>Company</th><th class="num">Qty</th><th class="num">Value</th>
     <th class="num">Drift vs target</th><th class="num">Funding 30d</th></tr></thead><tbody>` +
     rows.map(r => `<tr>
@@ -294,196 +531,456 @@ function renderBook() {
     </tr>`).join("") + "</tbody></table>";
 }
 
-/* ------------------------------ universe ------------------------------ */
-let CURRENT_CLUSTER = "all";
+/* ------------------------------ rotation ----------------------------- */
+function renderRecipe() {
+  const t = (D && D.tail && D.tail.payload) || {};
+  document.getElementById('recipe-stats').innerHTML = `
+    <div class="card"><h4>Construction</h4>
+      <div class="row"><strong>Rank</strong> every eligible name by close ÷ MA200 − 1</div>
+      <div class="row"><strong>Qualify</strong> above +5%; hold the top 10, max 2 per theme</div>
+      <div class="row"><strong>Cash</strong> entirely when under 30% of the universe qualifies</div>
+      <div class="row"><strong>Weight</strong> equally, 1/10 each, no leverage</div>
+    </div>
+    <div class="card"><h4>Turnover</h4>
+      <div class="big">${D ? (D.n_trades_total / (D.weeks.length || 1)).toFixed(1) : '—'}</div>
+      <div class="row">trades per week, simulated · ${D ? D.n_trades_total.toLocaleString() : '—'} since 2018</div>
+      <div class="row faint">${D ? Math.round(D.weeks.filter(w => w.gated).length / D.weeks.length * 100) : '—'}% of weeks gated to cash</div>
+    </div>
+    <div class="card"><h4>Consistency</h4>
+      <div class="big">${t.pct_positive_weeks != null ? t.pct_positive_weeks.toFixed(0) + '%' : '—'}</div>
+      <div class="row">of weeks positive · skew ${t.skew ?? '—'} · Sortino ${t.sortino ?? '—'}</div>
+      <div class="row faint">best week ${fmtPct(t.best_week)} · worst ${fmtPct(t.worst_week)}</div>
+    </div>`;
+}
+function renderSelection() {
+  const picks = (D && D.weeks && D.weeks.length) ? D.weeks[D.weeks.length - 1].picks : [];
+  const uni = DATA.universe || [];
+  const heldSyms = new Set((DATA.book || []).map(r => r.symbol.replace(/USDT$/, '')));
+  const t = document.getElementById('tbl-selection');
+  if (!picks.length) {
+    t.innerHTML = '<div class="faint" style="padding:12px;">The rule is in cash this week — the breadth gate is active.</div>';
+    return;
+  }
+  const rank = {}; (D.ranked_now || []).forEach(r => rank[r.base] = r);
+  t.innerHTML = `<table><thead><tr><th>Company</th><th>Theme</th><th class="num">Above MA200</th>
+    <th class="num">Target weight</th><th>In the live book</th></tr></thead><tbody>` +
+    picks.map(b => {
+      const r = rank[b] || {}, u = uni.find(x => x.base === b) || {};
+      return `<tr>
+        <td class="nm clickable" data-base="${b}">${u.name || r.name || b}<span class="tk">${b}</span></td>
+        <td><span class="badge">${u.cluster || r.cluster || '—'}</span></td>
+        <td class="num pos">${r.signal_pct != null ? fmtPct(r.signal_pct) : '—'}</td>
+        <td class="num">10.0%</td>
+        <td>${heldSyms.has(b) ? '<span class="pill pill-ok">held</span>' : '<span class="pill">not yet</span>'}</td>
+      </tr>`;
+    }).join('') + '</tbody></table>';
+}
+let SIGNAL_FILTER = 'qualifying';
+function renderSignal() {
+  const rows = (D && D.ranked_now) || [];
+  document.getElementById('signal-chips').innerHTML = [
+    ['qualifying', 'Above the floor'], ['selected', 'Selected'], ['all', 'All eligible (' + rows.length + ')']
+  ].map(([k, l]) => `<button class="chip${k === SIGNAL_FILTER ? ' active' : ''}" data-sf="${k}">${l}</button>`).join('');
+  document.querySelectorAll('[data-sf]').forEach(el => el.addEventListener('click', () => {
+    SIGNAL_FILTER = el.dataset.sf; renderSignal();
+  }));
+  let show = rows;
+  if (SIGNAL_FILTER === 'qualifying') show = rows.filter(r => r.above_floor);
+  if (SIGNAL_FILTER === 'selected') show = rows.filter(r => r.selected);
+  document.getElementById('tbl-signal').innerHTML =
+    `<table><thead><tr><th class="num">Rank</th><th>Company</th><th>Theme</th>
+      <th class="num">Above MA200</th><th>Qualifies</th><th>Held by the rule</th></tr></thead><tbody>` +
+    show.slice(0, 60).map(r => `<tr>
+      <td class="num muted">${r.rank}</td>
+      <td class="nm clickable" data-base="${r.base}">${r.name}<span class="tk">${r.base}</span></td>
+      <td><span class="badge">${r.cluster || '—'}</span></td>
+      <td class="num ${r.signal_pct >= 5 ? 'pos' : (r.signal_pct < 0 ? 'neg' : 'muted')}">${fmtPct(r.signal_pct)}</td>
+      <td>${r.above_floor ? '<span class="pill pill-ok">yes</span>' : '<span class="faint">below +5%</span>'}</td>
+      <td>${r.selected ? '<span class="pill pill-ok">selected</span>' : (r.above_floor ? '<span class="faint">theme cap / rank</span>' : '<span class="faint">—</span>')}</td>
+    </tr>`).join('') + '</tbody></table>';
+}
+function renderHonest() {
+  const n = V.null || {}, k10 = (V.grid_note || {}).k10_cap2;
+  document.getElementById('honest-note').innerHTML =
+    `<p><strong>What is defensible.</strong> The ranking carries real information: on the pre-registered shape it beat
+     ${n.n_paths || 1000} cost-matched random portfolios of identical size and turnover, landing at the
+     ${n.strategy_percentile}th percentile, and the K=10 shape ran its own null at the
+     ${(DATA.k10_null || {}).strategy_percentile}th. Both were run on frozen seeds, and the second was declared before
+     it was computed.</p>
+     <p><strong>What is not.</strong> This construction is a <strong>seen-data pick</strong> — the pre-registered
+     primary was K=5, every grid cell had been observed before K=10 was chosen for the live book, and the filed verdict
+     (which the equal-weight basket won) still stands in the record. The absolute return is flattered by the menu:
+     Binance listed these contracts in 2025–26 because the underlyings were already trending, and no construction
+     escapes that. Funding is modelled as a band because the contracts are too young to have a funding history worth
+     backtesting.</p>
+     <p><strong>What it is for.</strong> A US$5,000 book at 1× is not a return engine; it is an instrument for
+     measuring fills, funding and operations against a frozen model before anything larger is contemplated.</p>`;
+}
+function renderTail() {
+  const t = (D && D.tail) || {};
+  const rows = [['Rotation K=10 (live payload)', t.payload], ['Equal-weight basket', t.basket], ['SPY buy-and-hold', t.benchmark]];
+  document.getElementById('tbl-tail').innerHTML =
+    `<table><thead><tr><th>Series</th><th class="num">Best week</th><th class="num">Worst week</th>
+      <th class="num">Best 4wk</th><th class="num">Worst 4wk</th><th class="num">% weeks +</th>
+      <th class="num">Top decile</th><th class="num">Bottom decile</th><th class="num">Skew</th>
+      <th class="num">Sortino</th><th class="num">Calmar</th></tr></thead><tbody>` +
+    rows.map(([label, m]) => m ? `<tr><td>${label}</td>
+      <td class="num pos">${fmtPct2(m.best_week)}</td><td class="num neg">${fmtPct2(m.worst_week)}</td>
+      <td class="num pos">${fmtPct2(m.best_4wk)}</td><td class="num neg">${fmtPct2(m.worst_4wk)}</td>
+      <td class="num">${m.pct_positive_weeks}%</td>
+      <td class="num pos">${fmtPct2(m.top_decile_mean)}</td><td class="num neg">${fmtPct2(m.bottom_decile_mean)}</td>
+      <td class="num">${m.skew ?? '—'}</td><td class="num">${m.sortino ?? '—'}</td><td class="num">${m.calmar ?? '—'}</td></tr>` : '').join('') +
+    '</tbody></table>';
+}
+
+/* ------------------------------- charts ------------------------------ */
+function adaptiveDtick(n) { return n <= 78 ? 'M2' : (n <= 200 ? 'M6' : 'M12'); }
+function rebase(vals, from) { const b = vals[from]; return vals.slice(from).map(v => (v / b - 1) * 100); }
+function drawPerf(weeksBack) {
+  if (!S) return;
+  const n = S.dates.length, from = weeksBack ? Math.max(0, n - weeksBack) : 0;
+  const x = S.dates.slice(from);
+  const traces = [];
+  if (S.k10_b6) traces.push({ x, y: rebase(S.k10_b6, from), name: 'Rotation K=10 — live payload', line: { color: '#1a8754', width: 4 } });
+  if (D && D.bench && D.bench.equity) traces.push({ x, y: rebase(D.bench.equity, from), name: 'SPY buy-and-hold', line: { color: '#8a8a82', width: 1.3 } });
+  traces.push({ x, y: rebase(S.basket_eq_b6, from), name: 'Equal-weight basket', line: { color: '#2563eb', width: 1.3 } });
+  traces.push({ x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 (pre-registered)', line: { color: '#7c3aed', width: 1.3 } });
+  Plotly.react('perf-chart', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 46 },
+    xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
+    yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+  document.getElementById('perf-prov').textContent =
+    `simulated, net of 10bp round-trip fees, the +6%/yr funding band and forgone dividends · weekly Friday closes, ` +
+    `rebased to 0% at the window start · series computed ${fmtTs(DATA.as_of.series)}`;
+}
+document.querySelectorAll('#perf-periods button').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('#perf-periods button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active'); drawPerf(parseInt(btn.dataset.p, 10));
+}));
+function drawRotEquity() {
+  if (!S || !S.k10_b6) return;
+  const x = S.dates, traces = [
+    { x, y: rebase(S.k10_b6, 0), name: 'Rotation K=10, +6% funding band', line: { color: '#1a8754', width: 4 } },
+    S.k10_b0 ? { x, y: rebase(S.k10_b0, 0), name: 'same, 0% funding band', line: { color: '#22a366', width: 1.3, dash: 'dot' } } : null,
+    (D && D.bench && D.bench.equity) ? { x, y: rebase(D.bench.equity, 0), name: 'SPY buy-and-hold', line: { color: '#8a8a82', width: 1.5 } } : null,
+  ].filter(Boolean);
+  Plotly.react('rot-equity-chart', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 46 },
+    xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
+    yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', type: 'log', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+}
+function drawAlloc() {
+  if (!D || !D.alloc) return;
+  const a = D.alloc;
+  const traces = a.clusters.map(c => ({
+    x: a.dates, y: a.series[c], name: c, type: 'scatter', mode: 'lines', stackgroup: 'one',
+    line: { width: 0.5, color: CLUSTER_COLOURS[c] || '#999' }, fillcolor: (CLUSTER_COLOURS[c] || '#999') + 'cc',
+  }));
+  Plotly.react('rot-alloc-chart', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 46 },
+    xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(a.dates.length) },
+    yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', range: [0, 100] } }, PLOT_CFG);
+}
+function drawBreadth() {
+  if (!S) return;
+  const shapes = []; let start = null;
+  S.gated.forEach((g, i) => {
+    if (g && start === null) start = i;
+    if ((!g || i === S.gated.length - 1) && start !== null) {
+      shapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0: S.dates[start], x1: S.dates[i], y0: 0, y1: 1,
+                    fillcolor: 'rgba(192,57,43,0.07)', line: { width: 0 } });
+      start = null;
+    }
+  });
+  Plotly.react('rot-breadth-chart', [
+    { x: S.dates, y: S.breadth.map(v => v * 100), name: '% above the +5% floor', line: { color: '#2563eb', width: 2 } },
+    { x: [S.dates[0], S.dates[S.dates.length - 1]], y: [30, 30], name: '30% cash gate', mode: 'lines',
+      line: { color: '#c0392b', width: 1.3, dash: 'dash' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 46 }, shapes,
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(S.dates.length) },
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', range: [0, 100] } }, PLOT_CFG);
+}
+function drawTurnover() {
+  if (!D) return;
+  const byWeek = {}; D.ledger.forEach(t => { byWeek[t.date] = (byWeek[t.date] || 0) + 1; });
+  const dates = D.weeks.map(w => w.date);
+  Plotly.react('turnover-chart', [{ x: dates, y: dates.map(d => byWeek[d] || 0), type: 'bar',
+    name: 'trades', marker: { color: 'rgba(37,99,235,0.55)' } }],
+    { ...CHART_LAYOUT, showlegend: false, margin: { t: 20, b: 32, l: 10, r: 46 },
+      xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(dates.length) },
+      yaxis: { ...CHART_LAYOUT.yaxis, title: { text: 'trades per week', font: { size: 11 } } } }, PLOT_CFG);
+}
+function drawMonthly() {
+  if (!D || !D.monthly) return;
+  const m = D.monthly;
+  Plotly.react('monthly-chart', [{ x: m.map(r => r.month), y: m.map(r => r.ret), type: 'bar',
+    marker: { color: m.map(r => r.ret >= 0 ? 'rgba(26,135,84,0.7)' : 'rgba(192,57,43,0.7)') }, name: 'monthly %' }],
+    { ...CHART_LAYOUT, showlegend: false, margin: { t: 20, b: 40, l: 10, r: 46 }, hovermode: 'closest',
+      xaxis: { ...CHART_LAYOUT.xaxis, type: 'category', dtick: 6, tickangle: -45, tickformat: undefined },
+      yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+}
+function drawNull() {
+  if (!S || !S.null_sharpes) return;
+  const n = V.null || {};
+  Plotly.react('null-chart', [{ x: S.null_sharpes, type: 'histogram', nbinsx: 40,
+    marker: { color: 'rgba(37,99,235,0.35)', line: { color: '#2563eb', width: 0.5 } }, name: 'random portfolios' }],
+    { ...CHART_LAYOUT, showlegend: false, margin: { t: 30, b: 36, l: 10, r: 46 }, hovermode: 'closest',
+      xaxis: { ...CHART_LAYOUT.xaxis, tickformat: '.2f', dtick: 0.2, tickfont: { size: 11 },
+               title: { text: 'net Sharpe, band edge', font: { size: 11 } } },
+      shapes: [
+        { type: 'line', x0: n.strategy_sharpe, x1: n.strategy_sharpe, yref: 'paper', y0: 0, y1: 1, line: { color: '#7c3aed', width: 2.5 } },
+        { type: 'line', x0: n.p90, x1: n.p90, yref: 'paper', y0: 0, y1: 1, line: { color: '#c0beb5', width: 1.3, dash: 'dash' } },
+      ],
+      annotations: [
+        { x: n.strategy_sharpe, y: 1.04, yref: 'paper', text: `K=5 rotation ${n.strategy_sharpe} (${n.strategy_percentile}th)`, showarrow: false, font: { size: 11, color: '#7c3aed' } },
+        { x: n.p90, y: 0.9, yref: 'paper', text: 'null p90', showarrow: false, font: { size: 11, color: '#66665e' } },
+      ] }, PLOT_CFG);
+  const k = DATA.k10_null || {};
+  document.getElementById('null-prov').textContent =
+    `Shown at the pre-registered K=5 shape: null p50 ${n.p50}, p90 ${n.p90}, strategy ${n.strategy_sharpe} → ${n.strategy_percentile}th percentile. ` +
+    `The live K=10 payload ran its own null at its own shape: p90 ${k.p90}, strategy ${k.strategy_sharpe} → ${k.strategy_percentile}th percentile. Both seeds frozen.`;
+}
+
+/* ------------------------------ universe ----------------------------- */
+let CURRENT_CLUSTER = 'all';
 function renderChips() {
   const counts = DATA.clusters;
-  const chips = [["all", "All (" + Object.values(counts).reduce((a, b) => a + b, 0) + ")"]]
+  const chips = [['all', 'All (' + Object.values(counts).reduce((a, b) => a + b, 0) + ')']]
     .concat(Object.keys(counts).sort().map(c => [c, `${c} (${counts[c]})`]));
-  document.getElementById("chips").innerHTML =
-    chips.map(([c, label]) => `<button class="chip${c === CURRENT_CLUSTER ? " active" : ""}" data-c="${c}">${label}</button>`).join("");
-  document.querySelectorAll(".chip").forEach(el => el.addEventListener("click", () => {
+  document.getElementById('chips').innerHTML =
+    chips.map(([c, l]) => `<button class="chip${c === CURRENT_CLUSTER ? ' active' : ''}" data-c="${c}">${l}</button>`).join('');
+  document.querySelectorAll('[data-c]').forEach(el => el.addEventListener('click', () => {
     CURRENT_CLUSTER = el.dataset.c; renderChips(); renderUniverse();
   }));
 }
 function renderClusterBar() {
-  const counts = DATA.clusters;
-  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  const counts = DATA.clusters, total = Object.values(counts).reduce((a, b) => a + b, 0);
   const parts = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  document.getElementById("clusterbar").innerHTML =
-    parts.map(([c, n]) => `<div title="${c}: ${n}" style="width:${(n / total * 100).toFixed(2)}%; background:${CLUSTER_COLOURS[c] || "#999"}"></div>`).join("");
-  document.getElementById("clusterkey").innerHTML =
-    parts.map(([c, n]) => `<span class="sw" style="background:${CLUSTER_COLOURS[c] || "#999"}"></span>${c} ${n}`).join("");
+  document.getElementById('clusterbar').innerHTML = parts.map(([c, n]) =>
+    `<div title="${c}: ${n}" style="width:${(n / total * 100).toFixed(2)}%; background:${CLUSTER_COLOURS[c] || '#999'}"></div>`).join('');
+  document.getElementById('clusterkey').innerHTML = parts.map(([c, n]) =>
+    `<span class="sw" style="background:${CLUSTER_COLOURS[c] || '#999'}"></span>${c} ${n}`).join('');
 }
 function renderUniverse() {
-  const rows = (DATA.universe || []).filter(r =>
-    CURRENT_CLUSTER === "all" ? true : r.cluster === CURRENT_CLUSTER);
-  document.getElementById("tbl-universe").innerHTML =
-    `<table><thead><tr><th>Company</th><th>Cluster</th><th>Region</th>
-      <th class="num">History from</th><th class="num">Perp vol 24h</th><th class="num">Funding 30d</th>
-      <th>In book</th><th>Excluded</th></tr></thead><tbody>` +
-    rows.map(r => `<tr${r.excluded ? ' style="opacity:0.55"' : ""}>
+  const held = new Set((DATA.book || []).map(r => r.symbol.replace(/USDT$/, '')));
+  const sel = new Set((D && D.weeks && D.weeks.length) ? D.weeks[D.weeks.length - 1].picks : []);
+  const rows = (DATA.universe || []).filter(r => CURRENT_CLUSTER === 'all' ? true : r.cluster === CURRENT_CLUSTER);
+  document.getElementById('tbl-universe').innerHTML =
+    `<table><thead><tr><th>Company</th><th>Theme</th><th>Region</th><th class="num">History from</th>
+      <th class="num">Perp vol 24h</th><th class="num">Funding 30d</th><th>State</th><th>Excluded</th></tr></thead><tbody>` +
+    rows.map(r => `<tr${r.excluded ? ' style="opacity:0.55"' : ''}>
       <td class="nm clickable" data-base="${r.base}">${r.name}<span class="tk">${r.base}</span></td>
       <td><span class="badge">${r.cluster}</span></td>
       <td class="faint">${r.region}</td>
-      <td class="num ${r.full_hist ? "muted" : "faint"}">${r.first_bar || "—"}${r.full_hist ? "" : " (short)"}</td>
-      <td class="num muted">${r.vol24 != null ? "$" + Math.round(r.vol24) + "M" : "—"}</td>
-      <td class="num ${(r.fund ?? 0) >= 0 ? "neg" : "pos"}">${fmtPct(r.fund)}</td>
-      <td>${r.in_book ? '<span class="pill pill-ok">yes</span>' : '<span class="faint">—</span>'}</td>
-      <td class="faint">${r.excluded || ""}</td>
-    </tr>`).join("") + "</tbody></table>";
+      <td class="num ${r.full_hist ? 'muted' : 'faint'}">${r.first_bar || '—'}${r.full_hist ? '' : ' (short)'}</td>
+      <td class="num muted">${r.vol24 != null ? '$' + Math.round(r.vol24) + 'M' : '—'}</td>
+      <td class="num ${(r.fund ?? 0) >= 0 ? 'neg' : 'pos'}">${fmtPct(r.fund)}</td>
+      <td>${held.has(r.base) ? '<span class="pill pill-ok">held</span>' : (sel.has(r.base) ? '<span class="pill">selected</span>' : '<span class="faint">—</span>')}</td>
+      <td class="faint">${r.excluded || ''}</td>
+    </tr>`).join('') + '</tbody></table>';
 }
 
-/* ------------------------------- charts ------------------------------- */
-function rebase(vals, from) {
-  const base = vals[from];
-  return vals.slice(from).map(v => (v / base - 1) * 100);
+/* --------------------------- trade history --------------------------- */
+function renderFills() {
+  const fills = DATA.fills || [];
+  const t = document.getElementById('tbl-fills');
+  if (!fills.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No live fills logged yet.</div>'; return; }
+  t.innerHTML = `<table><thead><tr><th>When (SGT)</th><th>Symbol</th><th>Kind</th>
+    <th class="num">Qty</th><th class="num">Price</th><th class="num">Notional</th></tr></thead><tbody>` +
+    fills.map(f => `<tr><td class="num">${fmtTs(f.ts_utc)}</td><td class="nm">${f.symbol}</td>
+      <td>${f.kind}</td><td class="num">${f.qty}</td><td class="num">${f.px}</td>
+      <td class="num">$${f.notional_usd}</td></tr>`).join('') + '</tbody></table>';
 }
-function drawCharts(fromWeeksBack) {
-  const S = DATA.series;
-  const n = S.dates.length;
-  const from = fromWeeksBack ? Math.max(0, n - fromWeeksBack) : 0;
-  const x = S.dates.slice(from);
-
-  const traces = [
-    S.k10_b6 ? { x, y: rebase(S.k10_b6, from), name: 'Rotation K=10 cap=2 — LIVE payload (seen-data caveat)', line: { color: '#1a8754', width: 4 } } : null,
-    { x, y: rebase(S.basket_eq_b6, from), name: 'EW basket equity-only (filed verdict winner)', line: { color: '#2563eb', width: 1.3 } },
-    { x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 cap=2 (pre-registered primary)', line: { color: '#7c3aed', width: 1.3 } },
-    S.k10_b0 ? { x, y: rebase(S.k10_b0, from), name: 'K=10, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } } : { x, y: rebase(S.primary_b0, from), name: 'Rotation, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } },
-  ].filter(Boolean);
-  Plotly.react('ch-perf', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
-       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
-
-  const dd = ser => { let peak = -1e9; return ser.map(v => { peak = Math.max(peak, v); return (v / peak - 1) * 100; }); };
-  Plotly.react('ch-dd', [
-    { x: S.dates, y: dd(S.basket_eq_b6), name: 'EW basket — equity-only', line: { color: '#1a8754', width: 2.5 }, fill: 'tozeroy', fillcolor: 'rgba(26,135,84,0.07)' },
-    { x: S.dates, y: dd(S.primary_b6), name: 'Rotation K=5 cap=2', line: { color: '#7c3aed', width: 1.3 } },
-  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
-       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(S.dates.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%' } }, PLOT_CFG);
-
-  const gateShapes = [];
-  let start = null;
-  S.gated.forEach((g, i) => {
-    if (g && start === null) start = i;
-    if ((!g || i === S.gated.length - 1) && start !== null) {
-      gateShapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0: S.dates[start], x1: S.dates[i], y0: 0, y1: 1,
-                        fillcolor: 'rgba(192,57,43,0.07)', line: { width: 0 } });
-      start = null;
-    }
-  });
-  Plotly.react('ch-breadth', [
-    { x: S.dates, y: S.breadth.map(v => v * 100), name: '% of eligible above the +5% floor', line: { color: '#2563eb', width: 2 } },
-    { x: [S.dates[0], S.dates[S.dates.length - 1]], y: [30, 30], name: '30% gate', mode: 'lines', line: { color: '#c0392b', width: 1.3, dash: 'dash' } },
-  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 }, shapes: gateShapes,
-       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(S.dates.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', range: [0, 100] } }, PLOT_CFG);
-
-  const v = DATA.verdict.null || {};
-  Plotly.react('ch-null', [
-    { x: S.null_sharpes, type: 'histogram', name: 'random same-shape portfolios',
-      marker: { color: 'rgba(37,99,235,0.35)', line: { color: '#2563eb', width: 0.5 } }, nbinsx: 40 },
-  ], { ...CHART_LAYOUT, showlegend: false, margin: { t: 30, b: 34, l: 10, r: 45 }, hovermode: 'closest',
-       xaxis: { ...CHART_LAYOUT.xaxis, tickformat: '.2f', dtick: 0.2, title: { text: 'net Sharpe, band edge', font: { size: 11 } } },
-       shapes: [
-         { type: 'line', x0: v.strategy_sharpe, x1: v.strategy_sharpe, yref: 'paper', y0: 0, y1: 1, line: { color: '#7c3aed', width: 2.5 } },
-         { type: 'line', x0: v.p90, x1: v.p90, yref: 'paper', y0: 0, y1: 1, line: { color: '#c0beb5', width: 1.3, dash: 'dash' } },
-       ],
-       annotations: [
-         { x: v.strategy_sharpe, y: 1.04, yref: 'paper', text: `rotation ${v.strategy_sharpe} (${v.strategy_percentile}th)`, showarrow: false, font: { size: 11, color: '#7c3aed' } },
-         { x: v.p90, y: 0.92, yref: 'paper', text: 'null p90', showarrow: false, font: { size: 11, color: '#66665e' } },
-       ] }, PLOT_CFG);
-
-  document.getElementById('perf-prov').textContent =
-    `series computed ${fmtTs(DATA.as_of.series)} · net of 10bp RT fees, the +6%/yr funding band and dividends (dotted line: 0% band) · weekly Friday closes, rebased to 0% at the window start`;
+function renderLedger() {
+  if (!D) return;
+  const rows = D.ledger.slice(0, 200);
+  document.getElementById('tbl-ledger').innerHTML =
+    `<table><thead><tr><th>Rebalance</th><th>Action</th><th>Company</th><th>Theme</th></tr></thead><tbody>` +
+    rows.map(t => `<tr><td class="num muted">${t.date}</td>
+      <td class="${t.action === 'buy' ? 'pos' : 'neg'}">${t.action}</td>
+      <td class="nm clickable" data-base="${t.base}">${t.name}<span class="tk">${t.base}</span></td>
+      <td><span class="badge">${t.cluster || '—'}</span></td></tr>`).join('') + '</tbody></table>';
+  document.getElementById('ledger-prov').textContent =
+    `showing the 200 most recent of ${D.n_trades_total.toLocaleString()} simulated trades across ${D.weeks.length} weekly rebalances ` +
+    `(${(D.n_trades_total / D.weeks.length).toFixed(1)} per week) · ${D.construction}`;
 }
-document.querySelectorAll('#perf-periods button').forEach(btn => btn.addEventListener('click', () => {
-  document.querySelectorAll('#perf-periods button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  drawCharts(parseInt(btn.dataset.p, 10));
-}));
 
-/* --------------------------- method & decisions --------------------------- */
-function vrow(label, s) {
-  if (!s) return "";
-  return `<tr><td>${label}</td><td class="num">${s.sharpe >= 0 ? "+" : ""}${s.sharpe?.toFixed(2)}</td>
+/* -------------------------- risk & validation ------------------------- */
+function vrow(label, s, cls) {
+  if (!s) return '';
+  return `<tr><td>${label}</td><td class="num ${cls || ''}">${s.sharpe >= 0 ? '+' : ''}${s.sharpe?.toFixed(2)}</td>
     <td class="num">${fmtPct(s.cagr != null ? s.cagr * 100 : null)}</td>
-    <td class="num">${fmtPct(s.max_dd != null ? s.max_dd * 100 : null)}</td></tr>`;
+    <td class="num neg">${fmtPct(s.max_dd != null ? s.max_dd * 100 : null)}</td></tr>`;
 }
 function renderVerdict() {
-  const v = DATA.verdict;
-  const n = v.null || {};
-  document.getElementById("verdict-text").innerHTML =
-    `<strong>Rotation REJECTED</strong> — never +0.10 Sharpe ahead of the equal-weight
-     basket across the funding band. <strong>Ranking CONFIRMED real</strong> —
-     ${n.strategy_percentile}th percentile of ${n.n_paths} random same-shape selections.
-     <strong>The equal-weight basket SHIPS</strong>, in its equity-only form after
-     Amendment 1 (re-anchor indistinguishable from the filed row). Split-half
-     ${v.split_half?.first?.sharpe} / ${v.split_half?.second?.sharpe}. The K=10 uncapped
-     cell (+${v.grid_note?.k10_capNone}) is future-pre-registration material only.`;
-  let html = `<table><thead><tr><th>Series (net, 1× costs)</th><th class="num">Sharpe</th>
-    <th class="num">CAGR</th><th class="num">MaxDD</th></tr></thead><tbody>`;
-  for (const b of v.bands) html += vrow(`Rotation K=5 cap=2 — band ${Math.round(parseFloat(b) * 100)}%`, v.primary[b]);
-  for (const b of v.bands) html += vrow(`EW basket (full menu) — band ${Math.round(parseFloat(b) * 100)}%`, v.basket[b]);
-  html += vrow("EW basket — band 6%, 2× costs", v.basket_2x_edge);
-  for (const [k, s] of Object.entries(v.equity_anchor || {}))
-    html += vrow(`EW basket EQUITY-ONLY — ${k.replace("band_", "band ").replace("_2x", " 2× costs")}`, s);
-  html += "</tbody></table>";
-  document.getElementById("tbl-verdict").innerHTML = html;
-  document.getElementById("verdict-prov").textContent =
-    `null p50 ${n.p50} · p90 ${n.p90} · rotation ${n.strategy_sharpe} (frozen seed) · results ${fmtTs(DATA.as_of.results)}`;
+  const n = V.null || {};
+  document.getElementById('verdict-note').innerHTML =
+    `<p>The study was pre-registered before any result existed and the bars were read exactly as written.
+     <strong>Selection lost to the basket</strong> on the pre-registered shape — the K=5 rotation never cleared the
+     +0.10 Sharpe margin over an equal-weight basket of the same names, because concentration bought extra return with
+     more than proportionate risk. <strong>The ranking is nevertheless real</strong> against random portfolios of
+     identical shape (${n.strategy_percentile}th percentile). <strong>The basket won the filed verdict</strong> and
+     still holds it in the record.</p>
+     <p>The live book runs the K=10 rotation instead, on the owner's instruction and for two operational reasons: an
+     equal-weight book of 50+ names carries a trade load no micro-shadow can execute honestly, and it mechanically
+     chases Binance's listing decisions — its membership grew from 51 to 57 names in four days. That choice is a
+     seen-data pick and is labelled as one everywhere it appears.</p>`;
+  let html = `<table><thead><tr><th>Series (net, 1× costs, weekly basis)</th><th class="num">Sharpe</th>
+    <th class="num">CAGR</th><th class="num">Max DD</th></tr></thead><tbody>`;
+  const g = V.grid_full || {};
+  if (g.k10_cap2) for (const b of V.bands) html += vrow(`Rotation K=10 cap=2 — LIVE — band ${Math.round(parseFloat(b) * 100)}%`, g.k10_cap2[`m1_b${b}`], 'pos');
+  for (const b of V.bands) html += vrow(`Rotation K=5 cap=2 (pre-registered) — band ${Math.round(parseFloat(b) * 100)}%`, V.primary[b]);
+  for (const b of V.bands) html += vrow(`Equal-weight basket — band ${Math.round(parseFloat(b) * 100)}%`, V.basket[b]);
+  html += vrow('Equal-weight basket — band 6%, 2× costs', V.basket_2x_edge);
+  for (const [k, s] of Object.entries(V.equity_anchor || {}))
+    html += vrow(`Equal-weight basket, equity-only — ${k.replace('band_', 'band ').replace('_2x', ' 2× costs')}`, s);
+  html += '</tbody></table>';
+  document.getElementById('tbl-verdict').innerHTML = html;
+  document.getElementById('verdict-prov').textContent =
+    `all series share one basis: weekly Friday closes from 2018, signals read the prior session, ` +
+    `10bp round-trip fees, funding band charged on invested days, dividends subtracted · results ${fmtTs(DATA.as_of.results)}`;
 }
-function renderRules() {
-  document.getElementById("rules").innerHTML = Object.entries(DATA.rules)
-    .map(([k, txt]) => `<div class="rule-card"><strong>${k.replace(/_/g, " ")}</strong>${txt}</div>`).join("");
+function renderGrid() {
+  const g = V.grid_full || {};
+  const cells = Object.keys(g);
+  if (!cells.length) { document.getElementById('tbl-grid').innerHTML = '<div class="faint" style="padding:12px;">Grid unavailable.</div>'; return; }
+  document.getElementById('tbl-grid').innerHTML =
+    `<table class="heat"><thead><tr><th>Configuration</th>` +
+    V.bands.map(b => `<th class="num">Band ${Math.round(parseFloat(b) * 100)}%</th>`).join('') +
+    `<th class="num">2× costs</th><th class="num">4× costs</th><th>Status</th></tr></thead><tbody>` +
+    cells.map(c => {
+      const label = c.replace('k', 'K=').replace('_cap', ', cap ').replace('None', 'none');
+      const live = c === 'k10_cap2', prereg = c === 'k5_cap2';
+      return `<tr><td class="nm">${label}</td>` +
+        V.bands.map(b => { const s = g[c][`m1_b${b}`]; return `<td class="h ${live ? 'pos' : ''}">${s ? (s.sharpe >= 0 ? '+' : '') + s.sharpe.toFixed(2) : '—'}</td>`; }).join('') +
+        `<td class="h muted">${g[c][`m2_b${EDGE}`] ? g[c][`m2_b${EDGE}`].sharpe.toFixed(2) : '—'}</td>` +
+        `<td class="h muted">${g[c][`m4_b${EDGE}`] ? g[c][`m4_b${EDGE}`].sharpe.toFixed(2) : '—'}</td>` +
+        `<td>${live ? '<span class="pill pill-ok">live payload</span>' : (prereg ? '<span class="pill">pre-registered primary</span>' : '<span class="faint">reported only</span>')}</td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+function renderSplit() {
+  const s = V.split_half || {};
+  document.getElementById('tbl-split').innerHTML =
+    `<table><thead><tr><th>Half</th><th class="num">Sharpe</th><th class="num">CAGR</th>
+      <th class="num">Max DD</th><th class="num">Weeks</th></tr></thead><tbody>` +
+    [['2018 → 2021', s.first], ['2022 → today', s.second]].map(([l, m]) => m ?
+      `<tr><td>${l}</td><td class="num">${m.sharpe >= 0 ? '+' : ''}${m.sharpe.toFixed(2)}</td>
+       <td class="num">${fmtPct(m.cagr * 100)}</td><td class="num neg">${fmtPct(m.max_dd * 100)}</td>
+       <td class="num muted">${m.n_weeks}</td></tr>` : '').join('') + '</tbody></table>';
+}
+
+/* ------------------------------- method ------------------------------ */
+function renderMethod() {
+  document.getElementById('plain-note').innerHTML =
+    `<p>Binance lists perpetual futures on real stocks and equity ETFs — Apple, Nvidia, the S&amp;P 500 tracker, Korean
+     and Hong Kong names. This strategy treats that menu as an investable universe and asks one question of every name
+     each week: <strong>how far is it above its own 200-day average?</strong></p>
+     <p>Names more than 5% above qualify. The ten strongest qualifiers are held in equal size, with no more than two
+     from any single theme so the book cannot become purely semiconductors. If fewer than 30% of the universe qualifies
+     — a market-wide downtrend — the strategy holds nothing at all and waits in cash.</p>
+     <p>The signal is computed on the underlying share prices, which have decades of history. The exposure is taken
+     through the perpetual contracts, which are months old. That split is deliberate: it lets a long backtest inform a
+     new instrument, at the cost of having to model funding rather than measure it.</p>`;
+  document.getElementById('steps-list').innerHTML = [
+    '<strong>Friday close.</strong> The underlying prices settle; the panel refreshes and every name gets a fresh 200-day average.',
+    '<strong>Rank.</strong> Each eligible name is scored on close ÷ MA200 − 1. Eligibility needs 252 days of history and a fresh price.',
+    '<strong>Qualify and cap.</strong> Names above the +5% floor are taken in rank order, at most two per theme, up to ten.',
+    '<strong>Check the gate.</strong> If under 30% of the universe qualifies, everything is sold and the week is spent in cash.',
+    '<strong>Block the crowded.</strong> Any name paying more than +30%/yr funding is not bought; existing holdings are never force-sold by this rule.',
+    '<strong>Execute Saturday morning.</strong> The evaluator emails the order list at 07:15 SGT; orders are placed by hand between 07:30 and 09:30 and logged.',
+    '<strong>Record.</strong> Fills feed the book, the dashboard rebuilds, and the decision log keeps the reason for every skip.',
+  ].map(s => `<li>${s}</li>`).join('');
+  document.getElementById('rules').innerHTML = Object.entries(DATA.rules || {})
+    .map(([k, txt]) => `<div class="rule-card"><strong>${k.replace(/_/g, ' ')}</strong>${txt}</div>`).join('');
+  document.getElementById('amendments').innerHTML = (DATA.amendments || [])
+    .map(a => `<div class="rule-card amber"><strong>${a.date}</strong>${a.what}</div>`).join('');
+  document.getElementById('method-caveats').innerHTML =
+    `<p><strong>Menu survivorship.</strong> Binance chose these listings in 2025–26, after the underlyings had already
+     trended. Absolute returns are flattered and no construction on this menu escapes it; only like-for-like
+     comparisons within the menu are defensible.</p>
+     <p><strong>Funding is modelled, not measured.</strong> The contracts are too young for a funding backtest, so cost
+     is charged as a flat band of 0 to +6%/yr and the verdict must hold across all of it. Live funding concentrates in
+     exactly the names momentum buys, which the band does not capture — the +30%/yr live block exists for that reason
+     and is itself untested.</p>
+     <p><strong>Weekly basis.</strong> Drawdowns are measured on weekly closes, so intra-week troughs are understated —
+     equally for every series shown.</p>
+     <p><strong>Seen data.</strong> The live construction was chosen after its grid was visible. Its own null gate was
+     declared before being run and passed, but that does not undo the selection effect.</p>
+     <p><strong>No live record.</strong> Nothing on this page is a track record. The book was established days ago at
+     micro size to measure execution, not return.</p>`;
 }
 function renderDecisions() {
   const rows = DATA.decisions || [];
-  const t = document.getElementById("tbl-decisions");
+  const t = document.getElementById('tbl-decisions');
   if (!rows.length) { t.innerHTML = '<div class="faint" style="padding:12px;">No evaluator runs logged yet.</div>'; return; }
   t.innerHTML = `<table><thead><tr><th>Run (SGT)</th><th>Mode</th><th class="num">Orders</th>
-    <th class="num">Held</th><th class="num">Book</th><th>Skips, with the rule that caused them</th></tr></thead><tbody>` +
+    <th class="num">Held</th><th class="num">Book</th><th>Reasons</th></tr></thead><tbody>` +
     rows.map(r => {
-      const skips = []
-        .concat((r.skipped_funding || []).map(s => `funding rule: ${s}`))
-        .concat((r.skipped_no_price || []).map(s => `no price: ${s}`));
-      return `<tr>
-        <td class="num">${fmtTs(r.ts_utc)}</td>
-        <td>${r.event === "OK" ? `<span class="pill">${r.mode}</span>` : `<span class="pill" style="background:var(--r-bg2);color:var(--r-text);border-color:transparent;">${r.event}</span>`}</td>
-        <td class="num">${r.n_orders ?? "—"}</td>
-        <td class="num">${r.n_held ?? "—"}${r.n_members ? '<span class="faint"> / ' + r.n_members + "</span>" : ""}</td>
-        <td class="num">${r.book_value_usd != null ? "$" + r.book_value_usd : "—"}</td>
-        <td class="faint">${skips.length ? skips.join("; ") : (r.reason || "—")}</td>
-      </tr>`;
-    }).join("") + "</tbody></table>";
-}
-function renderAmendments() {
-  document.getElementById("amendments").innerHTML = DATA.amendments
-    .map(a => `<div class="rule-card" style="border-left-color: var(--a);"><strong>${a.date}</strong>${a.what}</div>`).join("");
+      const skips = [].concat((r.skipped_funding || []).map(s => `funding rule: ${s}`))
+                      .concat((r.skipped_no_price || []).map(s => `no price: ${s}`));
+      return `<tr><td class="num">${fmtTs(r.ts_utc)}</td>
+        <td>${r.event === 'OK' ? `<span class="pill">${r.mode}</span>` : `<span class="pill pill-bad">${r.event}</span>`}</td>
+        <td class="num">${r.n_orders ?? '—'}</td>
+        <td class="num">${r.n_held ?? '—'}</td>
+        <td class="num">${r.book_value_usd != null ? '$' + r.book_value_usd : '—'}</td>
+        <td class="faint">${skips.length ? skips.join('; ') : (r.reason || '—')}</td></tr>`;
+    }).join('') + '</tbody></table>';
 }
 
-/* ------------------------ per-name click-through ------------------------ */
-// Adaptive x-ticks: two-month labels crowd unreadably past ~1.5 years; step to
-// half-yearly, then yearly, keeping the house "%b '%y" format throughout.
-function adaptiveDtick(nWeeks) {
-  if (nWeeks <= 78) return 'M2';
-  if (nWeeks <= 200) return 'M6';
-  return 'M12';
+/* -------------------------------- data ------------------------------- */
+function renderData() {
+  const u = DATA.universe || [];
+  const withHist = u.filter(r => r.full_hist).length;
+  const excl = u.filter(r => r.excluded).length;
+  document.getElementById('tbl-panel').innerHTML =
+    `<table><thead><tr><th>Item</th><th class="num">Count</th><th>Note</th></tr></thead><tbody>
+      <tr><td>Verified identities</td><td class="num">${u.length}</td><td class="faint">two-source: Binance listing announcements × vendor records</td></tr>
+      <tr><td>Tradeable after exclusions</td><td class="num">${u.length - excl}</td><td class="faint">levered products, duplicate lines and commodities removed</td></tr>
+      <tr><td>Full history to 2018</td><td class="num">${withHist}</td><td class="faint">the rest are recent listings, admitted as they mature past 252 days</td></tr>
+      <tr><td>In today's tradeable set</td><td class="num">${DATA.n_members}</td><td class="faint">also passing the rolling liquidity screen</td></tr>
+      <tr><td>Weekly rebalances simulated</td><td class="num">${D ? D.weeks.length : '—'}</td><td class="faint">from ${S ? S.dates[0] : '—'} to ${S ? S.dates[S.dates.length - 1] : '—'}</td></tr>
+    </tbody></table>`;
+  const v = [
+    ['Universe map', DATA.as_of.universe, 'identities, themes, exclusions'],
+    ['Study results', DATA.as_of.results, 'the grid, basket and null'],
+    ['Chart series', DATA.as_of.series, 'equity curves, breadth, null distribution'],
+    ['Payload detail', DATA.as_of.detail, 'weekly picks, ledger, allocation, tails'],
+    ['Per-name series', DATA.as_of.name_series, 'price and MA200 per company'],
+    ['Order list', DATA.as_of.orders, "today's list and skip reasons"],
+    ['Funding scan', DATA.as_of.scan, 'trailing funding and liquidity'],
+  ];
+  document.getElementById('tbl-vintages').innerHTML =
+    `<table><thead><tr><th>Artefact</th><th>Built</th><th>Carries</th></tr></thead><tbody>` +
+    v.map(([n, t, d]) => `<tr><td>${n}</td><td class="num muted">${fmtTs(t)}</td><td class="faint">${d}</td></tr>`).join('') +
+    '</tbody></table>';
 }
-let nameBase = null, namePeriod = 156, nameScale = 'log';  // default LOG (owner call)
+
+/* ------------------------------- health ------------------------------ */
+function renderHealth() {
+  if (!H) { document.getElementById('health-dot').className = 'health-dot health-dot--warn'; return; }
+  const btn = document.getElementById('health-tab-btn');
+  btn.innerHTML = `Health (${H.n_ok} OK)<span class="health-dot health-dot--${H.n_fail ? 'broken' : (H.n_warn ? 'warn' : 'ok')}"></span>`;
+  const groups = {};
+  H.checks.forEach(c => { (groups[c.group] = groups[c.group] || []).push(c); });
+  const GROUP_LABEL = { universe: 'Universe integrity', freshness: 'Data freshness', artefacts: 'Artefacts present',
+                        study: 'Study invariants', book: 'Live book' };
+  let html = `<table><thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead><tbody>`;
+  for (const [g, rows] of Object.entries(groups)) {
+    html += `<tr><td colspan="3" style="background:var(--bg3);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--t3-text);">${GROUP_LABEL[g] || g}</td></tr>`;
+    html += rows.map(c => `<tr><td>${c.name}</td>
+      <td><span class="pill ${c.status === 'OK' ? 'pill-ok' : (c.status === 'WARN' ? 'pill-warn' : 'pill-bad')}">${c.status}</span></td>
+      <td class="faint">${c.detail}</td></tr>`).join('');
+  }
+  document.getElementById('tbl-health').innerHTML = html + '</tbody></table>';
+  document.getElementById('health-prov').textContent =
+    `${H.n_ok} OK · ${H.n_warn} WARN · ${H.n_fail} FAIL of ${H.n_checks} checks · computed ${fmtTs(H.computed_at_utc)}`;
+}
+
+/* --------------------- per-name inline expansion --------------------- */
+let nameBase = null, namePeriod = 156, nameScale = 'log', namePlot = null;
 function drawNameChart() {
   const NS = DATA.name_series;
   if (!NS || !nameBase || !NS.px[nameBase]) return;
-  const n = NS.dates.length;
-  const from = namePeriod ? Math.max(0, n - namePeriod) : 0;
-  const x = NS.dates.slice(from);
-  const px = NS.px[nameBase].slice(from);
-  const ma = NS.ma[nameBase].slice(from);
-
-  // Qualification shading: contiguous stretches where close > MA200 x 1.05.
-  const shapes = [];
-  let start = null;
+  const n = NS.dates.length, from = namePeriod ? Math.max(0, n - namePeriod) : 0;
+  const x = NS.dates.slice(from), px = NS.px[nameBase].slice(from), ma = NS.ma[nameBase].slice(from);
+  const shapes = []; let start = null;
   for (let i = 0; i < px.length; i++) {
     const q = px[i] != null && ma[i] != null && px[i] > ma[i] * 1.05;
     if (q && start === null) start = i;
@@ -493,89 +990,86 @@ function drawNameChart() {
       start = null;
     }
   }
-  document.querySelectorAll('.expand-panel [data-s]').forEach(b =>
-    b.classList.toggle('active', b.dataset.s === nameScale));
-  document.querySelectorAll('.expand-panel [data-p]').forEach(b =>
-    b.classList.toggle('active', parseInt(b.dataset.p, 10) === namePeriod));
-
-  Plotly.react('ch-name', [
+  document.querySelectorAll('.expand-panel [data-s]').forEach(b => b.classList.toggle('active', b.dataset.s === nameScale));
+  document.querySelectorAll('.expand-panel [data-p]').forEach(b => b.classList.toggle('active', parseInt(b.dataset.p, 10) === namePeriod));
+  const div = document.getElementById('ch-name');
+  if (!div) return;
+  namePlot = Plotly.react(div, [
     { x, y: px, name: 'weekly close (signal basis)', line: { color: '#2563eb', width: 2.5 } },
     { x, y: ma, name: 'MA200', line: { color: '#b45309', width: 1.5 } },
   ], { ...CHART_LAYOUT, margin: { t: 34, b: 44, l: 10, r: 55 }, shapes,
        xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(px.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, type: nameScale } }, PLOT_CFG);
+       yaxis: { ...CHART_LAYOUT.yaxis, type: nameScale } }, PLOT_CFG).catch(() => {});
 }
-
+// Teardown is DEFERRED until the pending draw drains. Purging a Plotly div
+// while its auto-margin pass is still queued throws from inside Plotly's own
+// promise chain, which no .catch of ours can reach. The row is hidden at once
+// so the click still feels instant, and removed a frame later.
 function closeExpand() {
   const row = document.querySelector('tr.expand-row');
-  if (row) { Plotly.purge('ch-name'); row.remove(); }
   nameBase = null;
+  if (!row) return;
+  const div = document.getElementById('ch-name');
+  row.classList.remove('expand-row');
+  row.style.display = 'none';
+  const finish = () => {
+    try { if (div && div.data) Plotly.purge(div); } catch (e) { /* already gone */ }
+    row.remove();
+  };
+  (namePlot || Promise.resolve()).then(
+    () => requestAnimationFrame(() => setTimeout(finish, 0)), finish);
+  namePlot = null;
 }
-
 function openName(base, hostRow) {
   const NS = DATA.name_series;
   if (!NS || !NS.px[base] || !hostRow) return;
-  const wasOpenHere = nameBase === base;
+  const same = nameBase === base;
   closeExpand();
-  if (wasOpenHere) return;   // second click on the same name toggles closed
+  if (same) return;
   nameBase = base; nameScale = 'log'; namePeriod = 156;
-
   const u = (DATA.universe || []).find(r => r.base === base) || {};
   const px = NS.px[base], ma = NS.ma[base];
   const last = px[px.length - 1], lastMa = ma[ma.length - 1];
   const sig = (last != null && lastMa != null) ? (last / lastMa - 1) * 100 : null;
   const badge = sig == null ? '' : (sig > 5
-    ? `<span class="pill" style="background:var(--g-bg2);color:var(--g-text);border-color:transparent;">+${sig.toFixed(1)}% above MA — qualifies</span>`
-    : `<span class="pill" style="background:var(--r-bg2);color:var(--r-text);border-color:transparent;">${sig >= 0 ? '+' : ''}${sig.toFixed(1)}% vs MA — below the +5% floor</span>`);
-
+    ? `<span class="pill pill-ok">+${sig.toFixed(1)}% above MA — qualifies</span>`
+    : `<span class="pill pill-bad">${sig >= 0 ? '+' : ''}${sig.toFixed(1)}% vs MA — below the +5% floor</span>`);
   const tr = document.createElement('tr');
   tr.className = 'expand-row';
   const td = document.createElement('td');
   td.colSpan = hostRow.cells.length;
   td.innerHTML = `<div class="expand-panel">
-      <div class="expand-head">
-        <span class="ttl">${u.name || base}</span>
-        <span class="pill">${base}</span>
-        <span class="pill">${u.cluster || '—'}</span>
-        <span class="pill">funding ${fmtPct(u.fund)}</span>
-        <span class="pill">${u.in_book ? 'in the book' : 'not held'}</span>
-        ${badge}
-        <button class="expand-close" aria-label="Close">✕</button>
-      </div>
+      <div class="expand-head"><span class="ttl">${u.name || base}</span>
+        <span class="pill">${base}</span><span class="pill">${u.cluster || '—'}</span>
+        <span class="pill">funding ${fmtPct(u.fund)}</span>${badge}
+        <button class="expand-close" aria-label="Close">✕</button></div>
       <div class="expand-tools">
-        <div class="period-selector">
-          <button data-p="52">1Y</button><button data-p="156" class="active">3Y</button><button data-p="0">MAX</button>
-        </div>
-        <div class="period-selector">
-          <button data-s="linear">Lin</button><button data-s="log" class="active">Log</button>
-        </div>
+        <div class="period-selector"><button data-p="52">1Y</button><button data-p="156" class="active">3Y</button><button data-p="0">MAX</button></div>
+        <div class="period-selector"><button data-s="linear">Lin</button><button data-s="log" class="active">Log</button></div>
         <span class="faint">green shading = qualifies (close above MA200 +5%)</span>
-      </div>
-      <div id="ch-name"></div>
-    </div>`;
+      </div><div id="ch-name"></div></div>`;
   tr.appendChild(td);
   hostRow.after(tr);
   td.querySelector('.expand-close').addEventListener('click', closeExpand);
-  td.querySelectorAll('[data-p]').forEach(b => b.addEventListener('click', () => {
-    namePeriod = parseInt(b.dataset.p, 10); drawNameChart();
-  }));
-  td.querySelectorAll('[data-s]').forEach(b => b.addEventListener('click', () => {
-    nameScale = b.dataset.s; drawNameChart();
-  }));
+  td.querySelectorAll('[data-p]').forEach(b => b.addEventListener('click', () => { namePeriod = parseInt(b.dataset.p, 10); drawNameChart(); }));
+  td.querySelectorAll('[data-s]').forEach(b => b.addEventListener('click', () => { nameScale = b.dataset.s; drawNameChart(); }));
   drawNameChart();
   tr.scrollIntoView({ block: 'nearest' });
 }
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeExpand(); });
-// Delegate clicks from every table: any .nm cell carrying data-base expands
-// its chart inline under the clicked row (the scanner.html pattern).
-document.addEventListener('click', (e) => {
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeExpand(); });
+document.addEventListener('click', e => {
   const cell = e.target.closest('.nm[data-base]');
   if (cell) openName(cell.dataset.base, cell.closest('tr'));
 });
 
-renderAsof(); renderShadow(); renderOrders(); renderBook();
+/* -------------------------------- init ------------------------------- */
+renderHero(); renderMonitor(); renderOrders(); renderBook();
+renderRecipe(); renderSelection(); renderSignal(); renderHonest(); renderTail();
 renderChips(); renderClusterBar(); renderUniverse();
-renderVerdict(); renderRules(); renderDecisions(); renderAmendments();
+renderFills(); renderLedger();
+renderVerdict(); renderGrid(); renderSplit();
+renderMethod(); renderDecisions(); renderData(); renderHealth();
+drawPerf(0); drawn.monitor = true;
 </script>
 </body>
 </html>

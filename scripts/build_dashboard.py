@@ -122,6 +122,7 @@ def main() -> int:
         "split_half": results.get("split_half", {}),
         "grid_note": {k: v.get(f"m1_b{bands[-1]}", {}).get("sharpe")
                       for k, v in results.get("cells", {}).items()},
+        "grid_full": results.get("cells", {}),
     }
 
     clusters = {}
@@ -131,7 +132,11 @@ def main() -> int:
 
     series = rj(ROOT / "data" / "phase2_series.json", None)
     name_series = rj(ROOT / "data" / "name_series.json", None)
+    detail = rj(ROOT / "data" / "payload_detail.json", None)
+    health = rj(ROOT / "data" / "data_health.json", None)
+    k10_null = rj(ROOT / "data" / "k10_null.json", None)
     decisions = [r for r in log if r.get("type") == "ops"][::-1][:60]
+    fills = [r for r in log if r.get("type") == "execution"][::-1]
 
     data = {
         "built_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -140,7 +145,16 @@ def main() -> int:
             "scan": scan.get("generated_at_utc"),
             "results": results.get("computed_at_utc"),
             "series": (series or {}).get("computed_at_utc"),
+            "detail": (detail or {}).get("computed_at_utc"),
+            "name_series": (name_series or {}).get("computed_at_utc"),
+            "universe": umap.get("generated_at_utc"),
         },
+        # Live signal state, straight from the evaluator's own order list so the
+        # page cannot disagree with the file the operator executes from.
+        "gated": orders.get("gated"),
+        "breadth": orders.get("breadth"),
+        "signal_asof": orders.get("signal_asof"),
+        "skipped_funding": orders.get("skipped_funding_rule", []),
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
         "orders": order_rows, "book": book_rows,
@@ -151,6 +165,10 @@ def main() -> int:
         "verdict": verdict,
         "series": series,
         "name_series": name_series,
+        "detail": detail,
+        "health": health,
+        "k10_null": k10_null,
+        "fills": fills,
         "decisions": decisions,
         "rules": {
             "signal": "distance of underlying adjusted close above its own 200-day moving average (P/MA200 − 1), computed on the underlying, traded via the perp",

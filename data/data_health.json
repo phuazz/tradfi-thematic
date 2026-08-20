@@ -1,0 +1,141 @@
+{
+ "computed_at_utc": "2026-08-20T10:00:38.200589+00:00",
+ "n_checks": 22,
+ "n_ok": 22,
+ "n_warn": 0,
+ "n_fail": 0,
+ "checks": [
+  {
+   "name": "Identity: no unresolved names",
+   "status": "OK",
+   "detail": "160 verified two-source, 0 flagged",
+   "group": "universe"
+  },
+  {
+   "name": "Levered ETPs excluded",
+   "status": "OK",
+   "detail": "16 levered/inverse products filtered out of the tradeable set",
+   "group": "universe"
+  },
+  {
+   "name": "No levered product in the eligible set",
+   "status": "OK",
+   "detail": "133 eligible equity names, 0 leaks",
+   "group": "universe"
+  },
+  {
+   "name": "Equity-only rule (Amendment 1)",
+   "status": "OK",
+   "detail": "0 commodity names in the eligible set (expected 0)",
+   "group": "universe"
+  },
+  {
+   "name": "Duplicate share lines dropped",
+   "status": "OK",
+   "detail": "HK0700, SKHY, STRC excluded",
+   "group": "universe"
+  },
+  {
+   "name": "Price panel freshness",
+   "status": "OK",
+   "detail": "newest bar 2026-08-20 (0 days ago); refreshed by the Saturday evaluator run",
+   "group": "freshness"
+  },
+  {
+   "name": "Funding scan freshness",
+   "status": "OK",
+   "detail": "scanner data 9.9h old (twice-daily cadence)",
+   "group": "freshness"
+  },
+  {
+   "name": "Evaluator heartbeat",
+   "status": "OK",
+   "detail": "last run 0.0h ago (12 runs logged)",
+   "group": "freshness"
+  },
+  {
+   "name": "Artefact present: study results",
+   "status": "OK",
+   "detail": "built 0.9h ago",
+   "group": "artefacts"
+  },
+  {
+   "name": "Artefact present: chart series",
+   "status": "OK",
+   "detail": "built 0.9h ago",
+   "group": "artefacts"
+  },
+  {
+   "name": "Artefact present: per-name series",
+   "status": "OK",
+   "detail": "built 0.9h ago",
+   "group": "artefacts"
+  },
+  {
+   "name": "Artefact present: payload detail",
+   "status": "OK",
+   "detail": "built 0.3h ago",
+   "group": "artefacts"
+  },
+  {
+   "name": "Null gate matches current engine result",
+   "status": "OK",
+   "detail": "gate ran on Sharpe 1.044, engine reports 1.044; percentile 99.9",
+   "group": "study"
+  },
+  {
+   "name": "Payload clears its null gate (>= p90)",
+   "status": "OK",
+   "detail": "99.9th percentile of 1000 random same-shape paths",
+   "group": "study"
+  },
+  {
+   "name": "Equity-only anchor present",
+   "status": "OK",
+   "detail": "Amendment 1 re-anchor recorded",
+   "group": "study"
+  },
+  {
+   "name": "Cluster cap respected every week",
+   "status": "OK",
+   "detail": "0 of 450 weeks breach the cap of 2",
+   "group": "study"
+  },
+  {
+   "name": "Position count never exceeds K",
+   "status": "OK",
+   "detail": "0 of 450 weeks hold more than 10 names",
+   "group": "study"
+  },
+  {
+   "name": "Sleeve gate fires (cash weeks exist)",
+   "status": "OK",
+   "detail": "85 of 450 weeks gated to cash \u2014 the regime rule is live",
+   "group": "study"
+  },
+  {
+   "name": "Contract specs present for tradeable names",
+   "status": "OK",
+   "detail": "163 contracts cached, 0 eligible names without specs",
+   "group": "book"
+  },
+  {
+   "name": "Book reconciles to the fill log",
+   "status": "OK",
+   "detail": "0 fills logged, 0 distinct positions; book value is derived, never typed",
+   "group": "book"
+  },
+  {
+   "name": "Funding rule active on buys",
+   "status": "OK",
+   "detail": "2 name(s) blocked today at >+30%/yr: SKHYNIXUSDT (+48.7%/yr), ZHONGJIUSDT (+47.9%/yr)",
+   "group": "book"
+  },
+  {
+   "name": "Evaluator places no orders",
+   "status": "OK",
+   "detail": "by construction: the evaluator writes lists and alerts only; every fill is manual",
+   "group": "book"
+  }
+ ]
+}

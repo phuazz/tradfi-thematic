@@ -284,19 +284,23 @@ def main() -> int:
     if is_saturday:
         for script, tmo in (("scripts/fetch_underlyings.py", 900),
                             ("scripts/write_name_series.py", 300),
-                            ("scripts/persist_series.py", 900)):
+                            ("scripts/persist_series.py", 900),
+                            ("scripts/persist_payload_detail.py", 600)):
             try:
                 subprocess.run([sys.executable, script], cwd=PROJECT_ROOT,
                                capture_output=True, timeout=tmo)
             except Exception:  # noqa: BLE001
                 pass
-    # Rebuild the names-first dashboard so it is fresh before the execution
-    # window — fail-open, the evaluation itself must never die here.
-    try:
-        subprocess.run([sys.executable, "scripts/build_dashboard.py"],
-                       cwd=PROJECT_ROOT, capture_output=True, timeout=120)
-    except Exception:  # noqa: BLE001
-        pass
+    # Health checks then the dashboard rebuild, so the page is fresh — and
+    # honestly labelled — before the execution window. Fail-open: the
+    # evaluation itself must never die here.
+    for script, tmo in (("scripts/data_health.py", 120),
+                        ("scripts/build_dashboard.py", 180)):
+        try:
+            subprocess.run([sys.executable, script], cwd=PROJECT_ROOT,
+                           capture_output=True, timeout=tmo)
+        except Exception:  # noqa: BLE001
+            pass
 
     subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"],
                    cwd=PROJECT_ROOT, capture_output=True)
