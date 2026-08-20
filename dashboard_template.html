@@ -216,7 +216,16 @@ footer strong { color: var(--t2); }
   </section>
 
   <section>
-    <h2>Performance<span class="badge-sim">simulated</span><span class="hint">net of fees, the funding band and forgone dividends — the live book is days old, so this is the simulated record</span></h2>
+    <h2>Performance — the tradeable record<span class="hint">the only window in which this universe existed: from the first perpetual listing to today</span></h2>
+    <div id="honest-banner"></div>
+    <div class="chart-wrap"><div id="honest-chart" class="chart"></div></div>
+    <div class="provenance" id="honest-prov"></div>
+    <div class="scroll" id="tbl-honest" style="margin-top: 11px;"></div>
+  </section>
+
+  <section>
+    <h2>The long backtest<span class="badge-sim">hindsight — not tradeable</span><span class="hint">kept visible because it is what the study was built on, and because its failure is the finding</span></h2>
+    <div id="hindsight-banner"></div>
     <div class="period-selector" id="perf-periods">
       <button data-p="52">1Y</button><button data-p="156">3Y</button><button data-p="0" class="active">MAX</button>
     </div>
@@ -448,7 +457,7 @@ document.querySelectorAll('#tabs button').forEach(btn =>
   btn.addEventListener('click', () => { closeExpand(); activateTab(btn.dataset.tab); }));
 
 function drawTabCharts(name) {
-  if (name === 'monitor') drawPerf(0);
+  if (name === 'monitor') { drawHonest(); drawPerf(0); }
   if (name === 'rotation') { drawRotEquity(); drawAlloc(); drawBreadth(); }
   if (name === 'history') { drawTurnover(); drawMonthly(); }
   if (name === 'robustness') drawNull();
@@ -460,20 +469,26 @@ function renderHero() {
   document.getElementById('ts-built-footer').textContent = 'Last updated ' + fmtTs(DATA.built_at_utc) + '.';
   const sh = payloadStats.sharpe, cagr = payloadStats.cagr, dd = payloadStats.max_dd;
   const weeks = payloadStats.n_weeks || (S ? S.dates.length : 0);
+  const L = ((DATA.honest || {}).like_for_like) || {};
+  const rot = L.rotation_K10_gated || {}, spy = L.spy_buy_and_hold || {}, bsk = L.equal_weight_basket_gated || {};
+  const hw = DATA.honest || {};
   document.getElementById('hero-banner').innerHTML =
-    `<strong>The four figures below are SIMULATED, not performance.</strong> They come from a backtest on the
-     underlying shares since 2018; the live book was funded days ago, holds ${DATA.n_filled} positions and has no
-     track record. The simulated return is also flattered by the universe: Binance chose to list these contracts in
-     2025–26, after the underlyings had already trended. Treat the comparisons on this page as the evidence, and the
-     absolute levels as unusable.`;
+    `<strong>The headline figures are from the only window that was actually tradeable</strong> — from the first
+     perpetual listing on ${hw.window_from || '2025-12-11'}, ${hw.weeks || 37} weeks. In that window the live payload
+     LOST money while buying and holding SPY would have made ${spy.total_return != null ? (spy.total_return * 100).toFixed(1) : '13.1'}%.
+     The eight-year backtest that this workstream was built on cannot be traded: the universe is Binance's 2026
+     listing menu projected backwards, and 90% of these contracts did not exist before May 2026.`;
   const items = [
-    { n: sh != null ? (sh >= 0 ? '+' : '') + sh.toFixed(2) : '—', cls: (sh || 0) > 0 ? 'good' : 'bad',
-      label: 'Net Sharpe · simulated', desc: 'worst funding band, after all modelled costs' },
-    { n: cagr != null ? fmtPct(cagr * 100) : '—', cls: (cagr || 0) > 0 ? 'good' : 'bad',
-      label: 'CAGR · simulated', desc: 'flattered by the listing menu — not a forecast' },
-    { n: dd != null ? fmtPct(dd * 100) : '—', cls: 'bad', label: 'Max drawdown · simulated',
-      desc: 'weekly closes; intra-week troughs are deeper' },
-    { n: (weeks / 52).toFixed(1) + 'y', cls: '', label: 'Backtest window', desc: weeks + ' weekly rebalances' },
+    { n: rot.sharpe != null ? (rot.sharpe >= 0 ? '+' : '') + rot.sharpe.toFixed(2) : '—',
+      cls: (rot.sharpe || 0) > 0 ? 'good' : 'bad', label: 'Sharpe · tradeable window',
+      desc: 'the live payload, listing-gated' },
+    { n: rot.total_return != null ? fmtPct(rot.total_return * 100) : '—',
+      cls: (rot.total_return || 0) > 0 ? 'good' : 'bad', label: 'Return · tradeable window',
+      desc: 'SPY made ' + (spy.total_return != null ? fmtPct(spy.total_return * 100) : '—') + ' over the same weeks' },
+    { n: rot.max_dd != null ? fmtPct(rot.max_dd * 100) : '—', cls: 'bad', label: 'Max drawdown · tradeable',
+      desc: 'against SPY ' + (spy.max_dd != null ? fmtPct(spy.max_dd * 100) : '—') + ' on the same basis' },
+    { n: (hw.weeks || 0) + 'w', cls: '', label: 'Tradeable history',
+      desc: 'the 8.7y backtest is hindsight — see below' },
     { n: DATA.n_filled + '/10', cls: DATA.n_filled ? 'good' : '', label: 'Live positions',
       desc: '$' + DATA.book_value.toFixed(0) + ' of $' + DATA.book_cap.toFixed(0) + ' · max loss $' + (DATA.max_loss_usd || 5000).toFixed(0) + ', no leverage' },
   ];
@@ -708,21 +723,88 @@ function renderTail() {
 /* ------------------------------- charts ------------------------------ */
 function adaptiveDtick(n) { return n <= 78 ? 'M2' : (n <= 200 ? 'M6' : 'M12'); }
 function rebase(vals, from) { const b = vals[from]; return vals.slice(from).map(v => (v / b - 1) * 100); }
+// GROWTH-OF-CAPITAL on a log axis. A 40× range on a linear axis compresses
+// six of eight years into a flat line at the bottom; log gives every year the
+// same visual weight, which is the honest way to show a long compounding
+// series. Ticks are labelled in multiples of starting capital.
+const LOG_TICKS = { tickvals: [0.5, 1, 2, 5, 10, 20, 40], ticktext: ['0.5×', '1×', '2×', '5×', '10×', '20×', '40×'] };
+function growth(vals, from) { const b = vals[from]; return vals.slice(from).map(v => v / b); }
+
 function drawPerf(weeksBack) {
   if (!S) return;
   const n = S.dates.length, from = weeksBack ? Math.max(0, n - weeksBack) : 0;
   const x = S.dates.slice(from);
   const traces = [];
-  if (S.k10_b6) traces.push({ x, y: rebase(S.k10_b6, from), name: 'Rotation K=10 — live payload', line: { color: '#1a8754', width: 4 } });
-  if (D && D.bench && D.bench.equity) traces.push({ x, y: rebase(D.bench.equity, from), name: 'SPY buy-and-hold', line: { color: '#8a8a82', width: 1.3 } });
-  traces.push({ x, y: rebase(S.basket_eq_b6, from), name: 'Equal-weight basket', line: { color: '#2563eb', width: 1.3 } });
-  traces.push({ x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 (pre-registered)', line: { color: '#7c3aed', width: 1.3 } });
-  Plotly.react('perf-chart', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 46 },
+  if (S.k10_b6) traces.push({ x, y: growth(S.k10_b6, from), name: 'Rotation K=10 (live payload)', line: { color: '#1a8754', width: 3.5 } });
+  traces.push({ x, y: growth(S.basket_eq_b6, from), name: 'Equal-weight basket', line: { color: '#2563eb', width: 1.4 } });
+  traces.push({ x, y: growth(S.primary_b6, from), name: 'Rotation K=5 (pre-registered)', line: { color: '#b8a6e8', width: 1.2 } });
+  if (D && D.bench && D.bench.equity) traces.push({ x, y: growth(D.bench.equity, from), name: 'SPY buy-and-hold', line: { color: '#8a8a82', width: 1.4, dash: 'dot' } });
+  // Mark the date the universe actually began to exist.
+  const firstListing = (DATA.honest || {}).window_from;
+  const shapes = [], annotations = [];
+  if (firstListing && x[0] <= firstListing) {
+    shapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0: x[0], x1: firstListing, y0: 0, y1: 1,
+                  fillcolor: 'rgba(192,57,43,0.055)', line: { width: 0 } });
+    shapes.push({ type: 'line', xref: 'x', yref: 'paper', x0: firstListing, x1: firstListing, y0: 0, y1: 1,
+                  line: { color: '#c0392b', width: 1.3, dash: 'dash' } });
+    annotations.push({ x: firstListing, y: 1.045, yref: 'paper', xanchor: 'right', text: 'shaded: no contract existed yet  ',
+                       showarrow: false, font: { size: 11, color: '#a93226' } });
+  }
+  Plotly.react('perf-chart', traces, { ...CHART_LAYOUT, margin: { t: 34, b: 32, l: 10, r: 52 }, shapes, annotations,
     xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
-    yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+    yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', ...LOG_TICKS, title: { text: 'growth of capital', font: { size: 11 } } } }, PLOT_CFG);
   document.getElementById('perf-prov').textContent =
-    `simulated, net of 10bp round-trip fees, the +6%/yr funding band and forgone dividends · weekly Friday closes, ` +
-    `rebased to 0% at the window start · series computed ${fmtTs(DATA.as_of.series)}`;
+    `HINDSIGHT: every name here was chosen by Binance in 2025–26; before ${firstListing || '2025-12-11'} none of these ` +
+    `contracts existed, so nothing in the shaded region was investable. Log axis, growth of capital, net of 10bp ` +
+    `round-trip fees, the +6%/yr funding band and forgone dividends · series computed ${fmtTs(DATA.as_of.series)}`;
+}
+
+// The tradeable record: same rule, but a name only becomes eligible once its
+// contract actually listed. This is the evidence; the chart above is context.
+function drawHonest() {
+  const h = DATA.honest;
+  if (!h || !h.series) return;
+  const s = h.series, x = s.dates;
+  const pct = arr => arr.map(v => (v / arr[0] - 1) * 100);
+  Plotly.react('honest-chart', [
+    { x, y: pct(s.rotation), name: 'Rotation K=10 (the live payload)', line: { color: '#c0392b', width: 3.5 } },
+    { x, y: pct(s.basket), name: 'Equal-weight basket', line: { color: '#2563eb', width: 2 } },
+    { x, y: pct(s.spy), name: 'SPY buy-and-hold', line: { color: '#1a1a18', width: 2, dash: 'dot' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 48 },
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: 'M1' },
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
+  document.getElementById('honest-prov').textContent =
+    `every construction gated by the ACTUAL contract listing date · ${h.weeks} weekly rebalances from ${h.window_from} ` +
+    `· identical costs and funding band throughout · computed ${fmtTs(h.computed_at_utc)}`;
+  const L = h.like_for_like || {};
+  const rows = [['Rotation K=10 — the live payload', L.rotation_K10_gated, 'neg'],
+                ['Equal-weight basket', L.equal_weight_basket_gated, ''],
+                ['SPY buy-and-hold', L.spy_buy_and_hold, 'pos']];
+  document.getElementById('tbl-honest').innerHTML =
+    `<table><thead><tr><th>Series (listing-gated, net)</th><th class="num">Sharpe</th><th class="num">Total return</th>
+      <th class="num">Max DD</th></tr></thead><tbody>` +
+    rows.map(([l, m, cls]) => m ? `<tr><td class="${cls === 'neg' ? 'nm' : ''}">${l}</td>
+      <td class="num ${cls}">${m.sharpe >= 0 ? '+' : ''}${m.sharpe.toFixed(2)}</td>
+      <td class="num ${m.total_return >= 0 ? 'pos' : 'neg'}">${fmtPct(m.total_return * 100)}</td>
+      <td class="num neg">${fmtPct(m.max_dd * 100)}</td></tr>` : '').join('') + '</tbody></table>';
+
+  const f = h.funding || {};
+  document.getElementById('honest-banner').innerHTML =
+    `<div class="banner banner-amber"><strong>Read this before the chart above it.</strong> In the only window where
+     these contracts existed, the live payload <strong>lost ${Math.abs(L.rotation_K10_gated.total_return * 100).toFixed(1)}%</strong>
+     while simply holding SPY made ${(L.spy_buy_and_hold.total_return * 100).toFixed(1)}% — and it did so with a
+     ${Math.abs(L.rotation_K10_gated.max_dd * 100).toFixed(0)}% drawdown against SPY's
+     ${Math.abs(L.spy_buy_and_hold.max_dd * 100).toFixed(0)}%. Realised funding on these contracts is also running
+     above the band the backtest charged: universe median <strong>${f.universe_median_ann_pct}%/yr</strong> against a
+     band edge of ${(f.band_assumed || [0,3,6])[2]}%/yr.</div>`;
+  document.getElementById('hindsight-banner').innerHTML =
+    `<div class="banner banner-amber"><strong>This curve is not evidence.</strong> The universe is Binance's 2026
+     listing menu projected backwards onto 2018. The top five contributors are
+     ${((DATA.pit || {}).contribution || {}).top5_share_pct || 47.5}% of the whole return, and every one of them had its
+     contract listed in 2026 — after the run the chart is claiming. Under a point-in-time listing gate the same rule is
+     invested in only ${((DATA.pit || {}).pit_listing || {}).weeks_invested || 36} of
+     ${((DATA.pit || {}).pit_listing || {}).weeks_total || 450} weeks and loses money. It is kept on the page because
+     deleting an inconvenient result is worse than showing it.</div>`;
 }
 document.querySelectorAll('#perf-periods button').forEach(btn => btn.addEventListener('click', () => {
   document.querySelectorAll('#perf-periods button').forEach(b => b.classList.remove('active'));
@@ -1147,7 +1229,7 @@ renderChips(); renderClusterBar(); renderUniverse();
 renderFills(); renderLedger();
 renderVerdict(); renderGrid(); renderSplit();
 renderMethod(); renderDecisions(); renderData(); renderHealth();
-drawPerf(0); drawn.monitor = true;
+drawHonest(); drawPerf(0); drawn.monitor = true;
 </script>
 </body>
 </html>

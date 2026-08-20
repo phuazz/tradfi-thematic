@@ -1,0 +1,138 @@
+{
+ "computed_at_utc": "2026-08-20T15:19:17.205859+00:00",
+ "contribution": {
+  "sum_of_weekly_contributions_pct": 392.0,
+  "top": [
+   {
+    "base": "GME",
+    "name": "GameStop Corporation",
+    "pct": 66.3,
+    "share_of_total": 16.9,
+    "perp_listed": "2026-06-10 00:00:00"
+   },
+   {
+    "base": "AXTI",
+    "name": "AXT Inc",
+    "pct": 36.2,
+    "share_of_total": 9.2,
+    "perp_listed": "2026-06-08 00:00:00"
+   },
+   {
+    "base": "BE",
+    "name": "Bloom Energy Corporation",
+    "pct": 31.6,
+    "share_of_total": 8.1,
+    "perp_listed": "2026-05-26 00:00:00"
+   },
+   {
+    "base": "APP",
+    "name": "Applovin Corporation",
+    "pct": 26.4,
+    "share_of_total": 6.7,
+    "perp_listed": "2026-07-10 00:00:00"
+   },
+   {
+    "base": "MSTR",
+    "name": "Strategy Inc",
+    "pct": 25.7,
+    "share_of_total": 6.6,
+    "perp_listed": "2026-02-09 00:00:00"
+   },
+   {
+    "base": "TSLA",
+    "name": "Tesla, Inc.",
+    "pct": 24.4,
+    "share_of_total": 6.2,
+    "perp_listed": "2026-01-28 00:00:00"
+   },
+   {
+    "base": "POPMART",
+    "name": "POP MART",
+    "pct": 20.4,
+    "share_of_total": 5.2,
+    "perp_listed": "2026-07-23 00:00:00"
+   },
+   {
+    "base": "PLTR",
+    "name": "Palantir Technologies Inc.",
+    "pct": 16.4,
+    "share_of_total": 4.2,
+    "perp_listed": "2026-02-09 00:00:00"
+   },
+   {
+    "base": "NVDA",
+    "name": "NVIDIA Corporation",
+    "pct": 14.6,
+    "share_of_total": 3.7,
+    "perp_listed": "2026-03-26 00:00:00"
+   },
+   {
+    "base": "VRT",
+    "name": "Vertiv Holdings, LLC",
+    "pct": 13.6,
+    "share_of_total": 3.5,
+    "perp_listed": "2026-07-10 00:00:00"
+   },
+   {
+    "base": "RKLB",
+    "name": "Rocket Lab Corporation",
+    "pct": 13.4,
+    "share_of_total": 3.4,
+    "perp_listed": "2026-05-18 00:00:00"
+   },
+   {
+    "base": "SMCI",
+    "name": "Super Micro Computer, Inc.",
+    "pct": 11.6,
+    "share_of_total": 2.9,
+    "perp_listed": "2026-06-22 00:00:00"
+   }
+  ],
+  "top5_share_pct": 47.5
+ },
+ "pit_listing": {
+  "stats_full_window": {
+   "sharpe": -0.025,
+   "cagr": -0.0066,
+   "total_return": -0.0558,
+   "max_dd": -0.305,
+   "n_weeks": 450
+  },
+  "weeks_invested": 36,
+  "weeks_total": 450,
+  "first_possible_listing": "2025-12-11",
+  "note": "a name is eligible only once its perp actually existed; before the first listing the strategy is untradeable and holds nothing"
+ },
+ "honest_window": {
+  "from": "2025-12-11",
+  "weeks": 37,
+  "payload_pit_listing": {
+   "sharpe": -0.086,
+   "cagr": -0.0775,
+   "total_return": -0.0558,
+   "max_dd": -0.305,
+   "n_weeks": 37
+  },
+  "payload_unrestricted_same_window": {
+   "sharpe": 0.963,
+   "cagr": 0.4115,
+   "total_return": 0.2779,
+   "max_dd": -0.325,
+   "n_weeks": 37
+  },
+  "equal_weight_basket": {
+   "sharpe": 1.819,
+   "cagr": 0.4845,
+   "total_return": 0.3246,
+   "max_dd": -0.1132,
+   "n_weeks": 37
+  },
+  "spy_buy_hold": {
+   "sharpe": 1.427,
+   "cagr": 0.1887,
+   "total_return": 0.1309,
+   "max_dd": -0.0839,
+   "n_weeks": 37
+  }
+ }
+}

@@ -52,6 +52,8 @@ def main() -> int:
     detail = rj(ROOT / "data" / "payload_detail.json", None)
     health = rj(ROOT / "data" / "data_health.json", None)
     k10_null = rj(ROOT / "data" / "k10_null.json", None)
+    honest = rj(ROOT / "data" / "honest_window.json", None)
+    pit = rj(ROOT / "data" / "pit_listing_check.json", None)
 
     def fund_of(sym):
         r = scan_rows.get(sym)
@@ -201,6 +203,8 @@ def main() -> int:
         "execution": execution,
         "index_beta": index_beta,
         "max_loss_usd": 5000.0,
+        "honest": honest,
+        "pit": pit,
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
         "orders": order_rows, "book": book_rows,
