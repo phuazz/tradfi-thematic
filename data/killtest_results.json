@@ -1534,5 +1534,17 @@
    "max_dd": -0.5993,
    "n_weeks": 1076
   }
+ },
+ "benchmark_spy": {
+  "basis": "price-only (Norgate CAPITAL adjustment), no costs, same weekly grid",
+  "declared": "prereg section 7, context only, no verdict weight",
+  "computed_post_run": "2026-08-21 - omitted from the P1 run; zero researcher degrees of freedom",
+  "stats": {
+   "sharpe": 0.576,
+   "cagr": 0.0903,
+   "total_return": 4.9877,
+   "max_dd": -0.5591,
+   "n_weeks": 1076
+  }
  }
 }

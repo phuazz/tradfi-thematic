@@ -5,6 +5,47 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-21 — Post-verdict: successor exploration on DECLARED outputs; two omissions disclosed
+
+Owner direction (Fable session): think through how the construction could work —
+e.g. a ≤25% per-theme concentration bound — with more critical thinking. Every
+number below reads pre-declared P1 outputs; no new configuration was run; the H1
+kill verdict stands as filed.
+
+- **The K × sector-cap family is exhausted.** All six declared cells fail H1 at
+  the binding 0%-premium point; the best margin is k10_capNone at **+0.086**
+  against the +0.10 bar. The pure selection edge with financing neutralised is
+  +0.07 to +0.09 Sharpe — real (null median negative, 100th pct) but thin.
+- **Sector caps are a tail tool, not a Sharpe tool.** cap2 minus capNone at the
+  band centre: K=5 **+11.5pp** shallower MaxDD for +0.019 Sharpe; K=20
+  **+10.5pp** for +0.013; K=10 a wash (−0.027 Sharpe, −0.5pp). The owner's ≤25%
+  bound is already satisfied by the tested primary (2/10 = 20%). Gap worth a
+  successor: GICS caps miss cross-sector theme piling (the AI complex spans
+  four sectors) — a correlation-cluster theme definition is untested machinery.
+- **The metric was the binder.** Calmar across the band: rotation (primary)
+  0.22 / 0.13 / 0.07 vs basket 0.10 / 0.05 / 0.00; MaxDD is financing-
+  insensitive (−36/−41/−46%) unlike the Sharpe margin that died at p0. Any
+  metric change is a successor's frozen primary, never a retroactive pass.
+- **Omission 1, closed:** the declared SPY context benchmark (§7) was missing
+  from the P1 run. Computed 2026-08-21, price-only, same grid, zero researcher
+  degrees of freedom: Sharpe +0.576, CAGR +9.0%, MaxDD −56%, 1,076 weeks;
+  appended to killtest_results.json. Carries no financing or costs — context
+  only; financing-matched it degrades toward the basket row.
+- **Omission 2, open:** the declared Russell 1000 robustness arm (§4) was never
+  built or run. Recommendation to owner: numbered amendment holding it out,
+  un-run, as the successor's single confirmation set — the only untouched US
+  universe left. Decision pending.
+- Successor sketch put to owner: constraints-first shape (name ≤10%, theme ≤25%
+  with 2 slots ⇒ K=10 cap 2 DERIVED, not tuned), 12-1 ranking (H3 +
+  signal-by-structure prior), gate kept, correlation-cluster themes as the one
+  new mechanism, Calmar-primary dual bar with a Sharpe floor, full {0,+3,+6}
+  band retained, bars set against second-half levels (+0.20 era), Russell
+  hold-out + walk-forward. Exclusions with priors: no vol knobs
+  (risk-overlay-lab), no relative/residual momentum (WS5), no MA re-tuning
+  (plateau).
+- Live-book decision needed before the Sat 2026-08-22 07:30 SGT window
+  (weekday verified by date library).
+
 ## 2026-08-21 — P1 RESULT: the kill-test kills it. H1 FAILS.
 
 Honest universe (S&P 500 + Nasdaq-100 point-in-time, delisted included,
