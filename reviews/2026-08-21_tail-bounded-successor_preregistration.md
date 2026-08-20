@@ -182,7 +182,26 @@ All dates weekday-verified by date library (Python `datetime`, months
 
 ---
 
-**Sign-off (owner):** ______________  **Date:** ______________
+**Sign-off (owner):** SIGNED — ZH, in session. **Date:** 2026-08-21 (Friday).
+The three named confirmations stand as written: Calmar-primary bars (§6), the
+Russell 1000 C&P top-250 confirmation universe, and the finality clause.
+
+## Implementation notes recorded at P0 (before any strategy result)
+
+1. **Liquidity screen, frozen details.** Candidates at t are names with a
+   fresh bar (staleness ≤ 3 sessions); the trailing 60-session median dollar
+   volume requires ≥ 30 non-missing sessions in the window (`DV_MIN_OBS = 30`)
+   so a newly listed or dying name cannot be ranked on a handful of prints.
+   The window ends the session BEFORE t — pinned by a guard test that injects
+   a future volume spike and asserts the selection is unchanged.
+2. **Clustering implementation.** scipy 1.17.1 average-linkage on 1 − ρ with
+   `squareform`; pairs with insufficient overlap take distance 1 (never
+   co-clustered); names under 52 weeks form singletons. The degeneracy
+   detector is itself guard-tested on constructed degenerate data.
+3. **Schedule.** P0 run 2026-08-21, ahead of the planned Monday, at owner
+   instruction — in the same sitting as, and after, the KT-1 filing, so the
+   record order (filing first) is preserved. No strategy number was computed
+   in P0.
 
 *Three things to confirm when signing, named now so they cannot move later:
 the primary metric (Calmar margins vs the basket, bars in §6), the held-out
