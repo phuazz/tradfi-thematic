@@ -68,7 +68,10 @@ ADJUDICATED: dict[str, str] = {
 # HKEX 2026-01-09 respectively) and carry real short-history series.
 NO_UNDERLYING = {"OPENAI", "ANTHROPIC"}
 
-LEVERED_PAT = re.compile(r"(?i)\b(2x|3x|-1x|ultra|bull|bear|short|daily target|leveraged|inverse)\b|\b2X\b")
+# "UltraPro" and "UltraShort" are single words, so \bultra\b and \bshort\b
+# never fired on them — TQQQ and TBT escaped the levered filter until the
+# rotation surfaced TQQQ in a live pick list (2026-08-20 defect correction).
+LEVERED_PAT = re.compile(r"(?i)\b(2x|3x|-1x|ultra\w*|bull|bear|short|daily target|leveraged|inverse)\b|\b2X\b")
 
 ETF_CLUSTER_KEYWORDS = [
     ("semi|memory|soxx|soxl|soxs", "semis-hardware"),

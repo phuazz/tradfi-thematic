@@ -11,32 +11,32 @@
  ],
  "results": {
   "band_0": {
-   "sharpe": 1.185,
-   "cagr": 0.2933,
-   "total_return": 8.216,
-   "max_dd": -0.3873,
-   "n_weeks": 449
+   "sharpe": 1.174,
+   "cagr": 0.2886,
+   "total_return": 7.9757,
+   "max_dd": -0.3892,
+   "n_weeks": 450
   },
   "band_0.03": {
-   "sharpe": 1.062,
-   "cagr": 0.2554,
-   "total_return": 6.1254,
-   "max_dd": -0.4045,
-   "n_weeks": 449
+   "sharpe": 1.05,
+   "cagr": 0.2508,
+   "total_return": 5.9355,
+   "max_dd": -0.4064,
+   "n_weeks": 450
   },
   "band_0.06": {
-   "sharpe": 0.938,
-   "cagr": 0.2185,
-   "total_return": 4.5083,
-   "max_dd": -0.4213,
-   "n_weeks": 449
+   "sharpe": 0.926,
+   "cagr": 0.2141,
+   "total_return": 4.3583,
+   "max_dd": -0.4231,
+   "n_weeks": 450
   },
   "band_0.06_2x": {
-   "sharpe": 0.938,
-   "cagr": 0.2183,
-   "total_return": 4.502,
-   "max_dd": -0.4213,
-   "n_weeks": 449
+   "sharpe": 0.926,
+   "cagr": 0.2139,
+   "total_return": 4.3521,
+   "max_dd": -0.4232,
+   "n_weeks": 450
   }
  }
 }

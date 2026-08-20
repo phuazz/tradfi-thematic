@@ -251,14 +251,13 @@ function renderShadow() {
   const sb = DATA.shadow_books || {};
   const b = sb.basket || {}, s = sb.smh || {};
   document.getElementById("shadow-cards").innerHTML = `
-    <div class="card"><h3>TradFi equity basket <span class="pill">${DATA.orders_mode || "—"}</span></h3>
+    <div class="card"><h3>TradFi rotation — K=10 cap=2 <span class="pill">${DATA.orders_mode || "—"}</span></h3>
       <div class="big">$${DATA.book_value.toFixed(0)}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> / $${DATA.book_cap.toFixed(0)}</span></div>
-      <div class="row"><strong>${DATA.n_filled} of ${DATA.n_members}</strong> names established · target $${(DATA.target_usd || 0).toFixed(2)}/name · equity-only (Amendment 1)</div>
+      <div class="row"><strong>${DATA.n_filled} of 10</strong> positions · $${(DATA.target_usd || 0).toFixed(0)}/name · live payload per Amendment 2, seen-data caveat carried</div>
       <div class="row"><strong>Triggers:</strong> <span class="${(b.fail_events || 0) ? "neg" : "pos"}">${(b.fail_events || 0) ? b.fail_events + " FAIL" : "none breached"}</span></div>
     </div>
-    <div class="card"><h3>WS17 xyz:SMH shadow <span class="pill">${s.mode || "—"}</span></h3>
-      <div class="row"><strong>Fills:</strong> ${s.n_fills_logged ?? "—"} (${s.n_probes_logged ?? "—"} probes; Tue/Fri schedule + one 5-session hold)</div>
-      <div class="row"><strong>Triggers:</strong> <span class="${(s.fail_events || 0) ? "neg" : "pos"}">${(s.fail_events || 0) ? s.fail_events + " FAIL" : "none breached"}</span></div>
+    <div class="card"><h3>WS17 xyz:SMH shadow <span class="pill">descoped</span></h3>
+      <div class="row">Closed early, not-started, 2026-08-20 (owner call) — zero fills logged; the KEEP-for-shadow verdict stands filed but unexercised.</div>
     </div>
     <div class="card"><h3>Combined close-out</h3>
       <div class="big">${sb.days_to_close_out ?? "—"}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> days</span></div>
@@ -346,12 +345,13 @@ function drawCharts(fromWeeksBack) {
   const from = fromWeeksBack ? Math.max(0, n - fromWeeksBack) : 0;
   const x = S.dates.slice(from);
 
-  Plotly.react('ch-perf', [
-    { x, y: rebase(S.basket_eq_b6, from), name: 'EW basket — equity-only (SHIPS)', line: { color: '#1a8754', width: 4 } },
-    { x, y: rebase(S.basket_b6, from), name: 'EW basket — full menu', line: { color: '#2563eb', width: 1.3 } },
-    { x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 cap=2 (rejected)', line: { color: '#7c3aed', width: 1.3 } },
-    { x, y: rebase(S.primary_b0, from), name: 'Rotation, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } },
-  ], { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
+  const traces = [
+    S.k10_b6 ? { x, y: rebase(S.k10_b6, from), name: 'Rotation K=10 cap=2 — LIVE payload (seen-data caveat)', line: { color: '#1a8754', width: 4 } } : null,
+    { x, y: rebase(S.basket_eq_b6, from), name: 'EW basket equity-only (filed verdict winner)', line: { color: '#2563eb', width: 1.3 } },
+    { x, y: rebase(S.primary_b6, from), name: 'Rotation K=5 cap=2 (pre-registered primary)', line: { color: '#7c3aed', width: 1.3 } },
+    S.k10_b0 ? { x, y: rebase(S.k10_b0, from), name: 'K=10, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } } : { x, y: rebase(S.primary_b0, from), name: 'Rotation, 0% funding band', line: { color: '#8a8a82', width: 1.3, dash: 'dot' } },
+  ].filter(Boolean);
+  Plotly.react('ch-perf', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 30, l: 10, r: 45 },
        xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
        yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
 

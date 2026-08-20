@@ -48,6 +48,10 @@ def main() -> int:
     for band in prereg.FUNDING_BAND_ANN:
         ser, _, _ = engine.run_cell(d, k, cap, 1.0, band)
         series[f"primary_b{int(band*100)}"] = ser
+    # Amendment 2 live payload: the K=10 cap=2 rotation, band edge and zero.
+    for band in (0.0, edge):
+        ser, _, _ = engine.run_cell(d, 10, 2, 1.0, band)
+        series[f"k10_b{int(band*100)}"] = ser
     basket_ser, _ = engine.run_basket(d, 1.0, edge)
     series["basket_b6"] = basket_ser
 

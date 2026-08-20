@@ -166,6 +166,8 @@ def main() -> int:
             {"date": "2026-08-16", "what": "Countersign and activation — Option A, US$5,000 book cap at 1× leverage; establishment tranches of 30 in the 07:30–09:30 SGT window."},
             {"date": "2026-08-16", "what": "Amendment 1 (pre-fills): EQUITY-ONLY — the commodity cluster excluded on owner instruction; membership 59 → 51; re-anchor indistinguishable from the filed full-menu basket, so the shipping bar carries."},
             {"date": "2026-08-17", "what": "Published to GitHub Pages on owner instruction; the evaluator pushes each morning's rebuild."},
+            {"date": "2026-08-20", "what": "Amendment 2 (pre-fills): the live payload pivots from the EW basket to the K=10 cluster-cap-2 ROTATION (US$5,000, ~US$500/name, ~3.3 orders/week) — owner grounds: operational load and listing-chase exposure (membership grew 51 → 57 in four days). SEEN-DATA CAVEAT carried: every grid cell was observed before this pick; the filed verdict (basket ships) stands in the record, overridden for the live book only. Gate, stated before its result: a fresh 1,000-path null at the K=10 shape — strategy at the 99.9th percentile. Passed."},
+            {"date": "2026-08-20", "what": "Defect correction: TQQQ and TBT had escaped the levered-ETP filter (\\bultra\\b cannot match inside UltraPro/UltraShort) — surfaced when TQQQ appeared in a live pick list. Filter fixed (16 levered excluded), and the panel, engine results, anchor, gate and every chart series were rerun on the corrected universe. The SMH shadow was descoped not-started the same day (separate owner decision)."},
         ],
     }
 

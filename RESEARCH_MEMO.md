@@ -5,6 +5,37 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-20 — Amendment 2 (payload pivot) + levered-filter defect correction
+
+**Pivot.** Owner rejected the shipped EW basket for the live book (operational load;
+listing-chase exposure — membership grew 51 → 57 in four days) with zero fills
+logged, and separately descoped the WS17 SMH shadow (not-started). New live payload:
+**K=10 cluster-cap-2 rotation**, US$5,000, ~US$500/name, ~3.3 orders/week measured.
+Seen-data caveat carried permanently (every grid cell observed before the pick; WS6b
+precedent). Gate stated before its result: a fresh 1,000-path null at the K=10 shape
+must place the strategy ≥ p90 — **first run 99.9th pct; rerun on the corrected
+universe below, still 99.9th** (`data/k10_null.json`). The filed verdict (basket
+ships) stands in the record; the amendment overrides the live-book choice only.
+
+**Defect correction.** The rotation's first live pick list surfaced TQQQ —
+"UltraPro" defeats `\bultra\b`, so TQQQ and TBT had escaped the levered-ETP filter
+since Phase 0 (14 → 16 levered after the fix). Panel refreshed to 2026-08-19 and
+every affected artefact rerun on the corrected universe. Deltas, old → new, all at
+1× costs (orderings unchanged; every verdict robust):
+
+- Rotation K=5 cap=2, band edge: Sharpe +0.94 → **+0.95** (null percentile 97.4 →
+  **97.7**, null p90 0.818 → 0.801)
+- EW basket, band edge: +0.94 → **+0.93** (2× costs likewise +0.93)
+- EW basket equity-only, band edge: +0.94 → **+0.93** (bar-2 margin intact)
+- K=10 cap=2 (live payload): band 0/3/6 = +1.20/+1.14/+1.07 → **+1.16/+1.10/+1.04**
+  (TQQQ's levered beta removed, four sessions added); gate percentile **99.9 both runs**
+- Universe: 141 chartable names (TQQQ, TBT out); equity-only bases 135 → 133
+
+**Bar reads after correction:** bar 1 still FAILS (rotation never +0.10 over the
+basket — band 0: 1.04 vs 1.19); ranking still CONFIRMED (97.7th); bar 2 still PASSES
+(+0.93 ≥ +0.40, cost-invariant). Nothing filed changes verdict; the ledger row
+carries the update note.
+
 ## 2026-08-16 — Phase 2 CLOSED: engine run complete, bar reads
 
 Engine and 11-test suite committed before results were read; tests green
