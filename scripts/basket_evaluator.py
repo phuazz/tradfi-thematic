@@ -47,6 +47,14 @@ ORDER_LIST = PROJECT_ROOT / "data" / "order_list_today.json"
 HEARTBEAT = PROJECT_ROOT / "logs" / "last_success.txt"
 
 BOOK_CAP_USD = 5000.0           # owner, 2026-08-16, Option A
+
+# Owner decision 2026-08-21 (protocol Amendment 4), after the honest-universe
+# kill-test failed H1: the book is PAUSED. The evaluator keeps running —
+# signal, health checks, dashboard, heartbeat — but emits no BUY orders, so
+# the empty book stays empty pending the successor study. Risk-REDUCING sells
+# would still be listed if positions existed. Un-pausing is an explicit owner
+# instruction, recorded in the protocol document, never an edit made in passing.
+BOOK_PAUSED = True
 EQUITY_ONLY = True              # Amendment 1, 2026-08-16: commodity cluster excluded
 ROTATION_K = 10                 # Amendment 2, 2026-08-20: K=10 cap=2 rotation payload
 ROTATION_CLUSTER_CAP = 2        # (seen-data caveat carried; k10-shape null 99.9th pct)
@@ -254,6 +262,12 @@ def main() -> int:
                     orders.append(row)
     else:
         mode = "heartbeat"
+
+    # The pause suppresses NEW risk only: buys are dropped, sells (risk-
+    # reducing) survive. With the book empty this yields an empty list.
+    if BOOK_PAUSED:
+        mode = "paused"
+        orders = [o for o in orders if o.get("side") == "sell"]
     n_missing = len(target_syms - held)
 
     payload = {
@@ -264,11 +278,14 @@ def main() -> int:
         "fill_reference_asof": str(fill_ref.date()),
         "breadth": round(diag.get("breadth", 0.0), 3) if diag else None,
         "gated": gated,
+        "paused": BOOK_PAUSED,
         # Under-fill: the live funding block can leave slots unfillable, which
         # the backtest never modelled (it has no funding rule). Surfaced so a
-        # persistently under-invested book cannot go unnoticed.
+        # persistently under-invested book cannot go unnoticed. Not meaningful
+        # while paused — the book is deliberately empty then.
         "n_target_positions": len(target_syms),
-        "under_filled": (not gated) and len(target_syms) < ROTATION_K,
+        "under_filled": (None if BOOK_PAUSED
+                         else (not gated) and len(target_syms) < ROTATION_K),
         "cash_pct": round((ROTATION_K - len(target_syms)) / ROTATION_K * 100, 1) if not gated else 100.0,
         "n_held": len(held), "n_missing": n_missing,
         "book_value_usd": round(sum(val_held.values()), 2),

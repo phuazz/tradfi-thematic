@@ -501,7 +501,13 @@ function renderMonitor() {
   const sb = DATA.shadow_books || {}, b = sb.basket || {};
   const gated = DATA.gated;
   const banners = [];
-  if (gated) banners.push(`<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the
+  if (DATA.orders_mode === 'paused')
+    banners.push(`<div class="banner banner-amber"><strong>Book paused — owner decision 2026-08-21, after the
+      kill-test verdict.</strong> The honest-universe study failed its pre-registered bar (Risk &amp; Validation has
+      the numbers), so the establishment buys were never executed. The evaluator still runs — signal, health checks
+      and this page stay live — but no buy list is generated while the successor study is designed. Risk-reducing
+      sells would still be listed if positions existed.</div>`);
+  else if (gated) banners.push(`<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the
     eligible universe clears the +5% floor, so the rule holds nothing this week. Any open positions are sold.</div>`);
   else if (DATA.orders_mode === 'establishment' && !DATA.n_filled)
     banners.push(`<div class="banner banner-blue"><strong>Establishment pending.</strong> The rotation is selected and
