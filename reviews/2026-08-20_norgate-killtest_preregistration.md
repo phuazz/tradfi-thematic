@@ -191,7 +191,26 @@ read this verdict when it re-decides the live payload.
 
 ---
 
-**Sign-off (owner):** ______________  **Date:** ______________
+**Sign-off (owner):** SIGNED — ZH, in session. **Date:** 2026-08-20 (Thursday).
+Primary universe (S&P 500 + Nasdaq-100 point-in-time) and primary cell (K=10,
+cap 2) confirmed as written. P0 authorised.
+
+## Implementation notes recorded at P0 (before any strategy result)
+
+1. **Price-only is achieved exactly, not approximated.** Section 6 charges a
+   trailing dividend yield to mimic a price-only perp. Norgate exposes
+   `StockPriceAdjustmentType.CAPITAL` — split-adjusted, dividends excluded —
+   which *is* price-only. The panel therefore uses CAPITAL prices and charges
+   **no** dividend estimate; subtracting one on top would double-count. Same
+   intent as the frozen text, strictly more accurate, and it removes an
+   approximation error the tradfi study carried.
+2. **The primary universe contains no ETFs.** S&P 500 and Nasdaq-100 membership
+   is single stocks only, so the sector cap is a GICS sector cap throughout.
+   ETFs appear only in the M1 menu arm, where the theme label comes from the
+   tradfi universe map.
+3. **Cash earns the 3-month T-bill** while the gate is active, as section 6
+   specifies; the rate series is `^IRX` (1995→), converted from its quoted
+   percentage to a fraction at load, guarded by a unit test.
 
 *Two things to confirm when signing: the PRIMARY universe (S&P 500 + Nasdaq-100
 point-in-time) and the PRIMARY cell (K=10, cap 2). Both are named now precisely

@@ -1,0 +1,8448 @@
+{
+ "built_at_utc": "2026-08-20T15:51:43.429864+00:00",
+ "price_adjustment": "CAPITAL (split-adjusted, dividends excluded \u2014 price-only)",
+ "n_symbols": 1181,
+ "n_sessions": 5441,
+ "first_session": "2005-01-03",
+ "last_session": "2026-08-19",
+ "n_delisted_symbols": 464,
+ "n_unavailable": 328,
+ "unavailable": [
+  [
+   "AAL-199702",
+   "empty"
+  ],
+  [
+   "AAV-199901",
+   "empty"
+  ],
+  [
+   "ACY-199411",
+   "empty"
+  ],
+  [
+   "AFM-200008",
+   "empty"
+  ],
+  [
+   "AFS-200011",
+   "empty"
+  ],
+  [
+   "AGC-200108",
+   "empty"
+  ],
+  [
+   "AHM-199810",
+   "empty"
+  ],
+  [
+   "AIT-199910",
+   "empty"
+  ],
+  [
+   "AMH-199709",
+   "empty"
+  ],
+  [
+   "AMP-199904",
+   "empty"
+  ],
+  [
+   "AMT-199607",
+   "empty"
+  ],
+  [
+   "AMX-199311",
+   "empty"
+  ],
+  [
+   "AN-199812",
+   "empty"
+  ],
+  [
+   "ANV-199904",
+   "empty"
+  ],
+  [
+   "AR-199911",
+   "empty"
+  ],
+  [
+   "ARC-200004",
+   "empty"
+  ],
+  [
+   "AS-199909",
+   "empty"
+  ],
+  [
+   "ASAI-199905",
+   "empty"
+  ],
+  [
+   "ASC-199906",
+   "empty"
+  ],
+  [
+   "ASND-199906",
+   "empty"
+  ],
+  [
+   "ASTA-199708",
+   "empty"
+  ],
+  [
+   "ATHMQ-200211",
+   "empty"
+  ],
+  [
+   "ATI-199906",
+   "empty"
+  ],
+  [
+   "AWE-200410",
+   "empty"
+  ],
+  [
+   "AZA-200106",
+   "empty"
+  ],
+  [
+   "BAC-199809",
+   "empty"
+  ],
+  [
+   "BAY-199808",
+   "empty"
+  ],
+  [
+   "BBI-199801",
+   "empty"
+  ],
+  [
+   "BFI-199907",
+   "empty"
+  ],
+  [
+   "BFO-200010",
+   "empty"
+  ],
+  [
+   "BGEN-200311",
+   "empty"
+  ],
+  [
+   "BHMSQ-200401",
+   "empty"
+  ],
+  [
+   "BKB-199909",
+   "empty"
+  ],
+  [
+   "BLY-199612",
+   "empty"
+  ],
+  [
+   "BMG-200101",
+   "empty"
+  ],
+  [
+   "BN-199503",
+   "empty"
+  ],
+  [
+   "BNL-199806",
+   "empty"
+  ],
+  [
+   "BOAT-199701",
+   "empty"
+  ],
+  [
+   "BRNO-199508",
+   "empty"
+  ],
+  [
+   "BT-199906",
+   "empty"
+  ]
+ ],
+ "members_first_day": 545,
+ "members_last_day": 518,
+ "members_min": 515,
+ "members_max": 546,
+ "rate_series": "^IRX",
+ "rate_units": "fraction (converted from quoted percent at load)",
+ "rate_last": 0.037,
+ "meta": {
+  "A": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AABA-201910": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-10-02",
+   "delisted": true,
+   "n_bars": 3713
+  },
+  "AAL": {
+   "sector": "Industrials",
+   "first_bar": "2013-12-09",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3192
+  },
+  "AAMRQ-201312": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-12-06",
+   "delisted": true,
+   "n_bars": 2248
+  },
+  "AAP": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AAPL": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ABBV": {
+   "sector": "Health Care",
+   "first_bar": "2012-12-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3443
+  },
+  "ABGX-200603": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-31",
+   "delisted": true,
+   "n_bars": 314
+  },
+  "ABI-200811": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-11-21",
+   "delisted": true,
+   "n_bars": 981
+  },
+  "ABKFQ-201304": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-04-30",
+   "delisted": true,
+   "n_bars": 2095
+  },
+  "ABMD-202212": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-12-21",
+   "delisted": true,
+   "n_bars": 4523
+  },
+  "ABNB": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2020-12-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1428
+  },
+  "ABS-200606": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-06-01",
+   "delisted": true,
+   "n_bars": 356
+  },
+  "ABT": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ACAS-201701": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-01-03",
+   "delisted": true,
+   "n_bars": 3022
+  },
+  "ACGL": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ACKH-200712": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-12",
+   "delisted": true,
+   "n_bars": 742
+  },
+  "ACN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ACS-201002": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-02-05",
+   "delisted": true,
+   "n_bars": 1283
+  },
+  "ACV-201105": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-05-10",
+   "delisted": true,
+   "n_bars": 1600
+  },
+  "ADBE": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ADCT-201012": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-12-09",
+   "delisted": true,
+   "n_bars": 1496
+  },
+  "ADELQ-200702": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-02-13",
+   "delisted": true,
+   "n_bars": 532
+  },
+  "ADI": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ADM": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ADP": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ADRX-200611": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-03",
+   "delisted": true,
+   "n_bars": 465
+  },
+  "ADSK": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ADT-201604": {
+   "sector": "Industrials",
+   "first_bar": "2012-09-17",
+   "last_bar": "2016-04-29",
+   "delisted": true,
+   "n_bars": 910
+  },
+  "ADTN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AEE": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AEO": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AEP": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AES": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AET-201811": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-11-28",
+   "delisted": true,
+   "n_bars": 3502
+  },
+  "AFL": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AGN-201503": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-03-16",
+   "delisted": true,
+   "n_bars": 2567
+  },
+  "AGN-202005": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-05-08",
+   "delisted": true,
+   "n_bars": 3864
+  },
+  "AIG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AIV": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AIZ": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AJG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AKAM": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AKLMQ-200808": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-08-08",
+   "delisted": true,
+   "n_bars": 888
+  },
+  "AKS-202003": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-03-12",
+   "delisted": true,
+   "n_bars": 3824
+  },
+  "AL-200711": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-11-14",
+   "delisted": true,
+   "n_bars": 723
+  },
+  "ALAB": {
+   "sector": "Information Technology",
+   "first_bar": "2024-03-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 606
+  },
+  "ALB": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ALGN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ALK": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ALL": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ALLE": {
+   "sector": "Industrials",
+   "first_bar": "2013-11-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3206
+  },
+  "ALNY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5440
+  },
+  "ALTR-201512": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-12-24",
+   "delisted": true,
+   "n_bars": 2765
+  },
+  "ALXN-202107": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-07-20",
+   "delisted": true,
+   "n_bars": 4165
+  },
+  "AM-201308": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-08-08",
+   "delisted": true,
+   "n_bars": 2165
+  },
+  "AMAT": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AMCC-201701": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-01-26",
+   "delisted": true,
+   "n_bars": 3038
+  },
+  "AMCR": {
+   "sector": "Materials",
+   "first_bar": "2019-06-11",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1808
+  },
+  "AMD": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AME": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AMG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AMGN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AMLN-201208": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-08-08",
+   "delisted": true,
+   "n_bars": 1915
+  },
+  "AMP": {
+   "sector": "Financials",
+   "first_bar": "2005-09-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5264
+  },
+  "AMT": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AMTM": {
+   "sector": "Industrials",
+   "first_bar": "2024-09-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 477
+  },
+  "AMZN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ANDV-201809": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-09-28",
+   "delisted": true,
+   "n_bars": 3460
+  },
+  "ANDW-200712": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-27",
+   "delisted": true,
+   "n_bars": 752
+  },
+  "ANET": {
+   "sector": "Information Technology",
+   "first_bar": "2014-06-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3069
+  },
+  "ANF": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ANRZQ-201607": {
+   "sector": "Energy",
+   "first_bar": "2005-02-15",
+   "last_bar": "2016-07-26",
+   "delisted": true,
+   "n_bars": 2880
+  },
+  "ANSS-202507": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-07-16",
+   "delisted": true,
+   "n_bars": 5166
+  },
+  "AON": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AOS": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "APA": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "APC-201908": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-08-08",
+   "delisted": true,
+   "n_bars": 3675
+  },
+  "APCC-200702": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-02-14",
+   "delisted": true,
+   "n_bars": 533
+  },
+  "APD": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "APH": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "APO": {
+   "sector": "Financials",
+   "first_bar": "2011-03-30",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3870
+  },
+  "APOL-201702": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-02-01",
+   "delisted": true,
+   "n_bars": 3042
+  },
+  "APP": {
+   "sector": "Communication Services",
+   "first_bar": "2021-04-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1343
+  },
+  "APTV": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2011-11-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3708
+  },
+  "ARBA-201209": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-09-28",
+   "delisted": true,
+   "n_bars": 1951
+  },
+  "ARE": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ARES": {
+   "sector": "Financials",
+   "first_bar": "2014-05-02",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3093
+  },
+  "ARG-201605": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-05-20",
+   "delisted": true,
+   "n_bars": 2866
+  },
+  "ARM": {
+   "sector": "Information Technology",
+   "first_bar": "2023-09-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 735
+  },
+  "ASCL-200504": {
+   "sector": null,
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-04-29",
+   "delisted": true,
+   "n_bars": 82
+  },
+  "ASH": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ASML": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ASN-200710": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-05",
+   "delisted": true,
+   "n_bars": 695
+  },
+  "ASO-200611": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-03",
+   "delisted": true,
+   "n_bars": 465
+  },
+  "AT-200711": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-11-16",
+   "delisted": true,
+   "n_bars": 725
+  },
+  "ATI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ATML-201604": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-04-04",
+   "delisted": true,
+   "n_bars": 2832
+  },
+  "ATO": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ATVI-202310": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2023-10-12",
+   "delisted": true,
+   "n_bars": 4727
+  },
+  "ATYT-200610": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-10-24",
+   "delisted": true,
+   "n_bars": 457
+  },
+  "AV-200710": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-25",
+   "delisted": true,
+   "n_bars": 709
+  },
+  "AVB-202608": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-14",
+   "delisted": true,
+   "n_bars": 5438
+  },
+  "AVGO": {
+   "sector": "Information Technology",
+   "first_bar": "2009-08-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4285
+  },
+  "AVP-202001": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-01-03",
+   "delisted": true,
+   "n_bars": 3777
+  },
+  "AVY": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AW-200812": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-12-05",
+   "delisted": true,
+   "n_bars": 990
+  },
+  "AWK": {
+   "sector": "Utilities",
+   "first_bar": "2008-04-23",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4610
+  },
+  "AXON": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AXP": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AYE-201102": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-02-25",
+   "delisted": true,
+   "n_bars": 1549
+  },
+  "AYI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "AZN-202601": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-01-30",
+   "delisted": true,
+   "n_bars": 5303
+  },
+  "AZO": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "B": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BA": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BAC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BALL": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BATRA": {
+   "sector": "Communication Services",
+   "first_bar": "2016-04-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2600
+  },
+  "BATRK": {
+   "sector": "Communication Services",
+   "first_bar": "2016-04-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2600
+  },
+  "BAX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BB": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BBBYQ-202309": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2023-09-29",
+   "delisted": true,
+   "n_bars": 4718
+  },
+  "BBWI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BBY": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BC": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BCHXQ-200911": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-06-08",
+   "last_bar": "2009-11-19",
+   "delisted": true,
+   "n_bars": 28
+  },
+  "BCO": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BCR-201712": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-12-28",
+   "delisted": true,
+   "n_bars": 3271
+  },
+  "BDK-201003": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-03-12",
+   "delisted": true,
+   "n_bars": 1307
+  },
+  "BDX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BEAM-201404": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-04-30",
+   "delisted": true,
+   "n_bars": 2347
+  },
+  "BEAS-200804": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-04-28",
+   "delisted": true,
+   "n_bars": 835
+  },
+  "BEN": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BEV-200603": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-14",
+   "delisted": true,
+   "n_bars": 301
+  },
+  "BF.B": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BFH": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BG": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BGGSQ-202101": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-01-06",
+   "delisted": true,
+   "n_bars": 4030
+  },
+  "BHF": {
+   "sector": "Financials",
+   "first_bar": "2017-07-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2285
+  },
+  "BIDU": {
+   "sector": "Communication Services",
+   "first_bar": "2005-08-05",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5292
+  },
+  "BIGGQ": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5432
+  },
+  "BIIB": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5437
+  },
+  "BIO": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BJS-201004": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-04-28",
+   "delisted": true,
+   "n_bars": 1339
+  },
+  "BKNG": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BKR": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BLDR": {
+   "sector": "Industrials",
+   "first_bar": "2005-06-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5323
+  },
+  "BLK": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BLS-200612": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-12-29",
+   "delisted": true,
+   "n_bars": 503
+  },
+  "BMC-201309": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-09-10",
+   "delisted": true,
+   "n_bars": 2187
+  },
+  "BMET-200709": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-09-25",
+   "delisted": true,
+   "n_bars": 687
+  },
+  "BMRN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5439
+  },
+  "BMS-201906": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-06-10",
+   "delisted": true,
+   "n_bars": 3633
+  },
+  "BMY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BNI-201002": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-02-12",
+   "delisted": true,
+   "n_bars": 1288
+  },
+  "BNSSA-201206": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-06-19",
+   "delisted": true,
+   "n_bars": 816
+  },
+  "BNY": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BOBE-201801": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-01-11",
+   "delisted": true,
+   "n_bars": 3280
+  },
+  "BOL-200710": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-26",
+   "delisted": true,
+   "n_bars": 710
+  },
+  "BR": {
+   "sector": "Industrials",
+   "first_bar": "2007-03-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4884
+  },
+  "BR-200603": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-31",
+   "delisted": true,
+   "n_bars": 314
+  },
+  "BRCD-201711": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-11-16",
+   "delisted": true,
+   "n_bars": 3243
+  },
+  "BRCM-201601": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-01-29",
+   "delisted": true,
+   "n_bars": 2788
+  },
+  "BRK.B": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BRL-200812": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-12-22",
+   "delisted": true,
+   "n_bars": 1001
+  },
+  "BRO": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BSC-200805": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-05-30",
+   "delisted": true,
+   "n_bars": 858
+  },
+  "BSET": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5440
+  },
+  "BSX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BTUUQ-201704": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-04-03",
+   "delisted": true,
+   "n_bars": 3083
+  },
+  "BUD-200811": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-11-17",
+   "delisted": true,
+   "n_bars": 977
+  },
+  "BVSN-202005": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-05-18",
+   "delisted": true,
+   "n_bars": 3800
+  },
+  "BWA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "BX": {
+   "sector": "Financials",
+   "first_bar": "2007-06-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4820
+  },
+  "BXLT-201606": {
+   "sector": "Health Care",
+   "first_bar": "2015-06-15",
+   "last_bar": "2016-06-02",
+   "delisted": true,
+   "n_bars": 245
+  },
+  "BXP": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "C": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CA-201811": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-11-02",
+   "delisted": true,
+   "n_bars": 3485
+  },
+  "CAG": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CAH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CAL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CAM-201604": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-04-01",
+   "delisted": true,
+   "n_bars": 2831
+  },
+  "CAR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CARR": {
+   "sector": "Industrials",
+   "first_bar": "2020-03-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1613
+  },
+  "CASY": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CAT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CB": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CB-201601": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-01-14",
+   "delisted": true,
+   "n_bars": 2778
+  },
+  "CBE-201211": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-11-30",
+   "delisted": true,
+   "n_bars": 1993
+  },
+  "CBH-200803": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-03-28",
+   "delisted": true,
+   "n_bars": 814
+  },
+  "CBOE": {
+   "sector": "Financials",
+   "first_bar": "2010-06-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4070
+  },
+  "CBRE": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CBRL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CBSS-200709": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-09-06",
+   "delisted": true,
+   "n_bars": 674
+  },
+  "CCEP": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CCI": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CCK": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CCL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CCTYQ-201109": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-09-27",
+   "delisted": true,
+   "n_bars": 1697
+  },
+  "CCU-200807": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-07-30",
+   "delisted": true,
+   "n_bars": 900
+  },
+  "CDNS": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CDW": {
+   "sector": "Information Technology",
+   "first_bar": "2013-06-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3306
+  },
+  "CDWC-200710": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-12",
+   "delisted": true,
+   "n_bars": 700
+  },
+  "CE": {
+   "sector": "Materials",
+   "first_bar": "2005-01-21",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5428
+  },
+  "CEG": {
+   "sector": "Utilities",
+   "first_bar": "2022-01-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1150
+  },
+  "CEG-201203": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-03-12",
+   "delisted": true,
+   "n_bars": 1811
+  },
+  "CELG-201911": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-11-20",
+   "delisted": true,
+   "n_bars": 3748
+  },
+  "CEN-200711": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-11-08",
+   "delisted": true,
+   "n_bars": 719
+  },
+  "CEPH-201110": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-10-13",
+   "delisted": true,
+   "n_bars": 1708
+  },
+  "CERN-202206": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-06-07",
+   "delisted": true,
+   "n_bars": 4388
+  },
+  "CF": {
+   "sector": "Materials",
+   "first_bar": "2005-08-11",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5288
+  },
+  "CFC-200806": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-06-30",
+   "delisted": true,
+   "n_bars": 879
+  },
+  "CFG": {
+   "sector": "Financials",
+   "first_bar": "2014-09-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2993
+  },
+  "CFN-201503": {
+   "sector": "Health Care",
+   "first_bar": "2009-08-21",
+   "last_bar": "2015-03-16",
+   "delisted": true,
+   "n_bars": 1400
+  },
+  "CHD": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CHIR-200604": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-04-19",
+   "delisted": true,
+   "n_bars": 326
+  },
+  "CHKAQ-202102": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-02-09",
+   "delisted": true,
+   "n_bars": 4053
+  },
+  "CHKP": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CHRS-201206": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-06-14",
+   "delisted": true,
+   "n_bars": 1877
+  },
+  "CHRW": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CHTR": {
+   "sector": "Communication Services",
+   "first_bar": "2009-12-02",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4178
+  },
+  "CHTRQ-200911": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-11-30",
+   "delisted": true,
+   "n_bars": 1237
+  },
+  "CI": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CIEN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CIN-200603": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-31",
+   "delisted": true,
+   "n_bars": 314
+  },
+  "CINF": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CITGQ-200912": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-12-09",
+   "delisted": true,
+   "n_bars": 1244
+  },
+  "CKFR-200712": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-03",
+   "delisted": true,
+   "n_bars": 735
+  },
+  "CL": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CLF": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CLX": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CMA-202601": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-01-30",
+   "delisted": true,
+   "n_bars": 5303
+  },
+  "CMCSA": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CMCSK-201512": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-12-11",
+   "delisted": true,
+   "n_bars": 2756
+  },
+  "CME": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CMG": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2006-01-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5173
+  },
+  "CMI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CMS": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CMVT-201302": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-02-04",
+   "delisted": true,
+   "n_bars": 2036
+  },
+  "CMX-200703": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-03-21",
+   "delisted": true,
+   "n_bars": 557
+  },
+  "CNA": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CNC": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CNET-200806": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-06-30",
+   "delisted": true,
+   "n_bars": 879
+  },
+  "CNP": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CNW-201510": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-10-29",
+   "delisted": true,
+   "n_bars": 2726
+  },
+  "CNX": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CNXT-201104": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-04-18",
+   "delisted": true,
+   "n_bars": 1585
+  },
+  "COF": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COHR": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COIN": {
+   "sector": "Financials",
+   "first_bar": "2021-04-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1344
+  },
+  "COL-201811": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-11-26",
+   "delisted": true,
+   "n_bars": 3500
+  },
+  "COMS-201004": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-04-09",
+   "delisted": true,
+   "n_bars": 1326
+  },
+  "COO": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COP": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COR": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COST": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "COTY": {
+   "sector": "Consumer Staples",
+   "first_bar": "2013-06-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3316
+  },
+  "COV-201501": {
+   "sector": "Health Care",
+   "first_bar": "2007-06-14",
+   "last_bar": "2015-01-26",
+   "delisted": true,
+   "n_bars": 1918
+  },
+  "CPAY": {
+   "sector": "Financials",
+   "first_bar": "2010-12-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3942
+  },
+  "CPB": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CPGX-201606": {
+   "sector": "Energy",
+   "first_bar": "2015-06-17",
+   "last_bar": "2016-06-30",
+   "delisted": true,
+   "n_bars": 263
+  },
+  "CPNLQ-200802": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-02-01",
+   "delisted": true,
+   "n_bars": 776
+  },
+  "CPPRQ-202102": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-02-01",
+   "delisted": true,
+   "n_bars": 4048
+  },
+  "CPRI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2011-12-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3689
+  },
+  "CPRT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CPT": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CPWR-201412": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-12-15",
+   "delisted": true,
+   "n_bars": 2506
+  },
+  "CRH": {
+   "sector": "Materials",
+   "first_bar": "2005-01-04",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2646
+  },
+  "CRL": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CRM": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CRUS": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CRWD": {
+   "sector": "Information Technology",
+   "first_bar": "2019-06-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1807
+  },
+  "CRWV": {
+   "sector": "Information Technology",
+   "first_bar": "2025-03-28",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 350
+  },
+  "CSCO": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CSGP": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CSRA-201804": {
+   "sector": "Information Technology",
+   "first_bar": "2015-11-16",
+   "last_bar": "2018-04-03",
+   "delisted": true,
+   "n_bars": 598
+  },
+  "CSX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CTAS": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CTB-202106": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-06-04",
+   "delisted": true,
+   "n_bars": 4134
+  },
+  "CTLT-202412": {
+   "sector": "Health Care",
+   "first_bar": "2014-07-31",
+   "last_bar": "2024-12-17",
+   "delisted": true,
+   "n_bars": 2614
+  },
+  "CTRA-202605": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-05-06",
+   "delisted": true,
+   "n_bars": 5369
+  },
+  "CTRX-201507": {
+   "sector": "Health Care",
+   "first_bar": "2006-06-13",
+   "last_bar": "2015-07-23",
+   "delisted": true,
+   "n_bars": 2290
+  },
+  "CTSH": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CTVA": {
+   "sector": "Materials",
+   "first_bar": "2019-05-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1819
+  },
+  "CTX-200908": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-08-18",
+   "delisted": true,
+   "n_bars": 1165
+  },
+  "CTXS-202209": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-09-29",
+   "delisted": true,
+   "n_bars": 4467
+  },
+  "CVC-201606": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-06-20",
+   "delisted": true,
+   "n_bars": 2886
+  },
+  "CVG-201810": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-10-04",
+   "delisted": true,
+   "n_bars": 3464
+  },
+  "CVH-201305": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-05-06",
+   "delisted": true,
+   "n_bars": 2099
+  },
+  "CVNA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2017-04-28",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2340
+  },
+  "CVS": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CVSA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CVX": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CXO-202101": {
+   "sector": "Energy",
+   "first_bar": "2007-08-03",
+   "last_bar": "2021-01-15",
+   "delisted": true,
+   "n_bars": 3388
+  },
+  "CXT": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "CYTC-200710": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-22",
+   "delisted": true,
+   "n_bars": 706
+  },
+  "CZR": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5440
+  },
+  "D": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DAL": {
+   "sector": "Industrials",
+   "first_bar": "2007-04-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4860
+  },
+  "DALRQ-200704": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-04-27",
+   "delisted": true,
+   "n_bars": 583
+  },
+  "DASH": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2020-12-09",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1429
+  },
+  "DAY-202602": {
+   "sector": "Industrials",
+   "first_bar": "2018-04-26",
+   "last_bar": "2026-02-03",
+   "delisted": true,
+   "n_bars": 1954
+  },
+  "DCNAQ-200801": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-01-31",
+   "delisted": true,
+   "n_bars": 775
+  },
+  "DD": {
+   "sector": "Industrials",
+   "first_bar": "2017-09-01",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2252
+  },
+  "DD-201708": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-08-31",
+   "delisted": true,
+   "n_bars": 3189
+  },
+  "DDOG": {
+   "sector": "Information Technology",
+   "first_bar": "2019-09-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1738
+  },
+  "DDS": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DE": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DECK": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DELL": {
+   "sector": "Information Technology",
+   "first_bar": "2016-08-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2515
+  },
+  "DELL-201310": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-10-29",
+   "delisted": true,
+   "n_bars": 2222
+  },
+  "DFODQ-202106": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-06-02",
+   "delisted": true,
+   "n_bars": 4131
+  },
+  "DFS-202505": {
+   "sector": "Financials",
+   "first_bar": "2007-06-14",
+   "last_bar": "2025-05-16",
+   "delisted": true,
+   "n_bars": 4511
+  },
+  "DG": {
+   "sector": "Consumer Staples",
+   "first_bar": "2009-11-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4215
+  },
+  "DG-200707": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-07-06",
+   "delisted": true,
+   "n_bars": 631
+  },
+  "DGX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DHI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DHR": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DINO": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DIS": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DISCK-202204": {
+   "sector": "Communication Services",
+   "first_bar": "2008-09-18",
+   "last_bar": "2022-04-08",
+   "delisted": true,
+   "n_bars": 3414
+  },
+  "DISH-202312": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2023-12-29",
+   "delisted": true,
+   "n_bars": 4781
+  },
+  "DJ-200712": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-13",
+   "delisted": true,
+   "n_bars": 743
+  },
+  "DLR": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DLTR": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DLX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DNB-201902": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-02-07",
+   "delisted": true,
+   "n_bars": 3549
+  },
+  "DNRCQ-202009": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-09-18",
+   "delisted": true,
+   "n_bars": 3954
+  },
+  "DOC": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DOCU": {
+   "sector": "Information Technology",
+   "first_bar": "2018-04-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2089
+  },
+  "DOFSQ-202104": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-04-23",
+   "delisted": true,
+   "n_bars": 4104
+  },
+  "DOV": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DOW": {
+   "sector": "Materials",
+   "first_bar": "2019-03-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1865
+  },
+  "DOW-201708": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-08-31",
+   "delisted": true,
+   "n_bars": 3189
+  },
+  "DPHIQ-200910": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-10-07",
+   "delisted": true,
+   "n_bars": 1199
+  },
+  "DPZ": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DRE-202209": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-09-30",
+   "delisted": true,
+   "n_bars": 4468
+  },
+  "DRI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DTE": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DTV-201507": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-07-24",
+   "delisted": true,
+   "n_bars": 2658
+  },
+  "DUK": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DVA": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DVN": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DXC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "DXCM": {
+   "sector": "Health Care",
+   "first_bar": "2005-04-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5370
+  },
+  "DYN-201804": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-04-06",
+   "delisted": true,
+   "n_bars": 3337
+  },
+  "EA-202608": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-04",
+   "delisted": true,
+   "n_bars": 5430
+  },
+  "EBAY": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EC-200606": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-06-09",
+   "delisted": true,
+   "n_bars": 362
+  },
+  "ECHO": {
+   "sector": "Communication Services",
+   "first_bar": "2007-12-31",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4688
+  },
+  "ECL": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ED": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EDCI-202003": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-03-26",
+   "delisted": true,
+   "n_bars": 1952
+  },
+  "EDS-200808": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-08-25",
+   "delisted": true,
+   "n_bars": 918
+  },
+  "EFII-201907": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-07-22",
+   "delisted": true,
+   "n_bars": 3662
+  },
+  "EFX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EHC": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EIX": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EKDKQ-201309": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-09-03",
+   "delisted": true,
+   "n_bars": 2182
+  },
+  "EL": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ELV": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EMC-201609": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-09-06",
+   "delisted": true,
+   "n_bars": 2940
+  },
+  "EME": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EMN": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EMR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ENDPQ-202405": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-05-01",
+   "delisted": true,
+   "n_bars": 4865
+  },
+  "ENPH": {
+   "sector": "Information Technology",
+   "first_bar": "2012-03-30",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3617
+  },
+  "EOG": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EOP-200702": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-02-09",
+   "delisted": true,
+   "n_bars": 530
+  },
+  "EP-201205": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-05-24",
+   "delisted": true,
+   "n_bars": 1863
+  },
+  "EPAM": {
+   "sector": "Information Technology",
+   "first_bar": "2012-02-08",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3653
+  },
+  "EQ-200906": {
+   "sector": "Communication Services",
+   "first_bar": "2006-05-04",
+   "last_bar": "2009-06-30",
+   "delisted": true,
+   "n_bars": 795
+  },
+  "EQIX": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EQT": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ERIC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ERIE": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ES": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ESND-201901": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-01-30",
+   "delisted": true,
+   "n_bars": 3543
+  },
+  "ESRX-201812": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-12-20",
+   "delisted": true,
+   "n_bars": 3517
+  },
+  "ESS": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ETFC-202010": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-10-01",
+   "delisted": true,
+   "n_bars": 3965
+  },
+  "ETN": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ETR": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ETS-200603": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-01",
+   "delisted": true,
+   "n_bars": 292
+  },
+  "ETSY": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2015-04-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2853
+  },
+  "EVHC-201810": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-10-10",
+   "delisted": true,
+   "n_bars": 3468
+  },
+  "EVRG": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EW": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EXC": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EXE": {
+   "sector": "Energy",
+   "first_bar": "2021-02-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1387
+  },
+  "EXPD": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EXPE": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-07-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5304
+  },
+  "EXR": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "EYE-200505": {
+   "sector": null,
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-05-27",
+   "delisted": true,
+   "n_bars": 102
+  },
+  "F": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FANG": {
+   "sector": "Energy",
+   "first_bar": "2012-10-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3481
+  },
+  "FAST": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FBIN": {
+   "sector": "Industrials",
+   "first_bar": "2011-09-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3752
+  },
+  "FCX": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FDC-200709": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-09-24",
+   "delisted": true,
+   "n_bars": 686
+  },
+  "FDO-201507": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-07-06",
+   "delisted": true,
+   "n_bars": 2644
+  },
+  "FDS": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FDX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FDXF": {
+   "sector": "Industrials",
+   "first_bar": "2026-05-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 59
+  },
+  "FE": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FER": {
+   "sector": "Industrials",
+   "first_bar": "2010-10-21",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 979
+  },
+  "FERG": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-04",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2225
+  },
+  "FFIV": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FHCC-200501": {
+   "sector": null,
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-01-28",
+   "delisted": true,
+   "n_bars": 19
+  },
+  "FHI": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FHN": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FICO": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FIS": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FISV": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FITB": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FIX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FJCC-200809": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-09-05",
+   "delisted": true,
+   "n_bars": 902
+  },
+  "FL-202509": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-09-05",
+   "delisted": true,
+   "n_bars": 5202
+  },
+  "FLEX": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FLIR-202105": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-05-13",
+   "delisted": true,
+   "n_bars": 4119
+  },
+  "FLR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FLS": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FLTWQ-200907": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-07-27",
+   "delisted": true,
+   "n_bars": 1149
+  },
+  "FMC": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FMCC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FMCN-201305": {
+   "sector": "Communication Services",
+   "first_bar": "2005-07-13",
+   "last_bar": "2013-05-23",
+   "delisted": true,
+   "n_bars": 1980
+  },
+  "FNMA": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FOSL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FOX": {
+   "sector": "Communication Services",
+   "first_bar": "2019-03-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1870
+  },
+  "FOXA": {
+   "sector": "Communication Services",
+   "first_bar": "2019-03-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1871
+  },
+  "FRCB": {
+   "sector": "Financials",
+   "first_bar": "2010-12-09",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3944
+  },
+  "FRT": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "FRX-201406": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-06-30",
+   "delisted": true,
+   "n_bars": 2389
+  },
+  "FSH-200611": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-09",
+   "delisted": true,
+   "n_bars": 469
+  },
+  "FSL.B-200612": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-12-01",
+   "delisted": true,
+   "n_bars": 484
+  },
+  "FSLR": {
+   "sector": "Information Technology",
+   "first_bar": "2006-11-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4967
+  },
+  "FTI": {
+   "sector": "Energy",
+   "first_bar": "2017-01-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2411
+  },
+  "FTI-201701": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-01-13",
+   "delisted": true,
+   "n_bars": 3030
+  },
+  "FTNT": {
+   "sector": "Information Technology",
+   "first_bar": "2009-11-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4212
+  },
+  "FTRCQ-202104": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-04-30",
+   "delisted": true,
+   "n_bars": 4110
+  },
+  "FTV": {
+   "sector": "Industrials",
+   "first_bar": "2016-06-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2558
+  },
+  "FWLT-201412": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-12-03",
+   "delisted": true,
+   "n_bars": 2498
+  },
+  "G-200509": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-09-30",
+   "delisted": true,
+   "n_bars": 189
+  },
+  "GAP": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GAPTQ-201203": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-03-14",
+   "delisted": true,
+   "n_bars": 1812
+  },
+  "GAS-201112": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-12-09",
+   "delisted": true,
+   "n_bars": 1749
+  },
+  "GAS-201606": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-06-30",
+   "delisted": true,
+   "n_bars": 2894
+  },
+  "GCO": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GD": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GDDY": {
+   "sector": "Information Technology",
+   "first_bar": "2015-04-01",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2863
+  },
+  "GDT-200604": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-04-21",
+   "delisted": true,
+   "n_bars": 328
+  },
+  "GDW-200609": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-09-29",
+   "delisted": true,
+   "n_bars": 440
+  },
+  "GE": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GEHC": {
+   "sector": "Health Care",
+   "first_bar": "2022-12-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 921
+  },
+  "GEN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GENZ-201104": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-04-08",
+   "delisted": true,
+   "n_bars": 1579
+  },
+  "GEV": {
+   "sector": "Industrials",
+   "first_bar": "2024-03-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 601
+  },
+  "GFS": {
+   "sector": "Information Technology",
+   "first_bar": "2021-10-28",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1206
+  },
+  "GGP-201808": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-08-27",
+   "delisted": true,
+   "n_bars": 3437
+  },
+  "GHC": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GILD": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GIS": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GL": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GLK-200507": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-07-01",
+   "delisted": true,
+   "n_bars": 126
+  },
+  "GLW": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2010-11-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3960
+  },
+  "GMCR-201603": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-03-02",
+   "delisted": true,
+   "n_bars": 2810
+  },
+  "GME": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GMST-200805": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-05-02",
+   "delisted": true,
+   "n_bars": 839
+  },
+  "GNRC": {
+   "sector": "Industrials",
+   "first_bar": "2010-02-11",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4155
+  },
+  "GNTX": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GNW": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GOLD-201812": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-12-28",
+   "delisted": true,
+   "n_bars": 3522
+  },
+  "GOOG": {
+   "sector": "Communication Services",
+   "first_bar": "2014-03-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3118
+  },
+  "GOOGL": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GOSHA-200507": {
+   "sector": null,
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-07-14",
+   "delisted": true,
+   "n_bars": 134
+  },
+  "GP-200512": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-12-22",
+   "delisted": true,
+   "n_bars": 247
+  },
+  "GPC": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GPN": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GR-201207": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-07-26",
+   "delisted": true,
+   "n_bars": 1906
+  },
+  "GRA-202109": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-09-21",
+   "delisted": true,
+   "n_bars": 4209
+  },
+  "GRMN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GS": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GT": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "GTW-200710": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-16",
+   "delisted": true,
+   "n_bars": 702
+  },
+  "GWOW-201009": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-09-17",
+   "delisted": true,
+   "n_bars": 404
+  },
+  "GWW": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "H-200704": {
+   "sector": "Real Estate",
+   "first_bar": "2006-07-19",
+   "last_bar": "2007-04-09",
+   "delisted": true,
+   "n_bars": 181
+  },
+  "HAL": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HAR-201703": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-03-10",
+   "delisted": true,
+   "n_bars": 3068
+  },
+  "HAS": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HBAN": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HBI-202511": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2006-08-16",
+   "last_bar": "2025-11-28",
+   "delisted": true,
+   "n_bars": 4853
+  },
+  "HCA": {
+   "sector": "Health Care",
+   "first_bar": "2011-03-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3884
+  },
+  "HCA-200611": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-17",
+   "delisted": true,
+   "n_bars": 475
+  },
+  "HCBK-201510": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-10-30",
+   "delisted": true,
+   "n_bars": 2727
+  },
+  "HCR-200712": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-21",
+   "delisted": true,
+   "n_bars": 749
+  },
+  "HD": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HDLM-201301": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-01-15",
+   "delisted": true,
+   "n_bars": 1778
+  },
+  "HES-202507": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-07-17",
+   "delisted": true,
+   "n_bars": 5167
+  },
+  "HET-200801": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-01-28",
+   "delisted": true,
+   "n_bars": 772
+  },
+  "HGSI-201208": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-08-02",
+   "delisted": true,
+   "n_bars": 1910
+  },
+  "HIG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HII": {
+   "sector": "Industrials",
+   "first_bar": "2011-03-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3876
+  },
+  "HLT": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2013-12-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3189
+  },
+  "HLT-200710": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-24",
+   "delisted": true,
+   "n_bars": 708
+  },
+  "HMA-201401": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-01-24",
+   "delisted": true,
+   "n_bars": 2281
+  },
+  "HNI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HNZ-201306": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-06-07",
+   "delisted": true,
+   "n_bars": 2122
+  },
+  "HOG": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HOLX-202604": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-04-06",
+   "delisted": true,
+   "n_bars": 5347
+  },
+  "HON": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HONA": {
+   "sector": "Industrials",
+   "first_bar": "2026-06-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 45
+  },
+  "HOOD": {
+   "sector": "Financials",
+   "first_bar": "2021-07-29",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1270
+  },
+  "HOT-201609": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-09-22",
+   "delisted": true,
+   "n_bars": 2952
+  },
+  "HP": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HPC-200811": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-11-13",
+   "delisted": true,
+   "n_bars": 975
+  },
+  "HPE": {
+   "sector": "Information Technology",
+   "first_bar": "2015-10-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2724
+  },
+  "HPQ": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HRB": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HRL": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HSH-201408": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-08-28",
+   "delisted": true,
+   "n_bars": 2431
+  },
+  "HSIC": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HSP-201509": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-09-02",
+   "delisted": true,
+   "n_bars": 2686
+  },
+  "HST": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HSY": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HTMXQ-201305": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-05-30",
+   "delisted": true,
+   "n_bars": 1787
+  },
+  "HUBB": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HUM": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "HWM": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IBKR": {
+   "sector": "Financials",
+   "first_bar": "2007-05-04",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4854
+  },
+  "IBM": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ICE": {
+   "sector": "Financials",
+   "first_bar": "2005-11-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5220
+  },
+  "ICOS-200701": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-01-29",
+   "delisted": true,
+   "n_bars": 521
+  },
+  "IDTI-201903": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-03-29",
+   "delisted": true,
+   "n_bars": 3584
+  },
+  "IDXX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IEX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IFF": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IGT-201504": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-04-06",
+   "delisted": true,
+   "n_bars": 2581
+  },
+  "IKN-200810": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-10-31",
+   "delisted": true,
+   "n_bars": 966
+  },
+  "ILMN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IMCL-200811": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-11-24",
+   "delisted": true,
+   "n_bars": 982
+  },
+  "INCLF-200701": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-01-05",
+   "delisted": true,
+   "n_bars": 505
+  },
+  "INCY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "INFO-202202": {
+   "sector": "Industrials",
+   "first_bar": "2014-06-19",
+   "last_bar": "2022-02-25",
+   "delisted": true,
+   "n_bars": 1937
+  },
+  "INFY": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "INGR-200611": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-29",
+   "delisted": true,
+   "n_bars": 482
+  },
+  "INSM": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5440
+  },
+  "INTC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "INTU": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "INVH": {
+   "sector": "Real Estate",
+   "first_bar": "2017-02-01",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2400
+  },
+  "IP": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IPG-202511": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-11-26",
+   "delisted": true,
+   "n_bars": 5260
+  },
+  "IPGP": {
+   "sector": "Information Technology",
+   "first_bar": "2006-12-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4950
+  },
+  "IQV": {
+   "sector": "Health Care",
+   "first_bar": "2013-05-09",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3340
+  },
+  "IR": {
+   "sector": "Industrials",
+   "first_bar": "2017-05-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2330
+  },
+  "IRM": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ISIL-201702": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-02-23",
+   "delisted": true,
+   "n_bars": 3057
+  },
+  "ISRG": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "IT": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ITT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ITW": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ITWO-201001": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-01-28",
+   "delisted": true,
+   "n_bars": 1277
+  },
+  "IVZ": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "J": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JAVA-201001": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-01-26",
+   "delisted": true,
+   "n_bars": 1275
+  },
+  "JBHT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JBL": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JCI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JCI-201609": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-09-02",
+   "delisted": true,
+   "n_bars": 2939
+  },
+  "JD": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2014-05-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3079
+  },
+  "JEF": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JH-200705": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-05-01",
+   "delisted": true,
+   "n_bars": 585
+  },
+  "JKHY": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JNJ": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JNPR-202507": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-07-01",
+   "delisted": true,
+   "n_bars": 5156
+  },
+  "JNS-201705": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-05-26",
+   "delisted": true,
+   "n_bars": 3122
+  },
+  "JNY-201404": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-04-08",
+   "delisted": true,
+   "n_bars": 2332
+  },
+  "JOY-201704": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-04-05",
+   "delisted": true,
+   "n_bars": 3086
+  },
+  "JP-200603": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-31",
+   "delisted": true,
+   "n_bars": 314
+  },
+  "JPM": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "JWN-202505": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-05-20",
+   "delisted": true,
+   "n_bars": 5128
+  },
+  "K-202512": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-12-10",
+   "delisted": true,
+   "n_bars": 5269
+  },
+  "KATE-201707": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-07-11",
+   "delisted": true,
+   "n_bars": 3152
+  },
+  "KBH": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KDP": {
+   "sector": "Consumer Staples",
+   "first_bar": "2008-04-28",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4607
+  },
+  "KELYA": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KEY": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KEYS": {
+   "sector": "Information Technology",
+   "first_bar": "2014-10-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2975
+  },
+  "KG-201102": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-02-28",
+   "delisted": true,
+   "n_bars": 1550
+  },
+  "KHC": {
+   "sector": "Consumer Staples",
+   "first_bar": "2015-07-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2798
+  },
+  "KIM": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KKR": {
+   "sector": "Financials",
+   "first_bar": "2010-07-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4049
+  },
+  "KLAC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KMB": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KMG-200608": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-08-10",
+   "delisted": true,
+   "n_bars": 405
+  },
+  "KMI": {
+   "sector": "Energy",
+   "first_bar": "2011-02-11",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3902
+  },
+  "KMI-200705": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-05-30",
+   "delisted": true,
+   "n_bars": 605
+  },
+  "KMX": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KO": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KR": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KRB-200512": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-12-30",
+   "delisted": true,
+   "n_bars": 252
+  },
+  "KRFT-201507": {
+   "sector": "Consumer Staples",
+   "first_bar": "2012-09-17",
+   "last_bar": "2015-07-02",
+   "delisted": true,
+   "n_bars": 702
+  },
+  "KRI-200606": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-06-27",
+   "delisted": true,
+   "n_bars": 374
+  },
+  "KSE-200708": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-08-24",
+   "delisted": true,
+   "n_bars": 666
+  },
+  "KSS": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "KSU-202112": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-12-13",
+   "delisted": true,
+   "n_bars": 4267
+  },
+  "KVUE": {
+   "sector": "Consumer Staples",
+   "first_bar": "2023-05-04",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 826
+  },
+  "L": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LAMR": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LBTYA": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LBTYK": {
+   "sector": "Communication Services",
+   "first_bar": "2005-08-30",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5273
+  },
+  "LCID": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2020-09-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1486
+  },
+  "LDG-200810": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-10-30",
+   "delisted": true,
+   "n_bars": 965
+  },
+  "LDOS": {
+   "sector": "Industrials",
+   "first_bar": "2006-10-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4992
+  },
+  "LEAP-201403": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-03-13",
+   "delisted": true,
+   "n_bars": 2314
+  },
+  "LEG": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LEHMQ-201203": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-03-05",
+   "delisted": true,
+   "n_bars": 1806
+  },
+  "LEN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LHX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LIFE-201402": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-02-03",
+   "delisted": true,
+   "n_bars": 2287
+  },
+  "LII": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LILA": {
+   "sector": "Communication Services",
+   "first_bar": "2015-06-22",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2801
+  },
+  "LILAK": {
+   "sector": "Communication Services",
+   "first_bar": "2015-06-23",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2801
+  },
+  "LIN": {
+   "sector": "Materials",
+   "first_bar": "2018-10-31",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1959
+  },
+  "LITE": {
+   "sector": "Information Technology",
+   "first_bar": "2015-07-23",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2784
+  },
+  "LKQ": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LLL-201906": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-06-28",
+   "delisted": true,
+   "n_bars": 3647
+  },
+  "LLTC-201703": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-03-10",
+   "delisted": true,
+   "n_bars": 3068
+  },
+  "LLY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LM-202007": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-07-31",
+   "delisted": true,
+   "n_bars": 3922
+  },
+  "LMCA-201604": {
+   "sector": "Communication Services",
+   "first_bar": "2013-01-10",
+   "last_bar": "2016-04-15",
+   "delisted": true,
+   "n_bars": 822
+  },
+  "LMCK-201604": {
+   "sector": "Communication Services",
+   "first_bar": "2014-07-08",
+   "last_bar": "2016-04-15",
+   "delisted": true,
+   "n_bars": 448
+  },
+  "LMT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LNC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LNCR-201208": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-08-13",
+   "delisted": true,
+   "n_bars": 1918
+  },
+  "LNT": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LO-201506": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-06-11",
+   "delisted": true,
+   "n_bars": 2628
+  },
+  "LOGI": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LOW": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LPX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LRCX": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LSI-201405": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-05-06",
+   "delisted": true,
+   "n_bars": 2351
+  },
+  "LU-200611": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-30",
+   "delisted": true,
+   "n_bars": 483
+  },
+  "LUB-202205": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-05-27",
+   "delisted": true,
+   "n_bars": 4382
+  },
+  "LULU": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2007-07-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4796
+  },
+  "LUMN": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LUV": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LVLT-201710": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-10-31",
+   "delisted": true,
+   "n_bars": 3231
+  },
+  "LVNTA-201803": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2012-08-10",
+   "last_bar": "2018-03-09",
+   "delisted": true,
+   "n_bars": 1403
+  },
+  "LVS": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "LW": {
+   "sector": "Consumer Staples",
+   "first_bar": "2016-11-01",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2461
+  },
+  "LXK-201611": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-11-28",
+   "delisted": true,
+   "n_bars": 2998
+  },
+  "LYB": {
+   "sector": "Materials",
+   "first_bar": "2010-04-28",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4103
+  },
+  "LYV": {
+   "sector": "Communication Services",
+   "first_bar": "2005-12-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5201
+  },
+  "M": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MA": {
+   "sector": "Financials",
+   "first_bar": "2006-05-25",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5090
+  },
+  "MAA": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MAC": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MAR": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MAS": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MAT": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MATX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MAY-200508": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-08-29",
+   "delisted": true,
+   "n_bars": 166
+  },
+  "MBI": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MCD": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MCHP": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MCIP-200601": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-01-06",
+   "delisted": true,
+   "n_bars": 256
+  },
+  "MCK": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MCO": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MDB": {
+   "sector": "Information Technology",
+   "first_bar": "2017-10-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2219
+  },
+  "MDLZ": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MDP-202112": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-12-01",
+   "delisted": true,
+   "n_bars": 4259
+  },
+  "MDRIQ-202006": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-06-30",
+   "delisted": true,
+   "n_bars": 3898
+  },
+  "MDT": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MEDI-200706": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-06-18",
+   "delisted": true,
+   "n_bars": 618
+  },
+  "MEE-201106": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-06-01",
+   "delisted": true,
+   "n_bars": 1615
+  },
+  "MEL-200706": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-06-29",
+   "delisted": true,
+   "n_bars": 627
+  },
+  "MELI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2007-08-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4786
+  },
+  "MENT-201703": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-03-30",
+   "delisted": true,
+   "n_bars": 3082
+  },
+  "MER-200812": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-12-31",
+   "delisted": true,
+   "n_bars": 1007
+  },
+  "MERQ-200611": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-08",
+   "delisted": true,
+   "n_bars": 468
+  },
+  "MET": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "META": {
+   "sector": "Communication Services",
+   "first_bar": "2012-05-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3583
+  },
+  "MFE-201102": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-02-28",
+   "delisted": true,
+   "n_bars": 1550
+  },
+  "MGM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MHK": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MHS-201203": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-03-30",
+   "delisted": true,
+   "n_bars": 1825
+  },
+  "MI-201107": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-07-05",
+   "delisted": true,
+   "n_bars": 1638
+  },
+  "MIL-201007": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-07-14",
+   "delisted": true,
+   "n_bars": 1392
+  },
+  "MIR-201012": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-12-03",
+   "delisted": true,
+   "n_bars": 1491
+  },
+  "MJN-201706": {
+   "sector": "Consumer Staples",
+   "first_bar": "2009-02-11",
+   "last_bar": "2017-06-14",
+   "delisted": true,
+   "n_bars": 2100
+  },
+  "MKC": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MKTX": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MLKN": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MLM": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MLNM-200805": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-05-14",
+   "delisted": true,
+   "n_bars": 847
+  },
+  "MMI-201205": {
+   "sector": "Information Technology",
+   "first_bar": "2010-12-17",
+   "last_bar": "2012-05-21",
+   "delisted": true,
+   "n_bars": 359
+  },
+  "MMM": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MNKKQ-202206": {
+   "sector": "Health Care",
+   "first_bar": "2013-06-17",
+   "last_bar": "2022-06-16",
+   "delisted": true,
+   "n_bars": 2267
+  },
+  "MNST": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MO": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MOH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MOLX-201312": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-12-06",
+   "delisted": true,
+   "n_bars": 2249
+  },
+  "MON-201806": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-06-06",
+   "delisted": true,
+   "n_bars": 3380
+  },
+  "MOS": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MPC": {
+   "sector": "Energy",
+   "first_bar": "2011-06-23",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3811
+  },
+  "MPWR": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MRK": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MRNA": {
+   "sector": "Health Care",
+   "first_bar": "2018-12-07",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1934
+  },
+  "MRO-202411": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-11-21",
+   "delisted": true,
+   "n_bars": 5007
+  },
+  "MRSH": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MRVL": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MS": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MSCI": {
+   "sector": "Financials",
+   "first_bar": "2007-11-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4718
+  },
+  "MSFT": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MSI": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MSTR": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MTB": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MTCH": {
+   "sector": "Communication Services",
+   "first_bar": "2015-11-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2701
+  },
+  "MTD": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MTG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MTLQQ-201103": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-03-31",
+   "delisted": true,
+   "n_bars": 1571
+  },
+  "MTW": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MU": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MUR": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "MWV-201507": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-07-01",
+   "delisted": true,
+   "n_bars": 2642
+  },
+  "MWW-201610": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-10-31",
+   "delisted": true,
+   "n_bars": 2979
+  },
+  "MXIM-202108": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-08-25",
+   "delisted": true,
+   "n_bars": 4191
+  },
+  "MYG-200603": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-31",
+   "delisted": true,
+   "n_bars": 314
+  },
+  "MZIAQ-201302": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-02-15",
+   "delisted": true,
+   "n_bars": 1581
+  },
+  "NAV-202106": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-06-30",
+   "delisted": true,
+   "n_bars": 4152
+  },
+  "NAVI": {
+   "sector": "Financials",
+   "first_bar": "2014-04-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3103
+  },
+  "NBIS": {
+   "sector": "Information Technology",
+   "first_bar": "2011-05-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3167
+  },
+  "NBL-202010": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-10-02",
+   "delisted": true,
+   "n_bars": 3966
+  },
+  "NBR": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NC": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NCC-200812": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-12-31",
+   "delisted": true,
+   "n_bars": 1007
+  },
+  "NCLH": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2013-01-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3416
+  },
+  "NDAQ": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NDSN": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NEBLQ-202102": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-02-08",
+   "delisted": true,
+   "n_bars": 4051
+  },
+  "NEE": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NEM": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NEU": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NFB-200611": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-30",
+   "delisted": true,
+   "n_bars": 483
+  },
+  "NFLX": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NFX-201902": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-02-13",
+   "delisted": true,
+   "n_bars": 3553
+  },
+  "NI": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NIHDQ-201506": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-06-25",
+   "delisted": true,
+   "n_bars": 2638
+  },
+  "NKE": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NKTR": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5438
+  },
+  "NL": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NLSN-202210": {
+   "sector": "Industrials",
+   "first_bar": "2011-01-26",
+   "last_bar": "2022-10-11",
+   "delisted": true,
+   "n_bars": 2948
+  },
+  "NOC": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NOV": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NOVL-201104": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-04-27",
+   "delisted": true,
+   "n_bars": 1591
+  },
+  "NOW": {
+   "sector": "Information Technology",
+   "first_bar": "2012-06-29",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3554
+  },
+  "NRG": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NRTLQ-201510": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-10-13",
+   "delisted": true,
+   "n_bars": 2704
+  },
+  "NSC": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NSM-201109": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-09-23",
+   "delisted": true,
+   "n_bars": 1695
+  },
+  "NTAP": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NTES": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NTLI-200603": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-03",
+   "delisted": true,
+   "n_bars": 294
+  },
+  "NTRS": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NUAN-202203": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-03-03",
+   "delisted": true,
+   "n_bars": 4322
+  },
+  "NUE": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NVDA": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NVLS-201206": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-06-04",
+   "delisted": true,
+   "n_bars": 1869
+  },
+  "NVR": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NWACQ-200705": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-05-24",
+   "delisted": true,
+   "n_bars": 602
+  },
+  "NWL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NWS": {
+   "sector": "Communication Services",
+   "first_bar": "2013-06-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3312
+  },
+  "NWSA": {
+   "sector": "Communication Services",
+   "first_bar": "2013-06-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3312
+  },
+  "NXPI": {
+   "sector": "Information Technology",
+   "first_bar": "2010-08-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4033
+  },
+  "NXTL-200508": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-08-12",
+   "delisted": true,
+   "n_bars": 155
+  },
+  "NYT": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "NYX-201311": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-11-12",
+   "delisted": true,
+   "n_bars": 2232
+  },
+  "O": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ODFL": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ODP-202512": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-12-09",
+   "delisted": true,
+   "n_bars": 5268
+  },
+  "OFIS-200608": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-08-10",
+   "delisted": true,
+   "n_bars": 151
+  },
+  "OGN": {
+   "sector": "Health Care",
+   "first_bar": "2021-05-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1322
+  },
+  "OI": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "OKE": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "OKTA": {
+   "sector": "Information Technology",
+   "first_bar": "2017-04-07",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2354
+  },
+  "OMC": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "OMX-201311": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-11-05",
+   "delisted": true,
+   "n_bars": 2227
+  },
+  "ON": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ORCL": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ORLY": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "OSI-200706": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-06-13",
+   "delisted": true,
+   "n_bars": 615
+  },
+  "OTIS": {
+   "sector": "Industrials",
+   "first_bar": "2020-03-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1613
+  },
+  "OWENQ-200610": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-10-31",
+   "delisted": true,
+   "n_bars": 462
+  },
+  "OXY": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PALM-201006": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-06-30",
+   "delisted": true,
+   "n_bars": 1383
+  },
+  "PANW": {
+   "sector": "Information Technology",
+   "first_bar": "2012-07-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3540
+  },
+  "PAS-201002": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-02-26",
+   "delisted": true,
+   "n_bars": 1297
+  },
+  "PAYC": {
+   "sector": "Industrials",
+   "first_bar": "2014-04-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3105
+  },
+  "PAYX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PBCT-202204": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-04-01",
+   "delisted": true,
+   "n_bars": 4343
+  },
+  "PBG-201002": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-02-26",
+   "delisted": true,
+   "n_bars": 1297
+  },
+  "PBI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PBY-201602": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-02-03",
+   "delisted": true,
+   "n_bars": 2791
+  },
+  "PCAR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PCG": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PCH-202601": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-01-30",
+   "delisted": true,
+   "n_bars": 5303
+  },
+  "PCL-201602": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-02-19",
+   "delisted": true,
+   "n_bars": 2802
+  },
+  "PCP-201601": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-01-29",
+   "delisted": true,
+   "n_bars": 2788
+  },
+  "PD-200703": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-03-19",
+   "delisted": true,
+   "n_bars": 555
+  },
+  "PDCO-202504": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-04-16",
+   "delisted": true,
+   "n_bars": 5105
+  },
+  "PDD": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2018-07-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2027
+  },
+  "PDG-200603": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-03-08",
+   "delisted": true,
+   "n_bars": 297
+  },
+  "PDLI-202012": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-12-30",
+   "delisted": true,
+   "n_bars": 4027
+  },
+  "PEG": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PENN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PEP": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PETM-201503": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-03-11",
+   "delisted": true,
+   "n_bars": 2564
+  },
+  "PFE": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PFG": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PG": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PGL-200702": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-02-21",
+   "delisted": true,
+   "n_bars": 537
+  },
+  "PGN-201207": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-07-02",
+   "delisted": true,
+   "n_bars": 1889
+  },
+  "PGR": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PH": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PHM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PHS-200512": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-12-20",
+   "delisted": true,
+   "n_bars": 245
+  },
+  "PIXR-200605": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-05-05",
+   "delisted": true,
+   "n_bars": 338
+  },
+  "PKG": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PLD": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PLD-201106": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-06-02",
+   "delisted": true,
+   "n_bars": 1616
+  },
+  "PLL-201508": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-08-28",
+   "delisted": true,
+   "n_bars": 2683
+  },
+  "PLTR": {
+   "sector": "Information Technology",
+   "first_bar": "2020-09-30",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1478
+  },
+  "PM": {
+   "sector": "Consumer Staples",
+   "first_bar": "2008-03-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4636
+  },
+  "PMCS-201601": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-01-14",
+   "delisted": true,
+   "n_bars": 2778
+  },
+  "PNC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PNR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PNW": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PODD": {
+   "sector": "Health Care",
+   "first_bar": "2007-05-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4847
+  },
+  "POM-201603": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-03-23",
+   "delisted": true,
+   "n_bars": 2825
+  },
+  "POOL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PPDI-201112": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-12-05",
+   "delisted": true,
+   "n_bars": 1745
+  },
+  "PPG": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PPL": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PPLI": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PRDO": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PRGO": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PRSU": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PRU": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PSA": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PSFT-200501": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-01-07",
+   "delisted": true,
+   "n_bars": 5
+  },
+  "PSKY": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PSX": {
+   "sector": "Energy",
+   "first_bar": "2012-04-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3609
+  },
+  "PTC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PTEN": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PTON": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2019-09-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1733
+  },
+  "PTV-201011": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-11-16",
+   "delisted": true,
+   "n_bars": 1480
+  },
+  "PVH": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PVN-200509": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-09-30",
+   "delisted": true,
+   "n_bars": 189
+  },
+  "PWER-201307": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-07-25",
+   "delisted": true,
+   "n_bars": 2155
+  },
+  "PWR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "PX-201810": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-10-30",
+   "delisted": true,
+   "n_bars": 3482
+  },
+  "PXD-202405": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-05-02",
+   "delisted": true,
+   "n_bars": 4866
+  },
+  "PYPL": {
+   "sector": "Financials",
+   "first_bar": "2015-07-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2798
+  },
+  "Q": {
+   "sector": "Information Technology",
+   "first_bar": "2025-10-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 204
+  },
+  "Q-201103": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-03-31",
+   "delisted": true,
+   "n_bars": 1573
+  },
+  "QCOM": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "QEP-202103": {
+   "sector": "Energy",
+   "first_bar": "2010-06-16",
+   "last_bar": "2021-03-16",
+   "delisted": true,
+   "n_bars": 2706
+  },
+  "QGEN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "QLGC-201608": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-08-15",
+   "delisted": true,
+   "n_bars": 2925
+  },
+  "QMCO": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "QRVO": {
+   "sector": "Information Technology",
+   "first_bar": "2015-01-02",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2924
+  },
+  "QVCAQ-202608": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2006-05-04",
+   "last_bar": "2026-08-06",
+   "delisted": true,
+   "n_bars": 5096
+  },
+  "R": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RADCQ-202409": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-09-03",
+   "delisted": true,
+   "n_bars": 4949
+  },
+  "RAI-201707": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-07-24",
+   "delisted": true,
+   "n_bars": 3161
+  },
+  "RBK-200601": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-01-31",
+   "delisted": true,
+   "n_bars": 272
+  },
+  "RCL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RDC-201904": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-04-10",
+   "delisted": true,
+   "n_bars": 3592
+  },
+  "RDDT": {
+   "sector": "Communication Services",
+   "first_bar": "2024-03-21",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 605
+  },
+  "RDRTQ-200508": {
+   "sector": null,
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-08-15",
+   "delisted": true,
+   "n_bars": 98
+  },
+  "REG": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "REGN": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5440
+  },
+  "RF": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RFMD-201412": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-12-31",
+   "delisted": true,
+   "n_bars": 2517
+  },
+  "RHI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RHT-201907": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-07-08",
+   "delisted": true,
+   "n_bars": 3652
+  },
+  "RIG": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RIVN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2021-11-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1197
+  },
+  "RJF": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RKLB": {
+   "sector": "Industrials",
+   "first_bar": "2020-11-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1438
+  },
+  "RL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RMD": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RML-200608": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-08-01",
+   "delisted": true,
+   "n_bars": 398
+  },
+  "RNWK-202212": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-12-21",
+   "delisted": true,
+   "n_bars": 4525
+  },
+  "ROH-200904": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-04-01",
+   "delisted": true,
+   "n_bars": 1069
+  },
+  "ROK": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ROL": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ROP": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ROST": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RPM": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RRC": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RRD-202202": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-02-25",
+   "delisted": true,
+   "n_bars": 4318
+  },
+  "RSG": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RSHCQ-201510": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-10-07",
+   "delisted": true,
+   "n_bars": 2709
+  },
+  "RTN-202004": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-04-02",
+   "delisted": true,
+   "n_bars": 3839
+  },
+  "RTX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RVTY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RX-201002": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-02-25",
+   "delisted": true,
+   "n_bars": 1296
+  },
+  "RYAAY": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "RYAN-200610": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-10-31",
+   "delisted": true,
+   "n_bars": 462
+  },
+  "RYI-200710": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-18",
+   "delisted": true,
+   "n_bars": 704
+  },
+  "S-200503": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-03-24",
+   "delisted": true,
+   "n_bars": 57
+  },
+  "S-202003": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-03-31",
+   "delisted": true,
+   "n_bars": 3837
+  },
+  "SAF-200809": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-09-22",
+   "delisted": true,
+   "n_bars": 937
+  },
+  "SANM": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SAPE-201502": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-02-05",
+   "delisted": true,
+   "n_bars": 2541
+  },
+  "SBAC": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SBL-200701": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-01-09",
+   "delisted": true,
+   "n_bars": 508
+  },
+  "SBNY": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5404
+  },
+  "SBUX": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SCG-201812": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-12-31",
+   "delisted": true,
+   "n_bars": 3523
+  },
+  "SCHW": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SCI": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SDS-200508": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-08-11",
+   "delisted": true,
+   "n_bars": 154
+  },
+  "SE-201702": {
+   "sector": "Energy",
+   "first_bar": "2006-12-14",
+   "last_bar": "2017-02-24",
+   "delisted": true,
+   "n_bars": 2566
+  },
+  "SEBL-200601": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-01-31",
+   "delisted": true,
+   "n_bars": 272
+  },
+  "SEDG": {
+   "sector": "Information Technology",
+   "first_bar": "2015-03-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2867
+  },
+  "SEE-202604": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-04-08",
+   "delisted": true,
+   "n_bars": 5349
+  },
+  "SEPR-200910": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-10-20",
+   "delisted": true,
+   "n_bars": 1209
+  },
+  "SFA-200602": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-02-24",
+   "delisted": true,
+   "n_bars": 289
+  },
+  "SGEN-202312": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2023-12-13",
+   "delisted": true,
+   "n_bars": 4769
+  },
+  "SGID-200610": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-10-17",
+   "delisted": true,
+   "n_bars": 452
+  },
+  "SGP-200911": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-11-03",
+   "delisted": true,
+   "n_bars": 1219
+  },
+  "SHEL": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SHLDQ-202210": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-10-31",
+   "delisted": true,
+   "n_bars": 4485
+  },
+  "SHLM-201808": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-08-20",
+   "delisted": true,
+   "n_bars": 3432
+  },
+  "SHOP": {
+   "sector": "Information Technology",
+   "first_bar": "2015-05-21",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2828
+  },
+  "SHPG-201901": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-01-04",
+   "delisted": true,
+   "n_bars": 3526
+  },
+  "SHW": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SIAL-201511": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-11-17",
+   "delisted": true,
+   "n_bars": 2739
+  },
+  "SIG": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SII-201008": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-08-27",
+   "delisted": true,
+   "n_bars": 1424
+  },
+  "SIRI": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SITC": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SIVBQ-202411": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-11-07",
+   "delisted": true,
+   "n_bars": 4984
+  },
+  "SJM": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SKY": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5438
+  },
+  "SLB": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SLG": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SLM": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SLR-200710": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-01",
+   "delisted": true,
+   "n_bars": 691
+  },
+  "SMCI": {
+   "sector": "Information Technology",
+   "first_bar": "2007-03-29",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4879
+  },
+  "SNA": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SNDK": {
+   "sector": "Information Technology",
+   "first_bar": "2025-02-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 380
+  },
+  "SNDK-201605": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-05-11",
+   "delisted": true,
+   "n_bars": 2859
+  },
+  "SNI-201803": {
+   "sector": "Communication Services",
+   "first_bar": "2008-06-12",
+   "last_bar": "2018-03-06",
+   "delisted": true,
+   "n_bars": 2450
+  },
+  "SNPS": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SNV-202512": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-12-31",
+   "delisted": true,
+   "n_bars": 5283
+  },
+  "SO": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SOLS": {
+   "sector": "Materials",
+   "first_bar": "2025-10-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 209
+  },
+  "SOLV": {
+   "sector": "Health Care",
+   "first_bar": "2024-03-26",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 602
+  },
+  "SON": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SOV-200901": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-01-29",
+   "delisted": true,
+   "n_bars": 1025
+  },
+  "SPCX": {
+   "sector": "Communication Services",
+   "first_bar": "2026-06-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 47
+  },
+  "SPG": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SPGI": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SPLK-202403": {
+   "sector": "Information Technology",
+   "first_bar": "2012-04-19",
+   "last_bar": "2024-03-15",
+   "delisted": true,
+   "n_bars": 2996
+  },
+  "SPLS-201709": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-09-12",
+   "delisted": true,
+   "n_bars": 3196
+  },
+  "SPXC": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SRCL-202411": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-11-01",
+   "delisted": true,
+   "n_bars": 4993
+  },
+  "SRCTQ-201512": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-12-18",
+   "delisted": true,
+   "n_bars": 2736
+  },
+  "SRE": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SRR-200708": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-08-17",
+   "delisted": true,
+   "n_bars": 661
+  },
+  "SSCC-201105": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2011-05-27",
+   "delisted": true,
+   "n_bars": 1612
+  },
+  "SSP": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "STCN-202501": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-01-02",
+   "delisted": true,
+   "n_bars": 5030
+  },
+  "STE": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "STEI-201312": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-12-23",
+   "delisted": true,
+   "n_bars": 2260
+  },
+  "STI-201912": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-12-06",
+   "delisted": true,
+   "n_bars": 3759
+  },
+  "STJ-201701": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-01-04",
+   "delisted": true,
+   "n_bars": 3023
+  },
+  "STLD": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "STR-201609": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-09-16",
+   "delisted": true,
+   "n_bars": 2948
+  },
+  "STRZA-201612": {
+   "sector": "Communication Services",
+   "first_bar": "2006-05-04",
+   "last_bar": "2016-12-08",
+   "delisted": true,
+   "n_bars": 2670
+  },
+  "STT": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "STX": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "STZ": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SUN-201210": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-10-04",
+   "delisted": true,
+   "n_bars": 1955
+  },
+  "SUNEQ-201712": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-12-29",
+   "delisted": true,
+   "n_bars": 3272
+  },
+  "SVC-200605": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-05-25",
+   "delisted": true,
+   "n_bars": 352
+  },
+  "SVU-201810": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-10-19",
+   "delisted": true,
+   "n_bars": 3475
+  },
+  "SW": {
+   "sector": "Materials",
+   "first_bar": "2008-04-25",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1673
+  },
+  "SWK": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SWKS": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SWN-202409": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2024-09-30",
+   "delisted": true,
+   "n_bars": 4969
+  },
+  "SWY-201501": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-01-29",
+   "delisted": true,
+   "n_bars": 2536
+  },
+  "SXCL-201702": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-02-15",
+   "delisted": true,
+   "n_bars": 2893
+  },
+  "SY-201007": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-07-29",
+   "delisted": true,
+   "n_bars": 1403
+  },
+  "SYF": {
+   "sector": "Financials",
+   "first_bar": "2014-07-31",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3031
+  },
+  "SYK": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "SYY": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "T": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "T-200511": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-11-18",
+   "delisted": true,
+   "n_bars": 224
+  },
+  "TAP": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TCOM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TDC": {
+   "sector": "Information Technology",
+   "first_bar": "2007-09-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4764
+  },
+  "TDG": {
+   "sector": "Industrials",
+   "first_bar": "2006-03-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5140
+  },
+  "TDY": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TE-201606": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2016-06-30",
+   "delisted": true,
+   "n_bars": 2894
+  },
+  "TEAM": {
+   "sector": "Information Technology",
+   "first_bar": "2015-12-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2687
+  },
+  "TECD-202006": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-06-29",
+   "delisted": true,
+   "n_bars": 3899
+  },
+  "TECH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TECU-201509": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-09-21",
+   "delisted": true,
+   "n_bars": 2544
+  },
+  "TECUA-201405": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2014-05-01",
+   "delisted": true,
+   "n_bars": 2348
+  },
+  "TEG-201506": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-06-29",
+   "delisted": true,
+   "n_bars": 2640
+  },
+  "TEK-200711": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-11-21",
+   "delisted": true,
+   "n_bars": 728
+  },
+  "TEL": {
+   "sector": "Information Technology",
+   "first_bar": "2007-06-14",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4826
+  },
+  "TEN-202211": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-11-16",
+   "delisted": true,
+   "n_bars": 4501
+  },
+  "TER": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TEVA": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TEX": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TFC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TFCF-201903": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-03-19",
+   "delisted": true,
+   "n_bars": 3576
+  },
+  "TFCFA-201903": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-03-19",
+   "delisted": true,
+   "n_bars": 3576
+  },
+  "TFX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TGNA-202603": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-03-19",
+   "delisted": true,
+   "n_bars": 5336
+  },
+  "TGT": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "THC": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TIE-201301": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-01-07",
+   "delisted": true,
+   "n_bars": 2017
+  },
+  "TIF-202101": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-01-06",
+   "delisted": true,
+   "n_bars": 4031
+  },
+  "TIGO": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5422
+  },
+  "TIN-201202": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-02-10",
+   "delisted": true,
+   "n_bars": 1791
+  },
+  "TJX": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TKO": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TKR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TLAB-201312": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-12-03",
+   "delisted": true,
+   "n_bars": 2246
+  },
+  "TMO": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TMUS": {
+   "sector": "Communication Services",
+   "first_bar": "2007-04-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4865
+  },
+  "TNB-201205": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-05-16",
+   "delisted": true,
+   "n_bars": 1857
+  },
+  "TNL": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2006-07-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5053
+  },
+  "TOPP-200710": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-12",
+   "delisted": true,
+   "n_bars": 700
+  },
+  "TOY-200507": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-07-21",
+   "delisted": true,
+   "n_bars": 139
+  },
+  "TPL": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5437
+  },
+  "TPR": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TRB-200712": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-12-20",
+   "delisted": true,
+   "n_bars": 748
+  },
+  "TRGP": {
+   "sector": "Energy",
+   "first_bar": "2010-12-07",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3948
+  },
+  "TRI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TRIN-200909": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-09-09",
+   "delisted": true,
+   "n_bars": 1180
+  },
+  "TRIP": {
+   "sector": "Communication Services",
+   "first_bar": "2011-12-07",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3695
+  },
+  "TRMB": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TROW": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TRV": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TSCO": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TSG-200703": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-03-30",
+   "delisted": true,
+   "n_bars": 564
+  },
+  "TSLA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2010-06-29",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4060
+  },
+  "TSN": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TSS-201909": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-09-17",
+   "delisted": true,
+   "n_bars": 3702
+  },
+  "TT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TT-200806": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-06-05",
+   "delisted": true,
+   "n_bars": 862
+  },
+  "TTD": {
+   "sector": "Communication Services",
+   "first_bar": "2016-09-21",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2491
+  },
+  "TTWO": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TUPBQ-202506": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-06-11",
+   "delisted": true,
+   "n_bars": 5141
+  },
+  "TWC-201605": {
+   "sector": "Communication Services",
+   "first_bar": "2007-01-05",
+   "last_bar": "2016-05-17",
+   "delisted": true,
+   "n_bars": 2358
+  },
+  "TWTR-202210": {
+   "sector": "Communication Services",
+   "first_bar": "2013-11-07",
+   "last_bar": "2022-10-27",
+   "delisted": true,
+   "n_bars": 2259
+  },
+  "TWX-201806": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-06-14",
+   "delisted": true,
+   "n_bars": 3386
+  },
+  "TXN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TXT": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "TXU-200710": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-10-10",
+   "delisted": true,
+   "n_bars": 698
+  },
+  "TYL": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2016-03-23",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2615
+  },
+  "UAA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-11-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5218
+  },
+  "UAL": {
+   "sector": "Industrials",
+   "first_bar": "2006-01-25",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5174
+  },
+  "UALAQ-200602": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-02-01",
+   "delisted": true,
+   "n_bars": 273
+  },
+  "UBER": {
+   "sector": "Industrials",
+   "first_bar": "2019-05-10",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1829
+  },
+  "UCL-200508": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-08-10",
+   "delisted": true,
+   "n_bars": 153
+  },
+  "UDR": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UHS": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UIS": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ULTA": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2007-10-25",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4733
+  },
+  "UN-202011": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-11-27",
+   "delisted": true,
+   "n_bars": 4005
+  },
+  "UNH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UNM": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UNP": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "UPS": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "URBN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "URI": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "USB": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "USG-201904": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2019-04-23",
+   "delisted": true,
+   "n_bars": 3600
+  },
+  "UST-200901": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-01-05",
+   "delisted": true,
+   "n_bars": 1009
+  },
+  "UVN-200703": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-03-28",
+   "delisted": true,
+   "n_bars": 562
+  },
+  "V": {
+   "sector": "Financials",
+   "first_bar": "2008-03-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4634
+  },
+  "VALPQ-202104": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-04-27",
+   "delisted": true,
+   "n_bars": 4104
+  },
+  "VAR-202104": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-04-14",
+   "delisted": true,
+   "n_bars": 4098
+  },
+  "VEEV": {
+   "sector": "Health Care",
+   "first_bar": "2013-10-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3229
+  },
+  "VEON": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VFC": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VIAB-201912": {
+   "sector": "Communication Services",
+   "first_bar": "2005-12-05",
+   "last_bar": "2019-12-04",
+   "delisted": true,
+   "n_bars": 3524
+  },
+  "VIAV": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VICI": {
+   "sector": "Real Estate",
+   "first_bar": "2017-10-17",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2218
+  },
+  "VLO": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VLTO": {
+   "sector": "Industrials",
+   "first_bar": "2023-09-27",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 726
+  },
+  "VMC": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VMED-201306": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2013-06-07",
+   "delisted": true,
+   "n_bars": 2122
+  },
+  "VMRK": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VNO": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VNT": {
+   "sector": "Information Technology",
+   "first_bar": "2020-09-24",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1481
+  },
+  "VOD": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VRSK": {
+   "sector": "Industrials",
+   "first_bar": "2009-10-07",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 4242
+  },
+  "VRSN": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VRT": {
+   "sector": "Industrials",
+   "first_bar": "2018-07-30",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2004
+  },
+  "VRTS-200507": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2005-07-01",
+   "delisted": true,
+   "n_bars": 126
+  },
+  "VRTX": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5439
+  },
+  "VSNT": {
+   "sector": "Communication Services",
+   "first_bar": "2025-12-15",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 170
+  },
+  "VST": {
+   "sector": "Utilities",
+   "first_bar": "2016-10-04",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2481
+  },
+  "VSTNQ-201010": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-10-01",
+   "delisted": true,
+   "n_bars": 1448
+  },
+  "VTR": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VTRS": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VTSS-201504": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2015-04-27",
+   "delisted": true,
+   "n_bars": 2595
+  },
+  "VYX": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "VZ": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WAB": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WAMUQ-201203": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2012-03-20",
+   "delisted": true,
+   "n_bars": 1817
+  },
+  "WAT": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WB-200812": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-12-31",
+   "delisted": true,
+   "n_bars": 1007
+  },
+  "WBA-202508": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-08-27",
+   "delisted": true,
+   "n_bars": 5196
+  },
+  "WBD": {
+   "sector": "Communication Services",
+   "first_bar": "2005-07-06",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5314
+  },
+  "WCG-202001": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-01-23",
+   "delisted": true,
+   "n_bars": 3790
+  },
+  "WCRX-201309": {
+   "sector": "Health Care",
+   "first_bar": "2006-09-21",
+   "last_bar": "2013-09-30",
+   "delisted": true,
+   "n_bars": 1768
+  },
+  "WDAY": {
+   "sector": "Information Technology",
+   "first_bar": "2012-10-12",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3481
+  },
+  "WDC": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WEC": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WELL": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WEN-200809": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-09-29",
+   "delisted": true,
+   "n_bars": 942
+  },
+  "WFC": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WFM-201708": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2017-08-25",
+   "delisted": true,
+   "n_bars": 3185
+  },
+  "WFRD": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5436
+  },
+  "WHR": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WINMQ-202009": {
+   "sector": "Communication Services",
+   "first_bar": "2005-02-09",
+   "last_bar": "2020-09-21",
+   "delisted": true,
+   "n_bars": 3931
+  },
+  "WLBAQ-202004": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2020-04-09",
+   "delisted": true,
+   "n_bars": 3818
+  },
+  "WM": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WMB": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WMT": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WNDXQ-200611": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2006-11-21",
+   "delisted": true,
+   "n_bars": 476
+  },
+  "WOR": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WPX-202101": {
+   "sector": "Energy",
+   "first_bar": "2011-12-12",
+   "last_bar": "2021-01-06",
+   "delisted": true,
+   "n_bars": 2282
+  },
+  "WRB": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WRK-202407": {
+   "sector": "Materials",
+   "first_bar": "2015-06-24",
+   "last_bar": "2024-07-05",
+   "delisted": true,
+   "n_bars": 2272
+  },
+  "WSM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WST": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WTW": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WU": {
+   "sector": "Financials",
+   "first_bar": "2006-09-20",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5009
+  },
+  "WWWW-200709": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2007-09-28",
+   "delisted": true,
+   "n_bars": 690
+  },
+  "WWY-200810": {
+   "sector": "Consumer Staples",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-10-06",
+   "delisted": true,
+   "n_bars": 947
+  },
+  "WY": {
+   "sector": "Real Estate",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "WYE-200910": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2009-10-15",
+   "delisted": true,
+   "n_bars": 1206
+  },
+  "WYNN": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "X-202506": {
+   "sector": "Materials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2025-06-17",
+   "delisted": true,
+   "n_bars": 5147
+  },
+  "XEC-202109": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2021-09-30",
+   "delisted": true,
+   "n_bars": 4216
+  },
+  "XEL": {
+   "sector": "Utilities",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "XL-201809": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2018-09-11",
+   "delisted": true,
+   "n_bars": 3447
+  },
+  "XLNX-202202": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2022-02-11",
+   "delisted": true,
+   "n_bars": 4309
+  },
+  "XMSR-200807": {
+   "sector": "Communication Services",
+   "first_bar": "2005-01-03",
+   "last_bar": "2008-07-28",
+   "delisted": true,
+   "n_bars": 898
+  },
+  "XOM": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "XRAY": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "XRX": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "XTO-201006": {
+   "sector": "Energy",
+   "first_bar": "2005-01-03",
+   "last_bar": "2010-06-25",
+   "delisted": true,
+   "n_bars": 1380
+  },
+  "XYL": {
+   "sector": "Industrials",
+   "first_bar": "2011-10-13",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3733
+  },
+  "XYZ": {
+   "sector": "Financials",
+   "first_bar": "2015-11-19",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2701
+  },
+  "YELLQ-202607": {
+   "sector": "Industrials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-07-01",
+   "delisted": true,
+   "n_bars": 5274
+  },
+  "YUM": {
+   "sector": "Consumer Discretionary",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ZBH": {
+   "sector": "Health Care",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ZBRA": {
+   "sector": "Information Technology",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ZION": {
+   "sector": "Financials",
+   "first_bar": "2005-01-03",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 5441
+  },
+  "ZM": {
+   "sector": "Information Technology",
+   "first_bar": "2019-04-18",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 1844
+  },
+  "ZS": {
+   "sector": "Information Technology",
+   "first_bar": "2018-03-16",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 2118
+  },
+  "ZTS": {
+   "sector": "Health Care",
+   "first_bar": "2013-02-01",
+   "last_bar": "2026-08-19",
+   "delisted": false,
+   "n_bars": 3407
+  }
+ }
+}

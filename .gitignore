@@ -3,3 +3,4 @@ __pycache__/
 data/*.parquet
 logs/
 .venv/
+data/killtest_*.parquet
