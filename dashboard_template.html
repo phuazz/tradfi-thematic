@@ -45,6 +45,9 @@ h1 { font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacin
 .hero-strip .number.good { color: var(--g); } .hero-strip .number.bad { color: var(--r); }
 .hero-strip .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--t3-text); margin-top: 3px; }
 .hero-strip .desc { font-size: 11px; color: var(--t3-text); margin-top: 2px; }
+.hero-banner { margin-top: 14px; background: var(--a-bg); border: 1px solid rgba(180,83,9,0.25);
+  border-radius: var(--radius); padding: 9px 13px; font-size: 12.5px; color: var(--a-text); line-height: 1.6; }
+.hero-banner strong { font-weight: 700; }
 
 /* ---- tabs ---- */
 nav.tabs { display: flex; gap: 0; margin: 18px 0 0; border: 1px solid var(--bd); border-radius: var(--radius);
@@ -167,6 +170,7 @@ footer strong { color: var(--t2); }
     from Binance's TradFi perpetual menu — ranked on how far each underlying sits above its own 200-day average,
     capped at two names per theme, rebalanced weekly, and pulled entirely to cash when too few names qualify.
     Signals are computed on the underlying stocks; the exposure is taken through perps. No leverage.</p>
+  <div class="hero-banner" id="hero-banner"></div>
   <div class="hero-strip" id="hero-strip"></div>
 </header>
 
@@ -199,6 +203,16 @@ footer strong { color: var(--t2); }
   <section>
     <h2>Current holdings<span class="hint">from the append-only fill log, valued at last-seen marks</span></h2>
     <div class="scroll" id="tbl-book"></div>
+  </section>
+
+  <section>
+    <h2>Execution quality<span class="hint">realised fills against the price the model would have filled at — this is what the shadow exists to measure</span></h2>
+    <div class="cards" id="exec-cards"></div>
+  </section>
+
+  <section>
+    <h2>Plain terms<span class="hint">every term this page uses, in one place</span></h2>
+    <details class="caveats"><summary>Open the glossary</summary><div id="glossary"></div></details>
   </section>
 
   <section>
@@ -239,7 +253,7 @@ footer strong { color: var(--t2); }
   </section>
 
   <section>
-    <h2>Equity vs benchmark<span class="hint">rotation against buy-and-hold SPY on the identical weekly basis, both net of the same cost model</span></h2>
+    <h2>Equity vs benchmark<span class="hint">rotation against buy-and-hold SPY on the identical weekly basis — note SPY is itself in the tradeable universe, so this is a reference point, not an independent yardstick</span></h2>
     <div class="chart-wrap"><div id="rot-equity-chart" class="chart"></div></div>
   </section>
 
@@ -374,9 +388,14 @@ footer strong { color: var(--t2); }
   <strong>Not investment advice.</strong> A personal research dashboard for a personal book, not affiliated with any
   regulated fund and not a recommendation to buy or sell anything. Positions shown are micro-sized verification
   experiments.<br>
-  <strong>Backtest disclosure.</strong> Weekly Friday-close basis from 2018; signals read the prior session's close, so
-  no look-ahead by construction (pinned by test). Every figure is net of 10bp round-trip fees, a funding band of
-  0 to +6%/yr charged on invested days, and forgone dividends. Costs are stressed at 2× and 4×. No leverage.<br>
+  <strong>Backtest disclosure.</strong> Weekly Friday-close basis from 2018. The signal is read on the session before
+  the fill — in the backtest that is the next close, in the live book an execution within hours of it — so there is no
+  look-ahead in either, and since Amendment 3 both read the same session. Every figure is net of 10bp round-trip fees,
+  a funding band of 0 to +6%/yr charged on invested days, and forgone dividends. Costs are stressed at 2× and 4×.
+  Long only, no leverage, so loss is bounded by the capital committed.<br>
+  <strong>Where live departs from the simulation.</strong> The live rule blocks buys in names paying more than +30%/yr
+  funding; the simulation has no funding rule at all, because these contracts are too young to have a testable funding
+  history. The live book can therefore sit under-invested in cash where the simulation never did.<br>
   <strong>The bias that cannot be removed.</strong> The tradeable menu is Binance's own 2025–26 listing selection, so
   absolute returns are flattered by construction; only the relative comparisons on this page are defensible.<br>
   <strong>Data.</strong> Underlying prices from yfinance; contract specs, funding and liquidity from Binance's public
@@ -441,15 +460,22 @@ function renderHero() {
   document.getElementById('ts-built-footer').textContent = 'Last updated ' + fmtTs(DATA.built_at_utc) + '.';
   const sh = payloadStats.sharpe, cagr = payloadStats.cagr, dd = payloadStats.max_dd;
   const weeks = payloadStats.n_weeks || (S ? S.dates.length : 0);
+  document.getElementById('hero-banner').innerHTML =
+    `<strong>The four figures below are SIMULATED, not performance.</strong> They come from a backtest on the
+     underlying shares since 2018; the live book was funded days ago, holds ${DATA.n_filled} positions and has no
+     track record. The simulated return is also flattered by the universe: Binance chose to list these contracts in
+     2025–26, after the underlyings had already trended. Treat the comparisons on this page as the evidence, and the
+     absolute levels as unusable.`;
   const items = [
     { n: sh != null ? (sh >= 0 ? '+' : '') + sh.toFixed(2) : '—', cls: (sh || 0) > 0 ? 'good' : 'bad',
-      label: 'Net Sharpe', desc: 'simulated, worst funding band' },
+      label: 'Net Sharpe · simulated', desc: 'worst funding band, after all modelled costs' },
     { n: cagr != null ? fmtPct(cagr * 100) : '—', cls: (cagr || 0) > 0 ? 'good' : 'bad',
-      label: 'CAGR', desc: 'net of all modelled costs' },
-    { n: dd != null ? fmtPct(dd * 100) : '—', cls: 'bad', label: 'Max drawdown', desc: 'weekly close basis' },
+      label: 'CAGR · simulated', desc: 'flattered by the listing menu — not a forecast' },
+    { n: dd != null ? fmtPct(dd * 100) : '—', cls: 'bad', label: 'Max drawdown · simulated',
+      desc: 'weekly closes; intra-week troughs are deeper' },
     { n: (weeks / 52).toFixed(1) + 'y', cls: '', label: 'Backtest window', desc: weeks + ' weekly rebalances' },
     { n: DATA.n_filled + '/10', cls: DATA.n_filled ? 'good' : '', label: 'Live positions',
-      desc: '$' + DATA.book_value.toFixed(0) + ' of $' + DATA.book_cap.toFixed(0) },
+      desc: '$' + DATA.book_value.toFixed(0) + ' of $' + DATA.book_cap.toFixed(0) + ' · max loss $' + (DATA.max_loss_usd || 5000).toFixed(0) + ', no leverage' },
   ];
   document.getElementById('hero-strip').innerHTML = items.map(i =>
     `<div class="item"><div class="number ${i.cls}">${i.n}</div><div class="label">${i.label}</div><div class="desc">${i.desc}</div></div>`).join('');
@@ -459,12 +485,23 @@ function renderHero() {
 function renderMonitor() {
   const sb = DATA.shadow_books || {}, b = sb.basket || {};
   const gated = DATA.gated;
-  document.getElementById('live-banner').innerHTML = gated
-    ? `<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the eligible universe
-       clears the +5% floor, so the rule holds nothing this week. Any open positions are sold.</div>`
-    : (DATA.orders_mode === 'establishment' && !DATA.n_filled
-      ? `<div class="banner banner-blue"><strong>Establishment pending.</strong> The rotation is selected and the order
-         list is ready; no fills have been logged yet, so the book is still empty.</div>` : '');
+  const banners = [];
+  if (gated) banners.push(`<div class="banner banner-amber"><strong>Cash gate active.</strong> Fewer than 30% of the
+    eligible universe clears the +5% floor, so the rule holds nothing this week. Any open positions are sold.</div>`);
+  else if (DATA.orders_mode === 'establishment' && !DATA.n_filled)
+    banners.push(`<div class="banner banner-blue"><strong>Establishment pending.</strong> The rotation is selected and
+      the order list is ready; no fills have been logged yet, so the book is still empty.</div>`);
+  if (DATA.under_filled) banners.push(`<div class="banner banner-amber"><strong>Under-invested:
+    ${DATA.n_target_positions} of 10 slots, ${DATA.cash_pct}% in cash.</strong> The live funding block removed
+    crowded names from candidacy and the theme cap left the remaining slots unfillable. The backtest never produced
+    this state — it has no funding rule — so the simulation runs more invested than the live book does.</div>`);
+  banners.push(`<div class="banner banner-blue"><strong>What could go wrong, plainly.</strong> In simulation this
+    strategy fell ${DATA.verdict && payloadStats.max_dd ? Math.abs(payloadStats.max_dd * 100).toFixed(0) : '45'}%
+    from peak to trough, spent ${payloadStats.pct_weeks_gated != null ? Math.round(payloadStats.pct_weeks_gated * 100) : 19}%
+    of all weeks holding nothing at all, and concentrates in whatever is trending — today that means
+    ${(DATA.index_beta || {}).now_pct || 0}% of the book is broad index exposure. It is long-only with no leverage, so
+    the most that can be lost is the $${(DATA.max_loss_usd || 5000).toFixed(0)} committed.</div>`);
+  document.getElementById('live-banner').innerHTML = banners.join('');
 
   const skips = DATA.skipped_funding || [];
   document.getElementById('live-cards').innerHTML = `
@@ -490,8 +527,29 @@ function renderMonitor() {
     </div>`;
 
   document.getElementById('config-ribbon').textContent =
-    `K=10 · cap 2/theme · MA200 +5% floor · 30% sleeve gate · weekly Friday signal, Saturday execution · ` +
-    `US$5,000 book at 1× · funding block >+30%/yr · fees 10bp RT · band {0,+3,+6}%/yr`;
+    `K=10 · cap 2/theme · MA200 +5% floor · 30% cash gate · signal ${DATA.signal_asof || '—'} → fill reference ` +
+    `${DATA.fill_reference_asof || '—'} (one session apart, as tested) · Saturday 07:30–09:30 SGT execution · ` +
+    `US$5,000 at 1× · funding block >+30%/yr · fees 10bp RT · band {0,+3,+6}%/yr`;
+
+  const ex = DATA.execution || {};
+  document.getElementById('exec-cards').innerHTML = `
+    <div class="card"><h4>Median slippage vs model</h4>
+      <div class="big ${ex.breached ? 'neg' : (ex.median_slippage_bp != null ? 'pos' : '')}">${ex.median_slippage_bp != null ? ex.median_slippage_bp.toFixed(1) + 'bp' : '—'}</div>
+      <div class="row">${ex.n_measured} fill(s) measured against the modelled reference close</div>
+      <div class="row faint">positive is worse than the model · FAIL-EXECUTION trips above ${ex.trigger_bp}bp median</div>
+    </div>
+    <div class="card"><h4>Worst single fill</h4>
+      <div class="big">${ex.worst_slippage_bp != null ? ex.worst_slippage_bp.toFixed(1) + 'bp' : '—'}</div>
+      <div class="row">${ex.n_measured ? 'of ' + ex.n_measured + ' measured fills' : 'nothing filled yet — this populates as the book is established'}</div>
+    </div>
+    <div class="card"><h4>Why this matters</h4>
+      <div class="row">The backtest assumes a fill at a closing price. The live book fills hours later, on a weekend,
+        in a contract whose underlying cash market is shut. This is the number that says whether that difference is
+        affordable — and it is the shadow's whole purpose.</div>
+    </div>`;
+
+  document.getElementById('glossary').innerHTML = (DATA.glossary || [])
+    .map(([t, d]) => `<div class="rule-card"><strong>${t}</strong>${d}</div>`).join('');
 
   document.getElementById('caveat-note').innerHTML =
     `The equity curve above is <strong>simulated</strong> from 2018 on the underlying stocks, not a record of this book —
@@ -614,7 +672,21 @@ function renderHonest() {
      escapes that. Funding is modelled as a band because the contracts are too young to have a funding history worth
      backtesting.</p>
      <p><strong>What it is for.</strong> A US$5,000 book at 1× is not a return engine; it is an instrument for
-     measuring fills, funding and operations against a frozen model before anything larger is contemplated.</p>`;
+     measuring fills, funding and operations against a frozen model before anything larger is contemplated. Being
+     long-only and unlevered, the most it can lose is the $${(DATA.max_loss_usd || 5000).toFixed(0)} committed.</p>
+     <p><strong>Two things the simulation does not do.</strong> It has no funding rule, so it never sits
+     under-invested the way the live book can — today the funding block leaves
+     ${(DATA.cash_pct != null ? DATA.cash_pct : 0)}% in cash, a state that occurred in 0 of
+     ${D ? D.weeks.length : 450} simulated weeks. And its benchmark, SPY, is itself a member of the tradeable
+     universe — it can be, and today is, one of the holdings — so it is a reference point rather than an
+     independent yardstick.</p>
+     <p><strong>What the book looks like right now.</strong> ${(DATA.index_beta || {}).now_count || 0} of
+     ${(DATA.index_beta || {}).now_total || 0} positions are broad index trackers
+     (${(DATA.index_beta || {}).now_pct || 0}% of the book), against ${(DATA.index_beta || {}).hist_pct || 0}% across
+     all simulated history. When the indices out-rank nearly every single name on trend, the cross-section is
+     unusually narrow — and a rotation that is one-fifth market beta is not doing quite what its name implies.
+     Worth remembering too that this exposure stacks on whatever the rest of the book already holds; semiconductors
+     and AI infrastructure are the crowded corner here as elsewhere.</p>`;
 }
 function renderTail() {
   const t = (D && D.tail) || {};
@@ -717,9 +789,14 @@ function drawMonthly() {
       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5' } }, PLOT_CFG);
 }
 function drawNull() {
-  if (!S || !S.null_sharpes) return;
-  const n = V.null || {};
-  Plotly.react('null-chart', [{ x: S.null_sharpes, type: 'histogram', nbinsx: 40,
+  // Plot the null at the shape the LIVE payload runs (K=10). The K=5
+  // distribution belongs to the pre-registered primary and is quoted beneath.
+  const k = DATA.k10_null || {};
+  const useK10 = Array.isArray(k.sharpes) && k.sharpes.length;
+  const dist = useK10 ? k.sharpes : (S ? S.null_sharpes : null);
+  if (!dist) return;
+  const n = useK10 ? k : (V.null || {});
+  Plotly.react('null-chart', [{ x: dist, type: 'histogram', nbinsx: 40,
     marker: { color: 'rgba(37,99,235,0.35)', line: { color: '#2563eb', width: 0.5 } }, name: 'random portfolios' }],
     { ...CHART_LAYOUT, showlegend: false, margin: { t: 30, b: 36, l: 10, r: 46 }, hovermode: 'closest',
       xaxis: { ...CHART_LAYOUT.xaxis, tickformat: '.2f', dtick: 0.2, tickfont: { size: 11 },
@@ -729,13 +806,14 @@ function drawNull() {
         { type: 'line', x0: n.p90, x1: n.p90, yref: 'paper', y0: 0, y1: 1, line: { color: '#c0beb5', width: 1.3, dash: 'dash' } },
       ],
       annotations: [
-        { x: n.strategy_sharpe, y: 1.04, yref: 'paper', text: `K=5 rotation ${n.strategy_sharpe} (${n.strategy_percentile}th)`, showarrow: false, font: { size: 11, color: '#7c3aed' } },
+        { x: n.strategy_sharpe, y: 1.04, yref: 'paper', text: `${useK10 ? 'K=10 live payload' : 'K=5 rotation'} ${n.strategy_sharpe} (${n.strategy_percentile}th)`, showarrow: false, font: { size: 11, color: '#7c3aed' } },
         { x: n.p90, y: 0.9, yref: 'paper', text: 'null p90', showarrow: false, font: { size: 11, color: '#66665e' } },
       ] }, PLOT_CFG);
-  const k = DATA.k10_null || {};
+  const p = V.null || {};
   document.getElementById('null-prov').textContent =
-    `Shown at the pre-registered K=5 shape: null p50 ${n.p50}, p90 ${n.p90}, strategy ${n.strategy_sharpe} → ${n.strategy_percentile}th percentile. ` +
-    `The live K=10 payload ran its own null at its own shape: p90 ${k.p90}, strategy ${k.strategy_sharpe} → ${k.strategy_percentile}th percentile. Both seeds frozen.`;
+    `Shown at the LIVE K=10 shape: null p50 ${k.p50}, p90 ${k.p90}, strategy ${k.strategy_sharpe} → ${k.strategy_percentile}th percentile of ${k.n_paths} paths. ` +
+    `The pre-registered K=5 primary ran its own null: p90 ${p.p90}, strategy ${p.strategy_sharpe} → ${p.strategy_percentile}th percentile. ` +
+    `Both use the same frozen seed and charge the same costs as the strategy they test.`;
 }
 
 /* ------------------------------ universe ----------------------------- */

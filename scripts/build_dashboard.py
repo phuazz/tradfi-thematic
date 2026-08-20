@@ -47,6 +47,11 @@ def main() -> int:
     anchor = rj(ROOT / "data" / "equity_anchor.json", {})
     scan = rj(SCANNER / "scan.json", {})
     scan_rows = {r["symbol"]: r for r in scan.get("rows", [])}
+    series = rj(ROOT / "data" / "phase2_series.json", None)
+    name_series = rj(ROOT / "data" / "name_series.json", None)
+    detail = rj(ROOT / "data" / "payload_detail.json", None)
+    health = rj(ROOT / "data" / "data_health.json", None)
+    k10_null = rj(ROOT / "data" / "k10_null.json", None)
 
     def fund_of(sym):
         r = scan_rows.get(sym)
@@ -89,6 +94,45 @@ def main() -> int:
         })
 
     name_by_sym = {r["base"] + "USDT": r["name"] for r in uni}
+    cluster_by_base = {r["base"]: r["cluster"] for r in uni}
+
+    # Execution quality: realised fills against the price the MODEL would have
+    # filled at, captured on each fill. This is what the FAIL-EXECUTION trigger
+    # reads (median round-trip cost above 15bp fails the shadow).
+    slips = [r["slippage_bp"] for r in log
+             if r.get("type") == "execution" and r.get("slippage_bp") is not None]
+    slips_sorted = sorted(slips)
+    median_slip = (slips_sorted[len(slips_sorted) // 2] if len(slips_sorted) % 2
+                   else (slips_sorted[len(slips_sorted) // 2 - 1] + slips_sorted[len(slips_sorted) // 2]) / 2) \
+        if slips_sorted else None
+    execution = {
+        "n_measured": len(slips),
+        "median_slippage_bp": round(median_slip, 1) if median_slip is not None else None,
+        "worst_slippage_bp": round(max(slips), 1) if slips else None,
+        "trigger_bp": 15.0,
+        "breached": (median_slip is not None and median_slip > 15.0),
+    }
+
+    # Index-beta share: how much of the book is broad-index exposure rather
+    # than single-name selection, now versus the simulated history.
+    live_picks = []
+    if detail and detail.get("weeks"):
+        live_picks = detail["weeks"][-1].get("picks", [])
+    order_bases = [o["symbol"].replace("USDT", "") for o in orders.get("orders", [])]
+    now_bases = order_bases or live_picks
+    idx_now = sum(1 for b in now_bases if cluster_by_base.get(b) == "index-broad")
+    idx_hist_pos = idx_hist_tot = 0
+    if detail:
+        for w in detail.get("weeks", []):
+            for b in w.get("picks", []):
+                idx_hist_tot += 1
+                if cluster_by_base.get(b) == "index-broad":
+                    idx_hist_pos += 1
+    index_beta = {
+        "now_count": idx_now, "now_total": len(now_bases),
+        "now_pct": round(idx_now / len(now_bases) * 100, 1) if now_bases else 0.0,
+        "hist_pct": round(idx_hist_pos / idx_hist_tot * 100, 2) if idx_hist_tot else 0.0,
+    }
 
     order_rows = []
     for o in orders.get("orders", []):
@@ -130,11 +174,6 @@ def main() -> int:
         if not r["excluded"]:
             clusters[r["cluster"]] = clusters.get(r["cluster"], 0) + 1
 
-    series = rj(ROOT / "data" / "phase2_series.json", None)
-    name_series = rj(ROOT / "data" / "name_series.json", None)
-    detail = rj(ROOT / "data" / "payload_detail.json", None)
-    health = rj(ROOT / "data" / "data_health.json", None)
-    k10_null = rj(ROOT / "data" / "k10_null.json", None)
     decisions = [r for r in log if r.get("type") == "ops"][::-1][:60]
     fills = [r for r in log if r.get("type") == "execution"][::-1]
 
@@ -154,7 +193,14 @@ def main() -> int:
         "gated": orders.get("gated"),
         "breadth": orders.get("breadth"),
         "signal_asof": orders.get("signal_asof"),
+        "fill_reference_asof": orders.get("fill_reference_asof"),
+        "under_filled": orders.get("under_filled"),
+        "cash_pct": orders.get("cash_pct"),
+        "n_target_positions": orders.get("n_target_positions"),
         "skipped_funding": orders.get("skipped_funding_rule", []),
+        "execution": execution,
+        "index_beta": index_beta,
+        "max_loss_usd": 5000.0,
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
         "orders": order_rows, "book": book_rows,
@@ -174,7 +220,11 @@ def main() -> int:
             "signal": "distance of underlying adjusted close above its own 200-day moving average (P/MA200 − 1), computed on the underlying, traded via the perp",
             "floor": "+5% above the MA to qualify (the deployed sleeve-C floor, inherited, not fitted)",
             "gate": "if fewer than 30% of the eligible universe clears the floor, the whole sleeve goes to cash for the week",
-            "cadence": "signal on the Thursday US close, execution at the Friday close — no look-ahead by construction, pinned by test",
+            "cadence": ("the signal is read on the session BEFORE the fill. The backtest decides on one close and "
+                        "fills at the next; the live book decides on the same earlier close and executes within "
+                        "hours of that next close (Saturday 07:30–09:30 SGT, about 3½ hours after the Friday US "
+                        "close). No look-ahead by construction, pinned by test. Until Amendment 3 the live rule "
+                        "read a session fresher than the tested one — that divergence is now closed."),
             "basket": "the shipping product: every eligible name equal-weighted weekly; selection had to beat this by +0.10 Sharpe across the funding band and did not",
             "funding_rule": "live only: a name whose trailing 30-day funding exceeds +30%/yr is not bought that week (the scanner's deployed threshold; insurance, not edge — it cannot be backtested because the contracts are months old)",
             "maintenance": "Saturday window: trade only names drifted beyond ±25% of target, plus entries of newly eligible names and exits of delisted ones",
@@ -186,6 +236,17 @@ def main() -> int:
             {"date": "2026-08-17", "what": "Published to GitHub Pages on owner instruction; the evaluator pushes each morning's rebuild."},
             {"date": "2026-08-20", "what": "Amendment 2 (pre-fills): the live payload pivots from the EW basket to the K=10 cluster-cap-2 ROTATION (US$5,000, ~US$500/name, ~3.3 orders/week) — owner grounds: operational load and listing-chase exposure (membership grew 51 → 57 in four days). SEEN-DATA CAVEAT carried: every grid cell was observed before this pick; the filed verdict (basket ships) stands in the record, overridden for the live book only. Gate, stated before its result: a fresh 1,000-path null at the K=10 shape — strategy at the 99.9th percentile. Passed."},
             {"date": "2026-08-20", "what": "Defect correction: TQQQ and TBT had escaped the levered-ETP filter (\\bultra\\b cannot match inside UltraPro/UltraShort) — surfaced when TQQQ appeared in a live pick list. Filter fixed (16 levered excluded), and the panel, engine results, anchor, gate and every chart series were rerun on the corrected universe. The SMH shadow was descoped not-started the same day (separate owner decision)."},
+            {"date": "2026-08-20", "what": "Amendment 3, from a three-lens review of this page: the LIVE rule was reading the latest session's signal while the backtest reads the session before the fill — not look-ahead, but a different and unpriced rule. Live is now aligned to the tested convention, at the cost of a day of information. The review also found three health checks that could not fail (now falsifiable), an under-fill state the backtest never modelled (the funding block can leave slots empty — now surfaced and warned), and the null chart plotting the K=5 shape while the live payload is K=10 (now plots K=10)."},
+        ],
+        "glossary": [
+            ["Above MA200", "how far a share price sits above its own average price of the last 200 trading days — the strategy's one measure of trend."],
+            ["The +5% floor", "a name must be at least 5% above that average to be eligible at all."],
+            ["Theme cap", "no more than two holdings from the same theme, so the book cannot become all semiconductors."],
+            ["Cash gate", "if fewer than 30% of the universe clears the floor, the strategy holds nothing and waits."],
+            ["Funding", "the recurring payment between the two sides of a perpetual contract. Positive means holders of the long side pay; it is a running cost of holding, quoted here annualised."],
+            ["Funding band", "because these contracts are too young to have a usable funding history, the backtest charges a flat 0%, 3% or 6% a year instead. A result only counts if it survives all three."],
+            ["Random-portfolio test", "the same strategy shape run 1,000 times picking names at random, to see whether the real ranking beats luck."],
+            ["Seen-data pick", "a configuration chosen after its results were visible. It is disclosed rather than hidden, because it cannot be undone by argument."],
         ],
     }
 

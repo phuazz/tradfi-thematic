@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-08-20T14:46:52.022019+00:00",
- "n_checks": 22,
- "n_ok": 22,
- "n_warn": 0,
+ "computed_at_utc": "2026-08-20T14:52:50.266118+00:00",
+ "n_checks": 24,
+ "n_ok": 23,
+ "n_warn": 1,
  "n_fail": 0,
  "checks": [
   {
@@ -44,37 +44,37 @@
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 2.7h old (twice-daily cadence)",
+   "detail": "scanner data 2.8h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (13 runs logged)",
+   "detail": "last run 0.1h ago (13 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 5.7h ago",
+   "detail": "built 5.8h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 5.7h ago",
+   "detail": "built 5.8h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 5.7h ago",
+   "detail": "built 5.8h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 5.1h ago",
+   "detail": "built 5.2h ago",
    "group": "artefacts"
   },
   {
@@ -122,20 +122,32 @@
   {
    "name": "Book reconciles to the fill log",
    "status": "OK",
-   "detail": "0 fills logged, 0 distinct positions; book value is derived, never typed",
+   "detail": "independent recompute $0.00 vs published $0.00 (difference $0.00) across 0 positions",
    "group": "book"
   },
   {
-   "name": "Funding rule active on buys",
+   "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "1 name(s) blocked today at >+30%/yr: SKHYNIXUSDT (+45.1%/yr)",
+   "detail": "1 name(s) blocked at >+30%/yr (SKHYNIXUSDT (+45.1%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
-   "name": "Evaluator places no orders",
+   "name": "Evaluator cannot place orders",
    "status": "OK",
-   "detail": "by construction: the evaluator writes lists and alerts only; every fill is manual",
+   "detail": "source carries no private trading endpoint or signing call; it writes lists and alerts only",
    "group": "book"
+  },
+  {
+   "name": "Book fully invested",
+   "status": "WARN",
+   "detail": "9 of 10 slots targeted; 10.0% in cash \u2014 funding block left slots unfillable, which the backtest never modelled",
+   "group": "book"
+  },
+  {
+   "name": "Live signal matches the tested convention",
+   "status": "OK",
+   "detail": "signal 2026-08-18 decides, fill reference 2026-08-19 \u2014 one session apart, as the backtest prices it",
+   "group": "study"
   }
  ]
 }

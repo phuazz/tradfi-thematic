@@ -157,19 +157,60 @@ def main() -> int:
         f"{len(filters)} contracts cached, {len(missing_filters)} eligible names without specs",
         "book")
 
+    # Falsifiable reconciliation: recompute the book INDEPENDENTLY from the
+    # fill log and last marks, then compare with what the evaluator published.
     fills = [r for r in log if r.get("type") == "execution"]
-    held = len({r["symbol"] for r in fills})
-    add("Book reconciles to the fill log", "OK",
-        f"{len(fills)} fills logged, {held} distinct positions; book value is derived, never typed",
+    qty = {}
+    for r in fills:
+        sign = 1.0 if str(r.get("kind", "")).endswith("entry") or r.get("kind") == "buy" else -1.0
+        qty[r["symbol"]] = qty.get(r["symbol"], 0.0) + sign * float(r["qty"])
+    qty = {s: q for s, q in qty.items() if abs(q) > 1e-12}
+    last_px = rj(ROOT / "data" / "last_prices.json", {})
+    recomputed = sum(q * (last_px.get(s) or {}).get("px", 0.0) for s, q in qty.items())
+    published = orders.get("book_value_usd", 0.0)
+    diff = abs(recomputed - published)
+    add("Book reconciles to the fill log",
+        "OK" if diff <= max(1.0, 0.01 * max(recomputed, published)) else "FAIL",
+        f"independent recompute ${recomputed:.2f} vs published ${published:.2f} "
+        f"(difference ${diff:.2f}) across {len(qty)} positions", "book")
+
+    # Falsifiable: no order on today's list may sit above the funding line.
+    thr = prereg.LIVE_FUNDING_EXCLUDE_ANN
+    skips = orders.get("skipped_funding_rule", [])
+    violations = [o["symbol"] for o in orders.get("orders", [])
+                  if o.get("side") == "buy" and (o.get("fund_ann_30d") or 0) > thr]
+    add("Funding rule holds on every buy", "OK" if not violations else "FAIL",
+        f"{len(skips)} name(s) blocked at >+{thr:.0f}%/yr"
+        + (f" ({', '.join(skips)})" if skips else "")
+        + f"; {len(violations)} buy(s) above the line on today's list", "book")
+
+    # Falsifiable: assert the evaluator's own source contains no private
+    # order-placing call. If someone ever wires one in, this goes red.
+    try:
+        src = (ROOT / "scripts" / "basket_evaluator.py").read_text(encoding="utf-8")
+        banned = [t for t in ("fapi/v1/order", "create_order", "new_order", "place_order",
+                              "api_secret", "signature=") if t in src]
+        add("Evaluator cannot place orders", "OK" if not banned else "FAIL",
+            "source carries no private trading endpoint or signing call; it writes lists and alerts only"
+            if not banned else f"order-placing call present: {', '.join(banned)}", "book")
+    except Exception as e:  # noqa: BLE001
+        add("Evaluator cannot place orders", "FAIL", f"source unreadable: {type(e).__name__}", "book")
+
+    # Under-investment: the live funding block can leave slots unfillable, a
+    # state the backtest never produced (0 of 450 weeks).
+    uf = orders.get("under_filled")
+    add("Book fully invested", "OK" if not uf else "WARN",
+        f"{orders.get('n_target_positions', '—')} of {10} slots targeted; "
+        f"{orders.get('cash_pct', 0)}% in cash"
+        + (" — funding block left slots unfillable, which the backtest never modelled" if uf else ""),
         "book")
 
-    skips = orders.get("skipped_funding_rule", [])
-    add("Funding rule active on buys", "OK",
-        f"{len(skips)} name(s) blocked today at >+{prereg.LIVE_FUNDING_EXCLUDE_ANN:.0f}%/yr"
-        + (f": {', '.join(skips)}" if skips else ""), "book")
-
-    add("Evaluator places no orders", "OK",
-        "by construction: the evaluator writes lists and alerts only; every fill is manual", "book")
+    # Live/model fidelity: the signal must sit exactly one session before the
+    # fill reference, matching engine's us_index[pos - SIGNAL_DAY_LAG].
+    sa, fa = orders.get("signal_asof"), orders.get("fill_reference_asof")
+    add("Live signal matches the tested convention", "OK" if (sa and fa and sa < fa) else "WARN",
+        f"signal {sa} decides, fill reference {fa} — one session apart, as the backtest prices it"
+        if (sa and fa and sa < fa) else "signal/fill reference not in the tested order", "study")
 
     n_ok = sum(1 for c in checks if c["status"] == "OK")
     out = {

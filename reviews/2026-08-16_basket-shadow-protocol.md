@@ -89,6 +89,54 @@ week with a quarter of weeks needing none.
 - The SMH shadow was descoped the same day (separate owner decision); the
   2026-09-13 close-out now reads this rotation shadow alone.
 
+## Amendment 3 (2026-08-20, still pre-fills) — live aligned to the tested rule
+
+From a three-lens review (quant PM / CIO / CPM) of the dashboard, owner
+instruction "aligning live to the model and fix all".
+
+**The defect.** The live evaluator read the signal from the LATEST session,
+while the engine reads the session BEFORE the fill (`us_index[pos −
+SIGNAL_DAY_LAG]`). Not look-ahead — Friday's close is genuinely known by
+Saturday morning — but a **different, unpriced rule**, and slightly more
+favourable than the one tested (fresher signal, shorter signal-to-fill gap).
+The dashboard asserted both conventions in different places.
+
+**The fix.** The evaluator now reads `us_index[−1 − SIGNAL_DAY_LAG]` and
+publishes both `signal_asof` and `fill_reference_asof`, one session apart, on
+every order list. Fidelity is chosen over freshness: the shadow exists to
+measure execution against a frozen model, and that comparison is only
+interpretable if live runs the model's rule. A health check now asserts the
+two dates stay in the tested order.
+
+**Also closed in the same pass:**
+- Three health checks could not fail (hardcoded OK). Now falsifiable: the book
+  is reconciled by independent recomputation against the published value; the
+  funding rule is asserted against every buy on the list; and the evaluator's
+  own source is scanned for order-placing or signing calls.
+- **Under-fill is now surfaced and warned.** The live funding block can leave
+  slots unfillable — it does today, 9 of 10 with 10% cash — a state the
+  simulation never produced in 450 weeks because it has no funding rule. The
+  live book therefore runs less invested than the backtest; disclosed on the
+  page and in the footer.
+- The null chart plotted the K=5 distribution while the live payload is K=10;
+  it now plots K=10 (99.9th percentile) and quotes K=5 beneath.
+- Execution quality is instrumented: `log_basket_fill.py` captures the
+  modelled reference price at fill time and computes signed slippage, which is
+  what FAIL-EXECUTION reads. Positive means worse than the model.
+
+**Missed-window rule (previously undefined, now frozen).** If the Saturday
+07:30–09:30 SGT window is missed: execute at the next available window within
+48 hours and log the fill as LATE (it still counts toward the execution
+statistics). Beyond 48 hours, **skip the week entirely** — do not chase the
+trade at a stale signal, and do not double-trade the following week. Two
+consecutive missed maintenance windows remain FAIL-OPS.
+
+**Payload re-decision at close-out (added to the agenda).** The 2026-09-13
+close-out reads the execution triggers; it must ALSO re-decide the payload
+itself — the rotation is a seen-data choice standing against a filed verdict
+that went to the equal-weight basket. Passing the execution triggers does not
+by itself ratify the construction.
+
 ## 3. Mechanics (frozen)
 
 - **Establishment:** orders placed manually across ≤5 sessions in the WS17

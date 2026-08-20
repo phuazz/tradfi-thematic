@@ -68,7 +68,10 @@ def main() -> int:
            "p95": round(float(np.percentile(a, 95)), 3),
            "strategy_sharpe": strat,
            "strategy_percentile": round(float((a < strat).mean() * 100), 1),
-           "gate": "strategy_percentile >= 90 required for the Amendment 2 payload"}
+           "gate": "strategy_percentile >= 90 required for the Amendment 2 payload",
+           # Full distribution so the dashboard can plot the null at the shape
+           # the LIVE payload actually runs, rather than the K=5 one.
+           "sharpes": [round(float(v), 3) for v in a]}
     (ROOT / "data" / "k10_null.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
     print(json.dumps(out))
     return 0
