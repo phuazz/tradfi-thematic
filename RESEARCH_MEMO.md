@@ -5,6 +5,58 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-21 — P1 RESULT: the kill-test kills it. H1 FAILS.
+
+Honest universe (S&P 500 + Nasdaq-100 point-in-time, delisted included,
+price-only, 1,076 weekly rebalances 2006-01 → 2026-08), bars read exactly as
+pre-registered on 2026-08-20.
+
+**H1 — rotation beats its own equal-weight basket: FAIL.** The bar required a
+≥ +0.10 Sharpe margin at *every* point of the funding-premium band at 1× costs.
+
+| premium | rotation | basket | margin | |
+|---|---|---|---|---|
+| 0% | +0.485 | +0.411 | **+0.074** | FAIL |
+| +3% | +0.368 | +0.263 | +0.105 | pass |
+| +6% | +0.251 | +0.115 | +0.136 | pass |
+
+Legs 2 and 3 passed (rotation ≥ basket at 2× costs everywhere; null percentile
+**100.0**, strategy +0.251 against a null p90 of −0.046). One failing band point
+fails the hypothesis. **The strategy case closes per the frozen kill criterion.**
+
+**Why it fails where it does — the mechanism matters.** The margin rises
+monotonically with the funding premium because the rotation is invested less
+than the basket (gate plus 10 names out of ~500), so it pays less financing.
+With financing free, the advantage nearly vanishes. The edge is a
+*cost-avoidance* edge, not a selection edge, and it is therefore fragile to the
+assumption it is most sensitive to.
+
+**H2 — the breadth gate: FAIL on the bar, load-bearing on the mechanism.**
+Gate on +0.368 vs off +0.343 = +0.025, far below the +0.10 bar. But drawdown is
+**−41.3% with the gate against −65.8% without**. A Sharpe-only bar cannot see
+that; the pre-registration chose a Sharpe bar and it stands. Filed as
+`no-effect` on the tested statistic with the drawdown result recorded, and
+consistent with the crypto-breadth record where the gate cut drawdown 38pp.
+
+**H3 — MA200-distance vs 12-1 momentum: FAIL, and backwards.** Plain 12-1
+momentum scores **+0.440** against MA200-distance's +0.368. The inherited
+ranking statistic is not merely un-superior; it is worse by 0.072. Not adopted —
+adopting a better cell after seeing the grid is the exact practice the freeze
+exists to prevent — but registered as a candidate primary for any successor.
+
+**M1 — the hindsight premium, measured.** Restricting the identical machinery to
+the 69 Binance-listed names present in the panel adds **+0.478 Sharpe to the
+rotation** (+0.846 vs +0.368) and **+0.369 to the basket**. That single number
+explains the 2026-08-20 correction: the menu, not the rule, was the story.
+
+**Scale, for calibration.** Honest CAGR is +7.9% / +5.4% / +3.0% across the
+band, against the hindsight backtest's +37%. Split-half +0.313 / +0.199.
+
+**What survives.** Selection carries real information on an honest universe —
+100th percentile against a null whose median is *negative* (−0.172), meaning
+random picking among floor-passers loses money after costs. And the gate is a
+genuine drawdown truncator. Neither rescues H1.
+
 ## 2026-08-20 — Amendment 2 (payload pivot) + levered-filter defect correction
 
 **Pivot.** Owner rejected the shipped EW basket for the live book (operational load;
