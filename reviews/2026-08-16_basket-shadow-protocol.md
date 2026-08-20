@@ -89,6 +89,29 @@ week with a quarter of weeks needing none.
 - The SMH shadow was descoped the same day (separate owner decision); the
   2026-09-13 close-out now reads this rotation shadow alone.
 
+## Amendment 4 (2026-08-21, zero fills ever logged) — book PAUSED
+
+Owner decision 2026-08-21, taken the day the honest-universe kill-test returned
+its verdict (H1 FAIL — see `reviews/2026-08-20_norgate-killtest_preregistration.md`
+and `RESEARCH_MEMO.md` 2026-08-21): the establishment buys are **not executed**.
+
+**Scope.** `BOOK_PAUSED = True` in the evaluator. Signal, health checks,
+dashboard and heartbeat continue unchanged; BUY orders are suppressed from the
+order list; risk-reducing SELLS would still be listed if positions existed
+(none do — the book has zero fills). The pause is a code-level switch shown as
+the leading banner on the dashboard, so no surface can hand the operator a buy
+list the owner has declined.
+
+**Un-pause condition.** An explicit owner instruction recorded here as a
+further amendment — expected trigger: the successor study's confirmation
+verdict (`reviews/2026-08-21_tail-bounded-successor_preregistration.md`).
+Never an edit made in passing.
+
+**Close-out.** The 2026-09-13 close-out stands. If the book is still paused
+and empty then, the close-out is an operations review only: the execution
+triggers read vacuously on zero fills, and the payload re-decision item added
+by Amendment 3 is superseded by the kill-test verdict and the successor study.
+
 ## Amendment 3 (2026-08-20, still pre-fills) — live aligned to the tested rule
 
 From a three-lens review (quant PM / CIO / CPM) of the dashboard, owner

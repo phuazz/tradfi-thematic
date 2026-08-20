@@ -212,6 +212,25 @@ cap 2) confirmed as written. P0 authorised.
    specifies; the rate series is `^IRX` (1995→), converted from its quoted
    percentage to a fraction at load, guarded by a unit test.
 
+## Amendment 1 (2026-08-21, post-verdict) — Russell robustness arm held out
+
+**Disclosed omission.** Section 4 declared a Russell 1000 robustness arm
+(top 250 by 60-day median dollar volume, reported alongside, not
+verdict-bearing). It was never built or run in P1 — found on a post-verdict
+re-read, disclosed in `RESEARCH_MEMO.md` 2026-08-21 before any use of it.
+
+**Owner decision (2026-08-21).** The arm is **held out, deliberately un-run**,
+and becomes the single confirmation set of the successor study
+(`reviews/2026-08-21_tail-bounded-successor_preregistration.md`). It is the
+only US universe no result of this workstream has touched; running it now for
+a filing formality would burn the one clean confirmation available.
+
+**Effect on the filing.** The P2 record notes the arm as *withheld by
+amendment*, not missing. The H1/H2/H3/M1 verdicts are unaffected — the arm
+carried no verdict weight by design. This document's declared design is
+otherwise unchanged, and the kill criterion has been read: no further
+configurations were searched on the primary universe.
+
 *Two things to confirm when signing: the PRIMARY universe (S&P 500 + Nasdaq-100
 point-in-time) and the PRIMARY cell (K=10, cap 2). Both are named now precisely
 so they cannot be chosen after the results are visible.*
