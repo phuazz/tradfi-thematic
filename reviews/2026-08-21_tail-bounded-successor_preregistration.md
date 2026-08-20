@@ -203,6 +203,30 @@ Russell 1000 C&P top-250 confirmation universe, and the finality clause.
    record order (filing first) is preserved. No strategy number was computed
    in P0.
 
+## Implementation notes recorded at P2, committed BEFORE the run
+
+1. **Run brought forward** from Thu 2026-08-27 to 2026-08-21 at owner
+   instruction. Schedule only: the panel is static history and nothing
+   matures by waiting. The engine and these notes are committed before the
+   run; the run happens once.
+2. **2×-costs clause read at EVERY premium** — the strictest available
+   reading of §6, declared here before any number exists.
+3. **Cluster formation name-set:** all names fresh (≤ 3 sessions) at the
+   formation date; a name entering the universe mid-quarter is a singleton
+   until the next formation, so the cap cannot bind it.
+4. **Split-half basis:** the adopted arm at the band edge (matches KT-1's
+   convention). Report-only.
+5. **Bootstrap CI (report-only):** joint circular block bootstrap of the
+   (rotation, basket) weekly pairs at the band centre — blocks of 13 weeks,
+   2,000 draws, seed 20260822. Blocks preserve some drawdown autocorrelation;
+   the residual understatement is acknowledged, not hidden.
+6. **SEEN continuity run:** KT-1 membership eligibility with KT-2
+   construction; theme arm = whichever the Russell run adopts (falling back
+   to GICS if the SEEN panel's own clustering is degenerate).
+7. **Hard asserts live in the engine** (picks within the eligible set, cap
+   respected per label, invested ≤ 1) — a violation raises rather than
+   degrades.
+
 *Three things to confirm when signing, named now so they cannot move later:
 the primary metric (Calmar margins vs the basket, bars in §6), the held-out
 confirmation universe (Russell 1000 C&P, top-250 by dollar volume), and the
