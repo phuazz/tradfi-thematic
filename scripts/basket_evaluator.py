@@ -193,7 +193,14 @@ def main() -> int:
     # are never force-sold by it.
     import engine  # local import: heavy, only needed for selection
     d = engine.load_inputs()
-    sd = d["us_index"][-1]
+    # Amendment 3 (2026-08-20): the signal is read ONE SESSION BEFORE the fill,
+    # exactly as the backtest does (engine: us_index[pos - SIGNAL_DAY_LAG]).
+    # Until this fix the live rule read the LATEST session, i.e. a signal one
+    # session fresher than anything that was ever priced — not look-ahead, but
+    # a different rule. Fidelity to the tested construction is what makes the
+    # shadow's fill evidence interpretable, so live now matches the model.
+    fill_ref = d["us_index"][-1]                       # the close the model fills at
+    sd = d["us_index"][-1 - prereg.SIGNAL_DAY_LAG]     # the close the model decides on
     sig_row = d["signal"].loc[sd]
     elig = (d["obs_count"].loc[sd] >= prereg.MIN_HISTORY_DAYS) & \
            (d["staleness"].loc[sd] <= prereg.FFILL_LIMIT_SESSIONS)
@@ -254,8 +261,15 @@ def main() -> int:
         "payload_construction": f"rotation K={ROTATION_K} cap={ROTATION_CLUSTER_CAP} (Amendment 2)",
         "n_members": n, "target_usd_per_name": round(target_usd, 2),
         "signal_asof": str(sd.date()),
+        "fill_reference_asof": str(fill_ref.date()),
         "breadth": round(diag.get("breadth", 0.0), 3) if diag else None,
         "gated": gated,
+        # Under-fill: the live funding block can leave slots unfillable, which
+        # the backtest never modelled (it has no funding rule). Surfaced so a
+        # persistently under-invested book cannot go unnoticed.
+        "n_target_positions": len(target_syms),
+        "under_filled": (not gated) and len(target_syms) < ROTATION_K,
+        "cash_pct": round((ROTATION_K - len(target_syms)) / ROTATION_K * 100, 1) if not gated else 100.0,
         "n_held": len(held), "n_missing": n_missing,
         "book_value_usd": round(sum(val_held.values()), 2),
         "orders": orders,

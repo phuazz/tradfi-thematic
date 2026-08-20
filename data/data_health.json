@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-20T10:00:38.200589+00:00",
+ "computed_at_utc": "2026-08-20T14:46:52.022019+00:00",
  "n_checks": 22,
  "n_ok": 22,
  "n_warn": 0,
@@ -44,37 +44,37 @@
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 9.9h old (twice-daily cadence)",
+   "detail": "scanner data 2.7h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (12 runs logged)",
+   "detail": "last run 0.0h ago (13 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 0.9h ago",
+   "detail": "built 5.7h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 0.9h ago",
+   "detail": "built 5.7h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 0.9h ago",
+   "detail": "built 5.7h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 0.3h ago",
+   "detail": "built 5.1h ago",
    "group": "artefacts"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule active on buys",
    "status": "OK",
-   "detail": "2 name(s) blocked today at >+30%/yr: SKHYNIXUSDT (+48.7%/yr), ZHONGJIUSDT (+47.9%/yr)",
+   "detail": "1 name(s) blocked today at >+30%/yr: SKHYNIXUSDT (+45.1%/yr)",
    "group": "book"
   },
   {

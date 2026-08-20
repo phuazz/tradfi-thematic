@@ -139,5 +139,19 @@
    "ZHONGJIUSDT (+47.9%/yr)"
   ],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-20T14:46:50.171774+00:00",
+  "event": "OK",
+  "mode": "establishment",
+  "n_orders": 9,
+  "n_held": 0,
+  "n_members": 58,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "SKHYNIXUSDT (+45.1%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]
