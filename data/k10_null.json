@@ -1,0 +1,11 @@
+{
+ "k": 10,
+ "cap": 2,
+ "n_paths": 1000,
+ "seed": 20260816,
+ "p50": 0.614,
+ "p90": 0.831,
+ "p95": 0.877,
+ "strategy_sharpe": 1.07,
+ "strategy_percentile": 99.9
+}

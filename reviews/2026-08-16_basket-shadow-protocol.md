@@ -52,6 +52,43 @@ basket) recorded in the memo, and the register record's tested object stands
 as filed. Display names accompany tickers on every order list from this
 amendment onward.
 
+## Amendment 2 (2026-08-20, before any fill was ever logged) — PAYLOAD PIVOT TO ROTATION
+
+Owner decision, 2026-08-20: the equal-weight basket is rejected for the live
+book on two grounds — operational load (51+ standing positions and orders) and
+listing-chase exposure (membership grew 51 → 57 in four days as Binance listed
+more perps; an equal-weight book mechanically follows the venue's listing
+choices). Zero fills were logged, so nothing unwinds; establishment never
+started.
+
+**New live payload: the K=10, cluster-cap-2 rotation** at the same US$5,000
+cap (~US$500 per name), same 1× leverage, same FAIL triggers, same 2026-09-13
+close-out. Filed grid figures: net Sharpe +1.20 / +1.14 / +1.07 across the
+{0,+3,+6}%/yr band, MaxDD −41% to −47%; measured trade load ~3.3 orders per
+week with a quarter of weeks needing none.
+
+**Disclosures that make this honest:**
+- **Seen-data caveat, carried permanently:** every grid cell's result was
+  observed before this pick, so K=10 cap=2 is a seen-data selection (the WS6b
+  deploy-with-caveat precedent). The pre-registered PRIMARY (K=5 cap=2) and
+  the filed verdict (basket ships) stand unchanged in the record; this
+  amendment overrides the shipping decision for the live book only, by owner
+  instruction.
+- **Gate run before activation, stated before its result was known:** the
+  original null was K=5-shaped, so a fresh 1,000-path null at the K=10 cap=2
+  shape (same frozen seed and construction) was required to clear ≥ the 90th
+  percentile. **Result: strategy 1.07 = 99.9th percentile** (null p50 0.614,
+  p90 0.831, p95 0.877; `data/k10_null.json`). Passed.
+- **Cadence in live form:** the panel refreshes Saturdays, so the rotation
+  list is computed from the Friday close and executed in the SATURDAY
+  07:30–09:30 SGT window — one session later than the model fills, the same
+  offset the maintenance window already carried. Weekday runs are
+  establishment (until 10 names are held) and heartbeats. The live
+  funding-exclusion rule applies to BUYS only; a held name is never
+  force-sold by it. A sleeve-breadth gate week goes to cash (sell list).
+- The SMH shadow was descoped the same day (separate owner decision); the
+  2026-09-13 close-out now reads this rotation shadow alone.
+
 ## 3. Mechanics (frozen)
 
 - **Establishment:** orders placed manually across ≤5 sessions in the WS17

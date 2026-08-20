@@ -94,5 +94,20 @@
   "book_value_usd": 0,
   "skipped_funding": [],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-20T09:02:32.795973+00:00",
+  "event": "OK",
+  "mode": "establishment",
+  "n_orders": 9,
+  "n_held": 0,
+  "n_members": 60,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "SKHYNIXUSDT (+48.7%/yr)",
+   "ZHONGJIUSDT (+47.9%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]

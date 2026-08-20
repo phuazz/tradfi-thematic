@@ -48,7 +48,9 @@ HEARTBEAT = PROJECT_ROOT / "logs" / "last_success.txt"
 
 BOOK_CAP_USD = 5000.0           # owner, 2026-08-16, Option A
 EQUITY_ONLY = True              # Amendment 1, 2026-08-16: commodity cluster excluded
-TRANCHE_SIZE = 30
+ROTATION_K = 10                 # Amendment 2, 2026-08-20: K=10 cap=2 rotation payload
+ROTATION_CLUSTER_CAP = 2        # (seen-data caveat carried; k10-shape null 99.9th pct)
+TRANCHE_SIZE = 30               # retained for reference; rotation establishes in one list
 DRIFT_BAND = 0.25               # maintenance only beyond +/-25% of target
 LIQUID_WINDOW_DAYS = 7
 SGT = timezone(timedelta(hours=8))
@@ -140,9 +142,11 @@ def main() -> int:
     filters = read_json(FILTERS_PATH, {})
     umap = read_json(MAP_PATH, {"rows": {}})["rows"]
 
-    # Establishment-eligible: prereg-eligible base whose perp trades, is in the
-    # rolling liquid union, and has a contract filter row.
-    members, names = [], {}
+    # Liquid, verified, unlevered equity membership (the candidate pool the
+    # rotation selects FROM). Amendment 2: the live payload is the K=10
+    # cluster-cap-2 rotation — selection is delegated to the FROZEN engine
+    # function so live picks are bit-identical to the filed construction.
+    members, names, clusters, base_of = [], {}, {}, {}
     for base, e in sorted(umap.items()):
         if e["status"] != "verified" or e["levered_etp"] or base in prereg.EXPLICIT_DROPS:
             continue
@@ -152,14 +156,15 @@ def main() -> int:
         if sym in filters and sym in liquid:
             members.append(sym)
             names[sym] = e.get("vendor_name") or (e.get("announced_name") or base).split("—")[0].strip()
+            clusters[base] = e.get("cluster", "unclassified")
+            base_of[sym] = base
     n = len(members)
-    target_usd = BOOK_CAP_USD / n if n else 0.0
+    target_usd = BOOK_CAP_USD / ROTATION_K
 
     prices = {s: last_px[s]["px"] for s in members if s in last_px}
     price_asof = {s: last_px[s]["asof"] for s in members if s in last_px}
     qty_held, val_held = current_book(prices)
     held = set(qty_held)
-    missing = [s for s in members if s not in held]
     sgt_now = now_utc().astimezone(SGT)
     is_saturday = sgt_now.weekday() == 5  # Monday=0 ... Saturday=5
 
@@ -181,41 +186,77 @@ def main() -> int:
                 "ref_price_asof": price_asof.get(sym),
                 "fund_ann_30d": fund}
 
-    if missing:
+    # Rotation selection from the frozen engine: signal at the panel's last
+    # session, eligibility (252d history, freshness), floor and sleeve gate,
+    # ranked picks under the cluster cap. Funding rule (live-only): a hot name
+    # is removed from CANDIDACY unless already held — buys are blocked, holds
+    # are never force-sold by it.
+    import engine  # local import: heavy, only needed for selection
+    d = engine.load_inputs()
+    sd = d["us_index"][-1]
+    sig_row = d["signal"].loc[sd]
+    elig = (d["obs_count"].loc[sd] >= prereg.MIN_HISTORY_DAYS) & \
+           (d["staleness"].loc[sd] <= prereg.FFILL_LIMIT_SESSIONS)
+    for b in list(sig_row.index):
+        sym = b + "USDT"
+        if sym not in members:
+            elig[b] = False
+            continue
+        fund = fund_of(sym)
+        if (fund is not None and fund > prereg.LIVE_FUNDING_EXCLUDE_ANN
+                and sym not in held):
+            elig[b] = False
+            skipped_funding.append(f"{sym} ({fund:+.1f}%/yr)")
+    picks, diag = engine.select_names(sig_row, elig, d["clusters"], ROTATION_K,
+                                      ROTATION_CLUSTER_CAP, prereg.ENTRY_FLOOR,
+                                      prereg.SLEEVE_BREADTH_GATE)
+    target_syms = set() if picks is None else {b + "USDT" for b in picks}
+    gated = picks is None
+
+    if gated and held:
+        mode = "gated-cash"
+        for sym in sorted(held):
+            row = order_row(sym, "sell", val_held.get(sym, 0.0))
+            if row:
+                orders.append(row)
+    elif gated:
+        mode = "gated-cash"
+    elif not held:
         mode = "establishment"
-        for sym in missing[:TRANCHE_SIZE]:
-            fund = fund_of(sym)
-            if fund is not None and fund > prereg.LIVE_FUNDING_EXCLUDE_ANN:
-                skipped_funding.append(f"{sym} ({fund:+.1f}%/yr)")
-                continue
+        for sym in sorted(target_syms):
             row = order_row(sym, "buy", target_usd)
             if row:
                 orders.append(row)
     elif is_saturday:
-        mode = "maintenance"
-        for sym in members:
+        mode = "rotation-rebalance"
+        for sym in sorted(held - target_syms):
+            row = order_row(sym, "sell", val_held.get(sym, 0.0))
+            if row:
+                orders.append(row)
+        for sym in sorted(target_syms - held):
+            row = order_row(sym, "buy", target_usd)
+            if row:
+                orders.append(row)
+        for sym in sorted(held & target_syms):
             cur = val_held.get(sym, 0.0)
             drift = (cur - target_usd) / target_usd if target_usd else 0.0
             if abs(drift) > DRIFT_BAND:
-                side = "sell" if drift > 0 else "buy"
-                fund = fund_of(sym)
-                if side == "buy" and fund is not None and fund > prereg.LIVE_FUNDING_EXCLUDE_ANN:
-                    skipped_funding.append(f"{sym} ({fund:+.1f}%/yr)")
-                    continue
-                row = order_row(sym, side, abs(cur - target_usd))
+                row = order_row(sym, "sell" if drift > 0 else "buy",
+                                abs(cur - target_usd))
                 if row:
                     orders.append(row)
-        for sym in list(held - set(members)):
-            row = order_row(sym, "sell", val_held.get(sym, 0.0))
-            if row:
-                orders.append(row)   # exit names no longer eligible/trading
     else:
         mode = "heartbeat"
+    n_missing = len(target_syms - held)
 
     payload = {
         "ts_utc": stamp, "mode": mode, "book_cap_usd": BOOK_CAP_USD,
+        "payload_construction": f"rotation K={ROTATION_K} cap={ROTATION_CLUSTER_CAP} (Amendment 2)",
         "n_members": n, "target_usd_per_name": round(target_usd, 2),
-        "n_held": len(held), "n_missing": len(missing),
+        "signal_asof": str(sd.date()),
+        "breadth": round(diag.get("breadth", 0.0), 3) if diag else None,
+        "gated": gated,
+        "n_held": len(held), "n_missing": n_missing,
         "book_value_usd": round(sum(val_held.values()), 2),
         "orders": orders,
         "skipped_funding_rule": skipped_funding,
