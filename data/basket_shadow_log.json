@@ -153,5 +153,19 @@
    "SKHYNIXUSDT (+45.1%/yr)"
   ],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-20T23:14:49.744838+00:00",
+  "event": "OK",
+  "mode": "paused",
+  "n_orders": 0,
+  "n_held": 0,
+  "n_members": 58,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "SKHYNIXUSDT (+45.1%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]

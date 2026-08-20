@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-08-20T15:22:58.664324+00:00",
+ "computed_at_utc": "2026-08-20T23:14:50.809444+00:00",
  "n_checks": 24,
- "n_ok": 23,
- "n_warn": 1,
+ "n_ok": 24,
+ "n_warn": 0,
  "n_fail": 0,
  "checks": [
   {
@@ -44,37 +44,37 @@
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 3.3h old (twice-daily cadence)",
+   "detail": "scanner data 11.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.6h ago (13 runs logged)",
+   "detail": "last run 0.0h ago (14 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 6.3h ago",
+   "detail": "built 14.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 6.3h ago",
+   "detail": "built 14.1h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 6.3h ago",
+   "detail": "built 14.1h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 5.7h ago",
+   "detail": "built 13.5h ago",
    "group": "artefacts"
   },
   {
@@ -139,8 +139,8 @@
   },
   {
    "name": "Book fully invested",
-   "status": "WARN",
-   "detail": "9 of 10 slots targeted; 10.0% in cash \u2014 funding block left slots unfillable, which the backtest never modelled",
+   "status": "OK",
+   "detail": "9 of 10 slots targeted; 10.0% in cash",
    "group": "book"
   },
   {
