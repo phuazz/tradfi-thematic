@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-21T01:40:47.148218+00:00",
+ "computed_at_utc": "2026-08-21T01:49:27.714105+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -5412,6 +5412,143 @@
    "sharpe": 0.578
   }
  },
+ "horizons": [
+  {
+   "label": "1y",
+   "blend": {
+    "cagr": 0.1284,
+    "excess": 0.091,
+    "beats_hurdle": true,
+    "max_dd": -0.0887,
+    "vol": 0.1283,
+    "sharpe": 1.005
+   },
+   "rotation": {
+    "cagr": 0.3118,
+    "excess": 0.2745,
+    "beats_hurdle": true,
+    "max_dd": -0.2875,
+    "vol": 0.4233,
+    "sharpe": 0.847
+   },
+   "spy": {
+    "cagr": 0.2065,
+    "excess": 0.1692,
+    "beats_hurdle": true,
+    "max_dd": -0.0864,
+    "vol": 0.1222,
+    "sharpe": 1.599
+   }
+  },
+  {
+   "label": "3y",
+   "blend": {
+    "cagr": 0.1959,
+    "excess": 0.151,
+    "beats_hurdle": true,
+    "max_dd": -0.1511,
+    "vol": 0.1227,
+    "sharpe": 1.521
+   },
+   "rotation": {
+    "cagr": 0.5122,
+    "excess": 0.4673,
+    "beats_hurdle": true,
+    "max_dd": -0.4602,
+    "vol": 0.4062,
+    "sharpe": 1.223
+   },
+   "spy": {
+    "cagr": 0.2116,
+    "excess": 0.1667,
+    "beats_hurdle": true,
+    "max_dd": -0.1713,
+    "vol": 0.1449,
+    "sharpe": 1.399
+   }
+  },
+  {
+   "label": "5y",
+   "blend": {
+    "cagr": 0.0987,
+    "excess": 0.0614,
+    "beats_hurdle": true,
+    "max_dd": -0.1511,
+    "vol": 0.1033,
+    "sharpe": 0.963
+   },
+   "rotation": {
+    "cagr": 0.1881,
+    "excess": 0.1508,
+    "beats_hurdle": true,
+    "max_dd": -0.4602,
+    "vol": 0.3422,
+    "sharpe": 0.674
+   },
+   "spy": {
+    "cagr": 0.1186,
+    "excess": 0.0813,
+    "beats_hurdle": true,
+    "max_dd": -0.248,
+    "vol": 0.1635,
+    "sharpe": 0.767
+   }
+  },
+  {
+   "label": "10y",
+   "blend": {
+    "cagr": 0.0896,
+    "excess": 0.0656,
+    "beats_hurdle": true,
+    "max_dd": -0.1511,
+    "vol": 0.0975,
+    "sharpe": 0.929
+   },
+   "rotation": {
+    "cagr": 0.2102,
+    "excess": 0.1862,
+    "beats_hurdle": true,
+    "max_dd": -0.4602,
+    "vol": 0.3234,
+    "sharpe": 0.751
+   },
+   "spy": {
+    "cagr": 0.1358,
+    "excess": 0.1119,
+    "beats_hurdle": true,
+    "max_dd": -0.3223,
+    "vol": 0.1721,
+    "sharpe": 0.828
+   }
+  },
+  {
+   "label": "Full",
+   "blend": {
+    "cagr": 0.0629,
+    "excess": 0.046,
+    "beats_hurdle": true,
+    "max_dd": -0.1511,
+    "vol": 0.0821,
+    "sharpe": 0.784
+   },
+   "rotation": {
+    "cagr": 0.1472,
+    "excess": 0.1303,
+    "beats_hurdle": true,
+    "max_dd": -0.4602,
+    "vol": 0.273,
+    "sharpe": 0.64
+   },
+   "spy": {
+    "cagr": 0.0908,
+    "excess": 0.074,
+    "beats_hurdle": true,
+    "max_dd": -0.5591,
+    "vol": 0.1782,
+    "sharpe": 0.578
+   }
+  }
+ ],
  "n_trades_total": 3694,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.4,

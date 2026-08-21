@@ -88,6 +88,31 @@ def main() -> int:
            for k, s in (("rotation", cash_basis), ("blend", blend),
                         ("hurdle", bill_w + MARGIN * 7 / 365), ("spy", spy_w))}
 
+    # longer-term stats: trailing horizons on the simulated history (SEEN),
+    # refreshed weekly by the tracker so the windows roll forward with it
+    def horizon_stats(s, bills, n):
+        r = s.tail(n) if n else s
+        b = bills.tail(n) if n else bills
+        eq = (1 + r).cumprod()
+        yrs = len(r) / 52.0
+        cagr = float(eq.iloc[-1] ** (1 / yrs) - 1)
+        bill_cagr = float((1 + b).prod() ** (1 / yrs) - 1)
+        dd = float((eq / eq.cummax() - 1).min())
+        sd = r.std()
+        return {"cagr": round(cagr, 4), "excess": round(cagr - bill_cagr, 4),
+                "beats_hurdle": bool(cagr - bill_cagr >= MARGIN),
+                "max_dd": round(dd, 4), "vol": round(float(sd * (52 ** 0.5)), 4),
+                "sharpe": round(float(r.mean() / sd * (52 ** 0.5)), 3) if sd > 0 else 0.0}
+
+    horizons = []
+    for label, n in (("1y", 52), ("3y", 156), ("5y", 260), ("10y", 520), ("Full", None)):
+        if n and len(blend) < n:
+            continue
+        horizons.append({"label": label,
+                         "blend": horizon_stats(blend, bill_w, n),
+                         "rotation": horizon_stats(cash_basis, bill_w, n),
+                         "spy": horizon_stats(spy_w, bill_w, n)})
+
     # names for every symbol that ever appears
     all_syms = sorted({n for d in diags for n in d["held"]})
     names = {}
@@ -118,6 +143,7 @@ def main() -> int:
            "dates": [t.strftime("%Y-%m-%d") for t in cash_basis.index],
            "equity": eqs,
            "stats": {"rotation": stats(cash_basis), "blend": stats(blend), "spy": stats(spy_w)},
+           "horizons": horizons,
            "n_trades_total": len(ledger),
            "trades_per_week": round(len(ledger) / len(diags), 2),
            "pct_weeks_in_cash": round(float((inv == 0).mean() * 100), 1),

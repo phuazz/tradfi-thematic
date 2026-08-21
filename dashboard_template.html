@@ -198,6 +198,19 @@ footer strong { color: var(--t2); }
   </section>
 
   <section>
+    <h2>Paper track — FV-1<span class="hint">the one live workstream: the rotation as a 30% sleeve beside T-bills, computed weekly; full detail on the Paper Track tab</span></h2>
+    <div class="cards" id="mon-fv1-cards"></div>
+    <div class="chart-wrap"><div id="mon-fv1-chart" class="chart"></div></div>
+    <div class="provenance" id="mon-fv1-prov"></div>
+  </section>
+
+  <section>
+    <h2>Longer-term performance<span class="hint">trailing windows on the simulated history, rolled forward weekly by the tracker — SEEN data until the forward track earns its own</span></h2>
+    <div class="scroll" id="tbl-mon-fv1-horizons"></div>
+    <div class="provenance" id="mon-fv1-horizons-prov"></div>
+  </section>
+
+  <section>
     <h2>Today's orders<span class="hint">execute manually in the 07:30–09:30 SGT window; rows tick off as fills are logged</span></h2>
     <div class="scroll" id="tbl-orders"></div>
   </section>
@@ -510,7 +523,7 @@ document.querySelectorAll('#tabs button').forEach(btn =>
   btn.addEventListener('click', () => { closeExpand(); activateTab(btn.dataset.tab); }));
 
 function drawTabCharts(name) {
-  if (name === 'monitor') { drawHonest(); drawPerf(0); }
+  if (name === 'monitor') { drawMonitorFv1Chart(); drawHonest(); drawPerf(0); }
   if (name === 'hurdle') drawHurdleChart();
   if (name === 'fv1') drawFv1Chart();
   if (name === 'rotation') { drawRotEquity(); drawAlloc(); drawBreadth(); }
@@ -569,6 +582,66 @@ function renderHurdleTab() {
      five years the floors improve but do not vanish. MEASUREMENT, not a verdict; the margin and horizon are the
      owner's blanks at the 2026-09-30 review.</p>`;
 }
+/* ------------------------- FV-1 on the Monitor ------------------------ */
+function renderMonitorFv1() {
+  const F = DATA.fv1, T = DATA.fv1_track;
+  if (!F) return;
+  const rows = T && T.rows ? T.rows : [];
+  const last = rows.length ? rows[rows.length - 1] : null;
+  const fwdWeeks = Math.max(0, rows.length - 1);
+  const fwdRet = last && last.nav_blend ? (last.nav_blend / 100 - 1) * 100 : 0;
+  document.getElementById('mon-fv1-cards').innerHTML = `
+    <div class="card"><h4>Forward track (the real test)</h4>
+      <div class="big ${fwdRet >= 0 ? 'pos' : 'neg'}">${last ? last.nav_blend.toFixed(2) : '—'}</div>
+      <div class="row">blend NAV, baseline 100 at ${T ? T.baseline_date : '—'} · ${fwdWeeks} forward week${fwdWeeks === 1 ? '' : 's'}</div>
+      <div class="row faint">verdict at 104 weeks per the frozen envelope bars — nothing earlier counts</div>
+    </div>
+    <div class="card"><h4>This week's paper book</h4>
+      <div class="big">${F.current.picks.length}/10</div>
+      <div class="row">${F.current.picks.map(p => p.sym).join(' · ')}</div>
+      <div class="row faint">as of the ${F.current.asof} fill · breadth ${(F.current.breadth * 100).toFixed(0)}%</div>
+    </div>
+    <div class="card"><h4>Next computation</h4>
+      <div class="big">Sat 08:30</div>
+      <div class="row">SGT, weekly — fresh panel, capture-integrity gate, then the week appends</div>
+      <div class="row faint">fail-closed: a guard failure appends nothing and the fleet watch flags it</div>
+    </div>`;
+  document.getElementById('mon-fv1-prov').textContent =
+    `simulated record on the cash-equity basis (dividends excluded — conservative); the green line is the FV-1 ` +
+    `book, the dashed line is the T-bill +2pp hurdle · full ledger and picks on the Paper Track tab`;
+  const hz = F.horizons || [];
+  document.getElementById('tbl-mon-fv1-horizons').innerHTML =
+    `<table><thead><tr><th>Window</th><th class="num">Blend CAGR</th><th class="num">Excess vs cash</th>
+      <th class="num">vs +2pp target</th><th class="num">Max DD</th><th class="num">Vol</th>
+      <th class="num">Sharpe</th><th class="num">SPY CAGR</th></tr></thead><tbody>` +
+    hz.map(h => `<tr><td class="nm">${h.label}</td>
+      <td class="num ${h.blend.cagr >= 0 ? 'pos' : 'neg'}">${fmtPct(h.blend.cagr * 100)}</td>
+      <td class="num ${h.blend.excess >= 0 ? 'pos' : 'neg'}">${(h.blend.excess * 100).toFixed(1)}pp</td>
+      <td class="num ${h.blend.beats_hurdle ? 'pos' : 'neg'}">${h.blend.beats_hurdle ? 'met' : 'missed'}</td>
+      <td class="num neg">${fmtPct(h.blend.max_dd * 100)}</td>
+      <td class="num">${(h.blend.vol * 100).toFixed(1)}%</td>
+      <td class="num">${h.blend.sharpe.toFixed(2)}</td>
+      <td class="num faint">${fmtPct(h.spy.cagr * 100)}</td></tr>`).join('') + '</tbody></table>';
+  document.getElementById('mon-fv1-horizons-prov').textContent =
+    `trailing windows ending ${F.current.asof}, rolled forward by each weekly run · excess = blend CAGR minus ` +
+    `T-bill CAGR over the same window; the target is +2pp · SEEN data — the forward track replaces these ` +
+    `numbers with its own as it accrues`;
+}
+function drawMonitorFv1Chart() {
+  const F = DATA.fv1;
+  if (!F) return;
+  const x = F.dates, e = F.equity;
+  Plotly.react('mon-fv1-chart', [
+    { x, y: e.blend, name: 'FV-1 blend 30/70', line: { color: '#1a8754', width: 3 } },
+    { x, y: e.hurdle, name: 'T-bills + 2pp', line: { color: '#b45309', width: 1.8, dash: 'dash' } },
+    { x, y: e.spy, name: 'SPY (price only)', line: { color: '#8a8a82', width: 1.2, dash: 'dot' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 52 },
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
+       yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', tickvals: [1, 1.5, 2, 3, 5],
+                ticktext: ['1×', '1.5×', '2×', '3×', '5×'],
+                title: { text: 'growth of capital', font: { size: 11 } } } }, PLOT_CFG);
+}
+
 /* ------------------------------- FV-1 -------------------------------- */
 function renderFv1Tab() {
   const F = DATA.fv1, T = DATA.fv1_track;
@@ -1433,8 +1506,8 @@ renderChips(); renderClusterBar(); renderUniverse();
 renderFills(); renderLedger();
 renderVerdict(); renderGrid(); renderSplit();
 renderMethod(); renderDecisions(); renderData(); renderHealth();
-renderHurdleTab(); renderFv1Tab();
-drawHonest(); drawPerf(0); drawn.monitor = true;
+renderHurdleTab(); renderFv1Tab(); renderMonitorFv1();
+drawMonitorFv1Chart(); drawHonest(); drawPerf(0); drawn.monitor = true;
 </script>
 </body>
 </html>
