@@ -1,0 +1,32 @@
+{
+ "started_utc": "2026-08-21T01:33:46.631293+00:00",
+ "baseline_date": "2026-08-14",
+ "w": 0.3,
+ "protocol": "reviews/2026-08-21_rotation-forward-validation_preregistration.md",
+ "rows": [
+  {
+   "date": "2026-08-14",
+   "nav_rot": 100.0,
+   "nav_blend": 100.0,
+   "w_eff": 0.3,
+   "picks": [
+    "BE",
+    "BNY",
+    "CVS",
+    "FIX",
+    "LLY",
+    "MPC",
+    "MS",
+    "MU",
+    "SNDK",
+    "VLO"
+   ],
+   "breadth": 0.581,
+   "invested": 1.0,
+   "rot_ret": null,
+   "bill_ret": null,
+   "note": "baseline"
+  }
+ ],
+ "last_run_utc": "2026-08-21T01:38:48.009477+00:00"
+}
