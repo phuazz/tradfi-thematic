@@ -607,8 +607,9 @@ function renderMonitorFv1() {
       <div class="row faint">fail-closed: a guard failure appends nothing and the fleet watch flags it</div>
     </div>`;
   document.getElementById('mon-fv1-prov').textContent =
-    `simulated record on the cash-equity basis (dividends excluded — conservative); the green line is the FV-1 ` +
-    `book, the dashed line is the T-bill +2pp hurdle · full ledger and picks on the Paper Track tab`;
+    `simulated record on the cash-equity basis (dividends excluded — conservative); green is the FV-1 book, blue ` +
+    `the unsized rotation sleeve (−46% MaxDD — the reason it is held at 30%), dashed the T-bill +2pp hurdle · ` +
+    `full ledger and picks on the Paper Track tab`;
   const hz = F.horizons || [];
   document.getElementById('tbl-mon-fv1-horizons').innerHTML =
     `<table><thead><tr><th>Window</th><th class="num">Blend CAGR</th><th class="num">Excess vs cash</th>
@@ -633,12 +634,13 @@ function drawMonitorFv1Chart() {
   const x = F.dates, e = F.equity;
   Plotly.react('mon-fv1-chart', [
     { x, y: e.blend, name: 'FV-1 blend 30/70', line: { color: '#1a8754', width: 3 } },
+    { x, y: e.rotation, name: 'Rotation sleeve alone', line: { color: '#2563eb', width: 1.4 } },
     { x, y: e.hurdle, name: 'T-bills + 2pp', line: { color: '#b45309', width: 1.8, dash: 'dash' } },
     { x, y: e.spy, name: 'SPY (price only)', line: { color: '#8a8a82', width: 1.2, dash: 'dot' } },
   ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 52 },
        xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', tickvals: [1, 1.5, 2, 3, 5],
-                ticktext: ['1×', '1.5×', '2×', '3×', '5×'],
+       yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', tickvals: [1, 2, 4, 8, 16],
+                ticktext: ['1×', '2×', '4×', '8×', '16×'],
                 title: { text: 'growth of capital', font: { size: 11 } } } }, PLOT_CFG);
 }
 
