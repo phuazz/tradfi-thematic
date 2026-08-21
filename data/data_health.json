@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-20T23:15:02.671268+00:00",
+ "computed_at_utc": "2026-08-21T23:15:26.517951+00:00",
  "n_checks": 24,
  "n_ok": 24,
  "n_warn": 0,
@@ -38,43 +38,43 @@
   {
    "name": "Price panel freshness",
    "status": "OK",
-   "detail": "newest bar 2026-08-20 (0 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-08-22 (-1 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 11.2h old (twice-daily cadence)",
+   "detail": "scanner data 8.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (15 runs logged)",
+   "detail": "last run 0.0h ago (16 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 14.2h ago",
+   "detail": "built 38.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 14.1h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 14.1h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 13.5h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "1 name(s) blocked at >+30%/yr (SKHYNIXUSDT (+45.1%/yr)); 0 buy(s) above the line on today's list",
+   "detail": "2 name(s) blocked at >+30%/yr (SKHYNIXUSDT (+42.3%/yr), ZHIPUUSDT (+31.4%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
