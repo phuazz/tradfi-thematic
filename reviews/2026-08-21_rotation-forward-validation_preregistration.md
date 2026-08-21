@@ -81,7 +81,31 @@ The 2026-09-13 Binance ops close-out proceeds unchanged.
 
 ---
 
-**Sign-off (owner):** ______________  **Date:** ______________
-*Blanks to confirm: the venue (cash equities recommended), and that w waits
-for the margin decision at the 2026-09-30 review — the paper track can start
-at a provisional w=30% immediately on sign-off and re-size at the review.*
+**Sign-off (owner):** SIGNED — ZH, in session. **Date:** 2026-08-21 (Friday).
+Venue: **cash equities**. Paper track starts at **w = 30%**. The owner also
+pre-loaded the margin at **cash +2pp** (2026-08-21); the 2026-09-30 review
+ratifies rather than chooses, and may still amend.
+
+## Implementation notes recorded at sign-off, before the first track row
+
+1. **Historical display basis.** The dashboard shows this construction's
+   history on a CASH-EQUITY basis reconstructed exactly from the filed KT-2
+   series: the perp-style financing charge ((T-bill + premium) × invested)
+   is added back using the per-week invested fraction, leaving price return
+   − fees + T-bill on cash. Dividends are NOT added (per-name dividend
+   series are not in the panel), so the display is conservative by roughly
+   1.5–2pp/yr on invested capital. Labelled on the page. SEEN data — it is
+   the record of the design, not validation.
+2. **Track mechanics.** Weekly runner rebuilds the Russell panel fresh from
+   Norgate (67s), computes the latest completed weekly fill's selection with
+   the frozen KT-2 constants, and appends NAV rows for the 30/70 blend with
+   monthly reset to weight. Baseline NAV = 100 at the last completed weekly
+   fill before sign-off.
+3. **Guard layer (per §3, wired before the first unattended run):**
+   capture-integrity — every run recomputes the PREVIOUS week's row from the
+   fresh panel and fails loudly on divergence (catches silent vendor
+   revisions); panel-freshness and universe-size floors; the KT-2 test
+   suite's no-look-ahead and cap asserts stand; a fleet_watch row with
+   weekly cadence.
+4. **Publication discipline.** The public page carries derived values only:
+   NAV, picks by name, entry/exit ledger. Never vendor price series.

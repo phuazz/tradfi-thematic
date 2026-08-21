@@ -177,6 +177,7 @@ footer strong { color: var(--t2); }
 <nav class="tabs" id="tabs">
   <button data-tab="monitor" class="active">Monitor</button>
   <button data-tab="hurdle">Hurdle</button>
+  <button data-tab="fv1">Paper Track</button>
   <button data-tab="rotation">Rotation</button>
   <button data-tab="universe">Universe</button>
   <button data-tab="history">Trade History</button>
@@ -258,6 +259,36 @@ footer strong { color: var(--t2); }
     <div class="chart-wrap"><div id="hurdle-chart" class="chart"></div></div>
     <div class="provenance" id="hurdle-chart-prov"></div>
     <details class="caveats"><summary>Assumptions &amp; caveats</summary><div class="note" id="hurdle-caveats"></div></details>
+  </section>
+</div>
+
+<div class="tab-content" id="tab-fv1">
+  <section>
+    <h2>FV-1 — the rotation as a sized sleeve, validated forward<span class="hint">signed 2026-08-21 · paper only · every fill is a computation, never an order</span></h2>
+    <div id="fv1-banner"></div>
+    <div class="cards" id="fv1-cards"></div>
+  </section>
+
+  <section>
+    <h2>This week's paper book<span class="hint">the ten names the frozen rule holds right now — the list the forward track marks to market</span></h2>
+    <div class="scroll" id="tbl-fv1-picks"></div>
+  </section>
+
+  <section>
+    <h2>Historical performance<span class="hint">SEEN data — the record of the design, not validation; cash-equity basis, dividends excluded (conservative)</span></h2>
+    <div class="chart-wrap"><div id="fv1-chart" class="chart"></div></div>
+    <div class="provenance" id="fv1-prov"></div>
+  </section>
+
+  <section>
+    <h2>Forward track<span class="hint">the only verdict-bearing evidence; 104-week envelope bars pre-declared in the protocol</span></h2>
+    <div class="scroll" id="tbl-fv1-track"></div>
+  </section>
+
+  <section>
+    <h2>Rotation trades<span class="hint">every entry and exit the rule made, newest first</span></h2>
+    <div class="scroll" id="tbl-fv1-ledger"></div>
+    <div class="provenance" id="fv1-ledger-prov"></div>
   </section>
 </div>
 
@@ -481,6 +512,7 @@ document.querySelectorAll('#tabs button').forEach(btn =>
 function drawTabCharts(name) {
   if (name === 'monitor') { drawHonest(); drawPerf(0); }
   if (name === 'hurdle') drawHurdleChart();
+  if (name === 'fv1') drawFv1Chart();
   if (name === 'rotation') { drawRotEquity(); drawAlloc(); drawBreadth(); }
   if (name === 'history') { drawTurnover(); drawMonthly(); }
   if (name === 'robustness') drawNull();
@@ -500,7 +532,8 @@ function renderHurdleTab() {
      Both kill-tests failed their frozen bars and the family was closed; the owner has directed, as a recorded
      override of that closure, that a rotational strategy stays in scope. Both US test panels are seen, so no
      further backtest on them can validate anything — the rotation's remaining path is as the sized risk asset
-     inside this blend, validated <em>forward</em> under a pre-registered paper track. Nothing is deployed yet.</div>`;
+     inside this blend, validated <em>forward</em>. FV-1 was signed the same day: a paper track at w=30% now runs
+     weekly on a cash-equity basis (Paper Track tab); no capital is attached.</div>`;
   document.getElementById('hurdle-why').innerHTML =
     `<p><strong>Why sizing, not selection.</strong> On the honest universes the rotation's selection edge over
      simply owning everything was killed twice (Risk &amp; Validation has the bars). What survived is its SHAPE:
@@ -536,6 +569,77 @@ function renderHurdleTab() {
      five years the floors improve but do not vanish. MEASUREMENT, not a verdict; the margin and horizon are the
      owner's blanks at the 2026-09-30 review.</p>`;
 }
+/* ------------------------------- FV-1 -------------------------------- */
+function renderFv1Tab() {
+  const F = DATA.fv1, T = DATA.fv1_track;
+  if (!F) { document.getElementById('tab-fv1').style.display = 'none'; return; }
+  const st = F.stats;
+  document.getElementById('fv1-banner').innerHTML =
+    `<div class="banner banner-blue"><strong>Signed 2026-08-21: paper track at w=30%, cash-equity basis, margin
+     pre-loaded at cash +2pp</strong> (the 2026-09-30 review ratifies). The construction is the frozen KT-2 rule —
+     12-1 momentum among MA200 +5% qualifiers, K=10, sector cap 2, 30% breadth gate — inside a 30/70 blend with
+     T-bills, monthly reset. Its selection edge over owning the universe was tested twice and rejected; what runs
+     here is the SHAPE at a sized weight, and only the forward track below can validate it. Stops and the 104-week
+     envelope bars are frozen in the protocol.</div>`;
+  document.getElementById('fv1-cards').innerHTML = `
+    <div class="card"><h4>Blend, simulated 2006–26</h4>
+      <div class="big pos">${fmtPct(st.blend.cagr * 100)}/yr</div>
+      <div class="row">MaxDD ${fmtPct(st.blend.max_dd * 100)} · Sharpe ${st.blend.sharpe.toFixed(2)}</div>
+      <div class="row faint">vs SPY ${fmtPct(st.spy.cagr * 100)} / ${fmtPct(st.spy.max_dd * 100)} / ${st.spy.sharpe.toFixed(2)} · seen data</div>
+    </div>
+    <div class="card"><h4>Rotation sleeve alone</h4>
+      <div class="big">${fmtPct(st.rotation.cagr * 100)}/yr</div>
+      <div class="row">MaxDD ${fmtPct(st.rotation.max_dd * 100)} · Sharpe ${st.rotation.sharpe.toFixed(2)}</div>
+      <div class="row faint">${F.trades_per_week}/wk turnover · in cash ${F.pct_weeks_in_cash}% of weeks</div>
+    </div>
+    <div class="card"><h4>Forward track</h4>
+      <div class="big">${T && T.rows ? T.rows.length : 0} row${T && T.rows && T.rows.length === 1 ? '' : 's'}</div>
+      <div class="row">${T && T.rows && T.rows.length ? 'blend NAV ' + T.rows[T.rows.length - 1].nav_blend.toFixed(2) + ' · as of ' + T.rows[T.rows.length - 1].date : 'awaiting first weekly run'}</div>
+      <div class="row faint">baseline 100 at ${T ? T.baseline_date : '—'} · weekly Saturday computation</div>
+    </div>`;
+  document.getElementById('tbl-fv1-picks').innerHTML =
+    `<table><thead><tr><th>Company</th><th>Symbol</th><th>GICS sector</th></tr></thead><tbody>` +
+    F.current.picks.map(p => `<tr><td class="nm">${p.name}</td><td>${p.sym}</td><td>${p.sector}</td></tr>`).join('') +
+    `</tbody></table><div class="provenance">selection as of the ${F.current.asof} fill · breadth ${(F.current.breadth * 100).toFixed(0)}% (gate fires below 30%)</div>`;
+  const led = F.ledger_recent;
+  document.getElementById('tbl-fv1-ledger').innerHTML =
+    `<table><thead><tr><th>Week</th><th>Side</th><th>Company</th><th>Symbol</th><th>Sector</th></tr></thead><tbody>` +
+    led.map(t => `<tr><td>${t.date}</td><td class="${t.side === 'buy' ? 'pos' : 'neg'}">${t.side}</td>
+      <td class="nm">${t.name}</td><td>${t.sym}</td><td>${t.sector}</td></tr>`).join('') + '</tbody></table>';
+  document.getElementById('fv1-ledger-prov').textContent =
+    `${led.length} most recent of ${F.n_trades_total.toLocaleString()} simulated entries and exits over ` +
+    `${F.dates.length} weeks (${F.trades_per_week} per week) · full ledger in data/fv1_detail.json`;
+  const rows = (T && T.rows ? [...T.rows].reverse() : []);
+  document.getElementById('tbl-fv1-track').innerHTML = rows.length
+    ? `<table><thead><tr><th>Week</th><th class="num">Blend NAV</th><th class="num">Rotation NAV</th>
+        <th class="num">Breadth</th><th class="num">Invested</th><th>Picks</th></tr></thead><tbody>` +
+      rows.map(r => `<tr><td>${r.date}${r.note ? ' <span class="pill">' + r.note + '</span>' : ''}</td>
+        <td class="num">${r.nav_blend.toFixed(2)}</td><td class="num">${r.nav_rot.toFixed(2)}</td>
+        <td class="num">${(r.breadth * 100).toFixed(0)}%</td><td class="num">${(r.invested * 100).toFixed(0)}%</td>
+        <td class="faint">${r.picks.join(' ')}</td></tr>`).join('') + '</tbody></table>'
+    : '<div class="note">No rows yet.</div>';
+}
+function drawFv1Chart() {
+  const F = DATA.fv1;
+  if (!F) return;
+  const x = F.dates, e = F.equity;
+  Plotly.react('fv1-chart', [
+    { x, y: e.blend, name: 'Blend 30/70 — the FV-1 book', line: { color: '#1a8754', width: 3.5 } },
+    { x, y: e.hurdle, name: 'T-bills + 2pp (the hurdle)', line: { color: '#b45309', width: 2, dash: 'dash' } },
+    { x, y: e.rotation, name: 'Rotation sleeve alone', line: { color: '#2563eb', width: 1.2 } },
+    { x, y: e.spy, name: 'SPY (price only)', line: { color: '#8a8a82', width: 1.2, dash: 'dot' } },
+  ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 52 },
+       xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
+       yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', tickvals: [0.5, 1, 2, 4, 8, 16],
+                ticktext: ['0.5×', '1×', '2×', '4×', '8×', '16×'],
+                title: { text: 'growth of capital', font: { size: 11 } } } }, PLOT_CFG);
+  document.getElementById('fv1-prov').textContent =
+    `SEEN data (both panels burned by KT-1/KT-2) — displayed as the design record, never as validation · ` +
+    `cash-equity basis: perp financing added back exactly from the filed series; dividends excluded, so the ` +
+    `rotation and blend lines are conservative by roughly 1.5–2pp/yr on invested capital · SPY is price-only for ` +
+    `the same reason · log axis, growth of capital · computed ${fmtTs(F.computed_at_utc)}`;
+}
+
 function drawHurdleChart() {
   const H = DATA.hurdle_blend;
   if (!H || !H.chart_roll3y_excess) return;
@@ -1329,7 +1433,7 @@ renderChips(); renderClusterBar(); renderUniverse();
 renderFills(); renderLedger();
 renderVerdict(); renderGrid(); renderSplit();
 renderMethod(); renderDecisions(); renderData(); renderHealth();
-renderHurdleTab();
+renderHurdleTab(); renderFv1Tab();
 drawHonest(); drawPerf(0); drawn.monitor = true;
 </script>
 </body>

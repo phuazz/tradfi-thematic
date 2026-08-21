@@ -171,7 +171,8 @@ def simulate(weeks, sectors, kind, premium, fee_mult=1.0, use_gate=True,
         rets.append(gross - cost - KC2.weekly_carry(w["rf"], premium, invested))
         if collect:
             diags.append({"date": w["date"], "invested": invested,
-                          "breadth": w["breadth"], "n_held": len(held)})
+                          "breadth": w["breadth"], "n_held": len(held),
+                          "held": sorted(held)})
         prev = held
     ser = pd.Series(rets, index=[w["date"] for w in weeks])
     return (ser, diags) if collect else ser
