@@ -136,6 +136,20 @@ def main() -> int:
         prev = held
     ledger.reverse()
 
+    # contiguous spans where the gate held the book fully in cash — the
+    # chart's shaded bands (the analogue of the bte page's RISK_OFF bands)
+    cash_spans, span_start, span_end = [], None, None
+    for d in diags:
+        if d["invested"] == 0:
+            if span_start is None:
+                span_start = d["date"]
+            span_end = d["date"]
+        elif span_start is not None:
+            cash_spans.append([span_start.strftime("%Y-%m-%d"), span_end.strftime("%Y-%m-%d")])
+            span_start = None
+    if span_start is not None:
+        cash_spans.append([span_start.strftime("%Y-%m-%d"), span_end.strftime("%Y-%m-%d")])
+
     last = diags[-1]
     out = {"computed_at_utc": datetime.now(timezone.utc).isoformat(),
            "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
@@ -144,6 +158,7 @@ def main() -> int:
            "equity": eqs,
            "stats": {"rotation": stats(cash_basis), "blend": stats(blend), "spy": stats(spy_w)},
            "horizons": horizons,
+           "cash_spans": cash_spans,
            "n_trades_total": len(ledger),
            "trades_per_week": round(len(ledger) / len(diags), 2),
            "pct_weeks_in_cash": round(float((inv == 0).mean() * 100), 1),

@@ -200,6 +200,16 @@ footer strong { color: var(--t2); }
   <section>
     <h2>Paper track — FV-1<span class="hint">the one live workstream: the rotation as a 30% sleeve beside T-bills, computed weekly; full detail on the Paper Track tab</span></h2>
     <div class="cards" id="mon-fv1-cards"></div>
+  </section>
+
+  <section>
+    <h2>Performance<span class="badge-sim">simulated</span></h2>
+    <div class="note" id="mon-fv1-perf-note"></div>
+    <div class="period-selector" id="fv1-perf-periods">
+      <button data-p="ytd" class="active">YTD</button><button data-p="52">1Y</button><button data-p="156">3Y</button>
+      <button data-p="260">5Y</button><button data-p="520">10Y</button><button data-p="0">MAX</button>
+    </div>
+    <div class="cards" id="mon-fv1-stats"></div>
     <div class="chart-wrap"><div id="mon-fv1-chart" class="chart"></div></div>
     <div class="provenance" id="mon-fv1-prov"></div>
   </section>
@@ -606,10 +616,15 @@ function renderMonitorFv1() {
       <div class="row">SGT, weekly — fresh panel, capture-integrity gate, then the week appends</div>
       <div class="row faint">fail-closed: a guard failure appends nothing and the fleet watch flags it</div>
     </div>`;
-  document.getElementById('mon-fv1-prov').textContent =
-    `simulated record on the cash-equity basis (dividends excluded — conservative); green is the FV-1 book, blue ` +
-    `the unsized rotation sleeve (−46% MaxDD — the reason it is held at 30%), dashed the T-bill +2pp hurdle · ` +
-    `full ledger and picks on the Paper Track tab`;
+  document.getElementById('mon-fv1-perf-note').innerHTML =
+    `<p><strong>Every figure in this section is simulated.</strong> The stat strip and chart are computed from the
+     FV-1 backtest series sliced to the selected window — weekly closes on the cash-equity basis, dividends excluded
+     (conservative); the forward track appends one real week each Saturday and these figures roll with it. There is
+     no realised track record. Cumulative return is anchored at <strong>0% at the start of the selected period</strong>;
+     the stat strip recomputes live with the timeframe. <strong>Amber-shaded bands</strong> mark the weeks the 30%
+     breadth gate held the book fully in cash.</p>
+     <p>The full ledger, this week's book and the forward-track table are on the
+     <a href="#" onclick="activateTab('fv1');return false;">Paper Track tab →</a></p>`;
   const hz = F.horizons || [];
   document.getElementById('tbl-mon-fv1-horizons').innerHTML =
     `<table><thead><tr><th>Window</th><th class="num">Blend CAGR</th><th class="num">Excess vs cash</th>
@@ -628,21 +643,74 @@ function renderMonitorFv1() {
     `T-bill CAGR over the same window; the target is +2pp · SEEN data — the forward track replaces these ` +
     `numbers with its own as it accrues`;
 }
+let fv1PerfPeriod = 'ytd';
+function fv1WindowStart(period) {
+  const F = DATA.fv1, n = F.dates.length;
+  if (period === 'ytd') {
+    const yr = F.dates[n - 1].slice(0, 4);
+    let i = F.dates.findIndex(d => d.slice(0, 4) === yr);
+    if (i < 0 || n - i < 4) i = Math.max(0, n - 53);   // early January: fall back to 1Y
+    return Math.max(0, i - 1);                          // anchor on the prior close
+  }
+  const w = parseInt(period, 10);
+  return w ? Math.max(0, n - w - 1) : 0;
+}
 function drawMonitorFv1Chart() {
   const F = DATA.fv1;
   if (!F) return;
-  const x = F.dates, e = F.equity;
+  const i0 = fv1WindowStart(fv1PerfPeriod), e = F.equity;
+  const x = F.dates.slice(i0);
+  const cum = arr => arr.slice(i0).map(v => (v / arr[i0] - 1) * 100);
+  const b = e.blend.slice(i0);
+  const rets = [];
+  for (let i = 1; i < b.length; i++) rets.push(b[i] / b[i - 1] - 1);
+  const yrs = rets.length / 52;
+  const total = b[b.length - 1] / b[0] - 1;
+  const ann = yrs > 0 ? Math.pow(1 + total, 1 / yrs) - 1 : 0;
+  const mean = rets.reduce((s, v) => s + v, 0) / (rets.length || 1);
+  const sd = Math.sqrt(rets.reduce((s, v) => s + (v - mean) ** 2, 0) / (rets.length > 1 ? rets.length - 1 : 1));
+  const sharpe = sd > 0 ? mean / sd * Math.sqrt(52) : 0;
+  let peak = b[0], mdd = 0;
+  for (const v of b) { peak = Math.max(peak, v); mdd = Math.min(mdd, v / peak - 1); }
+  const wtd = e.blend[e.blend.length - 1] / e.blend[e.blend.length - 2] - 1;
+  const life = e.blend[e.blend.length - 1] / e.blend[0] - 1;
+  const card = (v, label, sub, cls) =>
+    `<div class="card"><div class="big ${cls}">${v}</div><h4>${label}</h4>${sub ? `<div class="row faint">${sub}</div>` : ''}</div>`;
+  document.getElementById('mon-fv1-stats').innerHTML =
+    card((wtd >= 0 ? '+' : '') + (wtd * 100).toFixed(2) + '%', 'LATEST WEEK',
+         F.dates[F.dates.length - 2] + ' → ' + F.dates[F.dates.length - 1], wtd >= 0 ? 'pos' : 'neg') +
+    card('+' + (life * 100).toFixed(1) + '%', 'LIFETIME RETURN — BLEND', F.dates[0] + ' start', 'pos') +
+    card((ann >= 0 ? '+' : '') + (ann * 100).toFixed(2) + '%', 'ANNUALISED', 'in window', ann >= 0 ? 'pos' : 'neg') +
+    card(sharpe.toFixed(2), 'SHARPE (IN WINDOW, RF = 0)', '', '') +
+    card((mdd * 100).toFixed(2) + '%', 'MAX DD IN WINDOW', '', 'neg');
+  const shapes = (F.cash_spans || [])
+    .filter(([s, t]) => t >= x[0] && s <= x[x.length - 1])
+    .map(([s, t]) => ({ type: 'rect', xref: 'x', yref: 'paper',
+      x0: s < x[0] ? x[0] : s, x1: t > x[x.length - 1] ? x[x.length - 1] : t, y0: 0, y1: 1,
+      fillcolor: 'rgba(180,83,9,0.10)', line: { width: 0 } }));
+  const annotations = shapes.length
+    ? [{ x: 1, y: 1.05, xref: 'paper', yref: 'paper', xanchor: 'right',
+         text: 'gate in cash (shaded)', showarrow: false, font: { size: 11, color: '#a05a0a' } }] : [];
   Plotly.react('mon-fv1-chart', [
-    { x, y: e.blend, name: 'FV-1 blend 30/70', line: { color: '#1a8754', width: 3 } },
-    { x, y: e.rotation, name: 'Rotation sleeve alone', line: { color: '#2563eb', width: 1.4 } },
-    { x, y: e.hurdle, name: 'T-bills + 2pp', line: { color: '#b45309', width: 1.8, dash: 'dash' } },
-    { x, y: e.spy, name: 'SPY (price only)', line: { color: '#8a8a82', width: 1.2, dash: 'dot' } },
-  ], { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 52 },
+    { x, y: cum(e.blend), name: 'FV-1 blend 30/70', line: { color: '#1a8754', width: 3.2 } },
+    { x, y: cum(e.rotation), name: 'Rotation sleeve alone', line: { color: '#2563eb', width: 1.4 } },
+    { x, y: cum(e.hurdle), name: 'T-bills + 2pp', line: { color: '#b45309', width: 1.8, dash: 'dash' } },
+    { x, y: cum(e.spy), name: 'SPY (price only)', line: { color: '#8a8a82', width: 1.2, dash: 'dot' } },
+  ], { ...CHART_LAYOUT, margin: { t: 34, b: 32, l: 10, r: 52 }, shapes, annotations,
        xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
-       yaxis: { ...CHART_LAYOUT.yaxis, type: 'log', tickvals: [1, 2, 4, 8, 16],
-                ticktext: ['1×', '2×', '4×', '8×', '16×'],
-                title: { text: 'growth of capital', font: { size: 11 } } } }, PLOT_CFG);
+       yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: '%', zeroline: true, zerolinecolor: '#c0beb5',
+                title: { text: 'cumulative return (0% at period start)', font: { size: 11 } } } }, PLOT_CFG);
+  document.getElementById('mon-fv1-prov').textContent =
+    `green is the FV-1 book, blue the unsized rotation sleeve (−46% lifetime MaxDD — the reason it is held at ` +
+    `30%), dashed the T-bill +2pp hurdle · weekly closes, cash-equity basis, dividends excluded · series computed ` +
+    `${fmtTs(F.computed_at_utc)}`;
 }
+document.querySelectorAll('#fv1-perf-periods button').forEach(btn =>
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#fv1-perf-periods button').forEach(b => b.classList.toggle('active', b === btn));
+    fv1PerfPeriod = btn.dataset.p;
+    drawMonitorFv1Chart();
+  }));
 
 /* ------------------------------- FV-1 -------------------------------- */
 function renderFv1Tab() {
