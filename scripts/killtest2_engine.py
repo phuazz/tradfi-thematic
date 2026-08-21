@@ -130,10 +130,12 @@ def _label(week, sectors, kind, n):
 
 
 def simulate(weeks, sectors, kind, premium, fee_mult=1.0, use_gate=True,
-             mode="rotation", rng=None):
-    """kind in {'cluster','gics','none'} for the rotation theme cap."""
+             mode="rotation", rng=None, collect=False):
+    """kind in {'cluster','gics','none'} for the rotation theme cap.
+    collect=True additionally returns per-week diagnostics (post-verdict
+    instrumentation only — it changes no return value used by the filed run)."""
     fee_side = P2.FEE_RT_BPS / 2.0 / 10_000.0 * fee_mult
-    rets, prev = [], set()
+    rets, prev, diags = [], set(), []
     for w in weeks:
         if mode == "basket":
             held = set(w["elig"])
@@ -167,8 +169,12 @@ def simulate(weeks, sectors, kind, premium, fee_mult=1.0, use_gate=True,
         cost = fee_side * turnover * wt
         gross = sum(w["ret"].get(n, 0.0) for n in held) * wt
         rets.append(gross - cost - KC2.weekly_carry(w["rf"], premium, invested))
+        if collect:
+            diags.append({"date": w["date"], "invested": invested,
+                          "breadth": w["breadth"], "n_held": len(held)})
         prev = held
-    return pd.Series(rets, index=[w["date"] for w in weeks])
+    ser = pd.Series(rets, index=[w["date"] for w in weeks])
+    return (ser, diags) if collect else ser
 
 
 def main() -> int:

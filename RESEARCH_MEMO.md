@@ -5,6 +5,40 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-08-21 — OWNER OVERRIDE of the finality clause; forward-only path built
+
+Owner instruction after the KT-2 verdict, verbatim: "i want a rotational
+strategy regardless and to dig deeper how to make it work." Recorded as an
+explicit override in the KT-2 pre-registration (scope stated there: no filed
+verdict reopens; both panels carry NO evidential standing from here — any
+number computed on them is DESIGN INPUT; deployment is a PRODUCT decision
+validated FORWARD only). Drafted unsigned:
+`reviews/2026-08-21_rotation-forward-validation_preregistration.md` (FV-1 —
+the rotation as the sized risk asset inside the cash+margin blend, paper
+track from sign-off, first review 2026-09-30, 104-week forward envelope
+bars declared now).
+
+**Drawdown anatomy (design input, `data/rotation_dd_anatomy.json`):** the
+deep tail is STRUCTURAL, not parametric. The −48.8% worst episode is the
+2021-03→2023-10 momentum-unwind GRIND — 137 weeks, breadth 0.63 at peak, the
+gate blind for 46 weeks because breadth holds up while momentum names bleed;
+−61pp lost while invested. Fast crashes (2025-02: −46.5% in SEVEN weeks;
+2025-10: −29% in five, never gated) outrun a weekly 30% gate by construction.
+**2008 is ABSENT from the worst-episode list** — in broad bears breadth
+collapses and the gate works; in narrow unwinds it cannot see. Conclusion:
+no gate/cap variant fixes this class's tail (and the burned panels could not
+validate one anyway); SIZING fixes it — at w=30% every episode lands at
+−6 to −15pp of portfolio, inside the −30% budget. That is FV-1's design.
+
+Also: hurdle blend MEASUREMENT extended to 1994–2026 net of fees and
+withholding (`data/hurdle_blend_measurement.json`): the 2006-start read
+UNDERSTATED the reliability floor — at 30% equity ~1 in 4 rolling 3y windows
+delivers <+1pp excess (dot-com decade), not ~1 in 7; excess CAGRs ~0.3-0.5pp
+lower net of drag; weekly-vs-monthly rebalance = 4bp/yr; UCITS beats
+US-domiciled by ~0.1pp/yr. Command-centre input memo amended accordingly.
+Dashboard gained a **Hurdle tab** (objective, override status, net menu,
+rolling-excess chart) — verified 1265/390, no h-scroll, chart draws at both.
+
 ## 2026-08-21 — KT-2 CONFIRMATION: S1 FAIL on the drawdown bound. The family closes.
 
 Single run on the held-out Russell panel (1,076 weeks, GICS arm after the

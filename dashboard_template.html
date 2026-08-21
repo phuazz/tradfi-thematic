@@ -176,6 +176,7 @@ footer strong { color: var(--t2); }
 
 <nav class="tabs" id="tabs">
   <button data-tab="monitor" class="active">Monitor</button>
+  <button data-tab="hurdle">Hurdle</button>
   <button data-tab="rotation">Rotation</button>
   <button data-tab="universe">Universe</button>
   <button data-tab="history">Trade History</button>
@@ -239,6 +240,27 @@ footer strong { color: var(--t2); }
 </div>
 
 <!-- ============================== ROTATION ============================= -->
+<div class="tab-content" id="tab-hurdle">
+  <section>
+    <h2>The objective, restated<span class="hint">owner decision 2026-08-21, after the strategy verdicts</span></h2>
+    <div id="hurdle-banner"></div>
+    <div class="note" id="hurdle-why"></div>
+  </section>
+
+  <section>
+    <h2>The delivery menu<span class="hint">SPY total return + 3-month T-bills, fixed weights, net of fees and dividend withholding — every row reported, none promoted</span></h2>
+    <div class="scroll" id="tbl-hurdle"></div>
+    <div class="provenance" id="hurdle-prov"></div>
+  </section>
+
+  <section>
+    <h2>Reliability, not averages<span class="hint">rolling 3-year annualised excess over the T-bill — the lines spend real years below every margin</span></h2>
+    <div class="chart-wrap"><div id="hurdle-chart" class="chart"></div></div>
+    <div class="provenance" id="hurdle-chart-prov"></div>
+    <details class="caveats"><summary>Assumptions &amp; caveats</summary><div class="note" id="hurdle-caveats"></div></details>
+  </section>
+</div>
+
 <div class="tab-content" id="tab-rotation">
   <section>
     <h3>The rotation — K=10, two names per theme</h3>
@@ -458,9 +480,80 @@ document.querySelectorAll('#tabs button').forEach(btn =>
 
 function drawTabCharts(name) {
   if (name === 'monitor') { drawHonest(); drawPerf(0); }
+  if (name === 'hurdle') drawHurdleChart();
   if (name === 'rotation') { drawRotEquity(); drawAlloc(); drawBreadth(); }
   if (name === 'history') { drawTurnover(); drawMonthly(); }
   if (name === 'robustness') drawNull();
+}
+
+/* ------------------------------ hurdle ------------------------------- */
+function renderHurdleTab() {
+  const H = DATA.hurdle_blend;
+  if (!H) { document.getElementById('tab-hurdle').style.display = 'none'; return; }
+  const win = H.window;
+  document.getElementById('hurdle-banner').innerHTML =
+    `<div class="banner banner-blue"><strong>The objective is USD cash + a margin, under the −30% whole-of-wealth
+     drawdown budget</strong> (owner decision 2026-08-21, refining "beat 4% USD p.a."). It is delivered by SIZING —
+     how much equity risk the book carries — not by strategy machinery. The margin, horizon and crypto-scope blanks
+     are adopted at the 2026-09-30 command-centre review; the menu below prices the choices.</div>
+    <div class="banner banner-amber"><strong>Where the rotation now stands (owner override, 2026-08-21).</strong>
+     Both kill-tests failed their frozen bars and the family was closed; the owner has directed, as a recorded
+     override of that closure, that a rotational strategy stays in scope. Both US test panels are seen, so no
+     further backtest on them can validate anything — the rotation's remaining path is as the sized risk asset
+     inside this blend, validated <em>forward</em> under a pre-registered paper track. Nothing is deployed yet.</div>`;
+  document.getElementById('hurdle-why').innerHTML =
+    `<p><strong>Why sizing, not selection.</strong> On the honest universes the rotation's selection edge over
+     simply owning everything was killed twice (Risk &amp; Validation has the bars). What survived is its SHAPE:
+     tail-adjusted return above owning the universe (Calmar 0.21 vs 0.11 at the band centre) with a −49% own
+     drawdown. At a sized weight that shape is usable: 30% of the book in the risk asset puts the blend's
+     drawdown near −15 to −19% — inside the budget — while clearing cash + 2pp on the ${win.n_weeks}-week record
+     below.</p>`;
+  const rows = H.scenarios.ucits, order = ['w10', 'w20', 'w30', 'w40', 'w50', 'w100'];
+  document.getElementById('tbl-hurdle').innerHTML =
+    `<table><thead><tr><th>Equity share</th><th class="num">Net CAGR</th><th class="num">Excess vs cash</th>
+      <th class="num">Max DD</th><th class="num">3y windows short of +2pp</th><th class="num">5y short of +2pp</th>
+      <th class="num">Worst 3y excess</th></tr></thead><tbody>` +
+    order.map(k => {
+      const s = rows[k], r3 = s.roll_3y, r5 = s.roll_5y;
+      return `<tr><td class="nm">${k.slice(1)}%${k === 'w30' ? ' <span class="pill pill-live">sizing corridor</span>' : ''}</td>
+        <td class="num">${fmtPct(s.cagr * 100)}</td>
+        <td class="num ${s.excess_cagr > 0 ? 'pos' : 'neg'}">${(s.excess_cagr * 100).toFixed(1)}pp</td>
+        <td class="num neg">${fmtPct(s.max_dd * 100)}</td>
+        <td class="num">${r3.below_2pp_pct}%</td><td class="num">${r5.below_2pp_pct}%</td>
+        <td class="num neg">${(r3.worst_excess_ann * 100).toFixed(1)}pp</td></tr>`;
+    }).join('') + '</tbody></table>';
+  document.getElementById('hurdle-prov').textContent =
+    `SPY total return + 3-month T-bill, weekly rebalanced (weekly-vs-monthly difference measured at ` +
+    `${H.rebalance_delta_w30.delta_bp_pa}bp/yr) · ${win.first} to ${win.last}, ${win.n_weeks} weeks — includes ` +
+    `2000-02, which the 2006-start table did not · Irish-UCITS implementation (equity dividends withheld 15%, ` +
+    `bill interest 0%, TER 7/10bp); US-domiciled variant is ~0.1pp/yr worse · computed ${fmtTs(H.computed_at_utc)}`;
+  document.getElementById('hurdle-caveats').innerHTML =
+    `<p>Every row reported, none promoted — a fixed-weight blend has no parameters to fit. Today's fund fees are
+     applied across history. The realised US equity premium on this window (+8pp net) is generous against a +4–6pp
+     long-run prior: sized on the prior, each margin needs roughly half again more equity share. The reliability
+     floor is structural: at 30% equity, about one rolling 3-year window in four delivers less than +1pp of excess
+     (1994–2026 basis; the 2006-start read understated this at ~one in seven because it missed 2000–02). Judged at
+     five years the floors improve but do not vanish. MEASUREMENT, not a verdict; the margin and horizon are the
+     owner's blanks at the 2026-09-30 review.</p>`;
+}
+function drawHurdleChart() {
+  const H = DATA.hurdle_blend;
+  if (!H || !H.chart_roll3y_excess) return;
+  const c = H.chart_roll3y_excess, x = c.dates;
+  const traces = [
+    { x, y: c.w20.map(v => v * 100), name: '20% equity', line: { color: '#8a8a82', width: 1.3 } },
+    { x, y: c.w30.map(v => v * 100), name: '30% equity', line: { color: '#1a8754', width: 3 } },
+    { x, y: c.w40.map(v => v * 100), name: '40% equity', line: { color: '#2563eb', width: 1.3 } },
+  ];
+  const shapes = [1, 2, 3].map(m => ({ type: 'line', xref: 'paper', yref: 'y', x0: 0, x1: 1, y0: m, y1: m,
+    line: { color: '#b45309', width: 1, dash: 'dot' } }));
+  Plotly.react('hurdle-chart', traces, { ...CHART_LAYOUT, margin: { t: 30, b: 32, l: 10, r: 52 }, shapes,
+    xaxis: { ...CHART_LAYOUT.xaxis, dtick: adaptiveDtick(x.length) },
+    yaxis: { ...CHART_LAYOUT.yaxis, ticksuffix: 'pp', zeroline: true, zerolinecolor: '#c0beb5',
+             title: { text: 'rolling 3y excess over T-bills, annualised', font: { size: 11 } } } }, PLOT_CFG);
+  document.getElementById('hurdle-chart-prov').textContent =
+    'dotted guides at +1/+2/+3pp margins · every dip below a guide is a 3-year stretch that missed that margin · ' +
+    'net of fees and withholding (UCITS scenario)';
 }
 
 /* ------------------------------- hero ------------------------------- */
@@ -1236,6 +1329,7 @@ renderChips(); renderClusterBar(); renderUniverse();
 renderFills(); renderLedger();
 renderVerdict(); renderGrid(); renderSplit();
 renderMethod(); renderDecisions(); renderData(); renderHealth();
+renderHurdleTab();
 drawHonest(); drawPerf(0); drawn.monitor = true;
 </script>
 </body>

@@ -54,6 +54,7 @@ def main() -> int:
     k10_null = rj(ROOT / "data" / "k10_null.json", None)
     honest = rj(ROOT / "data" / "honest_window.json", None)
     pit = rj(ROOT / "data" / "pit_listing_check.json", None)
+    hurdle_blend = rj(ROOT / "data" / "hurdle_blend_measurement.json", None)
 
     def fund_of(sym):
         r = scan_rows.get(sym)
@@ -205,6 +206,7 @@ def main() -> int:
         "max_loss_usd": 5000.0,
         "honest": honest,
         "pit": pit,
+        "hurdle_blend": hurdle_blend,
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
         "orders": order_rows, "book": book_rows,

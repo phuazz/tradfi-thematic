@@ -227,6 +227,30 @@ Russell 1000 C&P top-250 confirmation universe, and the finality clause.
    respected per label, invested ≤ 1) — a violation raises rather than
    degrades.
 
+## Owner override of the finality clause (2026-08-21, recorded verbatim)
+
+Owner instruction, same day as the verdict: *"i want a rotational strategy
+regardless and to dig deeper how to make it work."* Recorded as an explicit
+override of the §6 finality clause, which the sign-off had confirmed by name.
+Its scope, stated exactly:
+
+- It does **not** reopen S1, S2 or any filed verdict. The family remains
+  REJECTED as a selection strategy against its own universe on every tested
+  bar, and the ledger rows stand unchanged.
+- It does **not** license further backtesting on the S&P+NDX or Russell
+  panels as evidence. Both are seen; any number computed on them from here on
+  is DESIGN INPUT, labelled as such, and can validate nothing.
+- It **does** place a rotation back in deployment scope as a PRODUCT
+  decision: the construction may serve as the sized risk asset inside the
+  cash-plus-margin blend, with validation FORWARD ONLY, under
+  `reviews/2026-08-21_rotation-forward-validation_preregistration.md`.
+- Diagnosis on seen data is permitted as design input
+  (`data/rotation_dd_anatomy.json` — drawdown anatomy).
+
+The clause existed to prevent a third fitted search; the override does not
+create one, because the record now refuses the two panels any evidential
+standing. The only data that can still say yes or no is the future.
+
 *Three things to confirm when signing, named now so they cannot move later:
 the primary metric (Calmar margins vs the basket, bars in §6), the held-out
 confirmation universe (Russell 1000 C&P, top-250 by dollar volume), and the

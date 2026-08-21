@@ -1,0 +1,113 @@
+{
+ "computed_at_utc": "2026-08-21T01:13:58.051548+00:00",
+ "label": "DESIGN INPUT - seen data, no verdict, no configuration searched",
+ "series": "KT-2 adopted arm (GICS cap), band centre, as filed",
+ "episodes_beyond_15pct": [
+  {
+   "peak": "2021-03-05",
+   "trough": "2023-10-20",
+   "recovered": "2024-09-13",
+   "depth_pct": -48.8,
+   "weeks_peak_to_trough": 137,
+   "weeks_to_recover": 47,
+   "breadth_at_peak": 0.63,
+   "weeks_until_book_in_cash": 46,
+   "weeks_in_cash_during_fall": 39,
+   "loss_while_invested_pp": -61.0,
+   "sized_30pct_contribution_pp": -14.6
+  },
+  {
+   "peak": "2025-02-07",
+   "trough": "2025-03-28",
+   "recovered": "2025-09-12",
+   "depth_pct": -46.5,
+   "weeks_peak_to_trough": 7,
+   "weeks_to_recover": 24,
+   "breadth_at_peak": 0.54,
+   "weeks_until_book_in_cash": 5,
+   "weeks_in_cash_during_fall": 1,
+   "loss_while_invested_pp": -58.5,
+   "sized_30pct_contribution_pp": -14.0
+  },
+  {
+   "peak": "2006-04-28",
+   "trough": "2006-09-15",
+   "recovered": "2010-04-16",
+   "depth_pct": -32.2,
+   "weeks_peak_to_trough": 20,
+   "weeks_to_recover": 187,
+   "breadth_at_peak": 0.53,
+   "weeks_until_book_in_cash": 8,
+   "weeks_in_cash_during_fall": 3,
+   "loss_while_invested_pp": -36.6,
+   "sized_30pct_contribution_pp": -9.7
+  },
+  {
+   "peak": "2025-10-10",
+   "trough": "2025-11-14",
+   "recovered": "2026-05-22",
+   "depth_pct": -29.2,
+   "weeks_peak_to_trough": 5,
+   "weeks_to_recover": 27,
+   "breadth_at_peak": 0.57,
+   "weeks_until_book_in_cash": null,
+   "weeks_in_cash_during_fall": 0,
+   "loss_while_invested_pp": -32.7,
+   "sized_30pct_contribution_pp": -8.8
+  },
+  {
+   "peak": "2018-09-21",
+   "trough": "2019-04-12",
+   "recovered": "2020-07-10",
+   "depth_pct": -27.4,
+   "weeks_peak_to_trough": 29,
+   "weeks_to_recover": 65,
+   "breadth_at_peak": 0.51,
+   "weeks_until_book_in_cash": 3,
+   "weeks_in_cash_during_fall": 16,
+   "loss_while_invested_pp": -31.4,
+   "sized_30pct_contribution_pp": -8.2
+  },
+  {
+   "peak": "2014-02-28",
+   "trough": "2014-05-02",
+   "recovered": "2015-07-10",
+   "depth_pct": -27.1,
+   "weeks_peak_to_trough": 9,
+   "weeks_to_recover": 62,
+   "breadth_at_peak": 0.64,
+   "weeks_until_book_in_cash": null,
+   "weeks_in_cash_during_fall": 0,
+   "loss_while_invested_pp": -30.4,
+   "sized_30pct_contribution_pp": -8.1
+  },
+  {
+   "peak": "2010-04-16",
+   "trough": "2010-05-28",
+   "recovered": "2011-07-01",
+   "depth_pct": -26.1,
+   "weeks_peak_to_trough": 6,
+   "weeks_to_recover": 57,
+   "breadth_at_peak": 0.78,
+   "weeks_until_book_in_cash": 5,
+   "weeks_in_cash_during_fall": 1,
+   "loss_while_invested_pp": -28.5,
+   "sized_30pct_contribution_pp": -7.8
+  },
+  {
+   "peak": "2020-10-02",
+   "trough": "2020-10-23",
+   "recovered": "2020-11-20",
+   "depth_pct": -19.8,
+   "weeks_peak_to_trough": 3,
+   "weeks_to_recover": 4,
+   "breadth_at_peak": 0.6,
+   "weeks_until_book_in_cash": null,
+   "weeks_in_cash_during_fall": 0,
+   "loss_while_invested_pp": -21.2,
+   "sized_30pct_contribution_pp": -5.9
+  }
+ ],
+ "pct_weeks_in_cash_overall": 18.4,
+ "sized_note": "sized contribution = episode depth x 30% blend weight (T-bill leg adds back its accrual)"
+}
