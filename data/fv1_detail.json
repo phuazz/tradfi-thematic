@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-21T02:02:15.070654+00:00",
+ "computed_at_utc": "2026-08-22T00:33:04.562653+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -2158,7 +2158,7 @@
    16.3186,
    16.2285,
    17.58979,
-   17.13606
+   17.21571
   ],
   "blend": [
    1.00721,
@@ -3236,7 +3236,7 @@
    3.47395,
    3.47026,
    3.55932,
-   3.53193
+   3.53704
   ],
   "hurdle": [
    1.00117,
@@ -5397,14 +5397,14 @@
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1472,
+   "cagr": 0.1474,
    "max_dd": -0.4602,
    "sharpe": 0.64
   },
   "blend": {
-   "cagr": 0.0629,
+   "cagr": 0.063,
    "max_dd": -0.1511,
-   "sharpe": 0.784
+   "sharpe": 0.785
   },
   "spy": {
    "cagr": 0.0908,
@@ -5416,20 +5416,20 @@
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.1284,
-    "excess": 0.091,
+    "cagr": 0.13,
+    "excess": 0.0927,
     "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.1283,
-    "sharpe": 1.005
+    "vol": 0.1281,
+    "sharpe": 1.017
    },
    "rotation": {
-    "cagr": 0.3118,
-    "excess": 0.2745,
+    "cagr": 0.3179,
+    "excess": 0.2806,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.4233,
-    "sharpe": 0.847
+    "vol": 0.423,
+    "sharpe": 0.859
    },
    "spy": {
     "cagr": 0.2065,
@@ -5443,20 +5443,20 @@
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.1959,
-    "excess": 0.151,
+    "cagr": 0.1965,
+    "excess": 0.1515,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1227,
-    "sharpe": 1.521
+    "vol": 0.1226,
+    "sharpe": 1.526
    },
    "rotation": {
-    "cagr": 0.5122,
-    "excess": 0.4673,
+    "cagr": 0.5145,
+    "excess": 0.4696,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4062,
-    "sharpe": 1.223
+    "vol": 0.4061,
+    "sharpe": 1.227
    },
    "spy": {
     "cagr": 0.2116,
@@ -5470,20 +5470,20 @@
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.0987,
-    "excess": 0.0614,
+    "cagr": 0.099,
+    "excess": 0.0618,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1033,
-    "sharpe": 0.963
+    "sharpe": 0.966
    },
    "rotation": {
-    "cagr": 0.1881,
-    "excess": 0.1508,
+    "cagr": 0.1892,
+    "excess": 0.1519,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3422,
-    "sharpe": 0.674
+    "vol": 0.3421,
+    "sharpe": 0.677
    },
    "spy": {
     "cagr": 0.1186,
@@ -5497,20 +5497,20 @@
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0896,
-    "excess": 0.0656,
+    "cagr": 0.0897,
+    "excess": 0.0658,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0975,
-    "sharpe": 0.929
+    "sharpe": 0.93
    },
    "rotation": {
-    "cagr": 0.2102,
-    "excess": 0.1862,
+    "cagr": 0.2107,
+    "excess": 0.1868,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.3234,
-    "sharpe": 0.751
+    "sharpe": 0.752
    },
    "spy": {
     "cagr": 0.1358,
@@ -5524,19 +5524,19 @@
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0629,
-    "excess": 0.046,
+    "cagr": 0.063,
+    "excess": 0.0461,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0821,
-    "sharpe": 0.784
+    "sharpe": 0.785
    },
    "rotation": {
-    "cagr": 0.1472,
-    "excess": 0.1303,
+    "cagr": 0.1474,
+    "excess": 0.1306,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.273,
+    "vol": 0.2729,
     "sharpe": 0.64
    },
    "spy": {
