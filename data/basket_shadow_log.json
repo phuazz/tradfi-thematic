@@ -196,5 +196,20 @@
    "ZHIPUUSDT (+31.4%/yr)"
   ],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-08-22T23:15:02.878888+00:00",
+  "event": "OK",
+  "mode": "paused",
+  "n_orders": 0,
+  "n_held": 0,
+  "n_members": 60,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "SKHYNIXUSDT (+41.6%/yr)",
+   "ZHIPUUSDT (+30.8%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]
