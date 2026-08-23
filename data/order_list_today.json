@@ -1,13 +1,13 @@
 {
- "ts_utc": "2026-08-22T23:15:02.878888+00:00",
+ "ts_utc": "2026-08-23T23:48:44.705459+00:00",
  "mode": "paused",
  "book_cap_usd": 5000.0,
  "payload_construction": "rotation K=10 cap=2 (Amendment 2)",
- "n_members": 60,
+ "n_members": 58,
  "target_usd_per_name": 500.0,
  "signal_asof": "2026-08-20",
  "fill_reference_asof": "2026-08-21",
- "breadth": 0.588,
+ "breadth": 0.612,
  "gated": false,
  "paused": true,
  "n_target_positions": 9,
@@ -18,7 +18,7 @@
  "book_value_usd": 0,
  "orders": [],
  "skipped_funding_rule": [
-  "SKHYNIXUSDT (+41.6%/yr)",
+  "SKHYNIXUSDT (+38.5%/yr)",
   "ZHIPUUSDT (+30.8%/yr)"
  ],
  "skipped_no_price": [],
