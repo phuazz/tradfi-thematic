@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-08-28T01:54:48.329514+00:00",
+ "computed_at_utc": "2026-08-28T23:15:29.933445+00:00",
  "n_checks": 24,
- "n_ok": 22,
- "n_warn": 2,
+ "n_ok": 23,
+ "n_warn": 1,
  "n_fail": 0,
  "checks": [
   {
@@ -37,44 +37,44 @@
   },
   {
    "name": "Price panel freshness",
-   "status": "WARN",
-   "detail": "newest bar 2026-08-22 (6 days ago); refreshed by the Saturday evaluator run",
+   "status": "OK",
+   "detail": "newest bar 2026-08-28 (0 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "WARN",
-   "detail": "scanner data 25.9h old (twice-daily cadence)",
+   "detail": "scanner data 47.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (22 runs logged)",
+   "detail": "last run 0.0h ago (23 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 184.8h ago",
+   "detail": "built 206.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 146.7h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 146.7h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 146.7h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
@@ -98,19 +98,19 @@
   {
    "name": "Cluster cap respected every week",
    "status": "OK",
-   "detail": "0 of 450 weeks breach the cap of 2",
+   "detail": "0 of 451 weeks breach the cap of 2",
    "group": "study"
   },
   {
    "name": "Position count never exceeds K",
    "status": "OK",
-   "detail": "0 of 450 weeks hold more than 10 names",
+   "detail": "0 of 451 weeks hold more than 10 names",
    "group": "study"
   },
   {
    "name": "Sleeve gate fires (cash weeks exist)",
    "status": "OK",
-   "detail": "85 of 450 weeks gated to cash \u2014 the regime rule is live",
+   "detail": "85 of 451 weeks gated to cash \u2014 the regime rule is live",
    "group": "study"
   },
   {
