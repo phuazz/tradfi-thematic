@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-22T00:33:04.562653+00:00",
+ "computed_at_utc": "2026-08-29T00:33:11.035563+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1079,7 +1079,8 @@
   "2026-07-24",
   "2026-07-31",
   "2026-08-07",
-  "2026-08-14"
+  "2026-08-14",
+  "2026-08-21"
  ],
  "equity": {
   "rotation": [
@@ -2158,7 +2159,8 @@
    16.3186,
    16.2285,
    17.58979,
-   17.21571
+   17.21571,
+   16.85429
   ],
   "blend": [
    1.00721,
@@ -3236,7 +3238,8 @@
    3.47395,
    3.47026,
    3.55932,
-   3.53704
+   3.53704,
+   3.51559
   ],
   "hurdle": [
    1.00117,
@@ -4314,7 +4317,8 @@
    2.12868,
    2.131,
    2.13333,
-   2.13566
+   2.13566,
+   2.138
   ],
   "spy": [
    1.0,
@@ -5392,160 +5396,161 @@
    5.75311,
    5.81618,
    6.0204,
-   6.04438
+   6.04438,
+   5.96169
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1474,
+   "cagr": 0.1461,
    "max_dd": -0.4602,
-   "sharpe": 0.64
+   "sharpe": 0.636
   },
   "blend": {
-   "cagr": 0.063,
+   "cagr": 0.0626,
    "max_dd": -0.1511,
-   "sharpe": 0.785
+   "sharpe": 0.781
   },
   "spy": {
-   "cagr": 0.0908,
+   "cagr": 0.09,
    "max_dd": -0.5591,
-   "sharpe": 0.578
+   "sharpe": 0.574
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.13,
-    "excess": 0.0927,
+    "cagr": 0.1101,
+    "excess": 0.0729,
     "beats_hurdle": true,
     "max_dd": -0.0887,
     "vol": 0.1281,
-    "sharpe": 1.017
+    "sharpe": 0.879
    },
    "rotation": {
-    "cagr": 0.3179,
-    "excess": 0.2806,
+    "cagr": 0.2434,
+    "excess": 0.2061,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.423,
-    "sharpe": 0.859
+    "vol": 0.4227,
+    "sharpe": 0.72
    },
    "spy": {
-    "cagr": 0.2065,
-    "excess": 0.1692,
+    "cagr": 0.1866,
+    "excess": 0.1493,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1222,
-    "sharpe": 1.599
+    "vol": 0.1234,
+    "sharpe": 1.449
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.1965,
-    "excess": 0.1515,
+    "cagr": 0.1886,
+    "excess": 0.1438,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1226,
-    "sharpe": 1.526
+    "sharpe": 1.472
    },
    "rotation": {
-    "cagr": 0.5145,
-    "excess": 0.4696,
+    "cagr": 0.4806,
+    "excess": 0.4358,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4061,
-    "sharpe": 1.227
+    "vol": 0.4059,
+    "sharpe": 1.171
    },
    "spy": {
-    "cagr": 0.2116,
-    "excess": 0.1667,
+    "cagr": 0.2029,
+    "excess": 0.1581,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1449,
-    "sharpe": 1.399
+    "vol": 0.1453,
+    "sharpe": 1.346
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.099,
-    "excess": 0.0618,
+    "cagr": 0.098,
+    "excess": 0.0606,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1033,
-    "sharpe": 0.966
+    "vol": 0.1034,
+    "sharpe": 0.957
    },
    "rotation": {
-    "cagr": 0.1892,
-    "excess": 0.1519,
+    "cagr": 0.1854,
+    "excess": 0.148,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3421,
-    "sharpe": 0.677
+    "vol": 0.3423,
+    "sharpe": 0.668
    },
    "spy": {
-    "cagr": 0.1186,
-    "excess": 0.0813,
+    "cagr": 0.112,
+    "excess": 0.0747,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.1635,
-    "sharpe": 0.767
+    "vol": 0.1636,
+    "sharpe": 0.731
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0897,
-    "excess": 0.0658,
+    "cagr": 0.091,
+    "excess": 0.067,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0975,
-    "sharpe": 0.93
+    "vol": 0.0973,
+    "sharpe": 0.944
    },
    "rotation": {
-    "cagr": 0.2107,
-    "excess": 0.1868,
+    "cagr": 0.2156,
+    "excess": 0.1916,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3234,
-    "sharpe": 0.752
+    "vol": 0.3229,
+    "sharpe": 0.765
    },
    "spy": {
-    "cagr": 0.1358,
-    "excess": 0.1119,
+    "cagr": 0.1337,
+    "excess": 0.1097,
     "beats_hurdle": true,
     "max_dd": -0.3223,
-    "vol": 0.1721,
-    "sharpe": 0.828
+    "vol": 0.1722,
+    "sharpe": 0.816
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.063,
-    "excess": 0.0461,
+    "cagr": 0.0626,
+    "excess": 0.0457,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0821,
-    "sharpe": 0.785
+    "sharpe": 0.781
    },
    "rotation": {
-    "cagr": 0.1474,
-    "excess": 0.1306,
+    "cagr": 0.1461,
+    "excess": 0.1292,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.2729,
-    "sharpe": 0.64
+    "sharpe": 0.636
    },
    "spy": {
-    "cagr": 0.0908,
-    "excess": 0.074,
+    "cagr": 0.09,
+    "excess": 0.0731,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1782,
-    "sharpe": 0.578
+    "vol": 0.1781,
+    "sharpe": 0.574
    }
   }
  ],
@@ -5663,10 +5668,38 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3694,
+ "n_trades_total": 3698,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.4,
  "ledger_recent": [
+  {
+   "date": "2026-08-21",
+   "side": "buy",
+   "sym": "ROST",
+   "name": "Ross Stores Inc",
+   "sector": "Consumer Discretionary"
+  },
+  {
+   "date": "2026-08-21",
+   "side": "buy",
+   "sym": "HL",
+   "name": "Hecla Mining Co",
+   "sector": "Materials"
+  },
+  {
+   "date": "2026-08-21",
+   "side": "sell",
+   "sym": "MS",
+   "name": "Morgan Stanley",
+   "sector": "Financials"
+  },
+  {
+   "date": "2026-08-21",
+   "side": "sell",
+   "sym": "CVS",
+   "name": "CVS Health Corp",
+   "sector": "Health Care"
+  },
   {
    "date": "2026-08-14",
    "side": "buy",
@@ -8438,39 +8471,11 @@
    "sym": "DASH",
    "name": "DoorDash Inc",
    "sector": "Consumer Discretionary"
-  },
-  {
-   "date": "2024-04-26",
-   "side": "buy",
-   "sym": "NU",
-   "name": "Nu Holdings Ltd",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-04-26",
-   "side": "buy",
-   "sym": "DASH",
-   "name": "DoorDash Inc",
-   "sector": "Consumer Discretionary"
-  },
-  {
-   "date": "2024-04-26",
-   "side": "sell",
-   "sym": "CEG",
-   "name": "Constellation Energy Corp",
-   "sector": "Utilities"
-  },
-  {
-   "date": "2024-04-26",
-   "side": "sell",
-   "sym": "AFRM",
-   "name": "Affirm Holdings Inc",
-   "sector": "Financials"
   }
  ],
  "current": {
-  "asof": "2026-08-14",
-  "breadth": 0.581,
+  "asof": "2026-08-21",
+  "breadth": 0.532,
   "picks": [
    {
     "sym": "BE",
@@ -8483,14 +8488,14 @@
     "sector": "Financials"
    },
    {
-    "sym": "CVS",
-    "name": "CVS Health Corp",
-    "sector": "Health Care"
-   },
-   {
     "sym": "FIX",
     "name": "Comfort Systems USA Inc",
     "sector": "Industrials"
+   },
+   {
+    "sym": "HL",
+    "name": "Hecla Mining Co",
+    "sector": "Materials"
    },
    {
     "sym": "LLY",
@@ -8503,14 +8508,14 @@
     "sector": "Energy"
    },
    {
-    "sym": "MS",
-    "name": "Morgan Stanley",
-    "sector": "Financials"
-   },
-   {
     "sym": "MU",
     "name": "Micron Technology Inc",
     "sector": "Information Technology"
+   },
+   {
+    "sym": "ROST",
+    "name": "Ross Stores Inc",
+    "sector": "Consumer Discretionary"
    },
    {
     "sym": "SNDK",

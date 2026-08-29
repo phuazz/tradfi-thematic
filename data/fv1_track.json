@@ -26,7 +26,29 @@
    "rot_ret": null,
    "bill_ret": null,
    "note": "baseline"
+  },
+  {
+   "date": "2026-08-21",
+   "nav_rot": 97.9006,
+   "nav_blend": 99.42,
+   "w_eff": 0.2954,
+   "picks": [
+    "BE",
+    "BNY",
+    "FIX",
+    "HL",
+    "LLY",
+    "MPC",
+    "MU",
+    "ROST",
+    "SNDK",
+    "VLO"
+   ],
+   "breadth": 0.532,
+   "invested": 1.0,
+   "rot_ret": -0.020994,
+   "bill_ret": 0.000712
   }
  ],
- "last_run_utc": "2026-08-22T00:32:01.094984+00:00"
+ "last_run_utc": "2026-08-29T00:32:06.564486+00:00"
 }
