@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-28T23:15:29.933445+00:00",
+ "computed_at_utc": "2026-08-29T23:15:10.791681+00:00",
  "n_checks": 24,
  "n_ok": 23,
  "n_warn": 1,
@@ -38,43 +38,43 @@
   {
    "name": "Price panel freshness",
    "status": "OK",
-   "detail": "newest bar 2026-08-28 (0 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-08-28 (1 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "WARN",
-   "detail": "scanner data 47.2h old (twice-daily cadence)",
+   "detail": "scanner data 71.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (23 runs logged)",
+   "detail": "last run 0.0h ago (24 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 206.2h ago",
+   "detail": "built 230.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
@@ -140,13 +140,13 @@
   {
    "name": "Book fully invested",
    "status": "OK",
-   "detail": "8 of 10 slots targeted; 20.0% in cash",
+   "detail": "10 of 10 slots targeted; 0.0% in cash",
    "group": "book"
   },
   {
    "name": "Live signal matches the tested convention",
    "status": "OK",
-   "detail": "signal 2026-08-20 decides, fill reference 2026-08-21 \u2014 one session apart, as the backtest prices it",
+   "detail": "signal 2026-08-27 decides, fill reference 2026-08-28 \u2014 one session apart, as the backtest prices it",
    "group": "study"
   }
  ]
