@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-08-29T23:15:10.791681+00:00",
+ "computed_at_utc": "2026-08-30T23:40:45.931450+00:00",
  "n_checks": 24,
- "n_ok": 23,
- "n_warn": 1,
+ "n_ok": 24,
+ "n_warn": 0,
  "n_fail": 0,
  "checks": [
   {
@@ -38,43 +38,43 @@
   {
    "name": "Price panel freshness",
    "status": "OK",
-   "detail": "newest bar 2026-08-28 (1 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-08-28 (2 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
-   "status": "WARN",
-   "detail": "scanner data 71.2h old (twice-daily cadence)",
+   "status": "OK",
+   "detail": "scanner data 11.1h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (24 runs logged)",
+   "detail": "last run 0.0h ago (25 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 230.2h ago",
+   "detail": "built 254.6h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 48.4h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 48.4h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 48.4h ago",
    "group": "artefacts"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "3 name(s) blocked at >+30%/yr (SKHYNIXUSDT (+38.1%/yr), ZHIPUUSDT (+44.4%/yr), ZHONGJIUSDT (+45.1%/yr)); 0 buy(s) above the line on today's list",
+   "detail": "2 name(s) blocked at >+30%/yr (ZHIPUUSDT (+44.4%/yr), ZHONGJIUSDT (+45.1%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
