@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-02T00:05:37.016487+00:00",
+ "computed_at_utc": "2026-09-02T23:31:36.744312+00:00",
  "n_checks": 24,
  "n_ok": 23,
  "n_warn": 1,
@@ -44,37 +44,37 @@
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 1.2h old (twice-daily cadence)",
+   "detail": "scanner data 11.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (27 runs logged)",
+   "detail": "last run 0.0h ago (28 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 303.0h ago",
+   "detail": "built 326.4h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 96.8h ago",
+   "detail": "built 120.3h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 96.8h ago",
+   "detail": "built 120.3h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 96.8h ago",
+   "detail": "built 120.3h ago",
    "group": "artefacts"
   },
   {
