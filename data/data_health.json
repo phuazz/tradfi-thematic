@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-08-31T23:38:54.735858+00:00",
+ "computed_at_utc": "2026-09-02T00:05:37.016487+00:00",
  "n_checks": 24,
- "n_ok": 24,
- "n_warn": 0,
+ "n_ok": 23,
+ "n_warn": 1,
  "n_fail": 0,
  "checks": [
   {
@@ -37,44 +37,44 @@
   },
   {
    "name": "Price panel freshness",
-   "status": "OK",
-   "detail": "newest bar 2026-08-28 (3 days ago); refreshed by the Saturday evaluator run",
+   "status": "WARN",
+   "detail": "newest bar 2026-08-28 (5 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 11.6h old (twice-daily cadence)",
+   "detail": "scanner data 1.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (26 runs logged)",
+   "detail": "last run 0.0h ago (27 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 278.6h ago",
+   "detail": "built 303.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 72.4h ago",
+   "detail": "built 96.8h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 72.4h ago",
+   "detail": "built 96.8h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 72.4h ago",
+   "detail": "built 96.8h ago",
    "group": "artefacts"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "1 name(s) blocked at >+30%/yr (ZHONGJIUSDT (+33.8%/yr)); 0 buy(s) above the line on today's list",
+   "detail": "1 name(s) blocked at >+30%/yr (ZHONGJIUSDT (+31.9%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
