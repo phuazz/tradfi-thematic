@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-02T23:31:36.744312+00:00",
+ "computed_at_utc": "2026-09-03T23:15:03.900034+00:00",
  "n_checks": 24,
  "n_ok": 23,
  "n_warn": 1,
@@ -38,7 +38,7 @@
   {
    "name": "Price panel freshness",
    "status": "WARN",
-   "detail": "newest bar 2026-08-28 (5 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-08-28 (6 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
@@ -50,31 +50,31 @@
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (28 runs logged)",
+   "detail": "last run 0.0h ago (29 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 326.4h ago",
+   "detail": "built 350.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 120.3h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 120.3h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 120.3h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
