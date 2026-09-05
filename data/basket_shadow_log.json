@@ -408,5 +408,20 @@
    "ZHONGJIUSDT (+30.1%/yr)"
   ],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-09-05T23:15:02.470246+00:00",
+  "event": "OK",
+  "mode": "paused",
+  "n_orders": 0,
+  "n_held": 0,
+  "n_members": 57,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "BNCUSDT (+73.9%/yr)",
+   "ZHONGJIUSDT (+30.1%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]

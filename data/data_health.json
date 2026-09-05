@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-04T23:15:39.432243+00:00",
+ "computed_at_utc": "2026-09-05T23:15:08.627156+00:00",
  "n_checks": 24,
  "n_ok": 24,
  "n_warn": 0,
@@ -38,7 +38,7 @@
   {
    "name": "Price panel freshness",
    "status": "OK",
-   "detail": "newest bar 2026-09-04 (0 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-09-04 (1 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
@@ -50,31 +50,31 @@
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (30 runs logged)",
+   "detail": "last run 0.0h ago (31 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 374.2h ago",
+   "detail": "built 398.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 0.0h ago",
+   "detail": "built 24.0h ago",
    "group": "artefacts"
   },
   {
@@ -146,7 +146,7 @@
   {
    "name": "Live signal matches the tested convention",
    "status": "OK",
-   "detail": "signal 2026-08-27 decides, fill reference 2026-08-28 \u2014 one session apart, as the backtest prices it",
+   "detail": "signal 2026-09-03 decides, fill reference 2026-09-04 \u2014 one session apart, as the backtest prices it",
    "group": "study"
   }
  ]
