@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-08-29T00:33:11.035563+00:00",
+ "computed_at_utc": "2026-09-05T00:33:11.348798+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1080,7 +1080,8 @@
   "2026-07-31",
   "2026-08-07",
   "2026-08-14",
-  "2026-08-21"
+  "2026-08-21",
+  "2026-08-28"
  ],
  "equity": {
   "rotation": [
@@ -2160,7 +2161,8 @@
    16.2285,
    17.58979,
    17.21571,
-   16.85429
+   16.85429,
+   17.88508
   ],
   "blend": [
    1.00721,
@@ -3239,7 +3241,8 @@
    3.47026,
    3.55932,
    3.53704,
-   3.51559
+   3.51559,
+   3.58346
   ],
   "hurdle": [
    1.00117,
@@ -4318,7 +4321,8 @@
    2.131,
    2.13333,
    2.13566,
-   2.138
+   2.138,
+   2.14035
   ],
   "spy": [
    1.0,
@@ -5397,160 +5401,161 @@
    5.81618,
    6.0204,
    6.04438,
-   5.96169
+   5.96169,
+   5.98996
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1461,
+   "cagr": 0.1493,
    "max_dd": -0.4602,
-   "sharpe": 0.636
+   "sharpe": 0.646
   },
   "blend": {
-   "cagr": 0.0626,
+   "cagr": 0.0635,
    "max_dd": -0.1511,
-   "sharpe": 0.781
+   "sharpe": 0.791
   },
   "spy": {
-   "cagr": 0.09,
+   "cagr": 0.0902,
    "max_dd": -0.5591,
-   "sharpe": 0.574
+   "sharpe": 0.575
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.1101,
-    "excess": 0.0729,
+    "cagr": 0.1411,
+    "excess": 0.1039,
     "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.1281,
-    "sharpe": 0.879
+    "vol": 0.1287,
+    "sharpe": 1.089
    },
    "rotation": {
-    "cagr": 0.2434,
-    "excess": 0.2061,
+    "cagr": 0.3593,
+    "excess": 0.3221,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.4227,
-    "sharpe": 0.72
+    "vol": 0.4247,
+    "sharpe": 0.93
    },
    "spy": {
-    "cagr": 0.1866,
-    "excess": 0.1493,
+    "cagr": 0.1927,
+    "excess": 0.1555,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1234,
-    "sharpe": 1.449
+    "vol": 0.1233,
+    "sharpe": 1.491
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.1886,
-    "excess": 0.1438,
+    "cagr": 0.1975,
+    "excess": 0.1528,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1226,
-    "sharpe": 1.472
+    "vol": 0.1229,
+    "sharpe": 1.53
    },
    "rotation": {
-    "cagr": 0.4806,
-    "excess": 0.4358,
+    "cagr": 0.5171,
+    "excess": 0.4724,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4059,
-    "sharpe": 1.171
+    "vol": 0.4067,
+    "sharpe": 1.23
    },
    "spy": {
-    "cagr": 0.2029,
-    "excess": 0.1581,
+    "cagr": 0.1947,
+    "excess": 0.15,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1453,
-    "sharpe": 1.346
+    "vol": 0.1447,
+    "sharpe": 1.303
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.098,
-    "excess": 0.0606,
+    "cagr": 0.1031,
+    "excess": 0.0656,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1034,
-    "sharpe": 0.957
+    "vol": 0.1036,
+    "sharpe": 0.999
    },
    "rotation": {
-    "cagr": 0.1854,
-    "excess": 0.148,
+    "cagr": 0.2028,
+    "excess": 0.1652,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3423,
-    "sharpe": 0.668
+    "vol": 0.3431,
+    "sharpe": 0.709
    },
    "spy": {
-    "cagr": 0.112,
-    "excess": 0.0747,
+    "cagr": 0.1117,
+    "excess": 0.0742,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.1636,
-    "sharpe": 0.731
+    "vol": 0.1635,
+    "sharpe": 0.73
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.091,
-    "excess": 0.067,
+    "cagr": 0.0931,
+    "excess": 0.0691,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0973,
-    "sharpe": 0.944
+    "vol": 0.0975,
+    "sharpe": 0.963
    },
    "rotation": {
-    "cagr": 0.2156,
-    "excess": 0.1916,
+    "cagr": 0.223,
+    "excess": 0.199,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3229,
-    "sharpe": 0.765
+    "vol": 0.3234,
+    "sharpe": 0.783
    },
    "spy": {
-    "cagr": 0.1337,
-    "excess": 0.1097,
+    "cagr": 0.1369,
+    "excess": 0.1128,
     "beats_hurdle": true,
     "max_dd": -0.3223,
-    "vol": 0.1722,
-    "sharpe": 0.816
+    "vol": 0.172,
+    "sharpe": 0.834
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0626,
-    "excess": 0.0457,
+    "cagr": 0.0635,
+    "excess": 0.0466,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0821,
-    "sharpe": 0.781
+    "sharpe": 0.791
    },
    "rotation": {
-    "cagr": 0.1461,
-    "excess": 0.1292,
+    "cagr": 0.1493,
+    "excess": 0.1323,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.2729,
-    "sharpe": 0.636
+    "vol": 0.273,
+    "sharpe": 0.646
    },
    "spy": {
-    "cagr": 0.09,
-    "excess": 0.0731,
+    "cagr": 0.0902,
+    "excess": 0.0733,
     "beats_hurdle": true,
     "max_dd": -0.5591,
     "vol": 0.1781,
-    "sharpe": 0.574
+    "sharpe": 0.575
    }
   }
  ],
@@ -5668,10 +5673,24 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3698,
+ "n_trades_total": 3700,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.4,
  "ledger_recent": [
+  {
+   "date": "2026-08-28",
+   "side": "buy",
+   "sym": "WBD",
+   "name": "Warner Bros. Discovery Inc Series A",
+   "sector": "Communication Services"
+  },
+  {
+   "date": "2026-08-28",
+   "side": "sell",
+   "sym": "BNY",
+   "name": "Bank of New York Mellon Corp",
+   "sector": "Financials"
+  },
   {
    "date": "2026-08-21",
    "side": "buy",
@@ -8457,35 +8476,16 @@
    "sym": "APP",
    "name": "AppLovin Corp",
    "sector": "Communication Services"
-  },
-  {
-   "date": "2024-05-03",
-   "side": "sell",
-   "sym": "UBER",
-   "name": "Uber Technologies Inc",
-   "sector": "Industrials"
-  },
-  {
-   "date": "2024-05-03",
-   "side": "sell",
-   "sym": "DASH",
-   "name": "DoorDash Inc",
-   "sector": "Consumer Discretionary"
   }
  ],
  "current": {
-  "asof": "2026-08-21",
-  "breadth": 0.532,
+  "asof": "2026-08-28",
+  "breadth": 0.577,
   "picks": [
    {
     "sym": "BE",
     "name": "Bloom Energy Corporation",
     "sector": "Industrials"
-   },
-   {
-    "sym": "BNY",
-    "name": "Bank of New York Mellon Corp",
-    "sector": "Financials"
    },
    {
     "sym": "FIX",
@@ -8526,6 +8526,11 @@
     "sym": "VLO",
     "name": "Valero Energy Corp",
     "sector": "Energy"
+   },
+   {
+    "sym": "WBD",
+    "name": "Warner Bros. Discovery Inc Series A",
+    "sector": "Communication Services"
    }
   ]
  }

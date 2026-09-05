@@ -48,7 +48,29 @@
    "invested": 1.0,
    "rot_ret": -0.020994,
    "bill_ret": 0.000712
+  },
+  {
+   "date": "2026-08-28",
+   "nav_rot": 103.8881,
+   "nav_blend": 101.2663,
+   "w_eff": 0.3078,
+   "picks": [
+    "BE",
+    "FIX",
+    "HL",
+    "LLY",
+    "MPC",
+    "MU",
+    "ROST",
+    "SNDK",
+    "VLO",
+    "WBD"
+   ],
+   "breadth": 0.577,
+   "invested": 1.0,
+   "rot_ret": 0.061159,
+   "bill_ret": 0.000715
   }
  ],
- "last_run_utc": "2026-08-29T00:32:06.564486+00:00"
+ "last_run_utc": "2026-09-05T00:32:04.827945+00:00"
 }
