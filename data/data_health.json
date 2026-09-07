@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-05T23:15:08.627156+00:00",
+ "computed_at_utc": "2026-09-07T00:37:07.413840+00:00",
  "n_checks": 24,
  "n_ok": 24,
  "n_warn": 0,
@@ -38,43 +38,43 @@
   {
    "name": "Price panel freshness",
    "status": "OK",
-   "detail": "newest bar 2026-09-04 (1 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-09-04 (3 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 11.2h old (twice-daily cadence)",
+   "detail": "scanner data 11.5h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (31 runs logged)",
+   "detail": "last run 0.0h ago (32 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 398.2h ago",
+   "detail": "built 423.5h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 49.4h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 49.4h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 24.0h ago",
+   "detail": "built 49.4h ago",
    "group": "artefacts"
   },
   {
