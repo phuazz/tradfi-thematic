@@ -1,5 +1,5 @@
 {
- "ts_utc": "2026-09-07T23:15:02.134966+00:00",
+ "ts_utc": "2026-09-08T23:15:01.638267+00:00",
  "mode": "paused",
  "book_cap_usd": 5000.0,
  "payload_construction": "rotation K=10 cap=2 (Amendment 2)",
@@ -18,7 +18,7 @@
  "book_value_usd": 0,
  "orders": [],
  "skipped_funding_rule": [
-  "BNCUSDT (+73.9%/yr)"
+  "BNCUSDT (+91.2%/yr)"
  ],
  "skipped_no_price": [],
  "window": "07:30-09:30 SGT; execution is manual, this file is a list, not an instruction to any system"
