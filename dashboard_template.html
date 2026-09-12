@@ -496,8 +496,13 @@ const CHART_LAYOUT = {
   paper_bgcolor: 'transparent', plot_bgcolor: '#fafaf8',
   font: { family: 'DM Sans', size: 11, color: '#4a4a44' },
   margin: { t: 10, b: 10, l: 10, r: 10 },
+  // Ticks stay coarse, but the unified hover has to name the session. Without
+  // hoverformat Plotly reuses tickformat for the hover title, so every bar in
+  // a month read "May '26". Every chart below spreads ...CHART_LAYOUT.xaxis,
+  // so they all inherit this.
   xaxis: { gridcolor: '#eeeee8', linecolor: '#d5d3ca', linewidth: 1, showgrid: false,
-           tickformat: "%b '%y", dtick: 'M2', tickfont: { size: 11 } },
+           tickformat: "%b '%y", dtick: 'M2', tickfont: { size: 11 },
+           hoverformat: '%d %b %Y' },
   yaxis: { gridcolor: '#f0f0ea', linecolor: '#d5d3ca', linewidth: 1, showgrid: true, gridwidth: 1,
            side: 'right', tickfont: { size: 11, family: 'JetBrains Mono' } },
   showlegend: true,
