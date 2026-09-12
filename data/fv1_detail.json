@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-05T00:33:11.348798+00:00",
+ "computed_at_utc": "2026-09-12T00:34:32.078389+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1081,7 +1081,8 @@
   "2026-08-07",
   "2026-08-14",
   "2026-08-21",
-  "2026-08-28"
+  "2026-08-28",
+  "2026-09-04"
  ],
  "equity": {
   "rotation": [
@@ -2162,7 +2163,8 @@
    17.58979,
    17.21571,
    16.85429,
-   17.88508
+   17.88508,
+   17.88724
   ],
   "blend": [
    1.00721,
@@ -3242,7 +3244,8 @@
    3.55932,
    3.53704,
    3.51559,
-   3.58346
+   3.58346,
+   3.58539
   ],
   "hurdle": [
    1.00117,
@@ -4322,7 +4325,8 @@
    2.13333,
    2.13566,
    2.138,
-   2.14035
+   2.14035,
+   2.14271
   ],
   "spy": [
    1.0,
@@ -5402,12 +5406,13 @@
    6.0204,
    6.04438,
    5.96169,
-   5.98996
+   5.98996,
+   5.9965
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1493,
+   "cagr": 0.1491,
    "max_dd": -0.4602,
    "sharpe": 0.646
   },
@@ -5426,104 +5431,104 @@
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.1411,
-    "excess": 0.1039,
+    "cagr": 0.0989,
+    "excess": 0.0617,
     "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.1287,
-    "sharpe": 1.089
+    "vol": 0.1233,
+    "sharpe": 0.825
    },
    "rotation": {
-    "cagr": 0.3593,
-    "excess": 0.3221,
+    "cagr": 0.2048,
+    "excess": 0.1676,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.4247,
-    "sharpe": 0.93
+    "vol": 0.4065,
+    "sharpe": 0.656
    },
    "spy": {
-    "cagr": 0.1927,
-    "excess": 0.1555,
+    "cagr": 0.19,
+    "excess": 0.1528,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1233,
-    "sharpe": 1.491
+    "vol": 0.1234,
+    "sharpe": 1.472
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.1975,
-    "excess": 0.1528,
+    "cagr": 0.2008,
+    "excess": 0.1562,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1229,
-    "sharpe": 1.53
+    "vol": 0.1227,
+    "sharpe": 1.555
    },
    "rotation": {
-    "cagr": 0.5171,
-    "excess": 0.4724,
+    "cagr": 0.5317,
+    "excess": 0.4871,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4067,
-    "sharpe": 1.23
+    "vol": 0.4062,
+    "sharpe": 1.255
    },
    "spy": {
-    "cagr": 0.1947,
-    "excess": 0.15,
+    "cagr": 0.2002,
+    "excess": 0.1556,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1447,
-    "sharpe": 1.303
+    "vol": 0.1444,
+    "sharpe": 1.338
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.1031,
-    "excess": 0.0656,
+    "cagr": 0.104,
+    "excess": 0.0663,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1036,
-    "sharpe": 0.999
+    "sharpe": 1.007
    },
    "rotation": {
-    "cagr": 0.2028,
-    "excess": 0.1652,
+    "cagr": 0.2056,
+    "excess": 0.1679,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3431,
-    "sharpe": 0.709
+    "vol": 0.343,
+    "sharpe": 0.716
    },
    "spy": {
-    "cagr": 0.1117,
-    "excess": 0.0742,
+    "cagr": 0.1157,
+    "excess": 0.078,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.1635,
-    "sharpe": 0.73
+    "vol": 0.1633,
+    "sharpe": 0.753
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0931,
-    "excess": 0.0691,
+    "cagr": 0.0917,
+    "excess": 0.0676,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0975,
-    "sharpe": 0.963
+    "vol": 0.0974,
+    "sharpe": 0.949
    },
    "rotation": {
-    "cagr": 0.223,
-    "excess": 0.199,
+    "cagr": 0.2172,
+    "excess": 0.1931,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3234,
-    "sharpe": 0.783
+    "vol": 0.3231,
+    "sharpe": 0.769
    },
    "spy": {
-    "cagr": 0.1369,
+    "cagr": 0.137,
     "excess": 0.1128,
     "beats_hurdle": true,
     "max_dd": -0.3223,
@@ -5535,26 +5540,26 @@
    "label": "Full",
    "blend": {
     "cagr": 0.0635,
-    "excess": 0.0466,
+    "excess": 0.0465,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0821,
     "sharpe": 0.791
    },
    "rotation": {
-    "cagr": 0.1493,
-    "excess": 0.1323,
+    "cagr": 0.1491,
+    "excess": 0.1322,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.273,
+    "vol": 0.2729,
     "sharpe": 0.646
    },
    "spy": {
     "cagr": 0.0902,
-    "excess": 0.0733,
+    "excess": 0.0732,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1781,
+    "vol": 0.178,
     "sharpe": 0.575
    }
   }
@@ -5673,10 +5678,38 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3700,
+ "n_trades_total": 3704,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.4,
  "ledger_recent": [
+  {
+   "date": "2026-09-04",
+   "side": "buy",
+   "sym": "TGT",
+   "name": "Target Corp",
+   "sector": "Consumer Staples"
+  },
+  {
+   "date": "2026-09-04",
+   "side": "buy",
+   "sym": "MRNA",
+   "name": "Moderna Inc",
+   "sector": "Health Care"
+  },
+  {
+   "date": "2026-09-04",
+   "side": "sell",
+   "sym": "WBD",
+   "name": "Warner Bros. Discovery Inc Series A",
+   "sector": "Communication Services"
+  },
+  {
+   "date": "2026-09-04",
+   "side": "sell",
+   "sym": "LLY",
+   "name": "Eli Lilly and Co",
+   "sector": "Health Care"
+  },
   {
    "date": "2026-08-28",
    "side": "buy",
@@ -8448,39 +8481,11 @@
    "sym": "CELH",
    "name": "Celsius Holdings Inc",
    "sector": "Consumer Staples"
-  },
-  {
-   "date": "2024-05-10",
-   "side": "buy",
-   "sym": "META",
-   "name": "Meta Platforms Inc",
-   "sector": "Communication Services"
-  },
-  {
-   "date": "2024-05-10",
-   "side": "sell",
-   "sym": "NU",
-   "name": "Nu Holdings Ltd",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-05-03",
-   "side": "buy",
-   "sym": "CEG",
-   "name": "Constellation Energy Corp",
-   "sector": "Utilities"
-  },
-  {
-   "date": "2024-05-03",
-   "side": "buy",
-   "sym": "APP",
-   "name": "AppLovin Corp",
-   "sector": "Communication Services"
   }
  ],
  "current": {
-  "asof": "2026-08-28",
-  "breadth": 0.577,
+  "asof": "2026-09-04",
+  "breadth": 0.532,
   "picks": [
    {
     "sym": "BE",
@@ -8498,14 +8503,14 @@
     "sector": "Materials"
    },
    {
-    "sym": "LLY",
-    "name": "Eli Lilly and Co",
-    "sector": "Health Care"
-   },
-   {
     "sym": "MPC",
     "name": "Marathon Petroleum Corp",
     "sector": "Energy"
+   },
+   {
+    "sym": "MRNA",
+    "name": "Moderna Inc",
+    "sector": "Health Care"
    },
    {
     "sym": "MU",
@@ -8523,14 +8528,14 @@
     "sector": "Information Technology"
    },
    {
+    "sym": "TGT",
+    "name": "Target Corp",
+    "sector": "Consumer Staples"
+   },
+   {
     "sym": "VLO",
     "name": "Valero Energy Corp",
     "sector": "Energy"
-   },
-   {
-    "sym": "WBD",
-    "name": "Warner Bros. Discovery Inc Series A",
-    "sector": "Communication Services"
    }
   ]
  }
