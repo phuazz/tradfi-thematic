@@ -5,6 +5,21 @@ ledger; this file is the working trail.
 
 ---
 
+## 2026-09-17 — Owner decision: the KT-2 caveat's panel-level SEEN is scoped to the family
+
+Thursday, weekday verified with a date library. The KT-2 verdict's closing caveat
+(`reviews/2026-08-21_kt2_verdict.md`: "no future study may treat either as
+confirmation data") and the ledger row's "closes PERMANENTLY" are, by owner
+decision on 2026-09-17, scoped to the K×cap theme-basket momentum-rotation
+family and its statistics. The S&P+NDX and Russell 1000 C&P panels remain SEEN
+for that family at every horizon and threshold; for any other family they are
+governed by the vault doctrine's D3 as revised the same day
+(`C:\dev\studies\2026-09-03_prereg-design-lessons.md` §10: declared prior looks
+plus a multiplicity treatment across filed families). The selection-alpha
+verdicts (KT-1, KT-2) stand and are not reopened; the 2026-08-21 owner override
+and FV-1 already govern deployment. Nothing in this repository's code or data
+changes.
+
 ## 2026-08-21 — OWNER OVERRIDE of the finality clause; forward-only path built
 
 Owner instruction after the KT-2 verdict, verbatim: "i want a rotational
