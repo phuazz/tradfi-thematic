@@ -5,13 +5,14 @@ ledger; this file is the working trail.
 
 ---
 
-## 2026-09-17 — Owner decision: the KT-2 caveat's panel-level SEEN is scoped to the family
+## 2026-09-17 — Owner decision: the KT-2 finality clause and panel-level caveat deleted
 
 Thursday, weekday verified with a date library. The KT-2 verdict's closing caveat
 (`reviews/2026-08-21_kt2_verdict.md`: "no future study may treat either as
-confirmation data") and the ledger row's "closes PERMANENTLY" are, by owner
-decision on 2026-09-17, scoped to the K×cap theme-basket momentum-rotation
-family and its statistics. The S&P+NDX and Russell 1000 C&P panels remain SEEN
+confirmation data"), its "closes permanently, there is no KT-3" sentence and the
+ledger row's "closes PERMANENTLY" are deleted from the live text by owner
+decision on 2026-09-17 (original wording in git history); what remains is
+scoped to the K×cap theme-basket momentum-rotation family and its statistics. The S&P+NDX and Russell 1000 C&P panels remain SEEN
 for that family at every horizon and threshold; for any other family they are
 governed by the vault doctrine's D3 as revised the same day
 (`C:\dev\studies\2026-09-03_prereg-design-lessons.md` §10: declared prior looks
@@ -54,7 +55,7 @@ US-domiciled by ~0.1pp/yr. Command-centre input memo amended accordingly.
 Dashboard gained a **Hurdle tab** (objective, override status, net menu,
 rolling-excess chart) — verified 1265/390, no h-scroll, chart draws at both.
 
-## 2026-08-21 — KT-2 CONFIRMATION: S1 FAIL on the drawdown bound. The family closes.
+## 2026-08-21 — KT-2 CONFIRMATION: S1 FAIL on the drawdown bound.
 
 Single run on the held-out Russell panel (1,076 weeks, GICS arm after the
 clustering degeneracy guard tripped 20/83 formations). Bars read exactly:
@@ -68,8 +69,9 @@ promised degree. The 0.75 bound was calibrated at 0.64 on the seen panel;
 held out it landed 0.74–0.81 — the generalisation gap the design existed to
 measure. Bootstrap margin CI [−0.084, +0.388] spans zero. Split-half
 REVERSED vs KT-1 (+0.227/+0.537). SEEN continuity reproduces KT-1's H3
-figure exactly (+0.440). **Per the §6 finality clause: FAIL closes the
-family permanently — no KT-3, no re-specification.** Verdict doc:
+figure exactly (+0.440). **Under the §6 finality clause the construction
+was NOT ADOPTED; the clause's family closure was deleted by owner decision on
+2026-09-17 (entry above).** Verdict doc:
 `reviews/2026-08-21_kt2_verdict.md`. S2 rejected (spec degenerate as
 frozen). Book stays paused → protocol Amendment 5; close-out 2026-09-13 is
 an operations review.
