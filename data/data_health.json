@@ -1,8 +1,8 @@
 {
- "computed_at_utc": "2026-09-17T23:15:02.722384+00:00",
+ "computed_at_utc": "2026-09-18T23:15:34.311771+00:00",
  "n_checks": 24,
- "n_ok": 23,
- "n_warn": 1,
+ "n_ok": 24,
+ "n_warn": 0,
  "n_fail": 0,
  "checks": [
   {
@@ -37,8 +37,8 @@
   },
   {
    "name": "Price panel freshness",
-   "status": "WARN",
-   "detail": "newest bar 2026-09-12 (5 days ago); refreshed by the Saturday evaluator run",
+   "status": "OK",
+   "detail": "newest bar 2026-09-18 (0 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
@@ -50,31 +50,31 @@
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (41 runs logged)",
+   "detail": "last run 0.0h ago (42 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 686.2h ago",
+   "detail": "built 710.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 144.0h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 144.0h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 144.0h ago",
+   "detail": "built 0.0h ago",
    "group": "artefacts"
   },
   {
@@ -98,19 +98,19 @@
   {
    "name": "Cluster cap respected every week",
    "status": "OK",
-   "detail": "0 of 453 weeks breach the cap of 2",
+   "detail": "0 of 454 weeks breach the cap of 2",
    "group": "study"
   },
   {
    "name": "Position count never exceeds K",
    "status": "OK",
-   "detail": "0 of 453 weeks hold more than 10 names",
+   "detail": "0 of 454 weeks hold more than 10 names",
    "group": "study"
   },
   {
    "name": "Sleeve gate fires (cash weeks exist)",
    "status": "OK",
-   "detail": "85 of 453 weeks gated to cash \u2014 the regime rule is live",
+   "detail": "85 of 454 weeks gated to cash \u2014 the regime rule is live",
    "group": "study"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "1 name(s) blocked at >+30%/yr (BNCUSDT (+89.6%/yr)); 0 buy(s) above the line on today's list",
+   "detail": "1 name(s) blocked at >+30%/yr (BNCUSDT (+87.5%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
