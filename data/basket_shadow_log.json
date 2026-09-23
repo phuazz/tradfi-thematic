@@ -635,5 +635,19 @@
    "BNCUSDT (+97.6%/yr)"
   ],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-09-23T23:22:43.573800+00:00",
+  "event": "OK",
+  "mode": "paused",
+  "n_orders": 0,
+  "n_held": 0,
+  "n_members": 64,
+  "book_value_usd": 0,
+  "skipped_funding": [
+   "BNCUSDT (+93.7%/yr)"
+  ],
+  "skipped_no_price": []
  }
 ]
