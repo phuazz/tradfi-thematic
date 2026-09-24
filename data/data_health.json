@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-23T23:22:48.140176+00:00",
+ "computed_at_utc": "2026-09-24T23:15:02.818071+00:00",
  "n_checks": 24,
  "n_ok": 23,
  "n_warn": 1,
@@ -38,43 +38,43 @@
   {
    "name": "Price panel freshness",
    "status": "WARN",
-   "detail": "newest bar 2026-09-18 (5 days ago); refreshed by the Saturday evaluator run",
+   "detail": "newest bar 2026-09-18 (6 days ago); refreshed by the Saturday evaluator run",
    "group": "freshness"
   },
   {
    "name": "Funding scan freshness",
    "status": "OK",
-   "detail": "scanner data 11.3h old (twice-daily cadence)",
+   "detail": "scanner data 11.2h old (twice-daily cadence)",
    "group": "freshness"
   },
   {
    "name": "Evaluator heartbeat",
    "status": "OK",
-   "detail": "last run 0.0h ago (47 runs logged)",
+   "detail": "last run 0.0h ago (48 runs logged)",
    "group": "freshness"
   },
   {
    "name": "Artefact present: study results",
    "status": "OK",
-   "detail": "built 830.3h ago",
+   "detail": "built 854.2h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: chart series",
    "status": "OK",
-   "detail": "built 120.1h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: per-name series",
    "status": "OK",
-   "detail": "built 120.1h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
    "name": "Artefact present: payload detail",
    "status": "OK",
-   "detail": "built 120.1h ago",
+   "detail": "built 144.0h ago",
    "group": "artefacts"
   },
   {
@@ -128,7 +128,7 @@
   {
    "name": "Funding rule holds on every buy",
    "status": "OK",
-   "detail": "1 name(s) blocked at >+30%/yr (BNCUSDT (+93.7%/yr)); 0 buy(s) above the line on today's list",
+   "detail": "1 name(s) blocked at >+30%/yr (BNCUSDT (+86.2%/yr)); 0 buy(s) above the line on today's list",
    "group": "book"
   },
   {
