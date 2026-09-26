@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-19T00:37:55.708670+00:00",
+ "computed_at_utc": "2026-09-26T00:35:16.857642+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1083,7 +1083,8 @@
   "2026-08-21",
   "2026-08-28",
   "2026-09-04",
-  "2026-09-11"
+  "2026-09-11",
+  "2026-09-18"
  ],
  "equity": {
   "rotation": [
@@ -2166,7 +2167,8 @@
    16.85429,
    17.88508,
    17.88724,
-   18.44141
+   18.44141,
+   19.03745
   ],
   "blend": [
    1.00721,
@@ -3248,7 +3250,8 @@
    3.51559,
    3.58346,
    3.58539,
-   3.62059
+   3.62059,
+   3.65833
   ],
   "hurdle": [
    1.00117,
@@ -4330,7 +4333,8 @@
    2.138,
    2.14035,
    2.14271,
-   2.14514
+   2.14514,
+   2.1476
   ],
   "spy": [
    1.0,
@@ -5412,160 +5416,161 @@
    5.96169,
    5.98996,
    5.9965,
-   5.95056
+   5.95056,
+   5.93032
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1507,
+   "cagr": 0.1523,
    "max_dd": -0.4602,
-   "sharpe": 0.651
+   "sharpe": 0.656
   },
   "blend": {
-   "cagr": 0.0639,
+   "cagr": 0.0644,
    "max_dd": -0.1511,
-   "sharpe": 0.796
+   "sharpe": 0.802
   },
   "spy": {
-   "cagr": 0.0897,
+   "cagr": 0.0894,
    "max_dd": -0.5591,
-   "sharpe": 0.573
+   "sharpe": 0.572
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.0517,
-    "excess": 0.0145,
-    "beats_hurdle": false,
+    "cagr": 0.094,
+    "excess": 0.0568,
+    "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.1111,
-    "sharpe": 0.509
+    "vol": 0.1073,
+    "sharpe": 0.891
    },
    "rotation": {
-    "cagr": 0.064,
-    "excess": 0.0268,
+    "cagr": 0.1947,
+    "excess": 0.1575,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.3724,
-    "sharpe": 0.35
+    "vol": 0.3637,
+    "sharpe": 0.669
    },
    "spy": {
-    "cagr": 0.1626,
-    "excess": 0.1254,
+    "cagr": 0.1476,
+    "excess": 0.1104,
     "beats_hurdle": true,
     "max_dd": -0.0864,
     "vol": 0.1232,
-    "sharpe": 1.284
+    "sharpe": 1.179
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.2091,
-    "excess": 0.1646,
+    "cagr": 0.2108,
+    "excess": 0.1664,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1225,
-    "sharpe": 1.613
+    "sharpe": 1.624
    },
    "rotation": {
-    "cagr": 0.5683,
-    "excess": 0.5238,
+    "cagr": 0.5749,
+    "excess": 0.5305,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4054,
-    "sharpe": 1.316
+    "vol": 0.4055,
+    "sharpe": 1.326
    },
    "spy": {
-    "cagr": 0.199,
-    "excess": 0.1545,
+    "cagr": 0.2096,
+    "excess": 0.1651,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1445,
-    "sharpe": 1.33
+    "vol": 0.1433,
+    "sharpe": 1.402
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.1065,
-    "excess": 0.0687,
+    "cagr": 0.1113,
+    "excess": 0.0733,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1037,
-    "sharpe": 1.029
+    "vol": 0.1035,
+    "sharpe": 1.072
    },
    "rotation": {
-    "cagr": 0.2143,
-    "excess": 0.1765,
+    "cagr": 0.2318,
+    "excess": 0.1938,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3432,
-    "sharpe": 0.737
+    "vol": 0.3429,
+    "sharpe": 0.779
    },
    "spy": {
-    "cagr": 0.1161,
-    "excess": 0.0782,
+    "cagr": 0.114,
+    "excess": 0.076,
     "beats_hurdle": true,
     "max_dd": -0.248,
     "vol": 0.1633,
-    "sharpe": 0.754
+    "sharpe": 0.743
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0925,
-    "excess": 0.0683,
+    "cagr": 0.0949,
+    "excess": 0.0706,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0975,
-    "sharpe": 0.957
+    "vol": 0.0974,
+    "sharpe": 0.98
    },
    "rotation": {
-    "cagr": 0.2199,
-    "excess": 0.1958,
+    "cagr": 0.2287,
+    "excess": 0.2045,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3232,
-    "sharpe": 0.776
+    "vol": 0.323,
+    "sharpe": 0.798
    },
    "spy": {
-    "cagr": 0.1347,
-    "excess": 0.1105,
+    "cagr": 0.1342,
+    "excess": 0.1099,
     "beats_hurdle": true,
     "max_dd": -0.3223,
     "vol": 0.172,
-    "sharpe": 0.822
+    "sharpe": 0.82
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0639,
-    "excess": 0.047,
+    "cagr": 0.0644,
+    "excess": 0.0474,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0821,
-    "sharpe": 0.796
+    "vol": 0.082,
+    "sharpe": 0.802
    },
    "rotation": {
-    "cagr": 0.1507,
-    "excess": 0.1337,
+    "cagr": 0.1523,
+    "excess": 0.1353,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.2728,
-    "sharpe": 0.651
+    "sharpe": 0.656
    },
    "spy": {
-    "cagr": 0.0897,
-    "excess": 0.0727,
+    "cagr": 0.0894,
+    "excess": 0.0724,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1779,
-    "sharpe": 0.573
+    "vol": 0.1778,
+    "sharpe": 0.572
    }
   }
  ],
@@ -5683,10 +5688,38 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3706,
+ "n_trades_total": 3710,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.3,
  "ledger_recent": [
+  {
+   "date": "2026-09-18",
+   "side": "buy",
+   "sym": "MRK",
+   "name": "Merck & Co Inc",
+   "sector": "Health Care"
+  },
+  {
+   "date": "2026-09-18",
+   "side": "buy",
+   "sym": "BNY",
+   "name": "Bank of New York Mellon Corp",
+   "sector": "Financials"
+  },
+  {
+   "date": "2026-09-18",
+   "side": "sell",
+   "sym": "LLY",
+   "name": "Eli Lilly and Co",
+   "sector": "Health Care"
+  },
+  {
+   "date": "2026-09-18",
+   "side": "sell",
+   "sym": "FIX",
+   "name": "Comfort Systems USA Inc",
+   "sector": "Industrials"
+  },
   {
    "date": "2026-09-11",
    "side": "buy",
@@ -8458,39 +8491,11 @@
    "sym": "VKTX",
    "name": "Viking Therapeutics Inc",
    "sector": "Health Care"
-  },
-  {
-   "date": "2024-05-24",
-   "side": "buy",
-   "sym": "WSM",
-   "name": "Williams-Sonoma Inc",
-   "sector": "Consumer Discretionary"
-  },
-  {
-   "date": "2024-05-24",
-   "side": "buy",
-   "sym": "VKTX",
-   "name": "Viking Therapeutics Inc",
-   "sector": "Health Care"
-  },
-  {
-   "date": "2024-05-24",
-   "side": "sell",
-   "sym": "META",
-   "name": "Meta Platforms Inc",
-   "sector": "Communication Services"
-  },
-  {
-   "date": "2024-05-24",
-   "side": "sell",
-   "sym": "DASH",
-   "name": "DoorDash Inc",
-   "sector": "Consumer Discretionary"
   }
  ],
  "current": {
-  "asof": "2026-09-11",
-  "breadth": 0.452,
+  "asof": "2026-09-18",
+  "breadth": 0.403,
   "picks": [
    {
     "sym": "BE",
@@ -8498,19 +8503,19 @@
     "sector": "Industrials"
    },
    {
-    "sym": "FIX",
-    "name": "Comfort Systems USA Inc",
-    "sector": "Industrials"
-   },
-   {
-    "sym": "LLY",
-    "name": "Eli Lilly and Co",
-    "sector": "Health Care"
+    "sym": "BNY",
+    "name": "Bank of New York Mellon Corp",
+    "sector": "Financials"
    },
    {
     "sym": "MPC",
     "name": "Marathon Petroleum Corp",
     "sector": "Energy"
+   },
+   {
+    "sym": "MRK",
+    "name": "Merck & Co Inc",
+    "sector": "Health Care"
    },
    {
     "sym": "MRNA",
