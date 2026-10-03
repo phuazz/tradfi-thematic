@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-09-26T00:35:16.857642+00:00",
+ "computed_at_utc": "2026-10-03T00:34:40.980907+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1084,7 +1084,8 @@
   "2026-08-28",
   "2026-09-04",
   "2026-09-11",
-  "2026-09-18"
+  "2026-09-18",
+  "2026-09-25"
  ],
  "equity": {
   "rotation": [
@@ -2168,7 +2169,8 @@
    17.88508,
    17.88724,
    18.44141,
-   19.03745
+   19.03745,
+   19.10752
   ],
   "blend": [
    1.00721,
@@ -3251,7 +3253,8 @@
    3.58346,
    3.58539,
    3.62059,
-   3.65833
+   3.65833,
+   3.6645
   ],
   "hurdle": [
    1.00117,
@@ -4334,7 +4337,8 @@
    2.14035,
    2.14271,
    2.14514,
-   2.1476
+   2.1476,
+   2.1501
   ],
   "spy": [
    1.0,
@@ -5417,7 +5421,8 @@
    5.98996,
    5.9965,
    5.95056,
-   5.93032
+   5.93032,
+   6.00553
   ]
  },
  "stats": {
@@ -5432,118 +5437,118 @@
    "sharpe": 0.802
   },
   "spy": {
-   "cagr": 0.0894,
+   "cagr": 0.09,
    "max_dd": -0.5591,
-   "sharpe": 0.572
+   "sharpe": 0.575
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.094,
-    "excess": 0.0568,
+    "cagr": 0.0624,
+    "excess": 0.0252,
     "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.1073,
-    "sharpe": 0.891
+    "vol": 0.103,
+    "sharpe": 0.639
    },
    "rotation": {
-    "cagr": 0.1947,
-    "excess": 0.1575,
+    "cagr": 0.0993,
+    "excess": 0.0621,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.3637,
-    "sharpe": 0.669
+    "vol": 0.3529,
+    "sharpe": 0.442
    },
    "spy": {
-    "cagr": 0.1476,
-    "excess": 0.1104,
+    "cagr": 0.1655,
+    "excess": 0.1283,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1232,
-    "sharpe": 1.179
+    "vol": 0.1234,
+    "sharpe": 1.303
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.2108,
-    "excess": 0.1664,
+    "cagr": 0.2118,
+    "excess": 0.1674,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1225,
-    "sharpe": 1.624
+    "sharpe": 1.631
    },
    "rotation": {
-    "cagr": 0.5749,
-    "excess": 0.5305,
+    "cagr": 0.5795,
+    "excess": 0.5352,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4055,
-    "sharpe": 1.326
+    "vol": 0.4054,
+    "sharpe": 1.333
    },
    "spy": {
-    "cagr": 0.2096,
-    "excess": 0.1651,
+    "cagr": 0.2174,
+    "excess": 0.1731,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1433,
-    "sharpe": 1.402
+    "vol": 0.1432,
+    "sharpe": 1.448
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.1113,
-    "excess": 0.0733,
+    "cagr": 0.111,
+    "excess": 0.0729,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.1035,
-    "sharpe": 1.072
+    "sharpe": 1.069
    },
    "rotation": {
-    "cagr": 0.2318,
-    "excess": 0.1938,
+    "cagr": 0.2301,
+    "excess": 0.192,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.3429,
-    "sharpe": 0.779
+    "sharpe": 0.776
    },
    "spy": {
-    "cagr": 0.114,
-    "excess": 0.076,
+    "cagr": 0.1218,
+    "excess": 0.0836,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.1633,
-    "sharpe": 0.743
+    "vol": 0.163,
+    "sharpe": 0.787
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0949,
-    "excess": 0.0706,
+    "cagr": 0.095,
+    "excess": 0.0707,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0974,
-    "sharpe": 0.98
+    "sharpe": 0.981
    },
    "rotation": {
-    "cagr": 0.2287,
-    "excess": 0.2045,
+    "cagr": 0.2289,
+    "excess": 0.2046,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.323,
-    "sharpe": 0.798
+    "sharpe": 0.799
    },
    "spy": {
-    "cagr": 0.1342,
-    "excess": 0.1099,
+    "cagr": 0.1362,
+    "excess": 0.1119,
     "beats_hurdle": true,
     "max_dd": -0.3223,
     "vol": 0.172,
-    "sharpe": 0.82
+    "sharpe": 0.83
    }
   },
   {
@@ -5561,16 +5566,16 @@
     "excess": 0.1353,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.2728,
+    "vol": 0.2727,
     "sharpe": 0.656
    },
    "spy": {
-    "cagr": 0.0894,
-    "excess": 0.0724,
+    "cagr": 0.09,
+    "excess": 0.073,
     "beats_hurdle": true,
     "max_dd": -0.5591,
     "vol": 0.1778,
-    "sharpe": 0.572
+    "sharpe": 0.575
    }
   }
  ],
@@ -5688,10 +5693,38 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3710,
+ "n_trades_total": 3714,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.3,
  "ledger_recent": [
+  {
+   "date": "2026-09-25",
+   "side": "buy",
+   "sym": "FIX",
+   "name": "Comfort Systems USA Inc",
+   "sector": "Industrials"
+  },
+  {
+   "date": "2026-09-25",
+   "side": "buy",
+   "sym": "FCX",
+   "name": "Freeport-McMoRan Inc",
+   "sector": "Materials"
+  },
+  {
+   "date": "2026-09-25",
+   "side": "sell",
+   "sym": "ROST",
+   "name": "Ross Stores Inc",
+   "sector": "Consumer Discretionary"
+  },
+  {
+   "date": "2026-09-25",
+   "side": "sell",
+   "sym": "BNY",
+   "name": "Bank of New York Mellon Corp",
+   "sector": "Financials"
+  },
   {
    "date": "2026-09-18",
    "side": "buy",
@@ -8463,39 +8496,11 @@
    "sym": "CEG",
    "name": "Constellation Energy Corp",
    "sector": "Utilities"
-  },
-  {
-   "date": "2024-06-07",
-   "side": "buy",
-   "sym": "HOOD",
-   "name": "Robinhood Markets Inc",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-06-07",
-   "side": "sell",
-   "sym": "URI",
-   "name": "United Rentals Inc",
-   "sector": "Industrials"
-  },
-  {
-   "date": "2024-05-31",
-   "side": "buy",
-   "sym": "URI",
-   "name": "United Rentals Inc",
-   "sector": "Industrials"
-  },
-  {
-   "date": "2024-05-31",
-   "side": "sell",
-   "sym": "VKTX",
-   "name": "Viking Therapeutics Inc",
-   "sector": "Health Care"
   }
  ],
  "current": {
-  "asof": "2026-09-18",
-  "breadth": 0.403,
+  "asof": "2026-09-25",
+  "breadth": 0.415,
   "picks": [
    {
     "sym": "BE",
@@ -8503,9 +8508,14 @@
     "sector": "Industrials"
    },
    {
-    "sym": "BNY",
-    "name": "Bank of New York Mellon Corp",
-    "sector": "Financials"
+    "sym": "FCX",
+    "name": "Freeport-McMoRan Inc",
+    "sector": "Materials"
+   },
+   {
+    "sym": "FIX",
+    "name": "Comfort Systems USA Inc",
+    "sector": "Industrials"
    },
    {
     "sym": "MPC",
@@ -8526,11 +8536,6 @@
     "sym": "MU",
     "name": "Micron Technology Inc",
     "sector": "Information Technology"
-   },
-   {
-    "sym": "ROST",
-    "name": "Ross Stores Inc",
-    "sector": "Consumer Discretionary"
    },
    {
     "sym": "SNDK",
