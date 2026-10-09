@@ -857,5 +857,17 @@
   "book_value_usd": 0,
   "skipped_funding": [],
   "skipped_no_price": []
+ },
+ {
+  "type": "ops",
+  "ts_utc": "2026-10-09T23:15:04.450334+00:00",
+  "event": "OK",
+  "mode": "paused",
+  "n_orders": 0,
+  "n_held": 0,
+  "n_members": 67,
+  "book_value_usd": 0,
+  "skipped_funding": [],
+  "skipped_no_price": []
  }
 ]
