@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-10-03T00:34:40.980907+00:00",
+ "computed_at_utc": "2026-10-10T00:32:57.201180+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1085,7 +1085,8 @@
   "2026-09-04",
   "2026-09-11",
   "2026-09-18",
-  "2026-09-25"
+  "2026-09-25",
+  "2026-10-02"
  ],
  "equity": {
   "rotation": [
@@ -2170,7 +2171,8 @@
    17.88724,
    18.44141,
    19.03745,
-   19.10752
+   19.10752,
+   19.46264
   ],
   "blend": [
    1.00721,
@@ -3254,7 +3256,8 @@
    3.58539,
    3.62059,
    3.65833,
-   3.6645
+   3.6645,
+   3.6869
   ],
   "hurdle": [
    1.00117,
@@ -4338,7 +4341,8 @@
    2.14271,
    2.14514,
    2.1476,
-   2.1501
+   2.1501,
+   2.15258
   ],
   "spy": [
    1.0,
@@ -5422,160 +5426,161 @@
    5.9965,
    5.95056,
    5.93032,
-   6.00553
+   6.00553,
+   5.99221
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1523,
+   "cagr": 0.1532,
    "max_dd": -0.4602,
-   "sharpe": 0.656
+   "sharpe": 0.659
   },
   "blend": {
-   "cagr": 0.0644,
+   "cagr": 0.0647,
    "max_dd": -0.1511,
-   "sharpe": 0.802
+   "sharpe": 0.806
   },
   "spy": {
-   "cagr": 0.09,
+   "cagr": 0.0898,
    "max_dd": -0.5591,
-   "sharpe": 0.575
+   "sharpe": 0.574
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.0624,
-    "excess": 0.0252,
+    "cagr": 0.0679,
+    "excess": 0.0306,
     "beats_hurdle": true,
     "max_dd": -0.0887,
-    "vol": 0.103,
-    "sharpe": 0.639
+    "vol": 0.1031,
+    "sharpe": 0.689
    },
    "rotation": {
-    "cagr": 0.0993,
-    "excess": 0.0621,
+    "cagr": 0.1183,
+    "excess": 0.081,
     "beats_hurdle": true,
     "max_dd": -0.2875,
-    "vol": 0.3529,
-    "sharpe": 0.442
+    "vol": 0.3533,
+    "sharpe": 0.491
    },
    "spy": {
-    "cagr": 0.1655,
-    "excess": 0.1283,
+    "cagr": 0.1501,
+    "excess": 0.1128,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1234,
-    "sharpe": 1.303
+    "vol": 0.1233,
+    "sharpe": 1.196
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.2118,
-    "excess": 0.1674,
+    "cagr": 0.2162,
+    "excess": 0.172,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1225,
-    "sharpe": 1.631
+    "vol": 0.1224,
+    "sharpe": 1.663
    },
    "rotation": {
-    "cagr": 0.5795,
-    "excess": 0.5352,
+    "cagr": 0.5994,
+    "excess": 0.5551,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4054,
-    "sharpe": 1.333
+    "vol": 0.4051,
+    "sharpe": 1.365
    },
    "spy": {
-    "cagr": 0.2174,
-    "excess": 0.1731,
+    "cagr": 0.2146,
+    "excess": 0.1703,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1432,
-    "sharpe": 1.448
+    "vol": 0.1433,
+    "sharpe": 1.431
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.111,
-    "excess": 0.0729,
+    "cagr": 0.1075,
+    "excess": 0.0692,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1035,
-    "sharpe": 1.069
+    "vol": 0.1032,
+    "sharpe": 1.042
    },
    "rotation": {
-    "cagr": 0.2301,
-    "excess": 0.192,
+    "cagr": 0.2172,
+    "excess": 0.1789,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3429,
-    "sharpe": 0.776
+    "vol": 0.3415,
+    "sharpe": 0.746
    },
    "spy": {
-    "cagr": 0.1218,
-    "excess": 0.0836,
+    "cagr": 0.1194,
+    "excess": 0.0811,
     "beats_hurdle": true,
     "max_dd": -0.248,
     "vol": 0.163,
-    "sharpe": 0.787
+    "sharpe": 0.774
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.095,
-    "excess": 0.0707,
+    "cagr": 0.0958,
+    "excess": 0.0714,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0974,
-    "sharpe": 0.981
+    "sharpe": 0.989
    },
    "rotation": {
-    "cagr": 0.2289,
-    "excess": 0.2046,
+    "cagr": 0.2318,
+    "excess": 0.2074,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.323,
-    "sharpe": 0.799
+    "sharpe": 0.806
    },
    "spy": {
-    "cagr": 0.1362,
-    "excess": 0.1119,
+    "cagr": 0.137,
+    "excess": 0.1126,
     "beats_hurdle": true,
     "max_dd": -0.3223,
-    "vol": 0.172,
-    "sharpe": 0.83
+    "vol": 0.1719,
+    "sharpe": 0.834
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0644,
-    "excess": 0.0474,
+    "cagr": 0.0647,
+    "excess": 0.0476,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.082,
-    "sharpe": 0.802
+    "sharpe": 0.806
    },
    "rotation": {
-    "cagr": 0.1523,
-    "excess": 0.1353,
+    "cagr": 0.1532,
+    "excess": 0.1362,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.2727,
-    "sharpe": 0.656
+    "vol": 0.2726,
+    "sharpe": 0.659
    },
    "spy": {
-    "cagr": 0.09,
-    "excess": 0.073,
+    "cagr": 0.0898,
+    "excess": 0.0728,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1778,
-    "sharpe": 0.575
+    "vol": 0.1777,
+    "sharpe": 0.574
    }
   }
  ],
@@ -5784,7 +5789,7 @@
   {
    "date": "2026-09-04",
    "side": "sell",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -5798,7 +5803,7 @@
   {
    "date": "2026-08-28",
    "side": "buy",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6141,7 +6146,7 @@
   {
    "date": "2026-07-02",
    "side": "sell",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6162,7 +6167,7 @@
   {
    "date": "2026-06-26",
    "side": "buy",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6204,7 +6209,7 @@
   {
    "date": "2026-06-18",
    "side": "sell",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6232,7 +6237,7 @@
   {
    "date": "2026-06-05",
    "side": "buy",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6316,7 +6321,7 @@
   {
    "date": "2026-05-15",
    "side": "sell",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6330,7 +6335,7 @@
   {
    "date": "2026-05-01",
    "side": "buy",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6687,7 +6692,7 @@
   {
    "date": "2026-02-06",
    "side": "sell",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -6764,7 +6769,7 @@
   {
    "date": "2026-01-02",
    "side": "buy",
-   "sym": "WBD",
+   "sym": "WBD-202610",
    "name": "Warner Bros. Discovery Inc Series A",
    "sector": "Communication Services"
   },
@@ -8499,8 +8504,8 @@
   }
  ],
  "current": {
-  "asof": "2026-09-25",
-  "breadth": 0.415,
+  "asof": "2026-10-02",
+  "breadth": 0.399,
   "picks": [
    {
     "sym": "BE",
