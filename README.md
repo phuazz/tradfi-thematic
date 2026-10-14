@@ -3,12 +3,12 @@
 Thematic rotation over the **full Binance TradFi perpetual menu** (163 contracts at
 seed, 2026-08-16): long-only cross-sectional momentum computed on the UNDERLYINGS'
 history, traded via the perps, with a funding-aware term frozen at pre-registration.
-**Personal book. Research-grade — two micro shadow experiments live, nothing sized.**
+**Personal book. Research-grade — strategy NOT ADOPTED, shadow closed, nothing sized.**
 Public on owner instruction (2026-08-17); previously local-only. **Live dashboard:**
 [phuazz.github.io/tradfi-thematic](https://phuazz.github.io/tradfi-thematic/) —
-names-first study and implementation surface, rebuilt each morning by the evaluator.
-Not investment advice; the shadow books are micro-sized verification experiments and
-every backtest figure carries the menu-survivorship caveat stated below.
+the study record plus the FV-1 paper track, rebuilt each Saturday by
+`scripts/fv1_paper_track.py`. Not investment advice; every backtest figure carries
+the menu-survivorship caveat stated below.
 
 Commissioned 2026-08-16; kickoff and interview record: `C:\dev\KICKOFF_tradfi-thematic.md`
 (vault-docs). Owner-settled inputs: universe = ALL available TradFi perps; the
@@ -16,6 +16,14 @@ equal-weight basket ships if top-K selection fails its gate; a micro-live shadow
 pre-authorised if the pre-registered gates clear (WS17 guard set inherited).
 
 ## Status
+
+**Current (2026-10-14).** Strategy case closed permanently by the KT-2 verdict
+(`reviews/2026-08-21_kt2_verdict.md`). The basket shadow closed NOT EXERCISED on
+2026-10-14 (zero fills; `reviews/2026-10-14_basket-shadow-close-out.md`); its daily
+evaluator task `TradfiThematic-BasketShadow` is disabled. The only live job is the
+FV-1 paper track (`TradfiThematic-FV1Track`, Saturday 08:30 SGT; protocol
+`reviews/2026-08-21_rotation-forward-validation_preregistration.md`). The phase list
+below is the original plan, kept as the record.
 
 - **Phase 0 — universe integrity (2026-08-16 → …): IN PROGRESS.** Deliverable: a
   verified perp-to-underlying map for all 163 contracts (two-source identity: the

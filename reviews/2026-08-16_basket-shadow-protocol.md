@@ -89,6 +89,11 @@ week with a quarter of weeks needing none.
 - The SMH shadow was descoped the same day (separate owner decision); the
   2026-09-13 close-out now reads this rotation shadow alone.
 
+## Close-out (filed 2026-10-14, due 2026-09-13)
+
+NOT EXERCISED: zero fills, triggers vacuous, no sizing proposal. Schtask disabled and
+fleet row removed the same day. Record: `reviews/2026-10-14_basket-shadow-close-out.md`.
+
 ## Amendment 5 (2026-08-21, later same day) — closure made PERMANENT
 
 KT-2's held-out confirmation run **failed S1 on the drawdown bound**

@@ -846,7 +846,17 @@ function renderMonitor() {
   const sb = DATA.shadow_books || {}, b = sb.basket || {};
   const gated = DATA.gated;
   const banners = [];
-  if (DATA.orders_mode === 'paused')
+  const co = DATA.closed_out;
+  if (co)
+    banners.push(`<div class="banner banner-amber"><strong>Strategy case CLOSED — 2026-08-21. Shadow closed out —
+      ${co.date}.</strong> The honest-universe kill-test failed its pre-registered bar, and the successor's single
+      held-out confirmation run (Russell 1000 point-in-time, 1,076 weeks) then failed its drawdown bound, so the
+      construction family is closed permanently. The establishment buys were never executed: the shadow closed with
+      zero fills, every trigger unexercised, and no sizing proposal (record: ${co.memo}). The daily evaluator is
+      disabled, so the cards, order list and per-name panels below are frozen as at its last run
+      (${co.frozen_at || '—'} SGT, signal session ${co.signal_asof || '—'}). Only the FV-1 paper
+      track still updates, each Saturday.</div>`);
+  else if (DATA.orders_mode === 'paused')
     banners.push(`<div class="banner banner-amber"><strong>Strategy case CLOSED — 2026-08-21.</strong> The
       honest-universe kill-test failed its pre-registered bar, and the successor's single held-out confirmation run
       (Russell 1000 point-in-time, 1,076 weeks) then failed its drawdown bound — Calmar and Sharpe bars passed, but
@@ -862,7 +872,7 @@ function renderMonitor() {
     ${DATA.n_target_positions} of 10 slots, ${DATA.cash_pct}% in cash.</strong> The live funding block removed
     crowded names from candidacy and the theme cap left the remaining slots unfillable. The backtest never produced
     this state — it has no funding rule — so the simulation runs more invested than the live book does.</div>`);
-  banners.push(`<div class="banner banner-blue"><strong>What could go wrong, plainly.</strong> In simulation this
+  if (!co) banners.push(`<div class="banner banner-blue"><strong>What could go wrong, plainly.</strong> In simulation this
     strategy fell ${DATA.verdict && payloadStats.max_dd ? Math.abs(payloadStats.max_dd * 100).toFixed(0) : '45'}%
     from peak to trough, spent ${payloadStats.pct_weeks_gated != null ? Math.round(payloadStats.pct_weeks_gated * 100) : 19}%
     of all weeks holding nothing at all, and concentrates in whatever is trending — today that means
@@ -887,11 +897,15 @@ function renderMonitor() {
       <div class="row">name(s) blocked from buying at more than +30%/yr trailing funding</div>
       <div class="row faint">${skips.length ? skips.join(', ') : 'nothing crowded enough to block today'}</div>
     </div>
-    <div class="card"><h4>Shadow close-out</h4>
+    ${co ? `<div class="card"><h4>Shadow close-out</h4>
+      <div class="big">Filed<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> ${co.date}</span></div>
+      <div class="row"><strong>Not exercised</strong> · ${DATA.n_filled} fills, so no trigger could be read (due ${co.due})</div>
+      <div class="row faint">15bp median fill · +6%/yr rolling funding · missed windows · margin call at 1×</div>
+    </div>` : `<div class="card"><h4>Shadow close-out</h4>
       <div class="big">${sb.days_to_close_out ?? '—'}<span style="font-size:13px;color:var(--t3-text);font-weight:400;"> days</span></div>
       <div class="row"><strong>${sb.close_out || '2026-09-13'}</strong> · triggers ${(b.fail_events || 0) ? '<span class="neg">' + b.fail_events + ' FAIL</span>' : '<span class="pos">none breached</span>'}</div>
       <div class="row faint">15bp median fill · +6%/yr rolling funding · missed windows · margin call at 1×</div>
-    </div>`;
+    </div>`}`;
 
   document.getElementById('config-ribbon').textContent =
     `K=10 · cap 2/theme · MA200 +5% floor · 30% cash gate · signal ${DATA.signal_asof || '—'} → fill reference ` +

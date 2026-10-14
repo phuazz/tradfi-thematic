@@ -1,9 +1,10 @@
 """Build the local names-first dashboard: dashboard_template.html + data
 -> dashboard.html (self-contained, data inlined, no network, file:// friendly).
 
-LOCAL PAGE ONLY — the repo and the book are local by owner default; nothing
-here publishes. Rebuilt by basket_evaluator.py each morning so the page is
-fresh before the 07:30-09:30 SGT execution window.
+Writes dashboard.html and the published copy docs/index.html (GitHub Pages).
+Rebuilt by fv1_paper_track.py each Saturday. Until the 2026-10-14 close-out
+basket_evaluator.py also rebuilt it each morning; that task is disabled, so
+the inputs only it maintained are frozen as at its last run.
 
 Sources (all already maintained by other jobs):
   data/universe_map.json          identity, names, clusters   (Phase 0)
@@ -21,7 +22,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -38,8 +39,16 @@ def rj(path, default):
         return default
 
 
+def sgt_date(ts_utc):
+    """ISO UTC timestamp -> SGT calendar date string (UTC+8, no DST).
+    The evaluator's 07:15 SGT run stamps the previous UTC day."""
+    if not ts_utc:
+        return None
+    return datetime.fromisoformat(ts_utc).astimezone(timezone(timedelta(hours=8))).date().isoformat()
+
+
 def main() -> int:
-    umap = rj(ROOT / "data" / "universe_map.json", {"rows": {}})
+    umap =rj(ROOT / "data" / "universe_map.json", {"rows": {}})
     orders = rj(ROOT / "data" / "order_list_today.json", {})
     log = rj(ROOT / "data" / "basket_shadow_log.json", [])
     last_px = rj(ROOT / "data" / "last_prices.json", {})
@@ -213,6 +222,12 @@ def main() -> int:
         "fv1_track": fv1_track,
         "book_cap": 5000.0, "n_members": n_members, "target_usd": target,
         "orders_mode": orders.get("mode"),
+        # Shadow close-out (protocol §5): the evaluator is disabled, so the
+        # order list and the panels it fed are frozen at its last run.
+        "closed_out": {"date": "2026-10-14", "due": "2026-09-13",
+                       "memo": "reviews/2026-10-14_basket-shadow-close-out.md",
+                       "frozen_at": sgt_date(orders.get("ts_utc")),
+                       "signal_asof": orders.get("signal_asof")},
         "orders": order_rows, "book": book_rows,
         "book_value": round(sum(r["value"] for r in book_rows), 2),
         "n_filled": len(filled_syms),
@@ -247,6 +262,9 @@ def main() -> int:
             {"date": "2026-08-20", "what": "Amendment 2 (pre-fills): the live payload pivots from the EW basket to the K=10 cluster-cap-2 ROTATION (US$5,000, ~US$500/name, ~3.3 orders/week) — owner grounds: operational load and listing-chase exposure (membership grew 51 → 57 in four days). SEEN-DATA CAVEAT carried: every grid cell was observed before this pick; the filed verdict (basket ships) stands in the record, overridden for the live book only. Gate, stated before its result: a fresh 1,000-path null at the K=10 shape — strategy at the 99.9th percentile. Passed."},
             {"date": "2026-08-20", "what": "Defect correction: TQQQ and TBT had escaped the levered-ETP filter (\\bultra\\b cannot match inside UltraPro/UltraShort) — surfaced when TQQQ appeared in a live pick list. Filter fixed (16 levered excluded), and the panel, engine results, anchor, gate and every chart series were rerun on the corrected universe. The SMH shadow was descoped not-started the same day (separate owner decision)."},
             {"date": "2026-08-20", "what": "Amendment 3, from a three-lens review of this page: the LIVE rule was reading the latest session's signal while the backtest reads the session before the fill — not look-ahead, but a different and unpriced rule. Live is now aligned to the tested convention, at the cost of a day of information. The review also found three health checks that could not fail (now falsifiable), an under-fill state the backtest never modelled (the funding block can leave slots empty — now surfaced and warned), and the null chart plotting the K=5 shape while the live payload is K=10 (now plots K=10)."},
+            {"date": "2026-08-21", "what": "Amendment 4 (zero fills): the book is PAUSED on the honest-universe kill-test H1 FAIL; establishment buys never executed."},
+            {"date": "2026-08-21", "what": "Amendment 5: KT-2's held-out confirmation failed its drawdown bound, so the closure is made permanent; the evaluator stays in paused mode only to keep the record live until the close-out."},
+            {"date": "2026-10-14", "what": "Close-out (due 2026-09-13, filed late): NOT EXERCISED — zero fills, so every trigger reads vacuously and no sizing proposal follows. Evaluator task disabled and its fleet-watch row removed. Record: reviews/2026-10-14_basket-shadow-close-out.md."},
         ],
         "glossary": [
             ["Above MA200", "how far a share price sits above its own average price of the last 200 trading days — the strategy's one measure of trend."],
