@@ -180,7 +180,29 @@
    "invested": 1.0,
    "rot_ret": 0.018585,
    "bill_ret": 0.000766
+  },
+  {
+   "date": "2026-10-09",
+   "nav_rot": 103.2211,
+   "nav_blend": 101.4947,
+   "w_eff": 0.2847,
+   "picks": [
+    "BE",
+    "FCX",
+    "FIX",
+    "ILMN",
+    "LITE",
+    "MPC",
+    "MRNA",
+    "SNDK",
+    "TGT",
+    "VLO"
+   ],
+   "breadth": 0.411,
+   "invested": 1.0,
+   "rot_ret": -0.086955,
+   "bill_ret": 0.000778
   }
  ],
- "last_run_utc": "2026-10-10T00:31:56.104693+00:00"
+ "last_run_utc": "2026-10-17T00:35:51.656030+00:00"
 }

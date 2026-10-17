@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-10-10T00:32:57.201180+00:00",
+ "computed_at_utc": "2026-10-17T00:39:06.629916+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1086,7 +1086,8 @@
   "2026-09-11",
   "2026-09-18",
   "2026-09-25",
-  "2026-10-02"
+  "2026-10-02",
+  "2026-10-09"
  ],
  "equity": {
   "rotation": [
@@ -2172,7 +2173,8 @@
    18.44141,
    19.03745,
    19.10752,
-   19.46264
+   19.46264,
+   17.77026
   ],
   "blend": [
    1.00721,
@@ -3257,7 +3259,8 @@
    3.62059,
    3.65833,
    3.6645,
-   3.6869
+   3.6869,
+   3.59153
   ],
   "hurdle": [
    1.00117,
@@ -4342,7 +4345,8 @@
    2.14514,
    2.1476,
    2.1501,
-   2.15258
+   2.15258,
+   2.15508
   ],
   "spy": [
    1.0,
@@ -5427,160 +5431,161 @@
    5.95056,
    5.93032,
    6.00553,
-   5.99221
+   5.99221,
+   6.06174
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.1532,
+   "cagr": 0.148,
    "max_dd": -0.4602,
-   "sharpe": 0.659
+   "sharpe": 0.642
   },
   "blend": {
-   "cagr": 0.0647,
+   "cagr": 0.0633,
    "max_dd": -0.1511,
-   "sharpe": 0.806
+   "sharpe": 0.788
   },
   "spy": {
-   "cagr": 0.0898,
+   "cagr": 0.0903,
    "max_dd": -0.5591,
-   "sharpe": 0.574
+   "sharpe": 0.577
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.0679,
-    "excess": 0.0306,
-    "beats_hurdle": true,
-    "max_dd": -0.0887,
-    "vol": 0.1031,
-    "sharpe": 0.689
+    "cagr": 0.0289,
+    "excess": -0.0085,
+    "beats_hurdle": false,
+    "max_dd": -0.0881,
+    "vol": 0.1061,
+    "sharpe": 0.32
    },
    "rotation": {
-    "cagr": 0.1183,
-    "excess": 0.081,
-    "beats_hurdle": true,
-    "max_dd": -0.2875,
-    "vol": 0.3533,
-    "sharpe": 0.491
+    "cagr": -0.0138,
+    "excess": -0.0511,
+    "beats_hurdle": false,
+    "max_dd": -0.2849,
+    "vol": 0.363,
+    "sharpe": 0.141
    },
    "spy": {
-    "cagr": 0.1501,
-    "excess": 0.1128,
+    "cagr": 0.1923,
+    "excess": 0.155,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1233,
-    "sharpe": 1.196
+    "vol": 0.1204,
+    "sharpe": 1.521
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.2162,
-    "excess": 0.172,
+    "cagr": 0.2125,
+    "excess": 0.1683,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1224,
-    "sharpe": 1.663
+    "vol": 0.1231,
+    "sharpe": 1.629
    },
    "rotation": {
-    "cagr": 0.5994,
-    "excess": 0.5551,
+    "cagr": 0.5834,
+    "excess": 0.5392,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.4051,
-    "sharpe": 1.365
+    "vol": 0.407,
+    "sharpe": 1.336
    },
    "spy": {
-    "cagr": 0.2146,
-    "excess": 0.1703,
+    "cagr": 0.2174,
+    "excess": 0.1733,
     "beats_hurdle": true,
     "max_dd": -0.1713,
     "vol": 0.1433,
-    "sharpe": 1.431
+    "sharpe": 1.446
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.1075,
-    "excess": 0.0692,
+    "cagr": 0.1011,
+    "excess": 0.0626,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1032,
-    "sharpe": 1.042
+    "vol": 0.1039,
+    "sharpe": 0.979
    },
    "rotation": {
-    "cagr": 0.2172,
-    "excess": 0.1789,
+    "cagr": 0.1933,
+    "excess": 0.1548,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.3415,
-    "sharpe": 0.746
+    "vol": 0.344,
+    "sharpe": 0.685
    },
    "spy": {
-    "cagr": 0.1194,
-    "excess": 0.0811,
+    "cagr": 0.1179,
+    "excess": 0.0795,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.163,
-    "sharpe": 0.774
+    "vol": 0.1629,
+    "sharpe": 0.766
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.0958,
-    "excess": 0.0714,
+    "cagr": 0.093,
+    "excess": 0.0685,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0974,
-    "sharpe": 0.989
+    "vol": 0.0978,
+    "sharpe": 0.958
    },
    "rotation": {
-    "cagr": 0.2318,
-    "excess": 0.2074,
+    "cagr": 0.2206,
+    "excess": 0.1961,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.323,
-    "sharpe": 0.806
+    "vol": 0.3243,
+    "sharpe": 0.776
    },
    "spy": {
-    "cagr": 0.137,
-    "excess": 0.1126,
+    "cagr": 0.1379,
+    "excess": 0.1134,
     "beats_hurdle": true,
     "max_dd": -0.3223,
-    "vol": 0.1719,
-    "sharpe": 0.834
+    "vol": 0.172,
+    "sharpe": 0.839
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0647,
-    "excess": 0.0476,
+    "cagr": 0.0633,
+    "excess": 0.0462,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.082,
-    "sharpe": 0.806
+    "vol": 0.0822,
+    "sharpe": 0.788
    },
    "rotation": {
-    "cagr": 0.1532,
-    "excess": 0.1362,
+    "cagr": 0.148,
+    "excess": 0.131,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.2726,
-    "sharpe": 0.659
+    "vol": 0.2732,
+    "sharpe": 0.642
    },
    "spy": {
-    "cagr": 0.0898,
-    "excess": 0.0728,
+    "cagr": 0.0903,
+    "excess": 0.0732,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1777,
-    "sharpe": 0.574
+    "vol": 0.1776,
+    "sharpe": 0.577
    }
   }
  ],
@@ -5698,10 +5703,38 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3714,
+ "n_trades_total": 3718,
  "trades_per_week": 3.43,
  "pct_weeks_in_cash": 18.3,
  "ledger_recent": [
+  {
+   "date": "2026-10-09",
+   "side": "buy",
+   "sym": "LITE",
+   "name": "Lumentum Holdings Inc",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-09",
+   "side": "buy",
+   "sym": "ILMN",
+   "name": "Illumina Inc",
+   "sector": "Health Care"
+  },
+  {
+   "date": "2026-10-09",
+   "side": "sell",
+   "sym": "MU",
+   "name": "Micron Technology Inc",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-09",
+   "side": "sell",
+   "sym": "MRK",
+   "name": "Merck & Co Inc",
+   "sector": "Health Care"
+  },
   {
    "date": "2026-09-25",
    "side": "buy",
@@ -8473,39 +8506,11 @@
    "sym": "SPOT",
    "name": "Spotify Technology SA",
    "sector": "Communication Services"
-  },
-  {
-   "date": "2024-06-14",
-   "side": "buy",
-   "sym": "SPOT",
-   "name": "Spotify Technology SA",
-   "sector": "Communication Services"
-  },
-  {
-   "date": "2024-06-14",
-   "side": "buy",
-   "sym": "NRG",
-   "name": "NRG Energy Inc",
-   "sector": "Utilities"
-  },
-  {
-   "date": "2024-06-14",
-   "side": "sell",
-   "sym": "HOOD",
-   "name": "Robinhood Markets Inc",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-06-14",
-   "side": "sell",
-   "sym": "CEG",
-   "name": "Constellation Energy Corp",
-   "sector": "Utilities"
   }
  ],
  "current": {
-  "asof": "2026-10-02",
-  "breadth": 0.399,
+  "asof": "2026-10-09",
+  "breadth": 0.411,
   "picks": [
    {
     "sym": "BE",
@@ -8523,24 +8528,24 @@
     "sector": "Industrials"
    },
    {
+    "sym": "ILMN",
+    "name": "Illumina Inc",
+    "sector": "Health Care"
+   },
+   {
+    "sym": "LITE",
+    "name": "Lumentum Holdings Inc",
+    "sector": "Information Technology"
+   },
+   {
     "sym": "MPC",
     "name": "Marathon Petroleum Corp",
     "sector": "Energy"
    },
    {
-    "sym": "MRK",
-    "name": "Merck & Co Inc",
-    "sector": "Health Care"
-   },
-   {
     "sym": "MRNA",
     "name": "Moderna Inc",
     "sector": "Health Care"
-   },
-   {
-    "sym": "MU",
-    "name": "Micron Technology Inc",
-    "sector": "Information Technology"
    },
    {
     "sym": "SNDK",
