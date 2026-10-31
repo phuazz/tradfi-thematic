@@ -1,5 +1,5 @@
 {
- "computed_at_utc": "2026-10-17T00:39:06.629916+00:00",
+ "computed_at_utc": "2026-10-31T00:34:24.913267+00:00",
  "label": "SEEN data - the record of the design, not validation; cash-equity basis, dividends excluded",
  "w": 0.3,
  "margin": 0.02,
@@ -1087,7 +1087,9 @@
   "2026-09-18",
   "2026-09-25",
   "2026-10-02",
-  "2026-10-09"
+  "2026-10-09",
+  "2026-10-16",
+  "2026-10-23"
  ],
  "equity": {
   "rotation": [
@@ -2174,7 +2176,9 @@
    19.03745,
    19.10752,
    19.46264,
-   17.77026
+   17.77026,
+   16.91788,
+   16.7318
   ],
   "blend": [
    1.00721,
@@ -3260,7 +3264,9 @@
    3.65833,
    3.6645,
    3.6869,
-   3.59153
+   3.59153,
+   3.54449,
+   3.53577
   ],
   "hurdle": [
    1.00117,
@@ -4346,7 +4352,9 @@
    2.1476,
    2.1501,
    2.15258,
-   2.15508
+   2.15508,
+   2.15758,
+   2.16008
   ],
   "spy": [
    1.0,
@@ -5432,160 +5440,162 @@
    5.93032,
    6.00553,
    5.99221,
-   6.06174
+   6.06174,
+   5.94246,
+   5.91693
   ]
  },
  "stats": {
   "rotation": {
-   "cagr": 0.148,
+   "cagr": 0.1444,
    "max_dd": -0.4602,
-   "sharpe": 0.642
+   "sharpe": 0.631
   },
   "blend": {
-   "cagr": 0.0633,
+   "cagr": 0.0623,
    "max_dd": -0.1511,
-   "sharpe": 0.788
+   "sharpe": 0.778
   },
   "spy": {
-   "cagr": 0.0903,
+   "cagr": 0.0889,
    "max_dd": -0.5591,
-   "sharpe": 0.577
+   "sharpe": 0.57
   }
  },
  "horizons": [
   {
    "label": "1y",
    "blend": {
-    "cagr": 0.0289,
-    "excess": -0.0085,
+    "cagr": 0.0148,
+    "excess": -0.0226,
     "beats_hurdle": false,
-    "max_dd": -0.0881,
-    "vol": 0.1061,
-    "sharpe": 0.32
+    "max_dd": -0.0632,
+    "vol": 0.107,
+    "sharpe": 0.19
    },
    "rotation": {
-    "cagr": -0.0138,
-    "excess": -0.0511,
+    "cagr": -0.0626,
+    "excess": -0.1,
     "beats_hurdle": false,
-    "max_dd": -0.2849,
-    "vol": 0.363,
-    "sharpe": 0.141
+    "max_dd": -0.2142,
+    "vol": 0.3664,
+    "sharpe": 0.004
    },
    "spy": {
-    "cagr": 0.1923,
-    "excess": 0.155,
+    "cagr": 0.1221,
+    "excess": 0.0847,
     "beats_hurdle": true,
     "max_dd": -0.0864,
-    "vol": 0.1204,
-    "sharpe": 1.521
+    "vol": 0.1208,
+    "sharpe": 1.014
    }
   },
   {
    "label": "3y",
    "blend": {
-    "cagr": 0.2125,
-    "excess": 0.1683,
+    "cagr": 0.208,
+    "excess": 0.164,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1231,
-    "sharpe": 1.629
+    "vol": 0.1234,
+    "sharpe": 1.596
    },
    "rotation": {
-    "cagr": 0.5834,
-    "excess": 0.5392,
+    "cagr": 0.5632,
+    "excess": 0.5192,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.407,
-    "sharpe": 1.336
+    "vol": 0.4082,
+    "sharpe": 1.302
    },
    "spy": {
-    "cagr": 0.2174,
-    "excess": 0.1733,
+    "cagr": 0.2277,
+    "excess": 0.1837,
     "beats_hurdle": true,
     "max_dd": -0.1713,
-    "vol": 0.1433,
-    "sharpe": 1.446
+    "vol": 0.1422,
+    "sharpe": 1.517
    }
   },
   {
    "label": "5y",
    "blend": {
-    "cagr": 0.1011,
-    "excess": 0.0626,
+    "cagr": 0.0943,
+    "excess": 0.0555,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.1039,
-    "sharpe": 0.979
+    "vol": 0.104,
+    "sharpe": 0.918
    },
    "rotation": {
-    "cagr": 0.1933,
-    "excess": 0.1548,
+    "cagr": 0.1678,
+    "excess": 0.129,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.344,
-    "sharpe": 0.685
+    "vol": 0.3445,
+    "sharpe": 0.622
    },
    "spy": {
-    "cagr": 0.1179,
-    "excess": 0.0795,
+    "cagr": 0.106,
+    "excess": 0.0672,
     "beats_hurdle": true,
     "max_dd": -0.248,
-    "vol": 0.1629,
-    "sharpe": 0.766
+    "vol": 0.163,
+    "sharpe": 0.7
    }
   },
   {
    "label": "10y",
    "blend": {
-    "cagr": 0.093,
-    "excess": 0.0685,
+    "cagr": 0.0907,
+    "excess": 0.0661,
     "beats_hurdle": true,
     "max_dd": -0.1511,
     "vol": 0.0978,
-    "sharpe": 0.958
+    "sharpe": 0.938
    },
    "rotation": {
-    "cagr": 0.2206,
-    "excess": 0.1961,
+    "cagr": 0.2116,
+    "excess": 0.187,
     "beats_hurdle": true,
     "max_dd": -0.4602,
     "vol": 0.3243,
-    "sharpe": 0.776
+    "sharpe": 0.753
    },
    "spy": {
-    "cagr": 0.1379,
+    "cagr": 0.138,
     "excess": 0.1134,
     "beats_hurdle": true,
     "max_dd": -0.3223,
     "vol": 0.172,
-    "sharpe": 0.839
+    "sharpe": 0.84
    }
   },
   {
    "label": "Full",
    "blend": {
-    "cagr": 0.0633,
-    "excess": 0.0462,
+    "cagr": 0.0623,
+    "excess": 0.0453,
     "beats_hurdle": true,
     "max_dd": -0.1511,
-    "vol": 0.0822,
-    "sharpe": 0.788
+    "vol": 0.0821,
+    "sharpe": 0.778
    },
    "rotation": {
-    "cagr": 0.148,
-    "excess": 0.131,
+    "cagr": 0.1444,
+    "excess": 0.1273,
     "beats_hurdle": true,
     "max_dd": -0.4602,
-    "vol": 0.2732,
-    "sharpe": 0.642
+    "vol": 0.2731,
+    "sharpe": 0.631
    },
    "spy": {
-    "cagr": 0.0903,
-    "excess": 0.0732,
+    "cagr": 0.0889,
+    "excess": 0.0718,
     "beats_hurdle": true,
     "max_dd": -0.5591,
-    "vol": 0.1776,
-    "sharpe": 0.577
+    "vol": 0.1775,
+    "sharpe": 0.57
    }
   }
  ],
@@ -5703,10 +5713,80 @@
    "2025-04-25"
   ]
  ],
- "n_trades_total": 3718,
+ "n_trades_total": 3728,
  "trades_per_week": 3.43,
- "pct_weeks_in_cash": 18.3,
+ "pct_weeks_in_cash": 18.2,
  "ledger_recent": [
+  {
+   "date": "2026-10-23",
+   "side": "buy",
+   "sym": "TRV",
+   "name": "Travelers Companies Inc",
+   "sector": "Financials"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "buy",
+   "sym": "ROST",
+   "name": "Ross Stores Inc",
+   "sector": "Consumer Discretionary"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "buy",
+   "sym": "MU",
+   "name": "Micron Technology Inc",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "buy",
+   "sym": "DELL",
+   "name": "Dell Technologies Inc Class C",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "sell",
+   "sym": "SNDK",
+   "name": "Sandisk Corp",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "sell",
+   "sym": "LITE",
+   "name": "Lumentum Holdings Inc",
+   "sector": "Information Technology"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "sell",
+   "sym": "FCX",
+   "name": "Freeport-McMoRan Inc",
+   "sector": "Materials"
+  },
+  {
+   "date": "2026-10-23",
+   "side": "sell",
+   "sym": "BE",
+   "name": "Bloom Energy Corporation",
+   "sector": "Industrials"
+  },
+  {
+   "date": "2026-10-16",
+   "side": "buy",
+   "sym": "DE",
+   "name": "Deere & Co",
+   "sector": "Industrials"
+  },
+  {
+   "date": "2026-10-16",
+   "side": "sell",
+   "sym": "FIX",
+   "name": "Comfort Systems USA Inc",
+   "sector": "Industrials"
+  },
   {
    "date": "2026-10-09",
    "side": "buy",
@@ -8436,106 +8516,26 @@
    "sym": "COIN",
    "name": "Coinbase Global Inc",
    "sector": "Financials"
-  },
-  {
-   "date": "2024-07-26",
-   "side": "buy",
-   "sym": "SPOT",
-   "name": "Spotify Technology SA",
-   "sector": "Communication Services"
-  },
-  {
-   "date": "2024-07-26",
-   "side": "buy",
-   "sym": "NVDA",
-   "name": "NVIDIA Corp",
-   "sector": "Information Technology"
-  },
-  {
-   "date": "2024-07-26",
-   "side": "sell",
-   "sym": "SMCI",
-   "name": "Super Micro Computer Inc",
-   "sector": "Information Technology"
-  },
-  {
-   "date": "2024-07-26",
-   "side": "sell",
-   "sym": "LLY",
-   "name": "Eli Lilly and Co",
-   "sector": "Health Care"
-  },
-  {
-   "date": "2024-07-19",
-   "side": "buy",
-   "sym": "LLY",
-   "name": "Eli Lilly and Co",
-   "sector": "Health Care"
-  },
-  {
-   "date": "2024-07-19",
-   "side": "sell",
-   "sym": "HOOD",
-   "name": "Robinhood Markets Inc",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-06-28",
-   "side": "buy",
-   "sym": "CEG",
-   "name": "Constellation Energy Corp",
-   "sector": "Utilities"
-  },
-  {
-   "date": "2024-06-28",
-   "side": "sell",
-   "sym": "NRG",
-   "name": "NRG Energy Inc",
-   "sector": "Utilities"
-  },
-  {
-   "date": "2024-06-21",
-   "side": "buy",
-   "sym": "HOOD",
-   "name": "Robinhood Markets Inc",
-   "sector": "Financials"
-  },
-  {
-   "date": "2024-06-21",
-   "side": "sell",
-   "sym": "SPOT",
-   "name": "Spotify Technology SA",
-   "sector": "Communication Services"
   }
  ],
  "current": {
-  "asof": "2026-10-09",
-  "breadth": 0.411,
+  "asof": "2026-10-23",
+  "breadth": 0.419,
   "picks": [
    {
-    "sym": "BE",
-    "name": "Bloom Energy Corporation",
+    "sym": "DE",
+    "name": "Deere & Co",
     "sector": "Industrials"
    },
    {
-    "sym": "FCX",
-    "name": "Freeport-McMoRan Inc",
-    "sector": "Materials"
-   },
-   {
-    "sym": "FIX",
-    "name": "Comfort Systems USA Inc",
-    "sector": "Industrials"
+    "sym": "DELL",
+    "name": "Dell Technologies Inc Class C",
+    "sector": "Information Technology"
    },
    {
     "sym": "ILMN",
     "name": "Illumina Inc",
     "sector": "Health Care"
-   },
-   {
-    "sym": "LITE",
-    "name": "Lumentum Holdings Inc",
-    "sector": "Information Technology"
    },
    {
     "sym": "MPC",
@@ -8548,14 +8548,24 @@
     "sector": "Health Care"
    },
    {
-    "sym": "SNDK",
-    "name": "Sandisk Corp",
+    "sym": "MU",
+    "name": "Micron Technology Inc",
     "sector": "Information Technology"
+   },
+   {
+    "sym": "ROST",
+    "name": "Ross Stores Inc",
+    "sector": "Consumer Discretionary"
    },
    {
     "sym": "TGT",
     "name": "Target Corp",
     "sector": "Consumer Staples"
+   },
+   {
+    "sym": "TRV",
+    "name": "Travelers Companies Inc",
+    "sector": "Financials"
    },
    {
     "sym": "VLO",

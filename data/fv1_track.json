@@ -202,7 +202,51 @@
    "invested": 1.0,
    "rot_ret": -0.086955,
    "bill_ret": 0.000778
+  },
+  {
+   "date": "2026-10-16",
+   "nav_rot": 98.27,
+   "nav_blend": 100.1654,
+   "w_eff": 0.2746,
+   "picks": [
+    "BE",
+    "DE",
+    "FCX",
+    "ILMN",
+    "LITE",
+    "MPC",
+    "MRNA",
+    "SNDK",
+    "TGT",
+    "VLO"
+   ],
+   "breadth": 0.431,
+   "invested": 1.0,
+   "rot_ret": -0.047966,
+   "bill_ret": 0.000781
+  },
+  {
+   "date": "2026-10-23",
+   "nav_rot": 97.1891,
+   "nav_blend": 99.919,
+   "w_eff": 0.2723,
+   "picks": [
+    "DE",
+    "DELL",
+    "ILMN",
+    "MPC",
+    "MRNA",
+    "MU",
+    "ROST",
+    "TGT",
+    "TRV",
+    "VLO"
+   ],
+   "breadth": 0.419,
+   "invested": 1.0,
+   "rot_ret": -0.010999,
+   "bill_ret": 0.000773
   }
  ],
- "last_run_utc": "2026-10-17T00:35:51.656030+00:00"
+ "last_run_utc": "2026-10-31T00:33:13.277752+00:00"
 }
